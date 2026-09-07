@@ -4,28 +4,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>buildingSMART International Standards Server</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <style>
     :root { color-scheme: light; --blue: #005b9f; --navy: #16324f; --red: #ed1b2f; --ink: #293846; --muted: #617283; --line: #dbe4ea; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; color: var(--ink); background: linear-gradient(135deg, #eef6fa 0%, #f8fafb 48%, #fff4f5 100%); font: 16px/1.65 Arial, Helvetica, sans-serif; }
-    body::before { content: ""; display: block; height: 6px; background: linear-gradient(90deg, var(--blue) 0 72%, var(--red) 72%); }
-    header, main, footer { width: min(920px, calc(100% - 40px)); margin-inline: auto; }
-    header { padding: clamp(44px, 8vw, 84px) 0 32px; }
-    header img { display: block; width: min(400px, 82%); height: auto; margin-bottom: clamp(42px, 7vw, 72px); }
-    h1 { max-width: 760px; margin: 0; color: var(--navy); font-size: clamp(2.25rem, 6vw, 4.25rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.02; text-wrap: balance; }
-    main { padding: 0 0 56px; }
-    main > p:first-child { max-width: 740px; margin: 0 0 28px; color: var(--blue); font-size: clamp(1.2rem, 2.5vw, 1.5rem); line-height: 1.45; }
-    main > p { max-width: 760px; margin: 0 0 24px; }
-    ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0 36px; padding: 0; list-style: none; }
-    li a { display: flex; align-items: center; min-height: 76px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; color: var(--navy); background: rgba(255,255,255,.78); box-shadow: 0 8px 30px rgba(22,50,79,.06); font-weight: 700; text-decoration: none; transition: border-color .2s, transform .2s, box-shadow .2s; }
-    li a::after { content: "\2197"; margin-left: auto; color: var(--red); font-size: 1.15rem; }
-    li a:hover { border-color: #9fbfd3; transform: translateY(-2px); box-shadow: 0 12px 34px rgba(22,50,79,.11); }
-    li a:focus-visible, p a:focus-visible { outline: 3px solid rgba(0,91,159,.28); outline-offset: 3px; }
-    p a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    footer { padding: 24px 0 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: linear-gradient(135deg, #eef6fa 0%, #f8fafb 48%, #fff4f5 100%); font: 16px/1.45 Arial, Helvetica, sans-serif; }
+    body::before { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--blue) 0 72%, var(--red) 72%); }
+    header, main, footer { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    header { padding: 36px 0 20px; }
+    header img { display: block; width: 240px; max-width: 80%; height: auto; margin-bottom: 18px; }
+    h1 { margin: 0; color: var(--navy); font-size: clamp(1.65rem, 3vw, 2.25rem); font-weight: 700; letter-spacing: -.035em; line-height: 1.15; text-wrap: balance; }
+    .intro { margin: 0 0 8px; color: var(--blue); }
+    .context { margin: 0 0 18px; color: var(--muted); font-size: .875rem; }
+    .standards { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+    .standards-side { display: grid; gap: 20px; }
+    .panel { padding: 22px 24px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: 0 8px 30px rgba(22,50,79,.06); }
+    h2 { margin: 0 0 8px; color: var(--navy); font-size: 1.25rem; line-height: 1.2; }
+    .release { display: grid; grid-template-columns: 70px minmax(0,1fr); gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }
+    h3, h4 { margin: 0; color: var(--navy); font-size: 1rem; line-height: 1.6; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .release li { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; }
+    .status { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .75rem; font-weight: 700; line-height: 1.4; white-space: nowrap; }
+    .status-official { color: #17603b; background: #e3f3e9; border: 1px solid #b9dec9; }
+    .status-withdrawn { color: #803747; background: #f9e8ec; border: 1px solid #e7bfca; }
+    .status-retired { color: #4f5b69; background: #eaf0f5; border: 1px solid #cbd5df; }
+    .status-development { color: #805000; background: #fff2d6; border: 1px solid #ecd298; }
+    .release-name { font-weight: 700; }
+    .formats { display: flex; flex-wrap: wrap; gap: 2px 12px; flex-basis: 100%; font-size: .875rem; }
+    .formats a { white-space: nowrap; }
+    .release .formats a::after { content: none; }
+    .release li + li { margin-top: 8px; }
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .release a { display: inline-block; padding: 2px 0; }
+    .release a::after { content: "\2197"; display: inline-block; margin-left: 7px; color: var(--red); }
+    a:hover { color: var(--navy); }
+    a:focus-visible { outline: 3px solid rgba(0,91,159,.4); outline-offset: 3px; border-radius: 2px; }
+    .related { margin: 36px 0 16px; }
+    .related ul { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: .875rem; }
+    .support { margin: 0 0 16px; font-size: .875rem; color: var(--muted); }
+    footer { padding: 12px 0 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
     footer p { margin: 0; }
-    @media (max-width: 700px) { ul { grid-template-columns: 1fr; } li a { min-height: 64px; } }
-    @media (prefers-reduced-motion: reduce) { li a { transition: none; } }
+    @media (max-width: 720px) {
+      header, main, footer { width: calc(100% - 32px); }
+      header { padding-top: 20px; }
+      .standards { grid-template-columns: 1fr; gap: 14px; }
+      .standards-side { display: grid; gap: 20px; }
+    .panel { padding: 16px; }
+      .release a { padding: 6px 0; }
+    }
+
+    .api-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); }
+    .api-row a, .service-links { font-size: .875rem; }
+    .version { color: var(--muted); font-weight: 400; }
+    .services { margin-top: 44px; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .service-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+    @media (max-width: 720px) { .service-grid { grid-template-columns: 1fr; gap: 12px; } }
+    .section-heading { display: flex; align-items: center; gap: 14px; margin: 30px 0 20px; font-size: clamp(1.5rem, 2.5vw, 1.9rem); letter-spacing: -.025em; }
+    .section-heading::before { content: ""; width: 5px; height: 30px; border-radius: 4px; background: var(--blue); flex-shrink: 0; }
+    .section-heading::after { content: ""; height: 1px; flex: 1; margin-left: 6px; background: var(--line); }
+    .services .section-heading::before { background: var(--red); }
+    .panel-heading { margin: 0 0 12px; font-size: 1.25rem; line-height: 1.2; }
+    .service-grid > section { padding: 24px; border: 1px solid var(--line); border-top: 3px solid #ed1b2f; border-radius: 12px; background: #fff; box-shadow: 0 8px 30px rgba(22,50,79,.06); }
+    .service-grid h3 { margin: 0 0 16px; font-size: 1.125rem; }
+    .service-links a { padding: 4px 0; }
+    @media (max-width: 720px) { .services { margin-top: 32px; } .service-grid > section { padding: 20px; } }
+    .mvd-release { grid-template-columns: minmax(100px, 150px) minmax(0, 1fr); }
+    .mvd-release .formats { flex-basis: auto; }
+    .mvd-release li { gap: 6px 16px; }
+    .panel-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 12px; }
+    .heading-description { color: var(--muted); font-size: .875rem; font-weight: 400; line-height: 1.4; }
+    .release-filter { display: flex; align-items: center; gap: 10px; margin: 20px 0 8px; color: var(--navy); font-size: .875rem; cursor: pointer; width: fit-content; }
+    .release-filter input { width: 18px; height: 18px; margin: 0; accent-color: var(--blue); cursor: pointer; }
+    .release-filter input:focus-visible { outline: 3px solid rgba(0,91,159,.4); outline-offset: 3px; }
+    [hidden] { display: none !important; }
   </style>
 </head>
 <body>
@@ -34,20 +87,91 @@
     <h1>buildingSMART International Standards Server</h1>
   </header>
   <main>
-    <p>This is the official domain for buildingSMART International standards and supporting documentation.</p>
-    <p>This includes Retired, Official, and Candidate versions of the IFC schemas, as well as MVD documentation (HTML), along with other associated files (EXP, XSD, RDF, TTL, etc.). Support documentation in PDF form may also be found here.</p>
-    <p>All content on this server can be accessed from links at the following buildingSMART websites:</p>
-    <ul>
+    <p class="intro">The official domain for buildingSMART International standards and supporting documentation.</p>
+    <p class="context">Browse IFC, IDS, BCF, openCDE APIs, MVD and mvdXML, plus auxiliary services below. This server also hosts MVD documentation, schema files (EXP, XSD, RDF, TTL) and supporting PDFs.</p>
+    <label class="release-filter"><input type="checkbox" id="official-only">Show only official releases</label>
+    <h2 class="section-heading" id="standards-heading">Standards</h2>
+    <nav class="standards" aria-labelledby="standards-heading">
+      <section class="panel" aria-labelledby="ifc-heading">
+        <h3 class="panel-heading" id="ifc-heading"><span>IFC</span><span class="heading-description">Industry Foundation Classes</span></h3>
+        <div class="release"><h4>2x3</h4><ul>
+          <li><span class="release-name">FINAL</span> <span class="status status-retired">Retired</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/EXPRESS/IFC2X3_Final.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/IFC2x3_Final_HTML_distribution.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/IFC2x3_Final_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/PSD_for_IFC2x3_20080717.zip">PSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/psd_xsd_2x3_20080717.zip">PSD XSD ZIP</a></span></li>
+          <li><span class="release-name">TC1</span> <span class="status status-official">Official</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/EXPRESS/IFC2X3_TC1.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/XML/IFC2X3.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/IFC2x3_TC1_HTML_distribution-pset_errata.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/IFC2X3_TC1_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/ifcXML2x3_final.zip">XML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/psd_IFC2x3_TC1_20071227.zip">PSD ZIP</a></span></li>
+        </ul></div>
+        <div class="release"><h4>4</h4><ul><li><span class="release-name">FINAL</span> <span class="status status-official">Official</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/EXPRESS/IFC4.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/XML/ifcXML4.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_IFC4_HTML_distribution.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_IFC4_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_ifcXML4_XSD_longform.zip">XSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/PSD_IFC4_20131201.zip">PSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/PSD_IFC4_html_20131201.zip">PSD HTML ZIP</a></span></li></ul></div>
+        <div class="release"><h4>4.1</h4><ul><li><span class="release-name">FINAL</span> <span class="status status-withdrawn">Withdrawn</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/EXPRESS/IFC4x1.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/XML/IFC4x1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/ifc4x1-final_shortform.zip">Shortform ZIP</a></span></li></ul></div>
+        <div class="release"><h4>4.3.2.0</h4><ul>
+          <li><span class="release-name">Release</span> <span class="status status-official">Official</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/IFC4X3_ADD2.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/IFC4X3_ADD2.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/IFC4.3.2.0.zip">Release ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/annex-a-psd.zip">PSD ZIP</a></span></li>
+          <li><span class="release-name">Post-ISO</span> <span class="status status-development">In development</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML/">HTML</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML/IFC4X3_DEV_63e1f93.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML/IFC4X3_DEV_63e1f93.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML/annex-a-psd.zip">PSD ZIP</a></span></li>
+        </ul></div>
+        <div class="release"><h4>4.4</h4><ul><li><span class="release-name">work in progress</span> <span class="status status-development">In development</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/">HTML</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/IFC4X3_DEV_dd97e9c.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/IFC4X3_DEV_dd97e9c.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/annex-a-psd.zip">PSD ZIP</a></span></li></ul></div>
+      </section>
+      <div class="standards-side">
+      <section class="panel" aria-labelledby="ids-heading">
+        <h3 class="panel-heading" id="ids-heading"><span>IDS</span><span class="heading-description">Information Delivery Specification</span></h3>
+        <div class="release"><h4>0.9.7</h4><ul><li><span class="release-name">Pre-release draft</span> <span class="status status-withdrawn">Withdrawn</span><span class="formats"><a href="https://standards.buildingsmart.org/IDS/0.9.7/ids.xsd">XSD</a></span></li></ul></div>
+        <div class="release"><h4>1.0</h4><ul><li><span class="release-name">Release</span> <span class="status status-official">Official</span><span class="formats"><a href="https://standards.buildingsmart.org/IDS/1.0/ids.xsd">XSD</a></span></li></ul></div>
+      </section>
+      <section class="panel" aria-labelledby="bcf-heading">
+        <h3 class="panel-heading" id="bcf-heading"><span>BCF</span><span class="heading-description">BIM Collaboration Format</span></h3>
+        <div class="release"><h4>3.0</h4><ul><li><span class="formats"><a href="https://github.com/buildingSMART/BCF-XML">XML (GitHub)</a> <a href="https://github.com/BuildingSMART/BCF-API">API (GitHub)</a></span></li></ul></div>
+      </section>
+      <section class="panel" aria-labelledby="opencde-heading">
+        <h3 class="panel-heading" id="opencde-heading"><span>openCDE APIs</span><span class="heading-description">the APIs for data exchange</span></h3>
+        <div class="api-row"><h4>Foundation API <span class="version">1.1</span></h4><a href="https://github.com/buildingSMART/foundation-api">GitHub</a></div>
+        <div class="api-row"><h4>Documents API <span class="version">1.0</span></h4><a href="https://github.com/buildingSMART/documents-API/">GitHub</a></div>
+      </section>
+      </div>
+      <section class="panel" aria-labelledby="mvd-heading">
+        <h3 class="panel-heading" id="mvd-heading"><span>MVD</span><span class="heading-description">The IFC Model View Definitions</span></h3>
+        <div class="release mvd-release"><h4>IFC 2x3 / TC1</h4><ul>
+          <li><span class="release-name">CV2_0</span><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC2x3/TC1/CV2_0/IFC2x3_CV2_0.zip">ZIP</a></span></li>
+          <li><span class="release-name">FMHandover</span><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC2x3/TC1/FMHandover/BasicFMHandover.zip">ZIP</a></span></li>
+          <li><span class="release-name">SB1_1</span><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC2x3/TC1/SB1_1/IFC%20Space%20Boundary%20Implementation%20Agreement%20Addendum%202010-03-22.pdf">PDF</a></span></li>
+          <li><span class="release-name">Structural</span><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC2x3/TC1/Structural/StructuralAnalysisView.zip">ZIP</a></span></li>
+        </ul></div>
+        <div class="release mvd-release"><h4>IFC4 / ADD2_TC1</h4><ul><li><span class="release-name">RV1_2</span><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC4/ADD2_TC1/RV1_2/HTML/">HTML</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC4/ADD2_TC1/RV1_2/EXPRESS/IFC4.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC4/ADD2_TC1/RV1_2/XML/IFC4.xsd">XML (XSD)</a></span></li></ul></div>
+        <div class="release mvd-release"><h4>IFC4</h4><ul><li><span class="release-name">Precast</span><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/IFC4Precast/202111_ifc4precast.zip">ZIP</a></span></li></ul></div>
+      </section>
+      <section class="panel" aria-labelledby="mvdxml-heading">
+        <h3 class="panel-heading" id="mvdxml-heading"><span>mvdXML</span><span class="heading-description">The format of MVD</span></h3>
+        <div class="release"><h4>1.0</h4><ul><li><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-0/mvdXML_V1-0.xsd">XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-0/mvdXML_V1-0.pdf">PDF</a></span></li></ul></div>
+        <div class="release"><h4>1.1</h4><ul><li><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1.1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1.1_add1.xsd">Addendum 1 XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1-1-Final.pdf">PDF</a></span></li></ul></div>
+      </section>
+    </nav>
+    <nav class="services" aria-labelledby="services-heading">
+      <h2 class="section-heading" id="services-heading">Auxiliary Services</h2>
+      <div class="service-grid">
+        <section aria-labelledby="bsdd-heading"><h3 class="panel-heading" id="bsdd-heading"><span>bSDD</span><span class="heading-description">buildingSMART Data Dictionary platform</span></h3><div class="service-links"><a href="https://github.com/buildingSMART/bSDD">GitHub</a><a href="https://app.swaggerhub.com/apis-docs/buildingSMART/Dictionaries/v1">API Swagger</a></div></section>
+        <section aria-labelledby="ids-audit-heading"><h3 class="panel-heading" id="ids-audit-heading"><span>IDS Audit</span><span class="heading-description">check correctness of IDS file</span></h3><div class="service-links"><a href="https://github.com/buildingSMART/IDS-Audit-tool">GitHub</a></div></section>
+        <section aria-labelledby="validation-heading"><h3 class="panel-heading" id="validation-heading"><span>Validation Service</span><span class="heading-description">check correctness of IFC file</span></h3><div class="service-links"><a href="https://validate.buildingsmart.org/">Open service</a><a href="https://github.com/buildingSMART/validate">GitHub source code</a></div></section>
+      </div>
+    </nav>
+    <nav class="related" aria-label="buildingSMART websites"><ul>
       <li><a href="https://www.buildingsmart.org/">buildingsmart.org</a></li>
       <li><a href="https://technical.buildingsmart.org/">technical.buildingsmart.org</a></li>
       <li><a href="https://forums.buildingsmart.org/">forums.buildingsmart.org</a></li>
-    </ul>
-    <p>If there are any questions or issues, please <a href="https://www.buildingsmart.org/contact-us/">contact us</a>.</p>
-    <p>Thank you and welcome to the buildingSMART International community!</p>
+    </ul></nav>
+    <p class="support">Questions or issues? <a href="https://www.buildingsmart.org/contact-us/">Contact us</a>. Welcome to the buildingSMART International community!</p>
+    <p class="support">All versions and formats can be found in the <a href="https://github.com/buildingSMART/Standards-builds/tree/main">source repository</a>.</p>
   </main>
-  <footer>
-    <p>&copy; <span id="copyright-year"></span> buildingSMART International Ltd.</p>
-  </footer>
-  <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+  <footer><p>&copy; <span id="copyright-year"></span> buildingSMART International Ltd.</p></footer>
+  <script>
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    const officialOnly = document.getElementById('official-only');
+    function filterReleases() {
+      document.querySelectorAll('.standards .release').forEach(release => {
+        const rows = Array.from(release.querySelectorAll('li'));
+        rows.forEach(row => {
+          const excluded = row.querySelector('.status-retired, .status-withdrawn, .status-development');
+          row.hidden = officialOnly.checked && Boolean(excluded);
+        });
+        release.hidden = rows.length > 0 && rows.every(row => row.hidden);
+      });
+    }
+    officialOnly.addEventListener('change', filterReleases);
+    window.addEventListener('pageshow', filterReleases);
+    filterReleases();
+  </script>
 </body>
 </html>
