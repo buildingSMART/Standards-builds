@@ -1,0 +1,765 @@
+<html lang="en">
+<head>
+<link href="../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>8.7.3.14 IfcLocalPlacement - IFC 4.4.0.0 Documentation</title>
+<link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="..">
+                             Cover
+                        </a>
+<a href="../toc.html">
+                             Contents
+                        </a>
+<a href="../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a href="../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a class="current" href="../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+<a class="sublink-1" href="../ifcactorresource/content.html">
+                            8.1 IfcActorResource
+                        </a>
+<a class="sublink-1" href="../ifcapprovalresource/content.html">
+                            8.2 IfcApprovalResource
+                        </a>
+<a class="sublink-1" href="../ifcconstraintresource/content.html">
+                            8.3 IfcConstraintResource
+                        </a>
+<a class="sublink-1" href="../ifccostresource/content.html">
+                            8.4 IfcCostResource
+                        </a>
+<a class="sublink-1" href="../ifcdatetimeresource/content.html">
+                            8.5 IfcDateTimeResource
+                        </a>
+<a class="sublink-1" href="../ifcexternalreferenceresource/content.html">
+                            8.6 IfcExternalReferenceResource
+                        </a>
+<a class="sublink-1 current" href="../ifcgeometricconstraintresource/content.html">
+                            8.7 IfcGeometricConstraintResource
+                        </a>
+<a class="sublink-1" href="../ifcgeometricmodelresource/content.html">
+                            8.8 IfcGeometricModelResource
+                        </a>
+<a class="sublink-1" href="../ifcgeometryresource/content.html">
+                            8.9 IfcGeometryResource
+                        </a>
+<a class="sublink-1" href="../ifcmaterialresource/content.html">
+                            8.10 IfcMaterialResource
+                        </a>
+<a class="sublink-1" href="../ifcmeasureresource/content.html">
+                            8.11 IfcMeasureResource
+                        </a>
+<a class="sublink-1" href="../ifcpresentationappearanceresource/content.html">
+                            8.12 IfcPresentationAppearanceResource
+                        </a>
+<a class="sublink-1" href="../ifcpresentationdefinitionresource/content.html">
+                            8.13 IfcPresentationDefinitionResource
+                        </a>
+<a class="sublink-1" href="../ifcpresentationorganizationresource/content.html">
+                            8.14 IfcPresentationOrganizationResource
+                        </a>
+<a class="sublink-1" href="../ifcprofileresource/content.html">
+                            8.15 IfcProfileResource
+                        </a>
+<a class="sublink-1" href="../ifcpropertyresource/content.html">
+                            8.16 IfcPropertyResource
+                        </a>
+<a class="sublink-1" href="../ifcquantityresource/content.html">
+                            8.17 IfcQuantityResource
+                        </a>
+<a class="sublink-1" href="../ifcrepresentationresource/content.html">
+                            8.18 IfcRepresentationResource
+                        </a>
+<a class="sublink-1" href="../ifcstructuralloadresource/content.html">
+                            8.19 IfcStructuralLoadResource
+                        </a>
+<a class="sublink-1" href="../ifctopologyresource/content.html">
+                            8.20 IfcTopologyResource
+                        </a>
+<a class="sublink-1" href="../ifcutilityresource/content.html">
+                            8.21 IfcUtilityResource
+                        </a>
+</div>
+<div>
+<a href="../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>8.7.3.14 <a href="IfcLocalPlacement.html">IfcLocalPlacement</a></h1>
+<aside class="aside-note search-skip" id="translations-aside">
+<div class="translation lang-arabic" style="display:none">
+<div>
+<span style="color:#0277bd;">🇸🇦</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-chinese-simplified" style="display:none">
+<div>
+<span style="color:#0277bd;">🇨🇳</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-croatian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇭🇷</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-czech" style="display:none">
+<div>
+<span style="color:#0277bd;">🇨🇿</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-danish" style="display:none">
+<div>
+<span style="color:#0277bd;">🇩🇰</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-dutch" style="display:none">
+<div>
+<span style="color:#0277bd;">🇳🇱</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-finnish" style="display:none">
+<div>
+<span style="color:#0277bd;">🇫🇮</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-french" style="display:none">
+<div>
+<span style="color:#0277bd;">🇫🇷</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-german" style="display:none">
+<div>
+<span style="color:#0277bd;">🇩🇪</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-greek" style="display:none">
+<div>
+<span style="color:#0277bd;">🇬🇷</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-hindi" style="display:none">
+<div>
+<span style="color:#0277bd;">🇮🇳</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-icelandic" style="display:none">
+<div>
+<span style="color:#0277bd;">🇮🇸</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-italian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇮🇹</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-japanese" style="display:none">
+<div>
+<span style="color:#0277bd;">🇯🇵</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-korean" style="display:none">
+<div>
+<span style="color:#0277bd;">🇰🇷</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-lithuanian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇱🇹</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-norwegian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇳🇴</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-polish" style="display:none">
+<div>
+<span style="color:#0277bd;">🇵🇱</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-portuguese" style="display:none">
+<div>
+<span style="color:#0277bd;">🇵🇹</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-portuguese-brazilian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇧🇷</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-romanian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇷🇴</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-serbian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇷🇸</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-slovenian" style="display:none">
+<div>
+<span style="color:#0277bd;">🇸🇮</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-spanish" style="display:none">
+<div>
+<span style="color:#0277bd;">🇪🇸</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-swedish" style="display:none">
+<div>
+<span style="color:#0277bd;">🇸🇪</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+<div class="translation lang-turkish" style="display:none">
+<div>
+<span style="color:#0277bd;">🇹🇷</span>
+<span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+</span>
+</div>
+</div>
+</aside>
+<p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+<h2><a class="anchor" id="8.7.3.14.1-Semantic-definition"></a>
+    8.7.3.14.1 Semantic definition
+<a class="link" href="#8.7.3.14.1-Semantic-definition"><i data-feather="link"></i></a></h2>
+<p>An <em><a href="IfcLocalPlacement.html">IfcLocalPlacement</a></em> defines the relative placement of a product in relation to the placement of another product or the absolute placement of a product within the geometric representation context of the project.</p>
+<!-- end of short definition -->
+<p>The <em><a href="IfcLocalPlacement.html">IfcLocalPlacement</a></em> allows that an <em><a href="IfcProduct.html">IfcProduct</a></em> can be placed by this <em><a href="IfcLocalPlacement.html">IfcLocalPlacement</a></em> (through the attribute_ObjectPlacement_) within the local coordinate system of the object placement of another <em><a href="IfcProduct.html">IfcProduct</a></em>, which is referenced by the <em>PlacementRelTo</em>. Rules to prevent cyclic relative placements have to be introduced on the application level.</p>
+<p>If the <em>PlacementRelTo</em> is not given, then the <em><a href="IfcProduct.html">IfcProduct</a></em> is placed absolutely within the world coordinate system.</p>
+<p>The following conventions shall apply as default relative positions if the relative placement is used. The conventions are given for all five direct subtypes of <em><a href="IfcProduct.html">IfcProduct</a></em>, the <em><a href="IfcSpatialStructureElement.html">IfcSpatialStructureElement</a></em>, <em><a href="IfcElement.html">IfcElement</a></em>, <em><a href="IfcAnnotation.html">IfcAnnotation</a></em>, <em><a href="IfcGrid.html">IfcGrid</a></em>, <em><a href="IfcPort.html">IfcPort</a></em>. More detailed placement information is given at the level of subtypes of those five types mentioned.</p>
+<ul>
+<li>For the subtypes of <em><a href="IfcSpatialStructureElement.html">IfcSpatialStructureElement</a></em> the following conventions apply</li>
+<li><em><a href="IfcSite.html">IfcSite</a></em> shall be placed absolutely within the world coordinate system established by the geometric representation context of the <em><a href="IfcProject.html">IfcProject</a></em></li>
+<li><em><a href="IfcFacility.html">IfcFacility</a></em> shall be placed relative to the local placement of <em><a href="IfcSite.html">IfcSite</a></em></li>
+<li><em><a href="IfcFacilityPart.html">IfcFacilityPart</a></em> shall be placed relative to the local placement of <em><a href="IfcFacility.html">IfcFacility</a></em></li>
+<li>For <em><a href="IfcGrid.html">IfcGrid</a></em> and <em><a href="IfcAnnotation.html">IfcAnnotation</a></em> the convention applies that it shall be placed relative</li>
+<li>to the local placement of its container, either <em><a href="IfcSite.html">IfcSite</a></em>, <em><a href="IfcBuilding.html">IfcBuilding</a></em>, or <em><a href="IfcBuildingStorey.html">IfcBuildingStorey</a></em><ul>
+<li>it should be the same container element that is referenced by the <em><a href="IfcRelContainedInSpatialStructure.html">IfcRelContainedInSpatialStructure</a></em> containment relationship,</li>
+</ul>
+</li>
+<li>For <em><a href="IfcAlignment.html">IfcAlignment</a></em> placed relative to the world coordinate system of <em><a href="IfcProject.html">IfcProject</a></em>.</li>
+<li>For <em><a href="IfcPort.html">IfcPort</a></em> the convention applies that it shall be placed relative</li>
+<li>to the local placement of the <em><a href="IfcElement.html">IfcElement</a></em> it belongs to<ul>
+<li>it should be the same element that is referenced by the <em><a href="IfcRelConnectsPortToElement.html">IfcRelConnectsPortToElement</a></em> connection relationship,</li>
+</ul>
+</li>
+<li>For <em><a href="IfcElement.html">IfcElement</a></em> the convention applies that it shall be placed relative:</li>
+<li>to the local placement of its container, either <em><a href="IfcSite.html">IfcSite</a></em>, <em><a href="IfcFacility.html">IfcFacility</a></em>, or <em><a href="IfcFacilityPart.html">IfcFacilityPart</a></em><ul>
+<li>it should be the same container element that is referenced by the <em><a href="IfcRelContainedInSpatialStructure.html">IfcRelContainedInSpatialStructure</a></em> containment relationship,</li>
+</ul>
+</li>
+<li>to the local placement of the <em><a href="IfcElement.html">IfcElement</a></em> to which it is tied by an element composition relationship<ul>
+<li>for features that are located relative to the main component (such as openings), as expressed by <em><a href="IfcRelVoidsElement.html">IfcRelVoidsElement</a></em>, <em><a href="IfcRelProjectsElement.html">IfcRelProjectsElement</a></em> and <em><a href="IfcRelAdheresToElement.html">IfcRelAdheresToElement</a></em>;</li>
+<li>for elements that fill an opening (such as doors or windows), as expressed by <em><a href="IfcRelFillsElement.html">IfcRelFillsElement</a></em>;</li>
+<li>for coverings that cover the element, as expressed by <em><a href="IfcRelCoversBldgElements.html">IfcRelCoversBldgElements</a></em>;</li>
+<li>for sub components that are aggregated to the main component, as expressed by <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> and <em><a href="IfcRelNests.html">IfcRelNests</a></em>.</li>
+</ul>
+</li>
+</ul>
+<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC1.0.</aside>
+<h2><a class="anchor" id="8.7.3.14.2-Entity-inheritance"></a>
+    8.7.3.14.2 Entity inheritance
+<a class="link" href="#8.7.3.14.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
+<ol class="tier">
+<li>
+<i data-feather="arrow-up"></i>
+<ul class="classes classes-in-chain">
+<li class="abstract ancestor"><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></li>
+</ul>
+</li>
+<li>
+<i data-feather="arrow-up"></i>
+<ul class="classes classes-in-chain">
+<li class="current ancestor"><a href="IfcLocalPlacement.html">IfcLocalPlacement</a></li>
+<li class=""><a href="IfcGridPlacement.html">IfcGridPlacement</a></li>
+<li class=""><a href="IfcLinearPlacement.html">IfcLinearPlacement</a></li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="8.7.3.14.3-Attributes"></a>
+    8.7.3.14.3 Attributes
+<a class="link" href="#8.7.3.14.3-Attributes"><i data-feather="link"></i></a></h2>
+<!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
+<figure><a class="anchor" id="Table-A"></a><table class="striped grouped attributes">
+<colgroup>
+<col style="width: 20px;"/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="group-inherited">
+<td colspan="4">
+                <a href="IfcObjectPlacement.html">IfcObjectPlacement</a>
+                <small>(3)</small>
+</td>
+</tr>
+<tr class="inherited" data-type="attribute">
+<td data-label="#">1</td>
+<td data-label="Name">
+                PlacementRelTo
+            </td>
+<td data-label="Type">OPTIONAL <a href="IfcObjectPlacement.html">IfcObjectPlacement</a></td>
+<td data-label="Description">
+<p>Reference to object placement that provides the relative placement with its placement in a grid, local coordinate system or linear referenced placement. If it is omitted, then in the case of linear placement it is established by the origin of horizontal alignment of the referenced <a href="IfcAlignment.html">IfcAlignment</a> Axis. In the case of local placement it is established by the geometric representation context.</p>
+</td>
+</tr>
+<tr class="inherited" data-type="attribute">
+<td data-label="#"></td>
+<td data-label="Name">
+<em>PlacesObject</em>
+</td>
+<td data-label="Type">SET [0:?] OF <a href="IfcProduct.html">IfcProduct</a> FOR ObjectPlacement</td>
+<td data-label="Description">
+<p>The <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em> shall be used to provide a placement and
+an object coordinate system for instances of <em><a href="IfcProduct.html">IfcProduct</a></em>.</p>
+<aside class="aside-ifc2x3"><mark>IFC2x3-CHANGE</mark> New inverse attribute.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> The cardinality has changed to 0..n to allow reuse of instances of <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em> as placement object in one to many products. It takes also into account that it can act as a placement for <em><a href="IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a></em>.</aside><blockquote>
+<p>If an <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em> is shared by many instances of <em><a href="IfcProduct.html">IfcProduct</a></em> it does not apply a semantic meaning of being a shared placement that needs to be maintained. The same instance of <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em> could simply be used to reduce exchange file size.</p>
+</blockquote>
+</td>
+</tr>
+<tr class="inherited" data-type="attribute">
+<td data-label="#"></td>
+<td data-label="Name">
+<em>ReferencedByPlacements</em>
+</td>
+<td data-label="Type">SET [0:?] OF <a href="IfcObjectPlacement.html">IfcObjectPlacement</a> FOR PlacementRelTo</td>
+<td data-label="Description">
+<p class="search-skip">
+<em>No description available.</em>
+</p>
+</td>
+</tr>
+<tr class="preview">
+<td colspan="4">
+<small class="show-inherited" data-type="attribute">
+<i data-feather="eye-off"></i>
+                    Click to show 3 hidden inherited attributes
+                </small>
+<small class="hide-inherited" data-type="attribute">
+<i data-feather="eye-off"></i>
+                    Click to hide 3 inherited attributes
+                </small>
+</td>
+</tr>
+<tr class="group">
+<td colspan="4">
+                <a href="IfcLocalPlacement.html">IfcLocalPlacement</a>
+                <small>(1)</small>
+</td>
+</tr>
+<tr>
+<td data-label="#">2</td>
+<td data-label="Name">
+                RelativePlacement
+            </td>
+<td data-label="Type"><a href="IfcAxis2Placement.html">IfcAxis2Placement</a></td>
+<td data-label="Description">
+<p>Geometric placement that defines the transformation from the related coordinate system into the relating. The placement can be either 2D or 3D, depending on the dimension count of the coordinate system.</p>
+</td>
+</tr>
+</tbody>
+</table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="8.7.3.14.4-Formal-propositions"></a>
+    8.7.3.14.4 Formal propositions
+<a class="link" href="#8.7.3.14.4-Formal-propositions"><i data-feather="link"></i></a></h2>
+<figure><a class="anchor" id="Table-B"></a><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WR21</td>
+<td>
+<p>Ensures that a 3D local placement can only be relative (if exists) to a 3D parent local placement (and not to a 2D parent local placement).</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<pre><code class="language-express pygments" data-highlighted="generator"><a href="IfcCorrectLocalPlacement.html"><span class="tok-nc">IfcCorrectLocalPlacement</span></a><span class="tok-p">(</span><span class="tok-n">RelativePlacement</span><span class="tok-p">,</span> <span class="tok-n">PlacementRelTo</span><span class="tok-p">)</span></code></pre>
+</td>
+</tr>
+</tbody>
+</table><figcaption>Table B<a class="link" href="#Table-B"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="8.7.3.14.5-Formal-representation"></a>
+    8.7.3.14.5 Formal representation
+<a class="link" href="#8.7.3.14.5-Formal-representation"><i data-feather="link"></i></a></h2>
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">ENTITY</span> <a href="IfcLocalPlacement.html"><span class="tok-nc">IfcLocalPlacement</span></a>
+<span class="tok-k">SUBTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><a href="IfcObjectPlacement.html"><span class="tok-nc">IfcObjectPlacement</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">RelativePlacement</span> <span class="tok-o">:</span> <a href="IfcAxis2Placement.html"><span class="tok-nc">IfcAxis2Placement</span></a><span class="tok-p">;</span>
+<span class="tok-k">WHERE</span>
+<span class="tok-n">WR21</span> <span class="tok-o">:</span> <a href="IfcCorrectLocalPlacement.html"><span class="tok-nc">IfcCorrectLocalPlacement</span></a><span class="tok-p">(</span><span class="tok-n">RelativePlacement</span><span class="tok-p">,</span> <span class="tok-n">PlacementRelTo</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
+<h2><a class="anchor" id="8.7.3.14.6-References"></a>
+    8.7.3.14.6 References
+<a class="link" href="#8.7.3.14.6-References"><i data-feather="link"></i></a></h2>
+<ul class="references">
+<li><i data-feather="paperclip"></i><a href="IfcCorrectLocalPlacement.html">IfcCorrectLocalPlacement</a></li>
+<li><i data-feather="paperclip"></i><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></li>
+</ul>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/resource/IfcGeometricConstraintResource/Entities/IfcLocalPlacement.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>Change to official repo names</em> by Thomas Krijnen on 2026-09-08T13:56:10+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/schemas/resource/IfcGeometricConstraintResource/Entities/IfcLocalPlacement.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

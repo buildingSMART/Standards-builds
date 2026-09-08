@@ -1,0 +1,1679 @@
+<html lang="en">
+<head>
+<link href="../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>7.5 IfcHvacDomain - IFC 4.4.0.0 Documentation</title>
+<link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="..">
+                             Cover
+                        </a>
+<a href="../toc.html">
+                             Contents
+                        </a>
+<a href="../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a class="current" href="../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a class="sublink-1" href="../ifcarchitecturedomain/content.html">
+                            7.1 IfcArchitectureDomain
+                        </a>
+<a class="sublink-1" href="../ifcbuildingcontrolsdomain/content.html">
+                            7.2 IfcBuildingControlsDomain
+                        </a>
+<a class="sublink-1" href="../ifcconstructionmgmtdomain/content.html">
+                            7.3 IfcConstructionMgmtDomain
+                        </a>
+<a class="sublink-1" href="../ifcelectricaldomain/content.html">
+                            7.4 IfcElectricalDomain
+                        </a>
+<a class="sublink-1 current" href="content.html">
+                            7.5 IfcHvacDomain
+                        </a>
+<a class="sublink-1" href="../ifcplumbingfireprotectiondomain/content.html">
+                            7.6 IfcPlumbingFireProtectionDomain
+                        </a>
+<a class="sublink-1" href="../ifcportsandwaterwaysdomain/content.html">
+                            7.7 IfcPortsAndWaterwaysDomain
+                        </a>
+<a class="sublink-1" href="../ifcraildomain/content.html">
+                            7.8 IfcRailDomain
+                        </a>
+<a class="sublink-1" href="../ifcroaddomain/content.html">
+                            7.9 IfcRoadDomain
+                        </a>
+<a class="sublink-1" href="../ifcstructuralanalysisdomain/content.html">
+                            7.10 IfcStructuralAnalysisDomain
+                        </a>
+<a class="sublink-1" href="../ifcstructuralelementsdomain/content.html">
+                            7.11 IfcStructuralElementsDomain
+                        </a>
+<a href="../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>7.5 IfcHvacDomain</h1>
+<h2><a class="anchor" id="7.5.1-Schema-definition"></a>
+    7.5.1 Schema definition
+<a class="link" href="#7.5.1-Schema-definition"><i data-feather="link"></i></a></h2>
+<p>The <em>IfcHvacDomain</em> schema defines basic object concepts required for interoperability within the heating, ventilating and air conditioning (HVAC) domain. It extends concepts defined in the <em>IfcSharedBldgServiceElements</em> schema.</p>
+<p>The scope of the <em>IfcHvacDomain</em> schema is defined as:</p>
+<ol>
+<li>The segments, fittings and connections that constitute duct and piping distribution systems typically used for building services, such as for air conditioning, ventilation and exhaust-air systems; chilled water, steam and heating hot water, potable water, waste, natural gas and LPG systems, etc.</li>
+<li>Equipment typically used in building services systems, such as boilers, chillers, fans, and pumps and the vibration isolation associated with these components.</li>
+<li>Terminal and flow control devices, such as air vents and grilles, variable air volume modulators, valves, and dampers.</li>
+</ol>
+<p>The following are deemed to be out of scope of the <em>IfcHvacDomain</em> schema at this time:</p>
+<ul>
+<li>Industrial and institutional specialty equipment such as that used for power production, manufacturing and fabrication, etc.</li>
+<li>Provisions for dealing explicitly with hazardous materials such as chemical or biological agents</li>
+<li>Controls systems and sequencing systems for these equipment beyond what is defined in the <em>IfcBuildingControlsDomain</em> schema</li>
+</ul>
+<aside class="aside-history"><mark>HISTORY</mark>  This schema has been significantly modified in IFC2x2.</aside>
+<h2><a class="anchor" id="7.5.2-Types"></a>
+    7.5.2 Types
+<a class="link" href="#7.5.2-Types"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.5.2.1">
+<a href="../lexical/IfcAirTerminalBoxTypeEnum.html">
+            IfcAirTerminalBoxTypeEnum
+        </a>
+</li><li number="7.5.2.2">
+<a href="../lexical/IfcAirTerminalTypeEnum.html">
+            IfcAirTerminalTypeEnum
+        </a>
+</li><li number="7.5.2.3">
+<a href="../lexical/IfcAirToAirHeatRecoveryTypeEnum.html">
+            IfcAirToAirHeatRecoveryTypeEnum
+        </a>
+</li><li number="7.5.2.4">
+<a href="../lexical/IfcBoilerTypeEnum.html">
+            IfcBoilerTypeEnum
+        </a>
+</li><li number="7.5.2.5">
+<a href="../lexical/IfcBurnerTypeEnum.html">
+            IfcBurnerTypeEnum
+        </a>
+</li><li number="7.5.2.6">
+<a href="../lexical/IfcChillerTypeEnum.html">
+            IfcChillerTypeEnum
+        </a>
+</li><li number="7.5.2.7">
+<a href="../lexical/IfcCoilTypeEnum.html">
+            IfcCoilTypeEnum
+        </a>
+</li><li number="7.5.2.8">
+<a href="../lexical/IfcCompressorTypeEnum.html">
+            IfcCompressorTypeEnum
+        </a>
+</li><li number="7.5.2.9">
+<a href="../lexical/IfcCondenserTypeEnum.html">
+            IfcCondenserTypeEnum
+        </a>
+</li><li number="7.5.2.10">
+<a href="../lexical/IfcCooledBeamTypeEnum.html">
+            IfcCooledBeamTypeEnum
+        </a>
+</li><li number="7.5.2.11">
+<a href="../lexical/IfcCoolingTowerTypeEnum.html">
+            IfcCoolingTowerTypeEnum
+        </a>
+</li><li number="7.5.2.12">
+<a href="../lexical/IfcDamperTypeEnum.html">
+            IfcDamperTypeEnum
+        </a>
+</li><li number="7.5.2.13">
+<a href="../lexical/IfcDuctFittingTypeEnum.html">
+            IfcDuctFittingTypeEnum
+        </a>
+</li><li number="7.5.2.14">
+<a href="../lexical/IfcDuctSegmentTypeEnum.html">
+            IfcDuctSegmentTypeEnum
+        </a>
+</li><li number="7.5.2.15">
+<a href="../lexical/IfcDuctSilencerTypeEnum.html">
+            IfcDuctSilencerTypeEnum
+        </a>
+</li><li number="7.5.2.16">
+<a href="../lexical/IfcEngineTypeEnum.html">
+            IfcEngineTypeEnum
+        </a>
+</li><li number="7.5.2.17">
+<a href="../lexical/IfcEvaporativeCoolerTypeEnum.html">
+            IfcEvaporativeCoolerTypeEnum
+        </a>
+</li><li number="7.5.2.18">
+<a href="../lexical/IfcEvaporatorTypeEnum.html">
+            IfcEvaporatorTypeEnum
+        </a>
+</li><li number="7.5.2.19">
+<a href="../lexical/IfcFanTypeEnum.html">
+            IfcFanTypeEnum
+        </a>
+</li><li number="7.5.2.20">
+<a href="../lexical/IfcFilterTypeEnum.html">
+            IfcFilterTypeEnum
+        </a>
+</li><li number="7.5.2.21">
+<a href="../lexical/IfcFlowMeterTypeEnum.html">
+            IfcFlowMeterTypeEnum
+        </a>
+</li><li number="7.5.2.22">
+<a href="../lexical/IfcHeatExchangerTypeEnum.html">
+            IfcHeatExchangerTypeEnum
+        </a>
+</li><li number="7.5.2.23">
+<a href="../lexical/IfcHumidifierTypeEnum.html">
+            IfcHumidifierTypeEnum
+        </a>
+</li><li number="7.5.2.24">
+<a href="../lexical/IfcMedicalDeviceTypeEnum.html">
+            IfcMedicalDeviceTypeEnum
+        </a>
+</li><li number="7.5.2.25">
+<a href="../lexical/IfcPipeFittingTypeEnum.html">
+            IfcPipeFittingTypeEnum
+        </a>
+</li><li number="7.5.2.26">
+<a href="../lexical/IfcPipeSegmentTypeEnum.html">
+            IfcPipeSegmentTypeEnum
+        </a>
+</li><li number="7.5.2.27">
+<a href="../lexical/IfcPumpTypeEnum.html">
+            IfcPumpTypeEnum
+        </a>
+</li><li number="7.5.2.28">
+<a href="../lexical/IfcSpaceHeaterTypeEnum.html">
+            IfcSpaceHeaterTypeEnum
+        </a>
+</li><li number="7.5.2.29">
+<a href="../lexical/IfcTankTypeEnum.html">
+            IfcTankTypeEnum
+        </a>
+</li><li number="7.5.2.30">
+<a href="../lexical/IfcTubeBundleTypeEnum.html">
+            IfcTubeBundleTypeEnum
+        </a>
+</li><li number="7.5.2.31">
+<a href="../lexical/IfcUnitaryEquipmentTypeEnum.html">
+            IfcUnitaryEquipmentTypeEnum
+        </a>
+</li><li number="7.5.2.32">
+<a href="../lexical/IfcValveTypeEnum.html">
+            IfcValveTypeEnum
+        </a>
+</li><li number="7.5.2.33">
+<a href="../lexical/IfcVibrationIsolatorTypeEnum.html">
+            IfcVibrationIsolatorTypeEnum
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.5.3-Entities"></a>
+    7.5.3 Entities
+<a class="link" href="#7.5.3-Entities"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.5.3.1">
+<a href="../lexical/IfcAirTerminal.html">
+            IfcAirTerminal
+        </a>
+</li><li number="7.5.3.2">
+<a href="../lexical/IfcAirTerminalBox.html">
+            IfcAirTerminalBox
+        </a>
+</li><li number="7.5.3.3">
+<a href="../lexical/IfcAirTerminalBoxType.html">
+            IfcAirTerminalBoxType
+        </a>
+</li><li number="7.5.3.4">
+<a href="../lexical/IfcAirTerminalType.html">
+            IfcAirTerminalType
+        </a>
+</li><li number="7.5.3.5">
+<a href="../lexical/IfcAirToAirHeatRecovery.html">
+            IfcAirToAirHeatRecovery
+        </a>
+</li><li number="7.5.3.6">
+<a href="../lexical/IfcAirToAirHeatRecoveryType.html">
+            IfcAirToAirHeatRecoveryType
+        </a>
+</li><li number="7.5.3.7">
+<a href="../lexical/IfcBoiler.html">
+            IfcBoiler
+        </a>
+</li><li number="7.5.3.8">
+<a href="../lexical/IfcBoilerType.html">
+            IfcBoilerType
+        </a>
+</li><li number="7.5.3.9">
+<a href="../lexical/IfcBurner.html">
+            IfcBurner
+        </a>
+</li><li number="7.5.3.10">
+<a href="../lexical/IfcBurnerType.html">
+            IfcBurnerType
+        </a>
+</li><li number="7.5.3.11">
+<a href="../lexical/IfcChiller.html">
+            IfcChiller
+        </a>
+</li><li number="7.5.3.12">
+<a href="../lexical/IfcChillerType.html">
+            IfcChillerType
+        </a>
+</li><li number="7.5.3.13">
+<a href="../lexical/IfcCoil.html">
+            IfcCoil
+        </a>
+</li><li number="7.5.3.14">
+<a href="../lexical/IfcCoilType.html">
+            IfcCoilType
+        </a>
+</li><li number="7.5.3.15">
+<a href="../lexical/IfcCompressor.html">
+            IfcCompressor
+        </a>
+</li><li number="7.5.3.16">
+<a href="../lexical/IfcCompressorType.html">
+            IfcCompressorType
+        </a>
+</li><li number="7.5.3.17">
+<a href="../lexical/IfcCondenser.html">
+            IfcCondenser
+        </a>
+</li><li number="7.5.3.18">
+<a href="../lexical/IfcCondenserType.html">
+            IfcCondenserType
+        </a>
+</li><li number="7.5.3.19">
+<a href="../lexical/IfcCooledBeam.html">
+            IfcCooledBeam
+        </a>
+</li><li number="7.5.3.20">
+<a href="../lexical/IfcCooledBeamType.html">
+            IfcCooledBeamType
+        </a>
+</li><li number="7.5.3.21">
+<a href="../lexical/IfcCoolingTower.html">
+            IfcCoolingTower
+        </a>
+</li><li number="7.5.3.22">
+<a href="../lexical/IfcCoolingTowerType.html">
+            IfcCoolingTowerType
+        </a>
+</li><li number="7.5.3.23">
+<a href="../lexical/IfcDamper.html">
+            IfcDamper
+        </a>
+</li><li number="7.5.3.24">
+<a href="../lexical/IfcDamperType.html">
+            IfcDamperType
+        </a>
+</li><li number="7.5.3.25">
+<a href="../lexical/IfcDuctFitting.html">
+            IfcDuctFitting
+        </a>
+</li><li number="7.5.3.26">
+<a href="../lexical/IfcDuctFittingType.html">
+            IfcDuctFittingType
+        </a>
+</li><li number="7.5.3.27">
+<a href="../lexical/IfcDuctSegment.html">
+            IfcDuctSegment
+        </a>
+</li><li number="7.5.3.28">
+<a href="../lexical/IfcDuctSegmentType.html">
+            IfcDuctSegmentType
+        </a>
+</li><li number="7.5.3.29">
+<a href="../lexical/IfcDuctSilencer.html">
+            IfcDuctSilencer
+        </a>
+</li><li number="7.5.3.30">
+<a href="../lexical/IfcDuctSilencerType.html">
+            IfcDuctSilencerType
+        </a>
+</li><li number="7.5.3.31">
+<a href="../lexical/IfcEngine.html">
+            IfcEngine
+        </a>
+</li><li number="7.5.3.32">
+<a href="../lexical/IfcEngineType.html">
+            IfcEngineType
+        </a>
+</li><li number="7.5.3.33">
+<a href="../lexical/IfcEvaporativeCooler.html">
+            IfcEvaporativeCooler
+        </a>
+</li><li number="7.5.3.34">
+<a href="../lexical/IfcEvaporativeCoolerType.html">
+            IfcEvaporativeCoolerType
+        </a>
+</li><li number="7.5.3.35">
+<a href="../lexical/IfcEvaporator.html">
+            IfcEvaporator
+        </a>
+</li><li number="7.5.3.36">
+<a href="../lexical/IfcEvaporatorType.html">
+            IfcEvaporatorType
+        </a>
+</li><li number="7.5.3.37">
+<a href="../lexical/IfcFan.html">
+            IfcFan
+        </a>
+</li><li number="7.5.3.38">
+<a href="../lexical/IfcFanType.html">
+            IfcFanType
+        </a>
+</li><li number="7.5.3.39">
+<a href="../lexical/IfcFilter.html">
+            IfcFilter
+        </a>
+</li><li number="7.5.3.40">
+<a href="../lexical/IfcFilterType.html">
+            IfcFilterType
+        </a>
+</li><li number="7.5.3.41">
+<a href="../lexical/IfcFlowMeter.html">
+            IfcFlowMeter
+        </a>
+</li><li number="7.5.3.42">
+<a href="../lexical/IfcFlowMeterType.html">
+            IfcFlowMeterType
+        </a>
+</li><li number="7.5.3.43">
+<a href="../lexical/IfcHeatExchanger.html">
+            IfcHeatExchanger
+        </a>
+</li><li number="7.5.3.44">
+<a href="../lexical/IfcHeatExchangerType.html">
+            IfcHeatExchangerType
+        </a>
+</li><li number="7.5.3.45">
+<a href="../lexical/IfcHumidifier.html">
+            IfcHumidifier
+        </a>
+</li><li number="7.5.3.46">
+<a href="../lexical/IfcHumidifierType.html">
+            IfcHumidifierType
+        </a>
+</li><li number="7.5.3.47">
+<a href="../lexical/IfcMedicalDevice.html">
+            IfcMedicalDevice
+        </a>
+</li><li number="7.5.3.48">
+<a href="../lexical/IfcMedicalDeviceType.html">
+            IfcMedicalDeviceType
+        </a>
+</li><li number="7.5.3.49">
+<a href="../lexical/IfcPipeFitting.html">
+            IfcPipeFitting
+        </a>
+</li><li number="7.5.3.50">
+<a href="../lexical/IfcPipeFittingType.html">
+            IfcPipeFittingType
+        </a>
+</li><li number="7.5.3.51">
+<a href="../lexical/IfcPipeSegment.html">
+            IfcPipeSegment
+        </a>
+</li><li number="7.5.3.52">
+<a href="../lexical/IfcPipeSegmentType.html">
+            IfcPipeSegmentType
+        </a>
+</li><li number="7.5.3.53">
+<a href="../lexical/IfcPump.html">
+            IfcPump
+        </a>
+</li><li number="7.5.3.54">
+<a href="../lexical/IfcPumpType.html">
+            IfcPumpType
+        </a>
+</li><li number="7.5.3.55">
+<a href="../lexical/IfcSpaceHeater.html">
+            IfcSpaceHeater
+        </a>
+</li><li number="7.5.3.56">
+<a href="../lexical/IfcSpaceHeaterType.html">
+            IfcSpaceHeaterType
+        </a>
+</li><li number="7.5.3.57">
+<a href="../lexical/IfcTank.html">
+            IfcTank
+        </a>
+</li><li number="7.5.3.58">
+<a href="../lexical/IfcTankType.html">
+            IfcTankType
+        </a>
+</li><li number="7.5.3.59">
+<a href="../lexical/IfcTubeBundle.html">
+            IfcTubeBundle
+        </a>
+</li><li number="7.5.3.60">
+<a href="../lexical/IfcTubeBundleType.html">
+            IfcTubeBundleType
+        </a>
+</li><li number="7.5.3.61">
+<a href="../lexical/IfcUnitaryEquipment.html">
+            IfcUnitaryEquipment
+        </a>
+</li><li number="7.5.3.62">
+<a href="../lexical/IfcUnitaryEquipmentType.html">
+            IfcUnitaryEquipmentType
+        </a>
+</li><li number="7.5.3.63">
+<a href="../lexical/IfcValve.html">
+            IfcValve
+        </a>
+</li><li number="7.5.3.64">
+<a href="../lexical/IfcValveType.html">
+            IfcValveType
+        </a>
+</li><li number="7.5.3.65">
+<a href="../lexical/IfcVibrationIsolator.html">
+            IfcVibrationIsolator
+        </a>
+</li><li number="7.5.3.66">
+<a href="../lexical/IfcVibrationIsolatorType.html">
+            IfcVibrationIsolatorType
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.5.4-Property-Sets"></a>
+    7.5.4 Property Sets
+<a class="link" href="#7.5.4-Property-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.5.4.1">
+<a href="../lexical/Pset_AirTerminalBoxPHistory.html">
+            Pset_AirTerminalBoxPHistory
+        </a>
+</li><li number="7.5.4.2">
+<a href="../lexical/Pset_AirTerminalBoxTypeCommon.html">
+            Pset_AirTerminalBoxTypeCommon
+        </a>
+</li><li number="7.5.4.3">
+<a href="../lexical/Pset_AirTerminalOccurrence.html">
+            Pset_AirTerminalOccurrence
+        </a>
+</li><li number="7.5.4.4">
+<a href="../lexical/Pset_AirTerminalPHistory.html">
+            Pset_AirTerminalPHistory
+        </a>
+</li><li number="7.5.4.5">
+<a href="../lexical/Pset_AirTerminalTypeCommon.html">
+            Pset_AirTerminalTypeCommon
+        </a>
+</li><li number="7.5.4.6">
+<a href="../lexical/Pset_AirToAirHeatRecoveryPHistory.html">
+            Pset_AirToAirHeatRecoveryPHistory
+        </a>
+</li><li number="7.5.4.7">
+<a href="../lexical/Pset_AirToAirHeatRecoveryTypeCommon.html">
+            Pset_AirToAirHeatRecoveryTypeCommon
+        </a>
+</li><li number="7.5.4.8">
+<a href="../lexical/Pset_BoilerPHistory.html">
+            Pset_BoilerPHistory
+        </a>
+</li><li number="7.5.4.9">
+<a href="../lexical/Pset_BoilerTypeCommon.html">
+            Pset_BoilerTypeCommon
+        </a>
+</li><li number="7.5.4.10">
+<a href="../lexical/Pset_BoilerTypeSteam.html">
+            Pset_BoilerTypeSteam
+        </a>
+</li><li number="7.5.4.11">
+<a href="../lexical/Pset_BoilerTypeWater.html">
+            Pset_BoilerTypeWater
+        </a>
+</li><li number="7.5.4.12">
+<a href="../lexical/Pset_BurnerTypeCommon.html">
+            Pset_BurnerTypeCommon
+        </a>
+</li><li number="7.5.4.13">
+<a href="../lexical/Pset_ChillerPHistory.html">
+            Pset_ChillerPHistory
+        </a>
+</li><li number="7.5.4.14">
+<a href="../lexical/Pset_ChillerTypeCommon.html">
+            Pset_ChillerTypeCommon
+        </a>
+</li><li number="7.5.4.15">
+<a href="../lexical/Pset_CoilOccurrence.html">
+            Pset_CoilOccurrence
+        </a>
+</li><li number="7.5.4.16">
+<a href="../lexical/Pset_CoilPHistory.html">
+            Pset_CoilPHistory
+        </a>
+</li><li number="7.5.4.17">
+<a href="../lexical/Pset_CoilTypeCommon.html">
+            Pset_CoilTypeCommon
+        </a>
+</li><li number="7.5.4.18">
+<a href="../lexical/Pset_CoilTypeHydronic.html">
+            Pset_CoilTypeHydronic
+        </a>
+</li><li number="7.5.4.19">
+<a href="../lexical/Pset_CompressorPHistory.html">
+            Pset_CompressorPHistory
+        </a>
+</li><li number="7.5.4.20">
+<a href="../lexical/Pset_CompressorTypeCommon.html">
+            Pset_CompressorTypeCommon
+        </a>
+</li><li number="7.5.4.21">
+<a href="../lexical/Pset_CondenserPHistory.html">
+            Pset_CondenserPHistory
+        </a>
+</li><li number="7.5.4.22">
+<a href="../lexical/Pset_CondenserTypeCommon.html">
+            Pset_CondenserTypeCommon
+        </a>
+</li><li number="7.5.4.23">
+<a href="../lexical/Pset_CooledBeamPHistory.html">
+            Pset_CooledBeamPHistory
+        </a>
+</li><li number="7.5.4.24">
+<a href="../lexical/Pset_CooledBeamPHistoryActive.html">
+            Pset_CooledBeamPHistoryActive
+        </a>
+</li><li number="7.5.4.25">
+<a href="../lexical/Pset_CooledBeamTypeActive.html">
+            Pset_CooledBeamTypeActive
+        </a>
+</li><li number="7.5.4.26">
+<a href="../lexical/Pset_CooledBeamTypeCommon.html">
+            Pset_CooledBeamTypeCommon
+        </a>
+</li><li number="7.5.4.27">
+<a href="../lexical/Pset_CoolingTowerPHistory.html">
+            Pset_CoolingTowerPHistory
+        </a>
+</li><li number="7.5.4.28">
+<a href="../lexical/Pset_CoolingTowerTypeCommon.html">
+            Pset_CoolingTowerTypeCommon
+        </a>
+</li><li number="7.5.4.29">
+<a href="../lexical/Pset_DamperOccurrence.html">
+            Pset_DamperOccurrence
+        </a>
+</li><li number="7.5.4.30">
+<a href="../lexical/Pset_DamperPHistory.html">
+            Pset_DamperPHistory
+        </a>
+</li><li number="7.5.4.31">
+<a href="../lexical/Pset_DamperTypeCommon.html">
+            Pset_DamperTypeCommon
+        </a>
+</li><li number="7.5.4.32">
+<a href="../lexical/Pset_DamperTypeControlDamper.html">
+            Pset_DamperTypeControlDamper
+        </a>
+</li><li number="7.5.4.33">
+<a href="../lexical/Pset_DamperTypeFireDamper.html">
+            Pset_DamperTypeFireDamper
+        </a>
+</li><li number="7.5.4.34">
+<a href="../lexical/Pset_DamperTypeFireSmokeDamper.html">
+            Pset_DamperTypeFireSmokeDamper
+        </a>
+</li><li number="7.5.4.35">
+<a href="../lexical/Pset_DamperTypeSmokeDamper.html">
+            Pset_DamperTypeSmokeDamper
+        </a>
+</li><li number="7.5.4.36">
+<a href="../lexical/Pset_DuctFittingOccurrence.html">
+            Pset_DuctFittingOccurrence
+        </a>
+</li><li number="7.5.4.37">
+<a href="../lexical/Pset_DuctFittingPHistory.html">
+            Pset_DuctFittingPHistory
+        </a>
+</li><li number="7.5.4.38">
+<a href="../lexical/Pset_DuctFittingTypeCommon.html">
+            Pset_DuctFittingTypeCommon
+        </a>
+</li><li number="7.5.4.39">
+<a href="../lexical/Pset_DuctSegmentOccurrence.html">
+            Pset_DuctSegmentOccurrence
+        </a>
+</li><li number="7.5.4.40">
+<a href="../lexical/Pset_DuctSegmentPHistory.html">
+            Pset_DuctSegmentPHistory
+        </a>
+</li><li number="7.5.4.41">
+<a href="../lexical/Pset_DuctSegmentTypeCommon.html">
+            Pset_DuctSegmentTypeCommon
+        </a>
+</li><li number="7.5.4.42">
+<a href="../lexical/Pset_DuctSilencerPHistory.html">
+            Pset_DuctSilencerPHistory
+        </a>
+</li><li number="7.5.4.43">
+<a href="../lexical/Pset_DuctSilencerTypeCommon.html">
+            Pset_DuctSilencerTypeCommon
+        </a>
+</li><li number="7.5.4.44">
+<a href="../lexical/Pset_ElementSize.html">
+            Pset_ElementSize
+        </a>
+</li><li number="7.5.4.45">
+<a href="../lexical/Pset_EngineTypeCommon.html">
+            Pset_EngineTypeCommon
+        </a>
+</li><li number="7.5.4.46">
+<a href="../lexical/Pset_EvaporativeCoolerPHistory.html">
+            Pset_EvaporativeCoolerPHistory
+        </a>
+</li><li number="7.5.4.47">
+<a href="../lexical/Pset_EvaporativeCoolerTypeCommon.html">
+            Pset_EvaporativeCoolerTypeCommon
+        </a>
+</li><li number="7.5.4.48">
+<a href="../lexical/Pset_EvaporatorPHistory.html">
+            Pset_EvaporatorPHistory
+        </a>
+</li><li number="7.5.4.49">
+<a href="../lexical/Pset_EvaporatorTypeCommon.html">
+            Pset_EvaporatorTypeCommon
+        </a>
+</li><li number="7.5.4.50">
+<a href="../lexical/Pset_FanCentrifugal.html">
+            Pset_FanCentrifugal
+        </a>
+</li><li number="7.5.4.51">
+<a href="../lexical/Pset_FanOccurrence.html">
+            Pset_FanOccurrence
+        </a>
+</li><li number="7.5.4.52">
+<a href="../lexical/Pset_FanPHistory.html">
+            Pset_FanPHistory
+        </a>
+</li><li number="7.5.4.53">
+<a href="../lexical/Pset_FanTypeCommon.html">
+            Pset_FanTypeCommon
+        </a>
+</li><li number="7.5.4.54">
+<a href="../lexical/Pset_FilterPHistory.html">
+            Pset_FilterPHistory
+        </a>
+</li><li number="7.5.4.55">
+<a href="../lexical/Pset_FilterTypeAirParticleFilter.html">
+            Pset_FilterTypeAirParticleFilter
+        </a>
+</li><li number="7.5.4.56">
+<a href="../lexical/Pset_FilterTypeCommon.html">
+            Pset_FilterTypeCommon
+        </a>
+</li><li number="7.5.4.57">
+<a href="../lexical/Pset_FilterTypeCompressedAirFilter.html">
+            Pset_FilterTypeCompressedAirFilter
+        </a>
+</li><li number="7.5.4.58">
+<a href="../lexical/Pset_FilterTypeWaterFilter.html">
+            Pset_FilterTypeWaterFilter
+        </a>
+</li><li number="7.5.4.59">
+<a href="../lexical/Pset_FittingBend.html">
+            Pset_FittingBend
+        </a>
+</li><li number="7.5.4.60">
+<a href="../lexical/Pset_FittingJunction.html">
+            Pset_FittingJunction
+        </a>
+</li><li number="7.5.4.61">
+<a href="../lexical/Pset_FittingTransition.html">
+            Pset_FittingTransition
+        </a>
+</li><li number="7.5.4.62">
+<a href="../lexical/Pset_FlowMeterOccurrence.html">
+            Pset_FlowMeterOccurrence
+        </a>
+</li><li number="7.5.4.63">
+<a href="../lexical/Pset_FlowMeterTypeCommon.html">
+            Pset_FlowMeterTypeCommon
+        </a>
+</li><li number="7.5.4.64">
+<a href="../lexical/Pset_FlowMeterTypeEnergyMeter.html">
+            Pset_FlowMeterTypeEnergyMeter
+        </a>
+</li><li number="7.5.4.65">
+<a href="../lexical/Pset_FlowMeterTypeGasMeter.html">
+            Pset_FlowMeterTypeGasMeter
+        </a>
+</li><li number="7.5.4.66">
+<a href="../lexical/Pset_FlowMeterTypeOilMeter.html">
+            Pset_FlowMeterTypeOilMeter
+        </a>
+</li><li number="7.5.4.67">
+<a href="../lexical/Pset_FlowMeterTypeWaterMeter.html">
+            Pset_FlowMeterTypeWaterMeter
+        </a>
+</li><li number="7.5.4.68">
+<a href="../lexical/Pset_HeatExchangerTypeCommon.html">
+            Pset_HeatExchangerTypeCommon
+        </a>
+</li><li number="7.5.4.69">
+<a href="../lexical/Pset_HeatExchangerTypePlate.html">
+            Pset_HeatExchangerTypePlate
+        </a>
+</li><li number="7.5.4.70">
+<a href="../lexical/Pset_HumidifierPHistory.html">
+            Pset_HumidifierPHistory
+        </a>
+</li><li number="7.5.4.71">
+<a href="../lexical/Pset_HumidifierTypeCommon.html">
+            Pset_HumidifierTypeCommon
+        </a>
+</li><li number="7.5.4.72">
+<a href="../lexical/Pset_MedicalDeviceTypeCommon.html">
+            Pset_MedicalDeviceTypeCommon
+        </a>
+</li><li number="7.5.4.73">
+<a href="../lexical/Pset_PipeConnectionFlanged.html">
+            Pset_PipeConnectionFlanged
+        </a>
+</li><li number="7.5.4.74">
+<a href="../lexical/Pset_PipeFittingOccurrence.html">
+            Pset_PipeFittingOccurrence
+        </a>
+</li><li number="7.5.4.75">
+<a href="../lexical/Pset_PipeFittingPHistory.html">
+            Pset_PipeFittingPHistory
+        </a>
+</li><li number="7.5.4.76">
+<a href="../lexical/Pset_PipeFittingTypeCommon.html">
+            Pset_PipeFittingTypeCommon
+        </a>
+</li><li number="7.5.4.77">
+<a href="../lexical/Pset_PipeSegmentOccurrence.html">
+            Pset_PipeSegmentOccurrence
+        </a>
+</li><li number="7.5.4.78">
+<a href="../lexical/Pset_PipeSegmentPHistory.html">
+            Pset_PipeSegmentPHistory
+        </a>
+</li><li number="7.5.4.79">
+<a href="../lexical/Pset_PipeSegmentTypeCommon.html">
+            Pset_PipeSegmentTypeCommon
+        </a>
+</li><li number="7.5.4.80">
+<a href="../lexical/Pset_PipeSegmentTypeCulvert.html">
+            Pset_PipeSegmentTypeCulvert
+        </a>
+</li><li number="7.5.4.81">
+<a href="../lexical/Pset_PipeSegmentTypeGutter.html">
+            Pset_PipeSegmentTypeGutter
+        </a>
+</li><li number="7.5.4.82">
+<a href="../lexical/Pset_PumpOccurrence.html">
+            Pset_PumpOccurrence
+        </a>
+</li><li number="7.5.4.83">
+<a href="../lexical/Pset_PumpPHistory.html">
+            Pset_PumpPHistory
+        </a>
+</li><li number="7.5.4.84">
+<a href="../lexical/Pset_PumpTypeCommon.html">
+            Pset_PumpTypeCommon
+        </a>
+</li><li number="7.5.4.85">
+<a href="../lexical/Pset_ShadingDevicePHistory.html">
+            Pset_ShadingDevicePHistory
+        </a>
+</li><li number="7.5.4.86">
+<a href="../lexical/Pset_SpaceHeaterPHistory.html">
+            Pset_SpaceHeaterPHistory
+        </a>
+</li><li number="7.5.4.87">
+<a href="../lexical/Pset_SpaceHeaterTypeCommon.html">
+            Pset_SpaceHeaterTypeCommon
+        </a>
+</li><li number="7.5.4.88">
+<a href="../lexical/Pset_SpaceHeaterTypeConvector.html">
+            Pset_SpaceHeaterTypeConvector
+        </a>
+</li><li number="7.5.4.89">
+<a href="../lexical/Pset_SpaceHeaterTypeRadiator.html">
+            Pset_SpaceHeaterTypeRadiator
+        </a>
+</li><li number="7.5.4.90">
+<a href="../lexical/Pset_SpaceThermalPHistory.html">
+            Pset_SpaceThermalPHistory
+        </a>
+</li><li number="7.5.4.91">
+<a href="../lexical/Pset_TankOccurrence.html">
+            Pset_TankOccurrence
+        </a>
+</li><li number="7.5.4.92">
+<a href="../lexical/Pset_TankTypeCommon.html">
+            Pset_TankTypeCommon
+        </a>
+</li><li number="7.5.4.93">
+<a href="../lexical/Pset_TankTypeExpansion.html">
+            Pset_TankTypeExpansion
+        </a>
+</li><li number="7.5.4.94">
+<a href="../lexical/Pset_TankTypePreformed.html">
+            Pset_TankTypePreformed
+        </a>
+</li><li number="7.5.4.95">
+<a href="../lexical/Pset_TankTypePressureVessel.html">
+            Pset_TankTypePressureVessel
+        </a>
+</li><li number="7.5.4.96">
+<a href="../lexical/Pset_TankTypeSectional.html">
+            Pset_TankTypeSectional
+        </a>
+</li><li number="7.5.4.97">
+<a href="../lexical/Pset_TubeBundleTypeCommon.html">
+            Pset_TubeBundleTypeCommon
+        </a>
+</li><li number="7.5.4.98">
+<a href="../lexical/Pset_TubeBundleTypeFinned.html">
+            Pset_TubeBundleTypeFinned
+        </a>
+</li><li number="7.5.4.99">
+<a href="../lexical/Pset_UnitaryEquipmentTypeAirConditioningUnit.html">
+            Pset_UnitaryEquipmentTypeAirConditioningUnit
+        </a>
+</li><li number="7.5.4.100">
+<a href="../lexical/Pset_UnitaryEquipmentTypeAirHandler.html">
+            Pset_UnitaryEquipmentTypeAirHandler
+        </a>
+</li><li number="7.5.4.101">
+<a href="../lexical/Pset_UnitaryEquipmentTypeCommon.html">
+            Pset_UnitaryEquipmentTypeCommon
+        </a>
+</li><li number="7.5.4.102">
+<a href="../lexical/Pset_ValvePHistory.html">
+            Pset_ValvePHistory
+        </a>
+</li><li number="7.5.4.103">
+<a href="../lexical/Pset_ValveTypeAirRelease.html">
+            Pset_ValveTypeAirRelease
+        </a>
+</li><li number="7.5.4.104">
+<a href="../lexical/Pset_ValveTypeCommon.html">
+            Pset_ValveTypeCommon
+        </a>
+</li><li number="7.5.4.105">
+<a href="../lexical/Pset_ValveTypeDrawOffCock.html">
+            Pset_ValveTypeDrawOffCock
+        </a>
+</li><li number="7.5.4.106">
+<a href="../lexical/Pset_ValveTypeFaucet.html">
+            Pset_ValveTypeFaucet
+        </a>
+</li><li number="7.5.4.107">
+<a href="../lexical/Pset_ValveTypeFlushing.html">
+            Pset_ValveTypeFlushing
+        </a>
+</li><li number="7.5.4.108">
+<a href="../lexical/Pset_ValveTypeGasTap.html">
+            Pset_ValveTypeGasTap
+        </a>
+</li><li number="7.5.4.109">
+<a href="../lexical/Pset_ValveTypeIsolating.html">
+            Pset_ValveTypeIsolating
+        </a>
+</li><li number="7.5.4.110">
+<a href="../lexical/Pset_ValveTypeMixing.html">
+            Pset_ValveTypeMixing
+        </a>
+</li><li number="7.5.4.111">
+<a href="../lexical/Pset_ValveTypePressureReducing.html">
+            Pset_ValveTypePressureReducing
+        </a>
+</li><li number="7.5.4.112">
+<a href="../lexical/Pset_ValveTypePressureRelief.html">
+            Pset_ValveTypePressureRelief
+        </a>
+</li><li number="7.5.4.113">
+<a href="../lexical/Pset_VibrationIsolatorTypeCommon.html">
+            Pset_VibrationIsolatorTypeCommon
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.5.5-Quantity-Sets"></a>
+    7.5.5 Quantity Sets
+<a class="link" href="#7.5.5-Quantity-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.5.5.1">
+<a href="../lexical/Qto_AirTerminalBaseQuantities.html">
+            Qto_AirTerminalBaseQuantities
+        </a>
+</li><li number="7.5.5.2">
+<a href="../lexical/Qto_AirTerminalBoxTypeBaseQuantities.html">
+            Qto_AirTerminalBoxTypeBaseQuantities
+        </a>
+</li><li number="7.5.5.3">
+<a href="../lexical/Qto_AirToAirHeatRecoveryBaseQuantities.html">
+            Qto_AirToAirHeatRecoveryBaseQuantities
+        </a>
+</li><li number="7.5.5.4">
+<a href="../lexical/Qto_BoilerBaseQuantities.html">
+            Qto_BoilerBaseQuantities
+        </a>
+</li><li number="7.5.5.5">
+<a href="../lexical/Qto_BurnerBaseQuantities.html">
+            Qto_BurnerBaseQuantities
+        </a>
+</li><li number="7.5.5.6">
+<a href="../lexical/Qto_ChillerBaseQuantities.html">
+            Qto_ChillerBaseQuantities
+        </a>
+</li><li number="7.5.5.7">
+<a href="../lexical/Qto_CoilBaseQuantities.html">
+            Qto_CoilBaseQuantities
+        </a>
+</li><li number="7.5.5.8">
+<a href="../lexical/Qto_CompressorBaseQuantities.html">
+            Qto_CompressorBaseQuantities
+        </a>
+</li><li number="7.5.5.9">
+<a href="../lexical/Qto_CondenserBaseQuantities.html">
+            Qto_CondenserBaseQuantities
+        </a>
+</li><li number="7.5.5.10">
+<a href="../lexical/Qto_CooledBeamBaseQuantities.html">
+            Qto_CooledBeamBaseQuantities
+        </a>
+</li><li number="7.5.5.11">
+<a href="../lexical/Qto_CoolingTowerBaseQuantities.html">
+            Qto_CoolingTowerBaseQuantities
+        </a>
+</li><li number="7.5.5.12">
+<a href="../lexical/Qto_DamperBaseQuantities.html">
+            Qto_DamperBaseQuantities
+        </a>
+</li><li number="7.5.5.13">
+<a href="../lexical/Qto_DuctFittingBaseQuantities.html">
+            Qto_DuctFittingBaseQuantities
+        </a>
+</li><li number="7.5.5.14">
+<a href="../lexical/Qto_DuctSegmentBaseQuantities.html">
+            Qto_DuctSegmentBaseQuantities
+        </a>
+</li><li number="7.5.5.15">
+<a href="../lexical/Qto_DuctSilencerBaseQuantities.html">
+            Qto_DuctSilencerBaseQuantities
+        </a>
+</li><li number="7.5.5.16">
+<a href="../lexical/Qto_EvaporativeCoolerBaseQuantities.html">
+            Qto_EvaporativeCoolerBaseQuantities
+        </a>
+</li><li number="7.5.5.17">
+<a href="../lexical/Qto_EvaporatorBaseQuantities.html">
+            Qto_EvaporatorBaseQuantities
+        </a>
+</li><li number="7.5.5.18">
+<a href="../lexical/Qto_FanBaseQuantities.html">
+            Qto_FanBaseQuantities
+        </a>
+</li><li number="7.5.5.19">
+<a href="../lexical/Qto_FilterBaseQuantities.html">
+            Qto_FilterBaseQuantities
+        </a>
+</li><li number="7.5.5.20">
+<a href="../lexical/Qto_FlowMeterBaseQuantities.html">
+            Qto_FlowMeterBaseQuantities
+        </a>
+</li><li number="7.5.5.21">
+<a href="../lexical/Qto_HeatExchangerBaseQuantities.html">
+            Qto_HeatExchangerBaseQuantities
+        </a>
+</li><li number="7.5.5.22">
+<a href="../lexical/Qto_HumidifierBaseQuantities.html">
+            Qto_HumidifierBaseQuantities
+        </a>
+</li><li number="7.5.5.23">
+<a href="../lexical/Qto_PipeFittingBaseQuantities.html">
+            Qto_PipeFittingBaseQuantities
+        </a>
+</li><li number="7.5.5.24">
+<a href="../lexical/Qto_PipeSegmentBaseQuantities.html">
+            Qto_PipeSegmentBaseQuantities
+        </a>
+</li><li number="7.5.5.25">
+<a href="../lexical/Qto_PumpBaseQuantities.html">
+            Qto_PumpBaseQuantities
+        </a>
+</li><li number="7.5.5.26">
+<a href="../lexical/Qto_SpaceHeaterBaseQuantities.html">
+            Qto_SpaceHeaterBaseQuantities
+        </a>
+</li><li number="7.5.5.27">
+<a href="../lexical/Qto_TankBaseQuantities.html">
+            Qto_TankBaseQuantities
+        </a>
+</li><li number="7.5.5.28">
+<a href="../lexical/Qto_TubeBundleBaseQuantities.html">
+            Qto_TubeBundleBaseQuantities
+        </a>
+</li><li number="7.5.5.29">
+<a href="../lexical/Qto_UnitaryEquipmentBaseQuantities.html">
+            Qto_UnitaryEquipmentBaseQuantities
+        </a>
+</li><li number="7.5.5.30">
+<a href="../lexical/Qto_ValveBaseQuantities.html">
+            Qto_ValveBaseQuantities
+        </a>
+</li><li number="7.5.5.31">
+<a href="../lexical/Qto_VibrationIsolatorBaseQuantities.html">
+            Qto_VibrationIsolatorBaseQuantities
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.5.6-Functions"></a>
+    7.5.6 Functions
+<a class="link" href="#7.5.6-Functions"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="7.5.7-Rules"></a>
+    7.5.7 Rules
+<a class="link" href="#7.5.7-Rules"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="7.5.8-PropertyEnumerations"></a>
+    7.5.8 PropertyEnumerations
+<a class="link" href="#7.5.8-PropertyEnumerations"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.5.8.1">
+<a href="../lexical/PEnum_AirHandlerConstruction.html">
+            PEnum_AirHandlerConstruction
+        </a>
+</li><li number="7.5.8.2">
+<a href="../lexical/PEnum_AirHandlerFanCoilArrangement.html">
+            PEnum_AirHandlerFanCoilArrangement
+        </a>
+</li><li number="7.5.8.3">
+<a href="../lexical/PEnum_AirTerminalAirFlowType.html">
+            PEnum_AirTerminalAirFlowType
+        </a>
+</li><li number="7.5.8.4">
+<a href="../lexical/PEnum_AirTerminalBoxArrangementType.html">
+            PEnum_AirTerminalBoxArrangementType
+        </a>
+</li><li number="7.5.8.5">
+<a href="../lexical/PEnum_AirTerminalBoxReheatType.html">
+            PEnum_AirTerminalBoxReheatType
+        </a>
+</li><li number="7.5.8.6">
+<a href="../lexical/PEnum_AirTerminalCoreType.html">
+            PEnum_AirTerminalCoreType
+        </a>
+</li><li number="7.5.8.7">
+<a href="../lexical/PEnum_AirTerminalDischargeDirection.html">
+            PEnum_AirTerminalDischargeDirection
+        </a>
+</li><li number="7.5.8.8">
+<a href="../lexical/PEnum_AirTerminalFaceType.html">
+            PEnum_AirTerminalFaceType
+        </a>
+</li><li number="7.5.8.9">
+<a href="../lexical/PEnum_AirTerminalFinishType.html">
+            PEnum_AirTerminalFinishType
+        </a>
+</li><li number="7.5.8.10">
+<a href="../lexical/PEnum_AirTerminalFlowControlType.html">
+            PEnum_AirTerminalFlowControlType
+        </a>
+</li><li number="7.5.8.11">
+<a href="../lexical/PEnum_AirTerminalFlowPattern.html">
+            PEnum_AirTerminalFlowPattern
+        </a>
+</li><li number="7.5.8.12">
+<a href="../lexical/PEnum_AirTerminalLocation.html">
+            PEnum_AirTerminalLocation
+        </a>
+</li><li number="7.5.8.13">
+<a href="../lexical/PEnum_AirTerminalMountingType.html">
+            PEnum_AirTerminalMountingType
+        </a>
+</li><li number="7.5.8.14">
+<a href="../lexical/PEnum_AirTerminalShape.html">
+            PEnum_AirTerminalShape
+        </a>
+</li><li number="7.5.8.15">
+<a href="../lexical/PEnum_AirToAirHeatTransferHeatTransferType.html">
+            PEnum_AirToAirHeatTransferHeatTransferType
+        </a>
+</li><li number="7.5.8.16">
+<a href="../lexical/PEnum_BackflowPreventerType.html">
+            PEnum_BackflowPreventerType
+        </a>
+</li><li number="7.5.8.17">
+<a href="../lexical/PEnum_BoilerOperatingMode.html">
+            PEnum_BoilerOperatingMode
+        </a>
+</li><li number="7.5.8.18">
+<a href="../lexical/PEnum_CentrifugalFanArrangement.html">
+            PEnum_CentrifugalFanArrangement
+        </a>
+</li><li number="7.5.8.19">
+<a href="../lexical/PEnum_CentrifugalFanDischargePosition.html">
+            PEnum_CentrifugalFanDischargePosition
+        </a>
+</li><li number="7.5.8.20">
+<a href="../lexical/PEnum_CentrifugalFanRotation.html">
+            PEnum_CentrifugalFanRotation
+        </a>
+</li><li number="7.5.8.21">
+<a href="../lexical/PEnum_CoilConnectionDirection.html">
+            PEnum_CoilConnectionDirection
+        </a>
+</li><li number="7.5.8.22">
+<a href="../lexical/PEnum_CoilCoolant.html">
+            PEnum_CoilCoolant
+        </a>
+</li><li number="7.5.8.23">
+<a href="../lexical/PEnum_CoilFluidArrangement.html">
+            PEnum_CoilFluidArrangement
+        </a>
+</li><li number="7.5.8.24">
+<a href="../lexical/PEnum_CoilPlacementType.html">
+            PEnum_CoilPlacementType
+        </a>
+</li><li number="7.5.8.25">
+<a href="../lexical/PEnum_ComplementaryWorks.html">
+            PEnum_ComplementaryWorks
+        </a>
+</li><li number="7.5.8.26">
+<a href="../lexical/PEnum_CompressedAirFilterType.html">
+            PEnum_CompressedAirFilterType
+        </a>
+</li><li number="7.5.8.27">
+<a href="../lexical/PEnum_CompressorTypePowerSource.html">
+            PEnum_CompressorTypePowerSource
+        </a>
+</li><li number="7.5.8.28">
+<a href="../lexical/PEnum_ControlDamperOperation.html">
+            PEnum_ControlDamperOperation
+        </a>
+</li><li number="7.5.8.29">
+<a href="../lexical/PEnum_CooledBeamActiveAirFlowConfigurationType.html">
+            PEnum_CooledBeamActiveAirFlowConfigurationType
+        </a>
+</li><li number="7.5.8.30">
+<a href="../lexical/PEnum_CooledBeamIntegratedLightingType.html">
+            PEnum_CooledBeamIntegratedLightingType
+        </a>
+</li><li number="7.5.8.31">
+<a href="../lexical/PEnum_CooledBeamPipeConnection.html">
+            PEnum_CooledBeamPipeConnection
+        </a>
+</li><li number="7.5.8.32">
+<a href="../lexical/PEnum_CooledBeamSupplyAirConnectionType.html">
+            PEnum_CooledBeamSupplyAirConnectionType
+        </a>
+</li><li number="7.5.8.33">
+<a href="../lexical/PEnum_CooledBeamWaterFlowControlSystemType.html">
+            PEnum_CooledBeamWaterFlowControlSystemType
+        </a>
+</li><li number="7.5.8.34">
+<a href="../lexical/PEnum_CoolingTowerCapacityControl.html">
+            PEnum_CoolingTowerCapacityControl
+        </a>
+</li><li number="7.5.8.35">
+<a href="../lexical/PEnum_CoolingTowerCircuitType.html">
+            PEnum_CoolingTowerCircuitType
+        </a>
+</li><li number="7.5.8.36">
+<a href="../lexical/PEnum_CoolingTowerControlStrategy.html">
+            PEnum_CoolingTowerControlStrategy
+        </a>
+</li><li number="7.5.8.37">
+<a href="../lexical/PEnum_CoolingTowerFlowArrangement.html">
+            PEnum_CoolingTowerFlowArrangement
+        </a>
+</li><li number="7.5.8.38">
+<a href="../lexical/PEnum_CoolingTowerSprayType.html">
+            PEnum_CoolingTowerSprayType
+        </a>
+</li><li number="7.5.8.39">
+<a href="../lexical/PEnum_DamperBladeAction.html">
+            PEnum_DamperBladeAction
+        </a>
+</li><li number="7.5.8.40">
+<a href="../lexical/PEnum_DamperBladeEdge.html">
+            PEnum_DamperBladeEdge
+        </a>
+</li><li number="7.5.8.41">
+<a href="../lexical/PEnum_DamperBladeShape.html">
+            PEnum_DamperBladeShape
+        </a>
+</li><li number="7.5.8.42">
+<a href="../lexical/PEnum_DamperOperation.html">
+            PEnum_DamperOperation
+        </a>
+</li><li number="7.5.8.43">
+<a href="../lexical/PEnum_DamperOrientation.html">
+            PEnum_DamperOrientation
+        </a>
+</li><li number="7.5.8.44">
+<a href="../lexical/PEnum_DamperSizingMethod.html">
+            PEnum_DamperSizingMethod
+        </a>
+</li><li number="7.5.8.45">
+<a href="../lexical/PEnum_DuctSegmentShape.html">
+            PEnum_DuctSegmentShape
+        </a>
+</li><li number="7.5.8.46">
+<a href="../lexical/PEnum_EngineEnergySource.html">
+            PEnum_EngineEnergySource
+        </a>
+</li><li number="7.5.8.47">
+<a href="../lexical/PEnum_EvaporativeCoolerFlowArrangement.html">
+            PEnum_EvaporativeCoolerFlowArrangement
+        </a>
+</li><li number="7.5.8.48">
+<a href="../lexical/PEnum_EvaporatorCoolant.html">
+            PEnum_EvaporatorCoolant
+        </a>
+</li><li number="7.5.8.49">
+<a href="../lexical/PEnum_EvaporatorMediumType.html">
+            PEnum_EvaporatorMediumType
+        </a>
+</li><li number="7.5.8.50">
+<a href="../lexical/PEnum_FanApplicationType.html">
+            PEnum_FanApplicationType
+        </a>
+</li><li number="7.5.8.51">
+<a href="../lexical/PEnum_FanCapacityControlType.html">
+            PEnum_FanCapacityControlType
+        </a>
+</li><li number="7.5.8.52">
+<a href="../lexical/PEnum_FanCoilPosition.html">
+            PEnum_FanCoilPosition
+        </a>
+</li><li number="7.5.8.53">
+<a href="../lexical/PEnum_FanDischargeType.html">
+            PEnum_FanDischargeType
+        </a>
+</li><li number="7.5.8.54">
+<a href="../lexical/PEnum_FanMotorConnectionType.html">
+            PEnum_FanMotorConnectionType
+        </a>
+</li><li number="7.5.8.55">
+<a href="../lexical/PEnum_FanMotorPosition.html">
+            PEnum_FanMotorPosition
+        </a>
+</li><li number="7.5.8.56">
+<a href="../lexical/PEnum_FanMountingType.html">
+            PEnum_FanMountingType
+        </a>
+</li><li number="7.5.8.57">
+<a href="../lexical/PEnum_FaucetFunction.html">
+            PEnum_FaucetFunction
+        </a>
+</li><li number="7.5.8.58">
+<a href="../lexical/PEnum_FaucetOperation.html">
+            PEnum_FaucetOperation
+        </a>
+</li><li number="7.5.8.59">
+<a href="../lexical/PEnum_FaucetType.html">
+            PEnum_FaucetType
+        </a>
+</li><li number="7.5.8.60">
+<a href="../lexical/PEnum_FilterAirParticleFilterSeparationType.html">
+            PEnum_FilterAirParticleFilterSeparationType
+        </a>
+</li><li number="7.5.8.61">
+<a href="../lexical/PEnum_FilterAirParticleFilterType.html">
+            PEnum_FilterAirParticleFilterType
+        </a>
+</li><li number="7.5.8.62">
+<a href="../lexical/PEnum_FilterWaterFilterType.html">
+            PEnum_FilterWaterFilterType
+        </a>
+</li><li number="7.5.8.63">
+<a href="../lexical/PEnum_FittingJunctionType.html">
+            PEnum_FittingJunctionType
+        </a>
+</li><li number="7.5.8.64">
+<a href="../lexical/PEnum_FlowMeterPurpose.html">
+            PEnum_FlowMeterPurpose
+        </a>
+</li><li number="7.5.8.65">
+<a href="../lexical/PEnum_GasType.html">
+            PEnum_GasType
+        </a>
+</li><li number="7.5.8.66">
+<a href="../lexical/PEnum_HeatExchangerArrangement.html">
+            PEnum_HeatExchangerArrangement
+        </a>
+</li><li number="7.5.8.67">
+<a href="../lexical/PEnum_HeatTransferMedium.html">
+            PEnum_HeatTransferMedium
+        </a>
+</li><li number="7.5.8.68">
+<a href="../lexical/PEnum_HumidifierApplication.html">
+            PEnum_HumidifierApplication
+        </a>
+</li><li number="7.5.8.69">
+<a href="../lexical/PEnum_HumidifierInternalControl.html">
+            PEnum_HumidifierInternalControl
+        </a>
+</li><li number="7.5.8.70">
+<a href="../lexical/PEnum_IsolatingPurpose.html">
+            PEnum_IsolatingPurpose
+        </a>
+</li><li number="7.5.8.71">
+<a href="../lexical/PEnum_MeterReadOutType.html">
+            PEnum_MeterReadOutType
+        </a>
+</li><li number="7.5.8.72">
+<a href="../lexical/PEnum_MixingValveControl.html">
+            PEnum_MixingValveControl
+        </a>
+</li><li number="7.5.8.73">
+<a href="../lexical/PEnum_PumpBaseType.html">
+            PEnum_PumpBaseType
+        </a>
+</li><li number="7.5.8.74">
+<a href="../lexical/PEnum_PumpDriveConnectionType.html">
+            PEnum_PumpDriveConnectionType
+        </a>
+</li><li number="7.5.8.75">
+<a href="../lexical/PEnum_SpaceHeaterConvectorType.html">
+            PEnum_SpaceHeaterConvectorType
+        </a>
+</li><li number="7.5.8.76">
+<a href="../lexical/PEnum_SpaceHeaterHeatTransferDimension.html">
+            PEnum_SpaceHeaterHeatTransferDimension
+        </a>
+</li><li number="7.5.8.77">
+<a href="../lexical/PEnum_SpaceHeaterPlacementType.html">
+            PEnum_SpaceHeaterPlacementType
+        </a>
+</li><li number="7.5.8.78">
+<a href="../lexical/PEnum_SpaceHeaterRadiatorType.html">
+            PEnum_SpaceHeaterRadiatorType
+        </a>
+</li><li number="7.5.8.79">
+<a href="../lexical/PEnum_SpaceHeaterTemperatureClassification.html">
+            PEnum_SpaceHeaterTemperatureClassification
+        </a>
+</li><li number="7.5.8.80">
+<a href="../lexical/PEnum_TankAccessType.html">
+            PEnum_TankAccessType
+        </a>
+</li><li number="7.5.8.81">
+<a href="../lexical/PEnum_TankComposition.html">
+            PEnum_TankComposition
+        </a>
+</li><li number="7.5.8.82">
+<a href="../lexical/PEnum_TankStorageType.html">
+            PEnum_TankStorageType
+        </a>
+</li><li number="7.5.8.83">
+<a href="../lexical/PEnum_ValveMechanism.html">
+            PEnum_ValveMechanism
+        </a>
+</li><li number="7.5.8.84">
+<a href="../lexical/PEnum_ValveOperation.html">
+            PEnum_ValveOperation
+        </a>
+</li><li number="7.5.8.85">
+<a href="../lexical/PEnum_ValvePattern.html">
+            PEnum_ValvePattern
+        </a>
+</li><li number="7.5.8.86">
+<a href="../lexical/PEnum_WaterMeterType.html">
+            PEnum_WaterMeterType
+        </a>
+</li></ol>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/domain/IfcHvacDomain/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>Change to official repo names</em> by Thomas Krijnen on 2026-09-08T13:56:10+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/schemas/domain/IfcHvacDomain/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

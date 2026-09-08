@@ -1,0 +1,2688 @@
+<html lang="en">
+<head>
+<link href="assets/css/mini-default.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Annex A(informative)Inheritance listings - IFC 4.4.0.0 Documentation</title>
+<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="annex">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href=".">
+                             Cover
+                        </a>
+<a href="toc.html">
+                             Contents
+                        </a>
+<a href="content/foreword.html">
+                             Foreword
+                        </a>
+<a href="content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="content/scope.html">
+                            1 Scope
+                        </a>
+<a href="content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a href="chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a class="current" href="annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="annex-e.html">
+                            E Examples
+                        </a>
+<a href="annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>Annex A<br/>
+<span style="font-weight:lighter">(informative)</span><br/>
+<br/>
+Inheritance listings</h1>
+<p>
+    This annex contains listings of entity definitions organized by inheritance.
+</p>
+<ol class="referenced-list inheritance-listing">
+<li number="8.1.3.1">
+<a href="lexical/IfcActorRole.html">IfcActorRole</a>
+</li><li number="8.1.3.2">
+<a href="lexical/IfcAddress.html">IfcAddress</a>
+<ol class="referenced-list">
+<li number="8.1.3.7">
+<a href="lexical/IfcPostalAddress.html">IfcPostalAddress</a>
+</li><li number="8.1.3.8">
+<a href="lexical/IfcTelecomAddress.html">IfcTelecomAddress</a>
+</li>
+</ol>
+</li><li number="8.7.3.3">
+<a href="lexical/IfcAlignmentParameterSegment.html">IfcAlignmentParameterSegment</a>
+<ol class="referenced-list">
+<li number="8.7.3.1">
+<a href="lexical/IfcAlignmentCantSegment.html">IfcAlignmentCantSegment</a>
+</li><li number="8.7.3.2">
+<a href="lexical/IfcAlignmentHorizontalSegment.html">IfcAlignmentHorizontalSegment</a>
+</li><li number="8.7.3.4">
+<a href="lexical/IfcAlignmentVerticalSegment.html">IfcAlignmentVerticalSegment</a>
+</li>
+</ol>
+</li><li number="8.21.3.1">
+<a href="lexical/IfcApplication.html">IfcApplication</a>
+</li><li number="8.4.3.1">
+<a href="lexical/IfcAppliedValue.html">IfcAppliedValue</a>
+<ol class="referenced-list">
+<li number="8.4.3.2">
+<a href="lexical/IfcCostValue.html">IfcCostValue</a>
+</li>
+</ol>
+</li><li number="8.2.3.1">
+<a href="lexical/IfcApproval.html">IfcApproval</a>
+</li><li number="8.19.3.1">
+<a href="lexical/IfcBoundaryCondition.html">IfcBoundaryCondition</a>
+<ol class="referenced-list">
+<li number="8.19.3.2">
+<a href="lexical/IfcBoundaryEdgeCondition.html">IfcBoundaryEdgeCondition</a>
+</li><li number="8.19.3.3">
+<a href="lexical/IfcBoundaryFaceCondition.html">IfcBoundaryFaceCondition</a>
+</li><li number="8.19.3.4">
+<a href="lexical/IfcBoundaryNodeCondition.html">IfcBoundaryNodeCondition</a>
+<ol class="referenced-list">
+<li number="8.19.3.5">
+<a href="lexical/IfcBoundaryNodeConditionWarping.html">IfcBoundaryNodeConditionWarping</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.7.3.6">
+<a href="lexical/IfcConnectionGeometry.html">IfcConnectionGeometry</a>
+<ol class="referenced-list">
+<li number="8.7.3.5">
+<a href="lexical/IfcConnectionCurveGeometry.html">IfcConnectionCurveGeometry</a>
+</li><li number="8.7.3.8">
+<a href="lexical/IfcConnectionPointGeometry.html">IfcConnectionPointGeometry</a>
+<ol class="referenced-list">
+<li number="8.7.3.7">
+<a href="lexical/IfcConnectionPointEccentricity.html">IfcConnectionPointEccentricity</a>
+</li>
+</ol>
+</li><li number="8.7.3.9">
+<a href="lexical/IfcConnectionSurfaceGeometry.html">IfcConnectionSurfaceGeometry</a>
+</li><li number="8.7.3.10">
+<a href="lexical/IfcConnectionVolumeGeometry.html">IfcConnectionVolumeGeometry</a>
+</li>
+</ol>
+</li><li number="8.3.3.1">
+<a href="lexical/IfcConstraint.html">IfcConstraint</a>
+<ol class="referenced-list">
+<li number="8.3.3.2">
+<a href="lexical/IfcMetric.html">IfcMetric</a>
+</li><li number="8.3.3.3">
+<a href="lexical/IfcObjective.html">IfcObjective</a>
+</li>
+</ol>
+</li><li number="8.18.3.1">
+<a href="lexical/IfcCoordinateOperation.html">IfcCoordinateOperation</a>
+<ol class="referenced-list">
+<li number="8.18.3.6">
+<a href="lexical/IfcMapConversion.html">IfcMapConversion</a>
+<ol class="referenced-list">
+<li number="8.18.3.7">
+<a href="lexical/IfcMapConversionScaled.html">IfcMapConversionScaled</a>
+</li>
+</ol>
+</li><li number="8.18.3.14">
+<a href="lexical/IfcRigidOperation.html">IfcRigidOperation</a>
+</li>
+</ol>
+</li><li number="8.18.3.2">
+<a href="lexical/IfcCoordinateReferenceSystem.html">IfcCoordinateReferenceSystem</a>
+<ol class="referenced-list">
+<li number="8.18.3.3">
+<a href="lexical/IfcGeographicCRS.html">IfcGeographicCRS</a>
+</li><li number="8.18.3.11">
+<a href="lexical/IfcProjectedCRS.html">IfcProjectedCRS</a>
+</li>
+</ol>
+</li><li number="8.11.3.4">
+<a href="lexical/IfcDerivedUnit.html">IfcDerivedUnit</a>
+</li><li number="8.11.3.5">
+<a href="lexical/IfcDerivedUnitElement.html">IfcDerivedUnitElement</a>
+</li><li number="8.11.3.6">
+<a href="lexical/IfcDimensionalExponents.html">IfcDimensionalExponents</a>
+</li><li number="8.6.3.6">
+<a href="lexical/IfcExternalInformation.html">IfcExternalInformation</a>
+<ol class="referenced-list">
+<li number="8.6.3.1">
+<a href="lexical/IfcClassification.html">IfcClassification</a>
+</li><li number="8.6.3.3">
+<a href="lexical/IfcDocumentInformation.html">IfcDocumentInformation</a>
+</li><li number="8.6.3.9">
+<a href="lexical/IfcLibraryInformation.html">IfcLibraryInformation</a>
+</li>
+</ol>
+</li><li number="8.6.3.7">
+<a href="lexical/IfcExternalReference.html">IfcExternalReference</a>
+<ol class="referenced-list">
+<li number="8.6.3.2">
+<a href="lexical/IfcClassificationReference.html">IfcClassificationReference</a>
+</li><li number="8.6.3.5">
+<a href="lexical/IfcDocumentReference.html">IfcDocumentReference</a>
+</li><li number="8.12.3.11">
+<a href="lexical/IfcExternallyDefinedHatchStyle.html">IfcExternallyDefinedHatchStyle</a>
+</li><li number="8.12.3.12">
+<a href="lexical/IfcExternallyDefinedSurfaceStyle.html">IfcExternallyDefinedSurfaceStyle</a>
+</li><li number="8.12.3.13">
+<a href="lexical/IfcExternallyDefinedTextFont.html">IfcExternallyDefinedTextFont</a>
+</li><li number="8.6.3.10">
+<a href="lexical/IfcLibraryReference.html">IfcLibraryReference</a>
+</li>
+</ol>
+</li><li number="8.7.3.11">
+<a href="lexical/IfcGridAxis.html">IfcGridAxis</a>
+</li><li number="8.5.3.3">
+<a href="lexical/IfcIrregularTimeSeriesValue.html">IfcIrregularTimeSeriesValue</a>
+</li><li number="8.14.3.1">
+<a href="lexical/IfcLightDistributionData.html">IfcLightDistributionData</a>
+</li><li number="8.14.3.2">
+<a href="lexical/IfcLightIntensityDistribution.html">IfcLightIntensityDistribution</a>
+</li><li number="8.10.3.2">
+<a href="lexical/IfcMaterialClassificationRelationship.html">IfcMaterialClassificationRelationship</a>
+</li><li number="8.10.3.5">
+<a href="lexical/IfcMaterialDefinition.html">IfcMaterialDefinition</a>
+<ol class="referenced-list">
+<li number="8.10.3.1">
+<a href="lexical/IfcMaterial.html">IfcMaterial</a>
+</li><li number="8.10.3.3">
+<a href="lexical/IfcMaterialConstituent.html">IfcMaterialConstituent</a>
+</li><li number="8.10.3.4">
+<a href="lexical/IfcMaterialConstituentSet.html">IfcMaterialConstituentSet</a>
+</li><li number="8.10.3.6">
+<a href="lexical/IfcMaterialLayer.html">IfcMaterialLayer</a>
+<ol class="referenced-list">
+<li number="8.10.3.9">
+<a href="lexical/IfcMaterialLayerWithOffsets.html">IfcMaterialLayerWithOffsets</a>
+</li>
+</ol>
+</li><li number="8.10.3.7">
+<a href="lexical/IfcMaterialLayerSet.html">IfcMaterialLayerSet</a>
+</li><li number="8.10.3.11">
+<a href="lexical/IfcMaterialProfile.html">IfcMaterialProfile</a>
+<ol class="referenced-list">
+<li number="8.10.3.15">
+<a href="lexical/IfcMaterialProfileWithOffsets.html">IfcMaterialProfileWithOffsets</a>
+</li>
+</ol>
+</li><li number="8.10.3.12">
+<a href="lexical/IfcMaterialProfileSet.html">IfcMaterialProfileSet</a>
+</li>
+</ol>
+</li><li number="8.10.3.10">
+<a href="lexical/IfcMaterialList.html">IfcMaterialList</a>
+</li><li number="8.10.3.18">
+<a href="lexical/IfcMaterialUsageDefinition.html">IfcMaterialUsageDefinition</a>
+<ol class="referenced-list">
+<li number="8.10.3.8">
+<a href="lexical/IfcMaterialLayerSetUsage.html">IfcMaterialLayerSetUsage</a>
+</li><li number="8.10.3.13">
+<a href="lexical/IfcMaterialProfileSetUsage.html">IfcMaterialProfileSetUsage</a>
+<ol class="referenced-list">
+<li number="8.10.3.14">
+<a href="lexical/IfcMaterialProfileSetUsageTapering.html">IfcMaterialProfileSetUsageTapering</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.11.3.7">
+<a href="lexical/IfcMeasureWithUnit.html">IfcMeasureWithUnit</a>
+</li><li number="8.11.3.8">
+<a href="lexical/IfcMonetaryUnit.html">IfcMonetaryUnit</a>
+</li><li number="8.11.3.9">
+<a href="lexical/IfcNamedUnit.html">IfcNamedUnit</a>
+<ol class="referenced-list">
+<li number="8.11.3.1">
+<a href="lexical/IfcContextDependentUnit.html">IfcContextDependentUnit</a>
+</li><li number="8.11.3.2">
+<a href="lexical/IfcConversionBasedUnit.html">IfcConversionBasedUnit</a>
+<ol class="referenced-list">
+<li number="8.11.3.3">
+<a href="lexical/IfcConversionBasedUnitWithOffset.html">IfcConversionBasedUnitWithOffset</a>
+</li>
+</ol>
+</li><li number="8.11.3.10">
+<a href="lexical/IfcSIUnit.html">IfcSIUnit</a>
+</li>
+</ol>
+</li><li number="8.7.3.15">
+<a href="lexical/IfcObjectPlacement.html">IfcObjectPlacement</a>
+<ol class="referenced-list">
+<li number="8.7.3.12">
+<a href="lexical/IfcGridPlacement.html">IfcGridPlacement</a>
+</li><li number="8.7.3.13">
+<a href="lexical/IfcLinearPlacement.html">IfcLinearPlacement</a>
+</li><li number="8.7.3.14">
+<a href="lexical/IfcLocalPlacement.html">IfcLocalPlacement</a>
+</li>
+</ol>
+</li><li number="8.1.3.3">
+<a href="lexical/IfcOrganization.html">IfcOrganization</a>
+</li><li number="8.21.3.2">
+<a href="lexical/IfcOwnerHistory.html">IfcOwnerHistory</a>
+</li><li number="8.1.3.5">
+<a href="lexical/IfcPerson.html">IfcPerson</a>
+</li><li number="8.1.3.6">
+<a href="lexical/IfcPersonAndOrganization.html">IfcPersonAndOrganization</a>
+</li><li number="8.17.3.2">
+<a href="lexical/IfcPhysicalQuantity.html">IfcPhysicalQuantity</a>
+<ol class="referenced-list">
+<li number="8.17.3.1">
+<a href="lexical/IfcPhysicalComplexQuantity.html">IfcPhysicalComplexQuantity</a>
+</li><li number="8.17.3.3">
+<a href="lexical/IfcPhysicalSimpleQuantity.html">IfcPhysicalSimpleQuantity</a>
+<ol class="referenced-list">
+<li number="8.17.3.4">
+<a href="lexical/IfcQuantityArea.html">IfcQuantityArea</a>
+</li><li number="8.17.3.5">
+<a href="lexical/IfcQuantityCount.html">IfcQuantityCount</a>
+</li><li number="8.17.3.6">
+<a href="lexical/IfcQuantityLength.html">IfcQuantityLength</a>
+</li><li number="8.17.3.7">
+<a href="lexical/IfcQuantityNumber.html">IfcQuantityNumber</a>
+</li><li number="8.17.3.8">
+<a href="lexical/IfcQuantityTime.html">IfcQuantityTime</a>
+</li><li number="8.17.3.9">
+<a href="lexical/IfcQuantityVolume.html">IfcQuantityVolume</a>
+</li><li number="8.17.3.10">
+<a href="lexical/IfcQuantityWeight.html">IfcQuantityWeight</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.13.3.4">
+<a href="lexical/IfcPresentationItem.html">IfcPresentationItem</a>
+<ol class="referenced-list">
+<li number="8.12.3.3">
+<a href="lexical/IfcColourRgbList.html">IfcColourRgbList</a>
+</li><li number="8.12.3.4">
+<a href="lexical/IfcColourSpecification.html">IfcColourSpecification</a>
+<ol class="referenced-list">
+<li number="8.12.3.2">
+<a href="lexical/IfcColourRgb.html">IfcColourRgb</a>
+</li>
+</ol>
+</li><li number="8.12.3.6">
+<a href="lexical/IfcCurveStyleFont.html">IfcCurveStyleFont</a>
+</li><li number="8.12.3.7">
+<a href="lexical/IfcCurveStyleFontAndScaling.html">IfcCurveStyleFontAndScaling</a>
+</li><li number="8.12.3.8">
+<a href="lexical/IfcCurveStyleFontPattern.html">IfcCurveStyleFontPattern</a>
+</li><li number="8.12.3.18">
+<a href="lexical/IfcIndexedColourMap.html">IfcIndexedColourMap</a>
+</li><li number="8.12.3.25">
+<a href="lexical/IfcPreDefinedItem.html">IfcPreDefinedItem</a>
+<ol class="referenced-list">
+<li number="8.12.3.23">
+<a href="lexical/IfcPreDefinedColour.html">IfcPreDefinedColour</a>
+<ol class="referenced-list">
+<li number="8.12.3.9">
+<a href="lexical/IfcDraughtingPreDefinedColour.html">IfcDraughtingPreDefinedColour</a>
+</li>
+</ol>
+</li><li number="8.12.3.24">
+<a href="lexical/IfcPreDefinedCurveFont.html">IfcPreDefinedCurveFont</a>
+<ol class="referenced-list">
+<li number="8.12.3.10">
+<a href="lexical/IfcDraughtingPreDefinedCurveFont.html">IfcDraughtingPreDefinedCurveFont</a>
+</li>
+</ol>
+</li><li number="8.12.3.26">
+<a href="lexical/IfcPreDefinedTextFont.html">IfcPreDefinedTextFont</a>
+<ol class="referenced-list">
+<li number="8.12.3.37">
+<a href="lexical/IfcTextStyleFontModel.html">IfcTextStyleFontModel</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.12.3.30">
+<a href="lexical/IfcSurfaceStyleLighting.html">IfcSurfaceStyleLighting</a>
+</li><li number="8.12.3.31">
+<a href="lexical/IfcSurfaceStyleRefraction.html">IfcSurfaceStyleRefraction</a>
+</li><li number="8.12.3.33">
+<a href="lexical/IfcSurfaceStyleShading.html">IfcSurfaceStyleShading</a>
+<ol class="referenced-list">
+<li number="8.12.3.32">
+<a href="lexical/IfcSurfaceStyleRendering.html">IfcSurfaceStyleRendering</a>
+</li>
+</ol>
+</li><li number="8.12.3.34">
+<a href="lexical/IfcSurfaceStyleWithTextures.html">IfcSurfaceStyleWithTextures</a>
+</li><li number="8.12.3.35">
+<a href="lexical/IfcSurfaceTexture.html">IfcSurfaceTexture</a>
+<ol class="referenced-list">
+<li number="8.12.3.1">
+<a href="lexical/IfcBlobTexture.html">IfcBlobTexture</a>
+</li><li number="8.12.3.17">
+<a href="lexical/IfcImageTexture.html">IfcImageTexture</a>
+</li><li number="8.12.3.22">
+<a href="lexical/IfcPixelTexture.html">IfcPixelTexture</a>
+</li>
+</ol>
+</li><li number="8.12.3.38">
+<a href="lexical/IfcTextStyleForDefinedFont.html">IfcTextStyleForDefinedFont</a>
+</li><li number="8.12.3.39">
+<a href="lexical/IfcTextStyleTextModel.html">IfcTextStyleTextModel</a>
+</li><li number="8.12.3.40">
+<a href="lexical/IfcTextureCoordinate.html">IfcTextureCoordinate</a>
+<ol class="referenced-list">
+<li number="8.12.3.20">
+<a href="lexical/IfcIndexedTextureMap.html">IfcIndexedTextureMap</a>
+<ol class="referenced-list">
+<li number="8.12.3.19">
+<a href="lexical/IfcIndexedPolygonalTextureMap.html">IfcIndexedPolygonalTextureMap</a>
+</li><li number="8.12.3.21">
+<a href="lexical/IfcIndexedTriangleTextureMap.html">IfcIndexedTriangleTextureMap</a>
+</li>
+</ol>
+</li><li number="8.12.3.41">
+<a href="lexical/IfcTextureCoordinateGenerator.html">IfcTextureCoordinateGenerator</a>
+</li><li number="8.12.3.44">
+<a href="lexical/IfcTextureMap.html">IfcTextureMap</a>
+</li>
+</ol>
+</li><li number="8.12.3.45">
+<a href="lexical/IfcTextureVertex.html">IfcTextureVertex</a>
+</li><li number="8.12.3.46">
+<a href="lexical/IfcTextureVertexList.html">IfcTextureVertexList</a>
+</li>
+</ol>
+</li><li number="8.14.3.9">
+<a href="lexical/IfcPresentationLayerAssignment.html">IfcPresentationLayerAssignment</a>
+<ol class="referenced-list">
+<li number="8.14.3.10">
+<a href="lexical/IfcPresentationLayerWithStyle.html">IfcPresentationLayerWithStyle</a>
+</li>
+</ol>
+</li><li number="8.12.3.27">
+<a href="lexical/IfcPresentationStyle.html">IfcPresentationStyle</a>
+<ol class="referenced-list">
+<li number="8.12.3.5">
+<a href="lexical/IfcCurveStyle.html">IfcCurveStyle</a>
+</li><li number="8.12.3.14">
+<a href="lexical/IfcFillAreaStyle.html">IfcFillAreaStyle</a>
+</li><li number="8.12.3.29">
+<a href="lexical/IfcSurfaceStyle.html">IfcSurfaceStyle</a>
+</li><li number="8.12.3.36">
+<a href="lexical/IfcTextStyle.html">IfcTextStyle</a>
+</li>
+</ol>
+</li><li number="8.18.3.10">
+<a href="lexical/IfcProductRepresentation.html">IfcProductRepresentation</a>
+<ol class="referenced-list">
+<li number="8.18.3.8">
+<a href="lexical/IfcMaterialDefinitionRepresentation.html">IfcMaterialDefinitionRepresentation</a>
+</li><li number="8.18.3.9">
+<a href="lexical/IfcProductDefinitionShape.html">IfcProductDefinitionShape</a>
+</li>
+</ol>
+</li><li number="8.15.3.17">
+<a href="lexical/IfcProfileDef.html">IfcProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.1">
+<a href="lexical/IfcArbitraryClosedProfileDef.html">IfcArbitraryClosedProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.3">
+<a href="lexical/IfcArbitraryProfileDefWithVoids.html">IfcArbitraryProfileDefWithVoids</a>
+</li>
+</ol>
+</li><li number="8.15.3.2">
+<a href="lexical/IfcArbitraryOpenProfileDef.html">IfcArbitraryOpenProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.6">
+<a href="lexical/IfcCenterLineProfileDef.html">IfcCenterLineProfileDef</a>
+</li>
+</ol>
+</li><li number="8.15.3.9">
+<a href="lexical/IfcCompositeProfileDef.html">IfcCompositeProfileDef</a>
+</li><li number="8.15.3.10">
+<a href="lexical/IfcDerivedProfileDef.html">IfcDerivedProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.14">
+<a href="lexical/IfcMirroredProfileDef.html">IfcMirroredProfileDef</a>
+</li>
+</ol>
+</li><li number="8.15.3.15">
+<a href="lexical/IfcOpenCrossProfileDef.html">IfcOpenCrossProfileDef</a>
+</li><li number="8.15.3.16">
+<a href="lexical/IfcParameterizedProfileDef.html">IfcParameterizedProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.4">
+<a href="lexical/IfcAsymmetricIShapeProfileDef.html">IfcAsymmetricIShapeProfileDef</a>
+</li><li number="8.15.3.5">
+<a href="lexical/IfcCShapeProfileDef.html">IfcCShapeProfileDef</a>
+</li><li number="8.15.3.8">
+<a href="lexical/IfcCircleProfileDef.html">IfcCircleProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.7">
+<a href="lexical/IfcCircleHollowProfileDef.html">IfcCircleHollowProfileDef</a>
+</li>
+</ol>
+</li><li number="8.15.3.11">
+<a href="lexical/IfcEllipseProfileDef.html">IfcEllipseProfileDef</a>
+</li><li number="8.15.3.12">
+<a href="lexical/IfcIShapeProfileDef.html">IfcIShapeProfileDef</a>
+</li><li number="8.15.3.13">
+<a href="lexical/IfcLShapeProfileDef.html">IfcLShapeProfileDef</a>
+</li><li number="8.15.3.20">
+<a href="lexical/IfcRectangleProfileDef.html">IfcRectangleProfileDef</a>
+<ol class="referenced-list">
+<li number="8.15.3.19">
+<a href="lexical/IfcRectangleHollowProfileDef.html">IfcRectangleHollowProfileDef</a>
+</li><li number="8.15.3.22">
+<a href="lexical/IfcRoundedRectangleProfileDef.html">IfcRoundedRectangleProfileDef</a>
+</li>
+</ol>
+</li><li number="8.15.3.25">
+<a href="lexical/IfcTShapeProfileDef.html">IfcTShapeProfileDef</a>
+</li><li number="8.15.3.26">
+<a href="lexical/IfcTrapeziumProfileDef.html">IfcTrapeziumProfileDef</a>
+</li><li number="8.15.3.27">
+<a href="lexical/IfcUShapeProfileDef.html">IfcUShapeProfileDef</a>
+</li><li number="8.15.3.28">
+<a href="lexical/IfcZShapeProfileDef.html">IfcZShapeProfileDef</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.16.3.5">
+<a href="lexical/IfcPropertyAbstraction.html">IfcPropertyAbstraction</a>
+<ol class="referenced-list">
+<li number="8.16.3.2">
+<a href="lexical/IfcExtendedProperties.html">IfcExtendedProperties</a>
+<ol class="referenced-list">
+<li number="8.10.3.16">
+<a href="lexical/IfcMaterialProperties.html">IfcMaterialProperties</a>
+</li><li number="8.15.3.18">
+<a href="lexical/IfcProfileProperties.html">IfcProfileProperties</a>
+</li>
+</ol>
+</li><li number="8.16.3.3">
+<a href="lexical/IfcPreDefinedProperties.html">IfcPreDefinedProperties</a>
+<ol class="referenced-list">
+<li number="8.15.3.21">
+<a href="lexical/IfcReinforcementBarProperties.html">IfcReinforcementBarProperties</a>
+</li><li number="8.15.3.23">
+<a href="lexical/IfcSectionProperties.html">IfcSectionProperties</a>
+</li><li number="8.15.3.24">
+<a href="lexical/IfcSectionReinforcementProperties.html">IfcSectionReinforcementProperties</a>
+</li>
+</ol>
+</li><li number="8.16.3.4">
+<a href="lexical/IfcProperty.html">IfcProperty</a>
+<ol class="referenced-list">
+<li number="8.16.3.1">
+<a href="lexical/IfcComplexProperty.html">IfcComplexProperty</a>
+</li><li number="8.16.3.14">
+<a href="lexical/IfcSimpleProperty.html">IfcSimpleProperty</a>
+<ol class="referenced-list">
+<li number="8.16.3.6">
+<a href="lexical/IfcPropertyBoundedValue.html">IfcPropertyBoundedValue</a>
+</li><li number="8.16.3.8">
+<a href="lexical/IfcPropertyEnumeratedValue.html">IfcPropertyEnumeratedValue</a>
+</li><li number="8.16.3.10">
+<a href="lexical/IfcPropertyListValue.html">IfcPropertyListValue</a>
+</li><li number="8.16.3.11">
+<a href="lexical/IfcPropertyReferenceValue.html">IfcPropertyReferenceValue</a>
+</li><li number="8.16.3.12">
+<a href="lexical/IfcPropertySingleValue.html">IfcPropertySingleValue</a>
+</li><li number="8.16.3.13">
+<a href="lexical/IfcPropertyTableValue.html">IfcPropertyTableValue</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.16.3.9">
+<a href="lexical/IfcPropertyEnumeration.html">IfcPropertyEnumeration</a>
+</li>
+</ol>
+</li><li number="8.5.3.5">
+<a href="lexical/IfcRecurrencePattern.html">IfcRecurrencePattern</a>
+</li><li number="8.3.3.4">
+<a href="lexical/IfcReference.html">IfcReference</a>
+</li><li number="8.18.3.12">
+<a href="lexical/IfcRepresentation.html">IfcRepresentation</a>
+<ol class="referenced-list">
+<li number="8.18.3.16">
+<a href="lexical/IfcShapeModel.html">IfcShapeModel</a>
+<ol class="referenced-list">
+<li number="8.18.3.17">
+<a href="lexical/IfcShapeRepresentation.html">IfcShapeRepresentation</a>
+</li><li number="8.18.3.20">
+<a href="lexical/IfcTopologyRepresentation.html">IfcTopologyRepresentation</a>
+</li>
+</ol>
+</li><li number="8.18.3.18">
+<a href="lexical/IfcStyleModel.html">IfcStyleModel</a>
+<ol class="referenced-list">
+<li number="8.18.3.19">
+<a href="lexical/IfcStyledRepresentation.html">IfcStyledRepresentation</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.18.3.13">
+<a href="lexical/IfcRepresentationContext.html">IfcRepresentationContext</a>
+<ol class="referenced-list">
+<li number="8.18.3.4">
+<a href="lexical/IfcGeometricRepresentationContext.html">IfcGeometricRepresentationContext</a>
+<ol class="referenced-list">
+<li number="8.18.3.5">
+<a href="lexical/IfcGeometricRepresentationSubContext.html">IfcGeometricRepresentationSubContext</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.57">
+<a href="lexical/IfcRepresentationItem.html">IfcRepresentationItem</a>
+<ol class="referenced-list">
+<li number="8.9.3.33">
+<a href="lexical/IfcGeometricRepresentationItem.html">IfcGeometricRepresentationItem</a>
+<ol class="referenced-list">
+<li number="8.13.3.1">
+<a href="lexical/IfcAnnotationFillArea.html">IfcAnnotationFillArea</a>
+</li><li number="8.8.3.5">
+<a href="lexical/IfcBooleanResult.html">IfcBooleanResult</a>
+<ol class="referenced-list">
+<li number="8.8.3.4">
+<a href="lexical/IfcBooleanClippingResult.html">IfcBooleanClippingResult</a>
+</li>
+</ol>
+</li><li number="8.8.3.6">
+<a href="lexical/IfcBoundingBox.html">IfcBoundingBox</a>
+</li><li number="8.8.3.8">
+<a href="lexical/IfcCartesianPointList.html">IfcCartesianPointList</a>
+<ol class="referenced-list">
+<li number="8.8.3.9">
+<a href="lexical/IfcCartesianPointList2D.html">IfcCartesianPointList2D</a>
+</li><li number="8.8.3.10">
+<a href="lexical/IfcCartesianPointList3D.html">IfcCartesianPointList3D</a>
+</li>
+</ol>
+</li><li number="8.9.3.13">
+<a href="lexical/IfcCartesianTransformationOperator.html">IfcCartesianTransformationOperator</a>
+<ol class="referenced-list">
+<li number="8.9.3.14">
+<a href="lexical/IfcCartesianTransformationOperator2D.html">IfcCartesianTransformationOperator2D</a>
+<ol class="referenced-list">
+<li number="8.9.3.15">
+<a href="lexical/IfcCartesianTransformationOperator2DnonUniform.html">IfcCartesianTransformationOperator2DnonUniform</a>
+</li>
+</ol>
+</li><li number="8.9.3.16">
+<a href="lexical/IfcCartesianTransformationOperator3D.html">IfcCartesianTransformationOperator3D</a>
+<ol class="referenced-list">
+<li number="8.9.3.17">
+<a href="lexical/IfcCartesianTransformationOperator3DnonUniform.html">IfcCartesianTransformationOperator3DnonUniform</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.8.3.11">
+<a href="lexical/IfcCsgPrimitive3D.html">IfcCsgPrimitive3D</a>
+<ol class="referenced-list">
+<li number="8.8.3.3">
+<a href="lexical/IfcBlock.html">IfcBlock</a>
+</li><li number="8.8.3.29">
+<a href="lexical/IfcRectangularPyramid.html">IfcRectangularPyramid</a>
+</li><li number="8.8.3.32">
+<a href="lexical/IfcRightCircularCone.html">IfcRightCircularCone</a>
+</li><li number="8.8.3.33">
+<a href="lexical/IfcRightCircularCylinder.html">IfcRightCircularCylinder</a>
+</li><li number="8.8.3.40">
+<a href="lexical/IfcSphere.html">IfcSphere</a>
+</li>
+</ol>
+</li><li number="8.9.3.25">
+<a href="lexical/IfcCurve.html">IfcCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.10">
+<a href="lexical/IfcBoundedCurve.html">IfcBoundedCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.5">
+<a href="lexical/IfcBSplineCurve.html">IfcBSplineCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.6">
+<a href="lexical/IfcBSplineCurveWithKnots.html">IfcBSplineCurveWithKnots</a>
+<ol class="referenced-list">
+<li number="8.9.3.53">
+<a href="lexical/IfcRationalBSplineCurveWithKnots.html">IfcRationalBSplineCurveWithKnots</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.20">
+<a href="lexical/IfcCompositeCurve.html">IfcCompositeCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.21">
+<a href="lexical/IfcCompositeCurveOnSurface.html">IfcCompositeCurveOnSurface</a>
+<ol class="referenced-list">
+<li number="8.9.3.9">
+<a href="lexical/IfcBoundaryCurve.html">IfcBoundaryCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.43">
+<a href="lexical/IfcOuterBoundaryCurve.html">IfcOuterBoundaryCurve</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.34">
+<a href="lexical/IfcGradientCurve.html">IfcGradientCurve</a>
+</li><li number="8.9.3.62">
+<a href="lexical/IfcSegmentedReferenceCurve.html">IfcSegmentedReferenceCurve</a>
+</li>
+</ol>
+</li><li number="8.9.3.35">
+<a href="lexical/IfcIndexedPolyCurve.html">IfcIndexedPolyCurve</a>
+</li><li number="8.9.3.51">
+<a href="lexical/IfcPolyline.html">IfcPolyline</a>
+</li><li number="8.9.3.74">
+<a href="lexical/IfcTrimmedCurve.html">IfcTrimmedCurve</a>
+</li>
+</ol>
+</li><li number="8.9.3.23">
+<a href="lexical/IfcConic.html">IfcConic</a>
+<ol class="referenced-list">
+<li number="8.9.3.18">
+<a href="lexical/IfcCircle.html">IfcCircle</a>
+</li><li number="8.9.3.32">
+<a href="lexical/IfcEllipse.html">IfcEllipse</a>
+</li>
+</ol>
+</li><li number="8.9.3.37">
+<a href="lexical/IfcLine.html">IfcLine</a>
+</li><li number="8.9.3.39">
+<a href="lexical/IfcOffsetCurve.html">IfcOffsetCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.40">
+<a href="lexical/IfcOffsetCurve2D.html">IfcOffsetCurve2D</a>
+</li><li number="8.9.3.41">
+<a href="lexical/IfcOffsetCurve3D.html">IfcOffsetCurve3D</a>
+</li><li number="8.9.3.42">
+<a href="lexical/IfcOffsetCurveByDistances.html">IfcOffsetCurveByDistances</a>
+</li>
+</ol>
+</li><li number="8.9.3.44">
+<a href="lexical/IfcPcurve.html">IfcPcurve</a>
+</li><li number="8.9.3.52">
+<a href="lexical/IfcPolynomialCurve.html">IfcPolynomialCurve</a>
+</li><li number="8.9.3.66">
+<a href="lexical/IfcSpiral.html">IfcSpiral</a>
+<ol class="referenced-list">
+<li number="8.9.3.19">
+<a href="lexical/IfcClothoid.html">IfcClothoid</a>
+</li><li number="8.9.3.24">
+<a href="lexical/IfcCosineSpiral.html">IfcCosineSpiral</a>
+</li><li number="8.9.3.60">
+<a href="lexical/IfcSecondOrderPolynomialSpiral.html">IfcSecondOrderPolynomialSpiral</a>
+</li><li number="8.9.3.63">
+<a href="lexical/IfcSeventhOrderPolynomialSpiral.html">IfcSeventhOrderPolynomialSpiral</a>
+</li><li number="8.9.3.64">
+<a href="lexical/IfcSineSpiral.html">IfcSineSpiral</a>
+</li><li number="8.9.3.72">
+<a href="lexical/IfcThirdOrderPolynomialSpiral.html">IfcThirdOrderPolynomialSpiral</a>
+</li>
+</ol>
+</li><li number="8.9.3.68">
+<a href="lexical/IfcSurfaceCurve.html">IfcSurfaceCurve</a>
+<ol class="referenced-list">
+<li number="8.9.3.36">
+<a href="lexical/IfcIntersectionCurve.html">IfcIntersectionCurve</a>
+</li><li number="8.9.3.59">
+<a href="lexical/IfcSeamCurve.html">IfcSeamCurve</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.30">
+<a href="lexical/IfcDirection.html">IfcDirection</a>
+</li><li number="8.8.3.17">
+<a href="lexical/IfcFaceBasedSurfaceModel.html">IfcFaceBasedSurfaceModel</a>
+</li><li number="8.12.3.15">
+<a href="lexical/IfcFillAreaStyleHatching.html">IfcFillAreaStyleHatching</a>
+</li><li number="8.12.3.16">
+<a href="lexical/IfcFillAreaStyleTiles.html">IfcFillAreaStyleTiles</a>
+</li><li number="8.8.3.22">
+<a href="lexical/IfcGeometricSet.html">IfcGeometricSet</a>
+<ol class="referenced-list">
+<li number="8.8.3.21">
+<a href="lexical/IfcGeometricCurveSet.html">IfcGeometricCurveSet</a>
+</li>
+</ol>
+</li><li number="8.8.3.23">
+<a href="lexical/IfcHalfSpaceSolid.html">IfcHalfSpaceSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.7">
+<a href="lexical/IfcBoxedHalfSpace.html">IfcBoxedHalfSpace</a>
+</li><li number="8.8.3.27">
+<a href="lexical/IfcPolygonalBoundedHalfSpace.html">IfcPolygonalBoundedHalfSpace</a>
+</li>
+</ol>
+</li><li number="8.14.3.3">
+<a href="lexical/IfcLightSource.html">IfcLightSource</a>
+<ol class="referenced-list">
+<li number="8.14.3.4">
+<a href="lexical/IfcLightSourceAmbient.html">IfcLightSourceAmbient</a>
+</li><li number="8.14.3.5">
+<a href="lexical/IfcLightSourceDirectional.html">IfcLightSourceDirectional</a>
+</li><li number="8.14.3.6">
+<a href="lexical/IfcLightSourceGoniometric.html">IfcLightSourceGoniometric</a>
+</li><li number="8.14.3.7">
+<a href="lexical/IfcLightSourcePositional.html">IfcLightSourcePositional</a>
+<ol class="referenced-list">
+<li number="8.14.3.8">
+<a href="lexical/IfcLightSourceSpot.html">IfcLightSourceSpot</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.45">
+<a href="lexical/IfcPlacement.html">IfcPlacement</a>
+<ol class="referenced-list">
+<li number="8.9.3.1">
+<a href="lexical/IfcAxis1Placement.html">IfcAxis1Placement</a>
+</li><li number="8.9.3.2">
+<a href="lexical/IfcAxis2Placement2D.html">IfcAxis2Placement2D</a>
+</li><li number="8.9.3.3">
+<a href="lexical/IfcAxis2Placement3D.html">IfcAxis2Placement3D</a>
+</li><li number="8.9.3.4">
+<a href="lexical/IfcAxis2PlacementLinear.html">IfcAxis2PlacementLinear</a>
+</li>
+</ol>
+</li><li number="8.13.3.3">
+<a href="lexical/IfcPlanarExtent.html">IfcPlanarExtent</a>
+<ol class="referenced-list">
+<li number="8.13.3.2">
+<a href="lexical/IfcPlanarBox.html">IfcPlanarBox</a>
+</li>
+</ol>
+</li><li number="8.9.3.47">
+<a href="lexical/IfcPoint.html">IfcPoint</a>
+<ol class="referenced-list">
+<li number="8.9.3.12">
+<a href="lexical/IfcCartesianPoint.html">IfcCartesianPoint</a>
+</li><li number="8.9.3.48">
+<a href="lexical/IfcPointByDistanceExpression.html">IfcPointByDistanceExpression</a>
+</li><li number="8.9.3.49">
+<a href="lexical/IfcPointOnCurve.html">IfcPointOnCurve</a>
+</li><li number="8.9.3.50">
+<a href="lexical/IfcPointOnSurface.html">IfcPointOnSurface</a>
+</li>
+</ol>
+</li><li number="8.8.3.36">
+<a href="lexical/IfcSectionedSpine.html">IfcSectionedSpine</a>
+</li><li number="8.9.3.61">
+<a href="lexical/IfcSegment.html">IfcSegment</a>
+<ol class="referenced-list">
+<li number="8.9.3.22">
+<a href="lexical/IfcCompositeCurveSegment.html">IfcCompositeCurveSegment</a>
+<ol class="referenced-list">
+<li number="8.9.3.56">
+<a href="lexical/IfcReparametrisedCompositeCurveSegment.html">IfcReparametrisedCompositeCurveSegment</a>
+</li>
+</ol>
+</li><li number="8.9.3.28">
+<a href="lexical/IfcCurveSegment.html">IfcCurveSegment</a>
+</li>
+</ol>
+</li><li number="8.8.3.38">
+<a href="lexical/IfcShellBasedSurfaceModel.html">IfcShellBasedSurfaceModel</a>
+</li><li number="8.8.3.39">
+<a href="lexical/IfcSolidModel.html">IfcSolidModel</a>
+<ol class="referenced-list">
+<li number="8.8.3.12">
+<a href="lexical/IfcCsgSolid.html">IfcCsgSolid</a>
+</li><li number="8.8.3.26">
+<a href="lexical/IfcManifoldSolidBrep.html">IfcManifoldSolidBrep</a>
+<ol class="referenced-list">
+<li number="8.8.3.1">
+<a href="lexical/IfcAdvancedBrep.html">IfcAdvancedBrep</a>
+<ol class="referenced-list">
+<li number="8.8.3.2">
+<a href="lexical/IfcAdvancedBrepWithVoids.html">IfcAdvancedBrepWithVoids</a>
+</li>
+</ol>
+</li><li number="8.8.3.18">
+<a href="lexical/IfcFacetedBrep.html">IfcFacetedBrep</a>
+<ol class="referenced-list">
+<li number="8.8.3.19">
+<a href="lexical/IfcFacetedBrepWithVoids.html">IfcFacetedBrepWithVoids</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.8.3.34">
+<a href="lexical/IfcSectionedSolid.html">IfcSectionedSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.35">
+<a href="lexical/IfcSectionedSolidHorizontal.html">IfcSectionedSolidHorizontal</a>
+</li>
+</ol>
+</li><li number="8.8.3.42">
+<a href="lexical/IfcSweptAreaSolid.html">IfcSweptAreaSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.13">
+<a href="lexical/IfcDirectrixCurveSweptAreaSolid.html">IfcDirectrixCurveSweptAreaSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.20">
+<a href="lexical/IfcFixedReferenceSweptAreaSolid.html">IfcFixedReferenceSweptAreaSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.14">
+<a href="lexical/IfcDirectrixDerivedReferenceSweptAreaSolid.html">IfcDirectrixDerivedReferenceSweptAreaSolid</a>
+</li>
+</ol>
+</li><li number="8.8.3.41">
+<a href="lexical/IfcSurfaceCurveSweptAreaSolid.html">IfcSurfaceCurveSweptAreaSolid</a>
+</li>
+</ol>
+</li><li number="8.8.3.15">
+<a href="lexical/IfcExtrudedAreaSolid.html">IfcExtrudedAreaSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.16">
+<a href="lexical/IfcExtrudedAreaSolidTapered.html">IfcExtrudedAreaSolidTapered</a>
+</li>
+</ol>
+</li><li number="8.8.3.30">
+<a href="lexical/IfcRevolvedAreaSolid.html">IfcRevolvedAreaSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.31">
+<a href="lexical/IfcRevolvedAreaSolidTapered.html">IfcRevolvedAreaSolidTapered</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.8.3.43">
+<a href="lexical/IfcSweptDiskSolid.html">IfcSweptDiskSolid</a>
+<ol class="referenced-list">
+<li number="8.8.3.44">
+<a href="lexical/IfcSweptDiskSolidPolygonal.html">IfcSweptDiskSolidPolygonal</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.67">
+<a href="lexical/IfcSurface.html">IfcSurface</a>
+<ol class="referenced-list">
+<li number="8.9.3.11">
+<a href="lexical/IfcBoundedSurface.html">IfcBoundedSurface</a>
+<ol class="referenced-list">
+<li number="8.9.3.7">
+<a href="lexical/IfcBSplineSurface.html">IfcBSplineSurface</a>
+<ol class="referenced-list">
+<li number="8.9.3.8">
+<a href="lexical/IfcBSplineSurfaceWithKnots.html">IfcBSplineSurfaceWithKnots</a>
+<ol class="referenced-list">
+<li number="8.9.3.54">
+<a href="lexical/IfcRationalBSplineSurfaceWithKnots.html">IfcRationalBSplineSurfaceWithKnots</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.26">
+<a href="lexical/IfcCurveBoundedPlane.html">IfcCurveBoundedPlane</a>
+</li><li number="8.9.3.27">
+<a href="lexical/IfcCurveBoundedSurface.html">IfcCurveBoundedSurface</a>
+</li><li number="8.9.3.55">
+<a href="lexical/IfcRectangularTrimmedSurface.html">IfcRectangularTrimmedSurface</a>
+</li>
+</ol>
+</li><li number="8.9.3.31">
+<a href="lexical/IfcElementarySurface.html">IfcElementarySurface</a>
+<ol class="referenced-list">
+<li number="8.9.3.29">
+<a href="lexical/IfcCylindricalSurface.html">IfcCylindricalSurface</a>
+</li><li number="8.9.3.46">
+<a href="lexical/IfcPlane.html">IfcPlane</a>
+</li><li number="8.9.3.65">
+<a href="lexical/IfcSphericalSurface.html">IfcSphericalSurface</a>
+</li><li number="8.9.3.73">
+<a href="lexical/IfcToroidalSurface.html">IfcToroidalSurface</a>
+</li>
+</ol>
+</li><li number="8.8.3.37">
+<a href="lexical/IfcSectionedSurface.html">IfcSectionedSurface</a>
+</li><li number="8.9.3.71">
+<a href="lexical/IfcSweptSurface.html">IfcSweptSurface</a>
+<ol class="referenced-list">
+<li number="8.9.3.69">
+<a href="lexical/IfcSurfaceOfLinearExtrusion.html">IfcSurfaceOfLinearExtrusion</a>
+</li><li number="8.9.3.70">
+<a href="lexical/IfcSurfaceOfRevolution.html">IfcSurfaceOfRevolution</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.8.3.46">
+<a href="lexical/IfcTessellatedItem.html">IfcTessellatedItem</a>
+<ol class="referenced-list">
+<li number="8.8.3.24">
+<a href="lexical/IfcIndexedPolygonalFace.html">IfcIndexedPolygonalFace</a>
+<ol class="referenced-list">
+<li number="8.8.3.25">
+<a href="lexical/IfcIndexedPolygonalFaceWithVoids.html">IfcIndexedPolygonalFaceWithVoids</a>
+</li>
+</ol>
+</li><li number="8.8.3.45">
+<a href="lexical/IfcTessellatedFaceSet.html">IfcTessellatedFaceSet</a>
+<ol class="referenced-list">
+<li number="8.8.3.28">
+<a href="lexical/IfcPolygonalFaceSet.html">IfcPolygonalFaceSet</a>
+</li><li number="8.8.3.47">
+<a href="lexical/IfcTriangulatedFaceSet.html">IfcTriangulatedFaceSet</a>
+<ol class="referenced-list">
+<li number="8.8.3.48">
+<a href="lexical/IfcTriangulatedIrregularNetwork.html">IfcTriangulatedIrregularNetwork</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.13.3.5">
+<a href="lexical/IfcTextLiteral.html">IfcTextLiteral</a>
+<ol class="referenced-list">
+<li number="8.13.3.6">
+<a href="lexical/IfcTextLiteralWithExtent.html">IfcTextLiteralWithExtent</a>
+</li>
+</ol>
+</li><li number="8.9.3.75">
+<a href="lexical/IfcVector.html">IfcVector</a>
+</li>
+</ol>
+</li><li number="8.9.3.38">
+<a href="lexical/IfcMappedItem.html">IfcMappedItem</a>
+</li><li number="8.12.3.28">
+<a href="lexical/IfcStyledItem.html">IfcStyledItem</a>
+</li><li number="8.20.3.17">
+<a href="lexical/IfcTopologicalRepresentationItem.html">IfcTopologicalRepresentationItem</a>
+<ol class="referenced-list">
+<li number="8.20.3.3">
+<a href="lexical/IfcConnectedFaceSet.html">IfcConnectedFaceSet</a>
+<ol class="referenced-list">
+<li number="8.20.3.2">
+<a href="lexical/IfcClosedShell.html">IfcClosedShell</a>
+</li><li number="8.20.3.12">
+<a href="lexical/IfcOpenShell.html">IfcOpenShell</a>
+</li>
+</ol>
+</li><li number="8.20.3.4">
+<a href="lexical/IfcEdge.html">IfcEdge</a>
+<ol class="referenced-list">
+<li number="8.20.3.5">
+<a href="lexical/IfcEdgeCurve.html">IfcEdgeCurve</a>
+</li><li number="8.20.3.13">
+<a href="lexical/IfcOrientedEdge.html">IfcOrientedEdge</a>
+</li><li number="8.20.3.16">
+<a href="lexical/IfcSubedge.html">IfcSubedge</a>
+</li>
+</ol>
+</li><li number="8.20.3.7">
+<a href="lexical/IfcFace.html">IfcFace</a>
+<ol class="referenced-list">
+<li number="8.20.3.10">
+<a href="lexical/IfcFaceSurface.html">IfcFaceSurface</a>
+<ol class="referenced-list">
+<li number="8.20.3.1">
+<a href="lexical/IfcAdvancedFace.html">IfcAdvancedFace</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.20.3.8">
+<a href="lexical/IfcFaceBound.html">IfcFaceBound</a>
+<ol class="referenced-list">
+<li number="8.20.3.9">
+<a href="lexical/IfcFaceOuterBound.html">IfcFaceOuterBound</a>
+</li>
+</ol>
+</li><li number="8.20.3.11">
+<a href="lexical/IfcLoop.html">IfcLoop</a>
+<ol class="referenced-list">
+<li number="8.20.3.6">
+<a href="lexical/IfcEdgeLoop.html">IfcEdgeLoop</a>
+</li><li number="8.20.3.15">
+<a href="lexical/IfcPolyLoop.html">IfcPolyLoop</a>
+</li><li number="8.20.3.19">
+<a href="lexical/IfcVertexLoop.html">IfcVertexLoop</a>
+</li>
+</ol>
+</li><li number="8.20.3.14">
+<a href="lexical/IfcPath.html">IfcPath</a>
+</li><li number="8.20.3.18">
+<a href="lexical/IfcVertex.html">IfcVertex</a>
+<ol class="referenced-list">
+<li number="8.20.3.20">
+<a href="lexical/IfcVertexPoint.html">IfcVertexPoint</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.9.3.58">
+<a href="lexical/IfcRepresentationMap.html">IfcRepresentationMap</a>
+</li><li number="8.6.3.11">
+<a href="lexical/IfcResourceLevelRelationship.html">IfcResourceLevelRelationship</a>
+<ol class="referenced-list">
+<li number="8.2.3.2">
+<a href="lexical/IfcApprovalRelationship.html">IfcApprovalRelationship</a>
+</li><li number="8.4.3.3">
+<a href="lexical/IfcCurrencyRelationship.html">IfcCurrencyRelationship</a>
+</li><li number="8.6.3.4">
+<a href="lexical/IfcDocumentInformationRelationship.html">IfcDocumentInformationRelationship</a>
+</li><li number="8.6.3.8">
+<a href="lexical/IfcExternalReferenceRelationship.html">IfcExternalReferenceRelationship</a>
+</li><li number="8.10.3.17">
+<a href="lexical/IfcMaterialRelationship.html">IfcMaterialRelationship</a>
+</li><li number="8.1.3.4">
+<a href="lexical/IfcOrganizationRelationship.html">IfcOrganizationRelationship</a>
+</li><li number="8.16.3.7">
+<a href="lexical/IfcPropertyDependencyRelationship.html">IfcPropertyDependencyRelationship</a>
+</li><li number="8.2.3.3">
+<a href="lexical/IfcResourceApprovalRelationship.html">IfcResourceApprovalRelationship</a>
+</li><li number="8.3.3.5">
+<a href="lexical/IfcResourceConstraintRelationship.html">IfcResourceConstraintRelationship</a>
+</li>
+</ol>
+</li><li number="5.1.3.44">
+<a href="lexical/IfcRoot.html">IfcRoot</a>
+<ol class="referenced-list">
+<li number="5.1.3.7">
+<a href="lexical/IfcObjectDefinition.html">IfcObjectDefinition</a>
+<ol class="referenced-list">
+<li number="5.1.3.3">
+<a href="lexical/IfcContext.html">IfcContext</a>
+<ol class="referenced-list">
+<li number="5.1.3.11">
+<a href="lexical/IfcProject.html">IfcProject</a>
+</li><li number="5.1.3.12">
+<a href="lexical/IfcProjectLibrary.html">IfcProjectLibrary</a>
+</li>
+</ol>
+</li><li number="5.1.3.6">
+<a href="lexical/IfcObject.html">IfcObject</a>
+<ol class="referenced-list">
+<li number="5.1.3.1">
+<a href="lexical/IfcActor.html">IfcActor</a>
+<ol class="referenced-list">
+<li number="6.4.3.5">
+<a href="lexical/IfcOccupant.html">IfcOccupant</a>
+</li>
+</ol>
+</li><li number="5.1.3.4">
+<a href="lexical/IfcControl.html">IfcControl</a>
+<ol class="referenced-list">
+<li number="6.5.3.1">
+<a href="lexical/IfcActionRequest.html">IfcActionRequest</a>
+</li><li number="6.5.3.2">
+<a href="lexical/IfcCostItem.html">IfcCostItem</a>
+</li><li number="6.5.3.3">
+<a href="lexical/IfcCostSchedule.html">IfcCostSchedule</a>
+</li><li number="5.2.3.1">
+<a href="lexical/IfcPerformanceHistory.html">IfcPerformanceHistory</a>
+</li><li number="6.5.3.4">
+<a href="lexical/IfcPermit.html">IfcPermit</a>
+</li><li number="6.5.3.5">
+<a href="lexical/IfcProjectOrder.html">IfcProjectOrder</a>
+</li><li number="5.3.3.8">
+<a href="lexical/IfcWorkCalendar.html">IfcWorkCalendar</a>
+</li><li number="5.3.3.9">
+<a href="lexical/IfcWorkControl.html">IfcWorkControl</a>
+<ol class="referenced-list">
+<li number="5.3.3.10">
+<a href="lexical/IfcWorkPlan.html">IfcWorkPlan</a>
+</li><li number="5.3.3.11">
+<a href="lexical/IfcWorkSchedule.html">IfcWorkSchedule</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.5">
+<a href="lexical/IfcGroup.html">IfcGroup</a>
+<ol class="referenced-list">
+<li number="6.4.3.1">
+<a href="lexical/IfcAsset.html">IfcAsset</a>
+</li><li number="6.4.3.4">
+<a href="lexical/IfcInventory.html">IfcInventory</a>
+</li><li number="7.10.3.16">
+<a href="lexical/IfcStructuralLoadGroup.html">IfcStructuralLoadGroup</a>
+<ol class="referenced-list">
+<li number="7.10.3.15">
+<a href="lexical/IfcStructuralLoadCase.html">IfcStructuralLoadCase</a>
+</li>
+</ol>
+</li><li number="7.10.3.23">
+<a href="lexical/IfcStructuralResultGroup.html">IfcStructuralResultGroup</a>
+</li><li number="5.4.3.72">
+<a href="lexical/IfcSystem.html">IfcSystem</a>
+<ol class="referenced-list">
+<li number="6.1.3.7">
+<a href="lexical/IfcBuildingSystem.html">IfcBuildingSystem</a>
+</li><li number="5.4.3.13">
+<a href="lexical/IfcBuiltSystem.html">IfcBuiltSystem</a>
+</li><li number="6.2.3.9">
+<a href="lexical/IfcDistributionSystem.html">IfcDistributionSystem</a>
+<ol class="referenced-list">
+<li number="6.2.3.3">
+<a href="lexical/IfcDistributionCircuit.html">IfcDistributionCircuit</a>
+</li>
+</ol>
+</li><li number="7.10.3.6">
+<a href="lexical/IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a>
+</li><li number="5.4.3.82">
+<a href="lexical/IfcZone.html">IfcZone</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.9">
+<a href="lexical/IfcProcess.html">IfcProcess</a>
+<ol class="referenced-list">
+<li number="5.3.3.1">
+<a href="lexical/IfcEvent.html">IfcEvent</a>
+</li><li number="5.3.3.3">
+<a href="lexical/IfcProcedure.html">IfcProcedure</a>
+</li><li number="5.3.3.6">
+<a href="lexical/IfcTask.html">IfcTask</a>
+</li>
+</ol>
+</li><li number="5.1.3.10">
+<a href="lexical/IfcProduct.html">IfcProduct</a>
+<ol class="referenced-list">
+<li number="5.4.3.6">
+<a href="lexical/IfcAnnotation.html">IfcAnnotation</a>
+</li><li number="5.4.3.18">
+<a href="lexical/IfcElement.html">IfcElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.11">
+<a href="lexical/IfcBuiltElement.html">IfcBuiltElement</a>
+<ol class="referenced-list">
+<li number="6.1.3.1">
+<a href="lexical/IfcBeam.html">IfcBeam</a>
+</li><li number="6.1.3.3">
+<a href="lexical/IfcBearing.html">IfcBearing</a>
+</li><li number="6.1.3.5">
+<a href="lexical/IfcBuildingElementProxy.html">IfcBuildingElementProxy</a>
+</li><li number="6.1.3.8">
+<a href="lexical/IfcChimney.html">IfcChimney</a>
+</li><li number="6.1.3.10">
+<a href="lexical/IfcColumn.html">IfcColumn</a>
+</li><li number="6.6.3.2">
+<a href="lexical/IfcCourse.html">IfcCourse</a>
+</li><li number="6.1.3.12">
+<a href="lexical/IfcCovering.html">IfcCovering</a>
+</li><li number="6.1.3.14">
+<a href="lexical/IfcCurtainWall.html">IfcCurtainWall</a>
+</li><li number="7.11.3.3">
+<a href="lexical/IfcDeepFoundation.html">IfcDeepFoundation</a>
+<ol class="referenced-list">
+<li number="7.11.3.1">
+<a href="lexical/IfcCaissonFoundation.html">IfcCaissonFoundation</a>
+</li><li number="7.11.3.7">
+<a href="lexical/IfcPile.html">IfcPile</a>
+</li>
+</ol>
+</li><li number="6.1.3.16">
+<a href="lexical/IfcDoor.html">IfcDoor</a>
+</li><li number="6.6.3.5">
+<a href="lexical/IfcEarthworksElement.html">IfcEarthworksElement</a>
+<ol class="referenced-list">
+<li number="6.6.3.6">
+<a href="lexical/IfcEarthworksFill.html">IfcEarthworksFill</a>
+</li><li number="6.6.3.14">
+<a href="lexical/IfcReinforcedSoil.html">IfcReinforcedSoil</a>
+</li>
+</ol>
+</li><li number="7.11.3.5">
+<a href="lexical/IfcFooting.html">IfcFooting</a>
+</li><li number="7.9.3.1">
+<a href="lexical/IfcKerb.html">IfcKerb</a>
+</li><li number="6.1.3.18">
+<a href="lexical/IfcMember.html">IfcMember</a>
+</li><li number="7.7.3.7">
+<a href="lexical/IfcMooringDevice.html">IfcMooringDevice</a>
+</li><li number="7.7.3.9">
+<a href="lexical/IfcNavigationElement.html">IfcNavigationElement</a>
+</li><li number="6.6.3.12">
+<a href="lexical/IfcPavement.html">IfcPavement</a>
+</li><li number="6.1.3.20">
+<a href="lexical/IfcPlate.html">IfcPlate</a>
+</li><li number="7.8.3.1">
+<a href="lexical/IfcRail.html">IfcRail</a>
+</li><li number="6.1.3.22">
+<a href="lexical/IfcRailing.html">IfcRailing</a>
+</li><li number="6.1.3.24">
+<a href="lexical/IfcRamp.html">IfcRamp</a>
+</li><li number="6.1.3.25">
+<a href="lexical/IfcRampFlight.html">IfcRampFlight</a>
+</li><li number="6.1.3.31">
+<a href="lexical/IfcRoof.html">IfcRoof</a>
+</li><li number="6.1.3.33">
+<a href="lexical/IfcShadingDevice.html">IfcShadingDevice</a>
+</li><li number="6.1.3.35">
+<a href="lexical/IfcSlab.html">IfcSlab</a>
+</li><li number="6.1.3.37">
+<a href="lexical/IfcStair.html">IfcStair</a>
+</li><li number="6.1.3.38">
+<a href="lexical/IfcStairFlight.html">IfcStairFlight</a>
+</li><li number="7.8.3.5">
+<a href="lexical/IfcTrackElement.html">IfcTrackElement</a>
+</li><li number="6.1.3.41">
+<a href="lexical/IfcWall.html">IfcWall</a>
+<ol class="referenced-list">
+<li number="6.1.3.42">
+<a href="lexical/IfcWallStandardCase.html">IfcWallStandardCase</a>
+</li>
+</ol>
+</li><li number="6.1.3.44">
+<a href="lexical/IfcWindow.html">IfcWindow</a>
+</li>
+</ol>
+</li><li number="5.4.3.14">
+<a href="lexical/IfcCivilElement.html">IfcCivilElement</a>
+</li><li number="5.4.3.16">
+<a href="lexical/IfcDistributionElement.html">IfcDistributionElement</a>
+<ol class="referenced-list">
+<li number="6.2.3.4">
+<a href="lexical/IfcDistributionControlElement.html">IfcDistributionControlElement</a>
+<ol class="referenced-list">
+<li number="7.2.3.1">
+<a href="lexical/IfcActuator.html">IfcActuator</a>
+</li><li number="7.2.3.3">
+<a href="lexical/IfcAlarm.html">IfcAlarm</a>
+</li><li number="7.2.3.5">
+<a href="lexical/IfcController.html">IfcController</a>
+</li><li number="7.2.3.7">
+<a href="lexical/IfcFlowInstrument.html">IfcFlowInstrument</a>
+</li><li number="7.4.3.42">
+<a href="lexical/IfcProtectiveDeviceTrippingUnit.html">IfcProtectiveDeviceTrippingUnit</a>
+</li><li number="7.2.3.9">
+<a href="lexical/IfcSensor.html">IfcSensor</a>
+</li><li number="7.2.3.11">
+<a href="lexical/IfcUnitaryControlElement.html">IfcUnitaryControlElement</a>
+</li>
+</ol>
+</li><li number="6.2.3.6">
+<a href="lexical/IfcDistributionFlowElement.html">IfcDistributionFlowElement</a>
+<ol class="referenced-list">
+<li number="6.2.3.1">
+<a href="lexical/IfcDistributionChamberElement.html">IfcDistributionChamberElement</a>
+</li><li number="6.2.3.10">
+<a href="lexical/IfcEnergyConversionDevice.html">IfcEnergyConversionDevice</a>
+<ol class="referenced-list">
+<li number="7.5.3.5">
+<a href="lexical/IfcAirToAirHeatRecovery.html">IfcAirToAirHeatRecovery</a>
+</li><li number="7.5.3.7">
+<a href="lexical/IfcBoiler.html">IfcBoiler</a>
+</li><li number="7.5.3.9">
+<a href="lexical/IfcBurner.html">IfcBurner</a>
+</li><li number="7.5.3.11">
+<a href="lexical/IfcChiller.html">IfcChiller</a>
+</li><li number="7.5.3.13">
+<a href="lexical/IfcCoil.html">IfcCoil</a>
+</li><li number="7.5.3.17">
+<a href="lexical/IfcCondenser.html">IfcCondenser</a>
+</li><li number="7.5.3.19">
+<a href="lexical/IfcCooledBeam.html">IfcCooledBeam</a>
+</li><li number="7.5.3.21">
+<a href="lexical/IfcCoolingTower.html">IfcCoolingTower</a>
+</li><li number="7.4.3.23">
+<a href="lexical/IfcElectricGenerator.html">IfcElectricGenerator</a>
+</li><li number="7.4.3.25">
+<a href="lexical/IfcElectricMotor.html">IfcElectricMotor</a>
+</li><li number="7.5.3.31">
+<a href="lexical/IfcEngine.html">IfcEngine</a>
+</li><li number="7.5.3.33">
+<a href="lexical/IfcEvaporativeCooler.html">IfcEvaporativeCooler</a>
+</li><li number="7.5.3.35">
+<a href="lexical/IfcEvaporator.html">IfcEvaporator</a>
+</li><li number="7.5.3.43">
+<a href="lexical/IfcHeatExchanger.html">IfcHeatExchanger</a>
+</li><li number="7.5.3.45">
+<a href="lexical/IfcHumidifier.html">IfcHumidifier</a>
+</li><li number="7.4.3.37">
+<a href="lexical/IfcMotorConnection.html">IfcMotorConnection</a>
+</li><li number="7.4.3.45">
+<a href="lexical/IfcSolarDevice.html">IfcSolarDevice</a>
+</li><li number="7.4.3.49">
+<a href="lexical/IfcTransformer.html">IfcTransformer</a>
+</li><li number="7.5.3.59">
+<a href="lexical/IfcTubeBundle.html">IfcTubeBundle</a>
+</li><li number="7.5.3.61">
+<a href="lexical/IfcUnitaryEquipment.html">IfcUnitaryEquipment</a>
+</li>
+</ol>
+</li><li number="6.2.3.12">
+<a href="lexical/IfcFlowController.html">IfcFlowController</a>
+<ol class="referenced-list">
+<li number="7.5.3.2">
+<a href="lexical/IfcAirTerminalBox.html">IfcAirTerminalBox</a>
+</li><li number="7.5.3.23">
+<a href="lexical/IfcDamper.html">IfcDamper</a>
+</li><li number="7.4.3.13">
+<a href="lexical/IfcDistributionBoard.html">IfcDistributionBoard</a>
+</li><li number="7.4.3.17">
+<a href="lexical/IfcElectricDistributionBoard.html">IfcElectricDistributionBoard</a>
+</li><li number="7.4.3.27">
+<a href="lexical/IfcElectricTimeControl.html">IfcElectricTimeControl</a>
+</li><li number="7.5.3.41">
+<a href="lexical/IfcFlowMeter.html">IfcFlowMeter</a>
+</li><li number="7.4.3.41">
+<a href="lexical/IfcProtectiveDevice.html">IfcProtectiveDevice</a>
+</li><li number="7.4.3.47">
+<a href="lexical/IfcSwitchingDevice.html">IfcSwitchingDevice</a>
+</li><li number="7.5.3.63">
+<a href="lexical/IfcValve.html">IfcValve</a>
+</li>
+</ol>
+</li><li number="6.2.3.14">
+<a href="lexical/IfcFlowFitting.html">IfcFlowFitting</a>
+<ol class="referenced-list">
+<li number="7.4.3.3">
+<a href="lexical/IfcCableCarrierFitting.html">IfcCableCarrierFitting</a>
+</li><li number="7.4.3.7">
+<a href="lexical/IfcCableFitting.html">IfcCableFitting</a>
+</li><li number="7.5.3.25">
+<a href="lexical/IfcDuctFitting.html">IfcDuctFitting</a>
+</li><li number="7.4.3.29">
+<a href="lexical/IfcJunctionBox.html">IfcJunctionBox</a>
+</li><li number="7.5.3.49">
+<a href="lexical/IfcPipeFitting.html">IfcPipeFitting</a>
+</li>
+</ol>
+</li><li number="6.2.3.16">
+<a href="lexical/IfcFlowMovingDevice.html">IfcFlowMovingDevice</a>
+<ol class="referenced-list">
+<li number="7.5.3.15">
+<a href="lexical/IfcCompressor.html">IfcCompressor</a>
+</li><li number="7.5.3.37">
+<a href="lexical/IfcFan.html">IfcFan</a>
+</li><li number="7.5.3.53">
+<a href="lexical/IfcPump.html">IfcPump</a>
+</li>
+</ol>
+</li><li number="6.2.3.18">
+<a href="lexical/IfcFlowSegment.html">IfcFlowSegment</a>
+<ol class="referenced-list">
+<li number="7.4.3.5">
+<a href="lexical/IfcCableCarrierSegment.html">IfcCableCarrierSegment</a>
+</li><li number="7.4.3.9">
+<a href="lexical/IfcCableSegment.html">IfcCableSegment</a>
+</li><li number="7.7.3.1">
+<a href="lexical/IfcConveyorSegment.html">IfcConveyorSegment</a>
+</li><li number="7.5.3.27">
+<a href="lexical/IfcDuctSegment.html">IfcDuctSegment</a>
+</li><li number="7.5.3.51">
+<a href="lexical/IfcPipeSegment.html">IfcPipeSegment</a>
+</li>
+</ol>
+</li><li number="6.2.3.20">
+<a href="lexical/IfcFlowStorageDevice.html">IfcFlowStorageDevice</a>
+<ol class="referenced-list">
+<li number="7.4.3.19">
+<a href="lexical/IfcElectricFlowStorageDevice.html">IfcElectricFlowStorageDevice</a>
+</li><li number="7.5.3.57">
+<a href="lexical/IfcTank.html">IfcTank</a>
+</li>
+</ol>
+</li><li number="6.2.3.22">
+<a href="lexical/IfcFlowTerminal.html">IfcFlowTerminal</a>
+<ol class="referenced-list">
+<li number="7.5.3.1">
+<a href="lexical/IfcAirTerminal.html">IfcAirTerminal</a>
+</li><li number="7.4.3.1">
+<a href="lexical/IfcAudioVisualAppliance.html">IfcAudioVisualAppliance</a>
+</li><li number="7.4.3.11">
+<a href="lexical/IfcCommunicationsAppliance.html">IfcCommunicationsAppliance</a>
+</li><li number="7.4.3.15">
+<a href="lexical/IfcElectricAppliance.html">IfcElectricAppliance</a>
+</li><li number="7.6.3.1">
+<a href="lexical/IfcFireSuppressionTerminal.html">IfcFireSuppressionTerminal</a>
+</li><li number="7.4.3.31">
+<a href="lexical/IfcLamp.html">IfcLamp</a>
+</li><li number="7.4.3.33">
+<a href="lexical/IfcLightFixture.html">IfcLightFixture</a>
+</li><li number="7.7.3.3">
+<a href="lexical/IfcLiquidTerminal.html">IfcLiquidTerminal</a>
+</li><li number="7.5.3.47">
+<a href="lexical/IfcMedicalDevice.html">IfcMedicalDevice</a>
+</li><li number="7.4.3.35">
+<a href="lexical/IfcMobileTelecommunicationsAppliance.html">IfcMobileTelecommunicationsAppliance</a>
+</li><li number="7.4.3.39">
+<a href="lexical/IfcOutlet.html">IfcOutlet</a>
+</li><li number="7.6.3.5">
+<a href="lexical/IfcSanitaryTerminal.html">IfcSanitaryTerminal</a>
+</li><li number="6.6.3.17">
+<a href="lexical/IfcSignal.html">IfcSignal</a>
+</li><li number="7.5.3.55">
+<a href="lexical/IfcSpaceHeater.html">IfcSpaceHeater</a>
+</li><li number="7.6.3.7">
+<a href="lexical/IfcStackTerminal.html">IfcStackTerminal</a>
+</li><li number="7.6.3.9">
+<a href="lexical/IfcWasteTerminal.html">IfcWasteTerminal</a>
+</li>
+</ol>
+</li><li number="6.2.3.24">
+<a href="lexical/IfcFlowTreatmentDevice.html">IfcFlowTreatmentDevice</a>
+<ol class="referenced-list">
+<li number="7.5.3.29">
+<a href="lexical/IfcDuctSilencer.html">IfcDuctSilencer</a>
+</li><li number="7.4.3.21">
+<a href="lexical/IfcElectricFlowTreatmentDevice.html">IfcElectricFlowTreatmentDevice</a>
+</li><li number="7.5.3.39">
+<a href="lexical/IfcFilter.html">IfcFilter</a>
+</li><li number="7.6.3.3">
+<a href="lexical/IfcInterceptor.html">IfcInterceptor</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.4.3.19">
+<a href="lexical/IfcElementAssembly.html">IfcElementAssembly</a>
+</li><li number="6.3.3.5">
+<a href="lexical/IfcElementComponent.html">IfcElementComponent</a>
+<ol class="referenced-list">
+<li number="6.3.3.1">
+<a href="lexical/IfcBuildingElementPart.html">IfcBuildingElementPart</a>
+</li><li number="6.3.3.3">
+<a href="lexical/IfcDiscreteAccessory.html">IfcDiscreteAccessory</a>
+</li><li number="6.3.3.7">
+<a href="lexical/IfcFastener.html">IfcFastener</a>
+</li><li number="5.4.3.36">
+<a href="lexical/IfcImpactProtectionDevice.html">IfcImpactProtectionDevice</a>
+</li><li number="6.3.3.9">
+<a href="lexical/IfcMechanicalFastener.html">IfcMechanicalFastener</a>
+</li><li number="7.11.3.12">
+<a href="lexical/IfcReinforcingElement.html">IfcReinforcingElement</a>
+<ol class="referenced-list">
+<li number="7.11.3.10">
+<a href="lexical/IfcReinforcingBar.html">IfcReinforcingBar</a>
+</li><li number="7.11.3.14">
+<a href="lexical/IfcReinforcingMesh.html">IfcReinforcingMesh</a>
+</li><li number="7.11.3.17">
+<a href="lexical/IfcTendon.html">IfcTendon</a>
+</li><li number="7.11.3.18">
+<a href="lexical/IfcTendonAnchor.html">IfcTendonAnchor</a>
+</li><li number="7.11.3.20">
+<a href="lexical/IfcTendonConduit.html">IfcTendonConduit</a>
+</li>
+</ol>
+</li><li number="6.6.3.15">
+<a href="lexical/IfcSign.html">IfcSign</a>
+</li><li number="5.4.3.79">
+<a href="lexical/IfcVibrationDamper.html">IfcVibrationDamper</a>
+</li><li number="7.5.3.65">
+<a href="lexical/IfcVibrationIsolator.html">IfcVibrationIsolator</a>
+</li>
+</ol>
+</li><li number="5.4.3.28">
+<a href="lexical/IfcFeatureElement.html">IfcFeatureElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.29">
+<a href="lexical/IfcFeatureElementAddition.html">IfcFeatureElementAddition</a>
+<ol class="referenced-list">
+<li number="5.4.3.43">
+<a href="lexical/IfcProjectionElement.html">IfcProjectionElement</a>
+</li>
+</ol>
+</li><li number="5.4.3.30">
+<a href="lexical/IfcFeatureElementSubtraction.html">IfcFeatureElementSubtraction</a>
+<ol class="referenced-list">
+<li number="6.6.3.4">
+<a href="lexical/IfcEarthworksCut.html">IfcEarthworksCut</a>
+</li><li number="5.4.3.40">
+<a href="lexical/IfcOpeningElement.html">IfcOpeningElement</a>
+</li><li number="7.11.3.23">
+<a href="lexical/IfcVoidingFeature.html">IfcVoidingFeature</a>
+</li>
+</ol>
+</li><li number="7.11.3.16">
+<a href="lexical/IfcSurfaceFeature.html">IfcSurfaceFeature</a>
+</li>
+</ol>
+</li><li number="5.4.3.31">
+<a href="lexical/IfcFurnishingElement.html">IfcFurnishingElement</a>
+<ol class="referenced-list">
+<li number="6.4.3.2">
+<a href="lexical/IfcFurniture.html">IfcFurniture</a>
+</li><li number="6.4.3.6">
+<a href="lexical/IfcSystemFurnitureElement.html">IfcSystemFurnitureElement</a>
+</li>
+</ol>
+</li><li number="5.4.3.33">
+<a href="lexical/IfcGeographicElement.html">IfcGeographicElement</a>
+</li><li number="6.6.3.10">
+<a href="lexical/IfcGeotechnicalElement.html">IfcGeotechnicalElement</a>
+<ol class="referenced-list">
+<li number="6.6.3.9">
+<a href="lexical/IfcGeotechnicalAssembly.html">IfcGeotechnicalAssembly</a>
+<ol class="referenced-list">
+<li number="6.6.3.1">
+<a href="lexical/IfcBorehole.html">IfcBorehole</a>
+</li><li number="6.6.3.7">
+<a href="lexical/IfcGeomodel.html">IfcGeomodel</a>
+</li><li number="6.6.3.8">
+<a href="lexical/IfcGeoslice.html">IfcGeoslice</a>
+</li>
+</ol>
+</li><li number="6.6.3.11">
+<a href="lexical/IfcGeotechnicalStratum.html">IfcGeotechnicalStratum</a>
+</li>
+</ol>
+</li><li number="5.4.3.75">
+<a href="lexical/IfcTransportationDevice.html">IfcTransportationDevice</a>
+<ol class="referenced-list">
+<li number="5.4.3.73">
+<a href="lexical/IfcTransportElement.html">IfcTransportElement</a>
+</li><li number="5.4.3.77">
+<a href="lexical/IfcVehicle.html">IfcVehicle</a>
+</li>
+</ol>
+</li><li number="5.4.3.81">
+<a href="lexical/IfcVirtualElement.html">IfcVirtualElement</a>
+</li>
+</ol>
+</li><li number="5.4.3.38">
+<a href="lexical/IfcLinearElement.html">IfcLinearElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.2">
+<a href="lexical/IfcAlignmentCant.html">IfcAlignmentCant</a>
+</li><li number="5.4.3.3">
+<a href="lexical/IfcAlignmentHorizontal.html">IfcAlignmentHorizontal</a>
+</li><li number="5.4.3.4">
+<a href="lexical/IfcAlignmentSegment.html">IfcAlignmentSegment</a>
+</li><li number="5.4.3.5">
+<a href="lexical/IfcAlignmentVertical.html">IfcAlignmentVertical</a>
+</li>
+</ol>
+</li><li number="5.4.3.41">
+<a href="lexical/IfcPort.html">IfcPort</a>
+<ol class="referenced-list">
+<li number="6.2.3.8">
+<a href="lexical/IfcDistributionPort.html">IfcDistributionPort</a>
+</li>
+</ol>
+</li><li number="5.4.3.42">
+<a href="lexical/IfcPositioningElement.html">IfcPositioningElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.35">
+<a href="lexical/IfcGrid.html">IfcGrid</a>
+</li><li number="5.4.3.39">
+<a href="lexical/IfcLinearPositioningElement.html">IfcLinearPositioningElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.1">
+<a href="lexical/IfcAlignment.html">IfcAlignment</a>
+</li>
+</ol>
+</li><li number="5.4.3.44">
+<a href="lexical/IfcReferent.html">IfcReferent</a>
+</li>
+</ol>
+</li><li number="5.4.3.66">
+<a href="lexical/IfcSpatialElement.html">IfcSpatialElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.24">
+<a href="lexical/IfcExternalSpatialStructureElement.html">IfcExternalSpatialStructureElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.23">
+<a href="lexical/IfcExternalSpatialElement.html">IfcExternalSpatialElement</a>
+</li>
+</ol>
+</li><li number="5.4.3.68">
+<a href="lexical/IfcSpatialStructureElement.html">IfcSpatialStructureElement</a>
+<ol class="referenced-list">
+<li number="5.4.3.10">
+<a href="lexical/IfcBuildingStorey.html">IfcBuildingStorey</a>
+</li><li number="5.4.3.25">
+<a href="lexical/IfcFacility.html">IfcFacility</a>
+<ol class="referenced-list">
+<li number="5.4.3.7">
+<a href="lexical/IfcBridge.html">IfcBridge</a>
+</li><li number="5.4.3.9">
+<a href="lexical/IfcBuilding.html">IfcBuilding</a>
+</li><li number="7.7.3.5">
+<a href="lexical/IfcMarineFacility.html">IfcMarineFacility</a>
+</li><li number="7.8.3.3">
+<a href="lexical/IfcRailway.html">IfcRailway</a>
+</li><li number="7.9.3.3">
+<a href="lexical/IfcRoad.html">IfcRoad</a>
+</li>
+</ol>
+</li><li number="5.4.3.26">
+<a href="lexical/IfcFacilityPart.html">IfcFacilityPart</a>
+<ol class="referenced-list">
+<li number="5.4.3.8">
+<a href="lexical/IfcBridgePart.html">IfcBridgePart</a>
+</li><li number="5.4.3.27">
+<a href="lexical/IfcFacilityPartCommon.html">IfcFacilityPartCommon</a>
+</li><li number="7.7.3.6">
+<a href="lexical/IfcMarinePart.html">IfcMarinePart</a>
+</li><li number="7.8.3.4">
+<a href="lexical/IfcRailwayPart.html">IfcRailwayPart</a>
+</li><li number="7.9.3.4">
+<a href="lexical/IfcRoadPart.html">IfcRoadPart</a>
+</li>
+</ol>
+</li><li number="5.4.3.63">
+<a href="lexical/IfcSite.html">IfcSite</a>
+</li><li number="5.4.3.64">
+<a href="lexical/IfcSpace.html">IfcSpace</a>
+</li>
+</ol>
+</li><li number="5.4.3.70">
+<a href="lexical/IfcSpatialZone.html">IfcSpatialZone</a>
+</li>
+</ol>
+</li><li number="7.10.3.5">
+<a href="lexical/IfcStructuralActivity.html">IfcStructuralActivity</a>
+<ol class="referenced-list">
+<li number="7.10.3.4">
+<a href="lexical/IfcStructuralAction.html">IfcStructuralAction</a>
+<ol class="referenced-list">
+<li number="7.10.3.8">
+<a href="lexical/IfcStructuralCurveAction.html">IfcStructuralCurveAction</a>
+<ol class="referenced-list">
+<li number="7.10.3.14">
+<a href="lexical/IfcStructuralLinearAction.html">IfcStructuralLinearAction</a>
+</li>
+</ol>
+</li><li number="7.10.3.19">
+<a href="lexical/IfcStructuralPointAction.html">IfcStructuralPointAction</a>
+</li><li number="7.10.3.24">
+<a href="lexical/IfcStructuralSurfaceAction.html">IfcStructuralSurfaceAction</a>
+<ol class="referenced-list">
+<li number="7.10.3.18">
+<a href="lexical/IfcStructuralPlanarAction.html">IfcStructuralPlanarAction</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="7.10.3.22">
+<a href="lexical/IfcStructuralReaction.html">IfcStructuralReaction</a>
+<ol class="referenced-list">
+<li number="7.10.3.12">
+<a href="lexical/IfcStructuralCurveReaction.html">IfcStructuralCurveReaction</a>
+</li><li number="7.10.3.21">
+<a href="lexical/IfcStructuralPointReaction.html">IfcStructuralPointReaction</a>
+</li><li number="7.10.3.28">
+<a href="lexical/IfcStructuralSurfaceReaction.html">IfcStructuralSurfaceReaction</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="7.10.3.13">
+<a href="lexical/IfcStructuralItem.html">IfcStructuralItem</a>
+<ol class="referenced-list">
+<li number="7.10.3.7">
+<a href="lexical/IfcStructuralConnection.html">IfcStructuralConnection</a>
+<ol class="referenced-list">
+<li number="7.10.3.9">
+<a href="lexical/IfcStructuralCurveConnection.html">IfcStructuralCurveConnection</a>
+</li><li number="7.10.3.20">
+<a href="lexical/IfcStructuralPointConnection.html">IfcStructuralPointConnection</a>
+</li><li number="7.10.3.25">
+<a href="lexical/IfcStructuralSurfaceConnection.html">IfcStructuralSurfaceConnection</a>
+</li>
+</ol>
+</li><li number="7.10.3.17">
+<a href="lexical/IfcStructuralMember.html">IfcStructuralMember</a>
+<ol class="referenced-list">
+<li number="7.10.3.10">
+<a href="lexical/IfcStructuralCurveMember.html">IfcStructuralCurveMember</a>
+<ol class="referenced-list">
+<li number="7.10.3.11">
+<a href="lexical/IfcStructuralCurveMemberVarying.html">IfcStructuralCurveMemberVarying</a>
+</li>
+</ol>
+</li><li number="7.10.3.26">
+<a href="lexical/IfcStructuralSurfaceMember.html">IfcStructuralSurfaceMember</a>
+<ol class="referenced-list">
+<li number="7.10.3.27">
+<a href="lexical/IfcStructuralSurfaceMemberVarying.html">IfcStructuralSurfaceMemberVarying</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.43">
+<a href="lexical/IfcResource.html">IfcResource</a>
+<ol class="referenced-list">
+<li number="7.3.3.7">
+<a href="lexical/IfcConstructionResource.html">IfcConstructionResource</a>
+<ol class="referenced-list">
+<li number="7.3.3.1">
+<a href="lexical/IfcConstructionEquipmentResource.html">IfcConstructionEquipmentResource</a>
+</li><li number="7.3.3.3">
+<a href="lexical/IfcConstructionMaterialResource.html">IfcConstructionMaterialResource</a>
+</li><li number="7.3.3.5">
+<a href="lexical/IfcConstructionProductResource.html">IfcConstructionProductResource</a>
+</li><li number="7.3.3.9">
+<a href="lexical/IfcCrewResource.html">IfcCrewResource</a>
+</li><li number="7.3.3.11">
+<a href="lexical/IfcLaborResource.html">IfcLaborResource</a>
+</li><li number="7.3.3.13">
+<a href="lexical/IfcSubContractResource.html">IfcSubContractResource</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.46">
+<a href="lexical/IfcTypeObject.html">IfcTypeObject</a>
+<ol class="referenced-list">
+<li number="5.1.3.47">
+<a href="lexical/IfcTypeProcess.html">IfcTypeProcess</a>
+<ol class="referenced-list">
+<li number="5.3.3.2">
+<a href="lexical/IfcEventType.html">IfcEventType</a>
+</li><li number="5.3.3.4">
+<a href="lexical/IfcProcedureType.html">IfcProcedureType</a>
+</li><li number="5.3.3.7">
+<a href="lexical/IfcTaskType.html">IfcTaskType</a>
+</li>
+</ol>
+</li><li number="5.1.3.48">
+<a href="lexical/IfcTypeProduct.html">IfcTypeProduct</a>
+<ol class="referenced-list">
+<li number="5.4.3.22">
+<a href="lexical/IfcElementType.html">IfcElementType</a>
+<ol class="referenced-list">
+<li number="5.4.3.12">
+<a href="lexical/IfcBuiltElementType.html">IfcBuiltElementType</a>
+<ol class="referenced-list">
+<li number="6.1.3.2">
+<a href="lexical/IfcBeamType.html">IfcBeamType</a>
+</li><li number="6.1.3.4">
+<a href="lexical/IfcBearingType.html">IfcBearingType</a>
+</li><li number="6.1.3.6">
+<a href="lexical/IfcBuildingElementProxyType.html">IfcBuildingElementProxyType</a>
+</li><li number="6.1.3.9">
+<a href="lexical/IfcChimneyType.html">IfcChimneyType</a>
+</li><li number="6.1.3.11">
+<a href="lexical/IfcColumnType.html">IfcColumnType</a>
+</li><li number="6.6.3.3">
+<a href="lexical/IfcCourseType.html">IfcCourseType</a>
+</li><li number="6.1.3.13">
+<a href="lexical/IfcCoveringType.html">IfcCoveringType</a>
+</li><li number="6.1.3.15">
+<a href="lexical/IfcCurtainWallType.html">IfcCurtainWallType</a>
+</li><li number="7.11.3.4">
+<a href="lexical/IfcDeepFoundationType.html">IfcDeepFoundationType</a>
+<ol class="referenced-list">
+<li number="7.11.3.2">
+<a href="lexical/IfcCaissonFoundationType.html">IfcCaissonFoundationType</a>
+</li><li number="7.11.3.8">
+<a href="lexical/IfcPileType.html">IfcPileType</a>
+</li>
+</ol>
+</li><li number="6.1.3.17">
+<a href="lexical/IfcDoorType.html">IfcDoorType</a>
+</li><li number="7.11.3.6">
+<a href="lexical/IfcFootingType.html">IfcFootingType</a>
+</li><li number="7.9.3.2">
+<a href="lexical/IfcKerbType.html">IfcKerbType</a>
+</li><li number="6.1.3.19">
+<a href="lexical/IfcMemberType.html">IfcMemberType</a>
+</li><li number="7.7.3.8">
+<a href="lexical/IfcMooringDeviceType.html">IfcMooringDeviceType</a>
+</li><li number="7.7.3.10">
+<a href="lexical/IfcNavigationElementType.html">IfcNavigationElementType</a>
+</li><li number="6.6.3.13">
+<a href="lexical/IfcPavementType.html">IfcPavementType</a>
+</li><li number="6.1.3.21">
+<a href="lexical/IfcPlateType.html">IfcPlateType</a>
+</li><li number="7.8.3.2">
+<a href="lexical/IfcRailType.html">IfcRailType</a>
+</li><li number="6.1.3.23">
+<a href="lexical/IfcRailingType.html">IfcRailingType</a>
+</li><li number="6.1.3.26">
+<a href="lexical/IfcRampFlightType.html">IfcRampFlightType</a>
+</li><li number="6.1.3.27">
+<a href="lexical/IfcRampType.html">IfcRampType</a>
+</li><li number="6.1.3.32">
+<a href="lexical/IfcRoofType.html">IfcRoofType</a>
+</li><li number="6.1.3.34">
+<a href="lexical/IfcShadingDeviceType.html">IfcShadingDeviceType</a>
+</li><li number="6.1.3.36">
+<a href="lexical/IfcSlabType.html">IfcSlabType</a>
+</li><li number="6.1.3.39">
+<a href="lexical/IfcStairFlightType.html">IfcStairFlightType</a>
+</li><li number="6.1.3.40">
+<a href="lexical/IfcStairType.html">IfcStairType</a>
+</li><li number="7.8.3.6">
+<a href="lexical/IfcTrackElementType.html">IfcTrackElementType</a>
+</li><li number="6.1.3.43">
+<a href="lexical/IfcWallType.html">IfcWallType</a>
+</li><li number="6.1.3.45">
+<a href="lexical/IfcWindowType.html">IfcWindowType</a>
+</li>
+</ol>
+</li><li number="5.4.3.15">
+<a href="lexical/IfcCivilElementType.html">IfcCivilElementType</a>
+</li><li number="5.4.3.17">
+<a href="lexical/IfcDistributionElementType.html">IfcDistributionElementType</a>
+<ol class="referenced-list">
+<li number="6.2.3.5">
+<a href="lexical/IfcDistributionControlElementType.html">IfcDistributionControlElementType</a>
+<ol class="referenced-list">
+<li number="7.2.3.2">
+<a href="lexical/IfcActuatorType.html">IfcActuatorType</a>
+</li><li number="7.2.3.4">
+<a href="lexical/IfcAlarmType.html">IfcAlarmType</a>
+</li><li number="7.2.3.6">
+<a href="lexical/IfcControllerType.html">IfcControllerType</a>
+</li><li number="7.2.3.8">
+<a href="lexical/IfcFlowInstrumentType.html">IfcFlowInstrumentType</a>
+</li><li number="7.4.3.43">
+<a href="lexical/IfcProtectiveDeviceTrippingUnitType.html">IfcProtectiveDeviceTrippingUnitType</a>
+</li><li number="7.2.3.10">
+<a href="lexical/IfcSensorType.html">IfcSensorType</a>
+</li><li number="7.2.3.12">
+<a href="lexical/IfcUnitaryControlElementType.html">IfcUnitaryControlElementType</a>
+</li>
+</ol>
+</li><li number="6.2.3.7">
+<a href="lexical/IfcDistributionFlowElementType.html">IfcDistributionFlowElementType</a>
+<ol class="referenced-list">
+<li number="6.2.3.2">
+<a href="lexical/IfcDistributionChamberElementType.html">IfcDistributionChamberElementType</a>
+</li><li number="6.2.3.11">
+<a href="lexical/IfcEnergyConversionDeviceType.html">IfcEnergyConversionDeviceType</a>
+<ol class="referenced-list">
+<li number="7.5.3.6">
+<a href="lexical/IfcAirToAirHeatRecoveryType.html">IfcAirToAirHeatRecoveryType</a>
+</li><li number="7.5.3.8">
+<a href="lexical/IfcBoilerType.html">IfcBoilerType</a>
+</li><li number="7.5.3.10">
+<a href="lexical/IfcBurnerType.html">IfcBurnerType</a>
+</li><li number="7.5.3.12">
+<a href="lexical/IfcChillerType.html">IfcChillerType</a>
+</li><li number="7.5.3.14">
+<a href="lexical/IfcCoilType.html">IfcCoilType</a>
+</li><li number="7.5.3.18">
+<a href="lexical/IfcCondenserType.html">IfcCondenserType</a>
+</li><li number="7.5.3.20">
+<a href="lexical/IfcCooledBeamType.html">IfcCooledBeamType</a>
+</li><li number="7.5.3.22">
+<a href="lexical/IfcCoolingTowerType.html">IfcCoolingTowerType</a>
+</li><li number="7.4.3.24">
+<a href="lexical/IfcElectricGeneratorType.html">IfcElectricGeneratorType</a>
+</li><li number="7.4.3.26">
+<a href="lexical/IfcElectricMotorType.html">IfcElectricMotorType</a>
+</li><li number="7.5.3.32">
+<a href="lexical/IfcEngineType.html">IfcEngineType</a>
+</li><li number="7.5.3.34">
+<a href="lexical/IfcEvaporativeCoolerType.html">IfcEvaporativeCoolerType</a>
+</li><li number="7.5.3.36">
+<a href="lexical/IfcEvaporatorType.html">IfcEvaporatorType</a>
+</li><li number="7.5.3.44">
+<a href="lexical/IfcHeatExchangerType.html">IfcHeatExchangerType</a>
+</li><li number="7.5.3.46">
+<a href="lexical/IfcHumidifierType.html">IfcHumidifierType</a>
+</li><li number="7.4.3.38">
+<a href="lexical/IfcMotorConnectionType.html">IfcMotorConnectionType</a>
+</li><li number="7.4.3.46">
+<a href="lexical/IfcSolarDeviceType.html">IfcSolarDeviceType</a>
+</li><li number="7.4.3.50">
+<a href="lexical/IfcTransformerType.html">IfcTransformerType</a>
+</li><li number="7.5.3.60">
+<a href="lexical/IfcTubeBundleType.html">IfcTubeBundleType</a>
+</li><li number="7.5.3.62">
+<a href="lexical/IfcUnitaryEquipmentType.html">IfcUnitaryEquipmentType</a>
+</li>
+</ol>
+</li><li number="6.2.3.13">
+<a href="lexical/IfcFlowControllerType.html">IfcFlowControllerType</a>
+<ol class="referenced-list">
+<li number="7.5.3.3">
+<a href="lexical/IfcAirTerminalBoxType.html">IfcAirTerminalBoxType</a>
+</li><li number="7.5.3.24">
+<a href="lexical/IfcDamperType.html">IfcDamperType</a>
+</li><li number="7.4.3.14">
+<a href="lexical/IfcDistributionBoardType.html">IfcDistributionBoardType</a>
+</li><li number="7.4.3.18">
+<a href="lexical/IfcElectricDistributionBoardType.html">IfcElectricDistributionBoardType</a>
+</li><li number="7.4.3.28">
+<a href="lexical/IfcElectricTimeControlType.html">IfcElectricTimeControlType</a>
+</li><li number="7.5.3.42">
+<a href="lexical/IfcFlowMeterType.html">IfcFlowMeterType</a>
+</li><li number="7.4.3.44">
+<a href="lexical/IfcProtectiveDeviceType.html">IfcProtectiveDeviceType</a>
+</li><li number="7.4.3.48">
+<a href="lexical/IfcSwitchingDeviceType.html">IfcSwitchingDeviceType</a>
+</li><li number="7.5.3.64">
+<a href="lexical/IfcValveType.html">IfcValveType</a>
+</li>
+</ol>
+</li><li number="6.2.3.15">
+<a href="lexical/IfcFlowFittingType.html">IfcFlowFittingType</a>
+<ol class="referenced-list">
+<li number="7.4.3.4">
+<a href="lexical/IfcCableCarrierFittingType.html">IfcCableCarrierFittingType</a>
+</li><li number="7.4.3.8">
+<a href="lexical/IfcCableFittingType.html">IfcCableFittingType</a>
+</li><li number="7.5.3.26">
+<a href="lexical/IfcDuctFittingType.html">IfcDuctFittingType</a>
+</li><li number="7.4.3.30">
+<a href="lexical/IfcJunctionBoxType.html">IfcJunctionBoxType</a>
+</li><li number="7.5.3.50">
+<a href="lexical/IfcPipeFittingType.html">IfcPipeFittingType</a>
+</li>
+</ol>
+</li><li number="6.2.3.17">
+<a href="lexical/IfcFlowMovingDeviceType.html">IfcFlowMovingDeviceType</a>
+<ol class="referenced-list">
+<li number="7.5.3.16">
+<a href="lexical/IfcCompressorType.html">IfcCompressorType</a>
+</li><li number="7.5.3.38">
+<a href="lexical/IfcFanType.html">IfcFanType</a>
+</li><li number="7.5.3.54">
+<a href="lexical/IfcPumpType.html">IfcPumpType</a>
+</li>
+</ol>
+</li><li number="6.2.3.19">
+<a href="lexical/IfcFlowSegmentType.html">IfcFlowSegmentType</a>
+<ol class="referenced-list">
+<li number="7.4.3.6">
+<a href="lexical/IfcCableCarrierSegmentType.html">IfcCableCarrierSegmentType</a>
+</li><li number="7.4.3.10">
+<a href="lexical/IfcCableSegmentType.html">IfcCableSegmentType</a>
+</li><li number="7.7.3.2">
+<a href="lexical/IfcConveyorSegmentType.html">IfcConveyorSegmentType</a>
+</li><li number="7.5.3.28">
+<a href="lexical/IfcDuctSegmentType.html">IfcDuctSegmentType</a>
+</li><li number="7.5.3.52">
+<a href="lexical/IfcPipeSegmentType.html">IfcPipeSegmentType</a>
+</li>
+</ol>
+</li><li number="6.2.3.21">
+<a href="lexical/IfcFlowStorageDeviceType.html">IfcFlowStorageDeviceType</a>
+<ol class="referenced-list">
+<li number="7.4.3.20">
+<a href="lexical/IfcElectricFlowStorageDeviceType.html">IfcElectricFlowStorageDeviceType</a>
+</li><li number="7.5.3.58">
+<a href="lexical/IfcTankType.html">IfcTankType</a>
+</li>
+</ol>
+</li><li number="6.2.3.23">
+<a href="lexical/IfcFlowTerminalType.html">IfcFlowTerminalType</a>
+<ol class="referenced-list">
+<li number="7.5.3.4">
+<a href="lexical/IfcAirTerminalType.html">IfcAirTerminalType</a>
+</li><li number="7.4.3.2">
+<a href="lexical/IfcAudioVisualApplianceType.html">IfcAudioVisualApplianceType</a>
+</li><li number="7.4.3.12">
+<a href="lexical/IfcCommunicationsApplianceType.html">IfcCommunicationsApplianceType</a>
+</li><li number="7.4.3.16">
+<a href="lexical/IfcElectricApplianceType.html">IfcElectricApplianceType</a>
+</li><li number="7.6.3.2">
+<a href="lexical/IfcFireSuppressionTerminalType.html">IfcFireSuppressionTerminalType</a>
+</li><li number="7.4.3.32">
+<a href="lexical/IfcLampType.html">IfcLampType</a>
+</li><li number="7.4.3.34">
+<a href="lexical/IfcLightFixtureType.html">IfcLightFixtureType</a>
+</li><li number="7.7.3.4">
+<a href="lexical/IfcLiquidTerminalType.html">IfcLiquidTerminalType</a>
+</li><li number="7.5.3.48">
+<a href="lexical/IfcMedicalDeviceType.html">IfcMedicalDeviceType</a>
+</li><li number="7.4.3.36">
+<a href="lexical/IfcMobileTelecommunicationsApplianceType.html">IfcMobileTelecommunicationsApplianceType</a>
+</li><li number="7.4.3.40">
+<a href="lexical/IfcOutletType.html">IfcOutletType</a>
+</li><li number="7.6.3.6">
+<a href="lexical/IfcSanitaryTerminalType.html">IfcSanitaryTerminalType</a>
+</li><li number="6.6.3.18">
+<a href="lexical/IfcSignalType.html">IfcSignalType</a>
+</li><li number="7.5.3.56">
+<a href="lexical/IfcSpaceHeaterType.html">IfcSpaceHeaterType</a>
+</li><li number="7.6.3.8">
+<a href="lexical/IfcStackTerminalType.html">IfcStackTerminalType</a>
+</li><li number="7.6.3.10">
+<a href="lexical/IfcWasteTerminalType.html">IfcWasteTerminalType</a>
+</li>
+</ol>
+</li><li number="6.2.3.25">
+<a href="lexical/IfcFlowTreatmentDeviceType.html">IfcFlowTreatmentDeviceType</a>
+<ol class="referenced-list">
+<li number="7.5.3.30">
+<a href="lexical/IfcDuctSilencerType.html">IfcDuctSilencerType</a>
+</li><li number="7.4.3.22">
+<a href="lexical/IfcElectricFlowTreatmentDeviceType.html">IfcElectricFlowTreatmentDeviceType</a>
+</li><li number="7.5.3.40">
+<a href="lexical/IfcFilterType.html">IfcFilterType</a>
+</li><li number="7.6.3.4">
+<a href="lexical/IfcInterceptorType.html">IfcInterceptorType</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.4.3.20">
+<a href="lexical/IfcElementAssemblyType.html">IfcElementAssemblyType</a>
+</li><li number="6.3.3.6">
+<a href="lexical/IfcElementComponentType.html">IfcElementComponentType</a>
+<ol class="referenced-list">
+<li number="6.3.3.2">
+<a href="lexical/IfcBuildingElementPartType.html">IfcBuildingElementPartType</a>
+</li><li number="6.3.3.4">
+<a href="lexical/IfcDiscreteAccessoryType.html">IfcDiscreteAccessoryType</a>
+</li><li number="6.3.3.8">
+<a href="lexical/IfcFastenerType.html">IfcFastenerType</a>
+</li><li number="5.4.3.37">
+<a href="lexical/IfcImpactProtectionDeviceType.html">IfcImpactProtectionDeviceType</a>
+</li><li number="6.3.3.10">
+<a href="lexical/IfcMechanicalFastenerType.html">IfcMechanicalFastenerType</a>
+</li><li number="7.11.3.13">
+<a href="lexical/IfcReinforcingElementType.html">IfcReinforcingElementType</a>
+<ol class="referenced-list">
+<li number="7.11.3.11">
+<a href="lexical/IfcReinforcingBarType.html">IfcReinforcingBarType</a>
+</li><li number="7.11.3.15">
+<a href="lexical/IfcReinforcingMeshType.html">IfcReinforcingMeshType</a>
+</li><li number="7.11.3.19">
+<a href="lexical/IfcTendonAnchorType.html">IfcTendonAnchorType</a>
+</li><li number="7.11.3.21">
+<a href="lexical/IfcTendonConduitType.html">IfcTendonConduitType</a>
+</li><li number="7.11.3.22">
+<a href="lexical/IfcTendonType.html">IfcTendonType</a>
+</li>
+</ol>
+</li><li number="6.6.3.16">
+<a href="lexical/IfcSignType.html">IfcSignType</a>
+</li><li number="5.4.3.80">
+<a href="lexical/IfcVibrationDamperType.html">IfcVibrationDamperType</a>
+</li><li number="7.5.3.66">
+<a href="lexical/IfcVibrationIsolatorType.html">IfcVibrationIsolatorType</a>
+</li>
+</ol>
+</li><li number="5.4.3.32">
+<a href="lexical/IfcFurnishingElementType.html">IfcFurnishingElementType</a>
+<ol class="referenced-list">
+<li number="6.4.3.3">
+<a href="lexical/IfcFurnitureType.html">IfcFurnitureType</a>
+</li><li number="6.4.3.7">
+<a href="lexical/IfcSystemFurnitureElementType.html">IfcSystemFurnitureElementType</a>
+</li>
+</ol>
+</li><li number="5.4.3.34">
+<a href="lexical/IfcGeographicElementType.html">IfcGeographicElementType</a>
+</li><li number="5.4.3.76">
+<a href="lexical/IfcTransportationDeviceType.html">IfcTransportationDeviceType</a>
+<ol class="referenced-list">
+<li number="5.4.3.74">
+<a href="lexical/IfcTransportElementType.html">IfcTransportElementType</a>
+</li><li number="5.4.3.78">
+<a href="lexical/IfcVehicleType.html">IfcVehicleType</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.4.3.67">
+<a href="lexical/IfcSpatialElementType.html">IfcSpatialElementType</a>
+<ol class="referenced-list">
+<li number="5.4.3.69">
+<a href="lexical/IfcSpatialStructureElementType.html">IfcSpatialStructureElementType</a>
+<ol class="referenced-list">
+<li number="5.4.3.65">
+<a href="lexical/IfcSpaceType.html">IfcSpaceType</a>
+</li>
+</ol>
+</li><li number="5.4.3.71">
+<a href="lexical/IfcSpatialZoneType.html">IfcSpatialZoneType</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.49">
+<a href="lexical/IfcTypeResource.html">IfcTypeResource</a>
+<ol class="referenced-list">
+<li number="7.3.3.8">
+<a href="lexical/IfcConstructionResourceType.html">IfcConstructionResourceType</a>
+<ol class="referenced-list">
+<li number="7.3.3.2">
+<a href="lexical/IfcConstructionEquipmentResourceType.html">IfcConstructionEquipmentResourceType</a>
+</li><li number="7.3.3.4">
+<a href="lexical/IfcConstructionMaterialResourceType.html">IfcConstructionMaterialResourceType</a>
+</li><li number="7.3.3.6">
+<a href="lexical/IfcConstructionProductResourceType.html">IfcConstructionProductResourceType</a>
+</li><li number="7.3.3.10">
+<a href="lexical/IfcCrewResourceType.html">IfcCrewResourceType</a>
+</li><li number="7.3.3.12">
+<a href="lexical/IfcLaborResourceType.html">IfcLaborResourceType</a>
+</li><li number="7.3.3.14">
+<a href="lexical/IfcSubContractResourceType.html">IfcSubContractResourceType</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.13">
+<a href="lexical/IfcPropertyDefinition.html">IfcPropertyDefinition</a>
+<ol class="referenced-list">
+<li number="5.1.3.15">
+<a href="lexical/IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>
+<ol class="referenced-list">
+<li number="5.1.3.8">
+<a href="lexical/IfcPreDefinedPropertySet.html">IfcPreDefinedPropertySet</a>
+<ol class="referenced-list">
+<li number="7.1.3.1">
+<a href="lexical/IfcDoorLiningProperties.html">IfcDoorLiningProperties</a>
+</li><li number="7.1.3.2">
+<a href="lexical/IfcDoorPanelProperties.html">IfcDoorPanelProperties</a>
+</li><li number="7.1.3.3">
+<a href="lexical/IfcPermeableCoveringProperties.html">IfcPermeableCoveringProperties</a>
+</li><li number="7.11.3.9">
+<a href="lexical/IfcReinforcementDefinitionProperties.html">IfcReinforcementDefinitionProperties</a>
+</li><li number="7.1.3.4">
+<a href="lexical/IfcWindowLiningProperties.html">IfcWindowLiningProperties</a>
+</li><li number="7.1.3.5">
+<a href="lexical/IfcWindowPanelProperties.html">IfcWindowPanelProperties</a>
+</li>
+</ol>
+</li><li number="5.1.3.14">
+<a href="lexical/IfcPropertySet.html">IfcPropertySet</a>
+</li><li number="5.1.3.19">
+<a href="lexical/IfcQuantitySet.html">IfcQuantitySet</a>
+<ol class="referenced-list">
+<li number="5.4.3.21">
+<a href="lexical/IfcElementQuantity.html">IfcElementQuantity</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.18">
+<a href="lexical/IfcPropertyTemplateDefinition.html">IfcPropertyTemplateDefinition</a>
+<ol class="referenced-list">
+<li number="5.1.3.16">
+<a href="lexical/IfcPropertySetTemplate.html">IfcPropertySetTemplate</a>
+</li><li number="5.1.3.17">
+<a href="lexical/IfcPropertyTemplate.html">IfcPropertyTemplate</a>
+<ol class="referenced-list">
+<li number="5.1.3.2">
+<a href="lexical/IfcComplexPropertyTemplate.html">IfcComplexPropertyTemplate</a>
+</li><li number="5.1.3.45">
+<a href="lexical/IfcSimplePropertyTemplate.html">IfcSimplePropertyTemplate</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.42">
+<a href="lexical/IfcRelationship.html">IfcRelationship</a>
+<ol class="referenced-list">
+<li number="5.1.3.21">
+<a href="lexical/IfcRelAssigns.html">IfcRelAssigns</a>
+<ol class="referenced-list">
+<li number="5.1.3.22">
+<a href="lexical/IfcRelAssignsToActor.html">IfcRelAssignsToActor</a>
+</li><li number="5.1.3.23">
+<a href="lexical/IfcRelAssignsToControl.html">IfcRelAssignsToControl</a>
+</li><li number="5.1.3.24">
+<a href="lexical/IfcRelAssignsToGroup.html">IfcRelAssignsToGroup</a>
+<ol class="referenced-list">
+<li number="5.1.3.25">
+<a href="lexical/IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a>
+</li>
+</ol>
+</li><li number="5.1.3.26">
+<a href="lexical/IfcRelAssignsToProcess.html">IfcRelAssignsToProcess</a>
+</li><li number="5.1.3.27">
+<a href="lexical/IfcRelAssignsToProduct.html">IfcRelAssignsToProduct</a>
+</li><li number="5.1.3.28">
+<a href="lexical/IfcRelAssignsToResource.html">IfcRelAssignsToResource</a>
+</li>
+</ol>
+</li><li number="5.1.3.29">
+<a href="lexical/IfcRelAssociates.html">IfcRelAssociates</a>
+<ol class="referenced-list">
+<li number="5.2.3.2">
+<a href="lexical/IfcRelAssociatesApproval.html">IfcRelAssociatesApproval</a>
+</li><li number="5.1.3.30">
+<a href="lexical/IfcRelAssociatesClassification.html">IfcRelAssociatesClassification</a>
+</li><li number="5.2.3.3">
+<a href="lexical/IfcRelAssociatesConstraint.html">IfcRelAssociatesConstraint</a>
+</li><li number="5.1.3.31">
+<a href="lexical/IfcRelAssociatesDocument.html">IfcRelAssociatesDocument</a>
+</li><li number="5.1.3.32">
+<a href="lexical/IfcRelAssociatesLibrary.html">IfcRelAssociatesLibrary</a>
+</li><li number="5.4.3.46">
+<a href="lexical/IfcRelAssociatesMaterial.html">IfcRelAssociatesMaterial</a>
+</li><li number="5.4.3.47">
+<a href="lexical/IfcRelAssociatesProfileDef.html">IfcRelAssociatesProfileDef</a>
+</li>
+</ol>
+</li><li number="5.1.3.33">
+<a href="lexical/IfcRelConnects.html">IfcRelConnects</a>
+<ol class="referenced-list">
+<li number="5.4.3.48">
+<a href="lexical/IfcRelConnectsElements.html">IfcRelConnectsElements</a>
+<ol class="referenced-list">
+<li number="6.1.3.28">
+<a href="lexical/IfcRelConnectsPathElements.html">IfcRelConnectsPathElements</a>
+</li><li number="5.4.3.51">
+<a href="lexical/IfcRelConnectsWithRealizingElements.html">IfcRelConnectsWithRealizingElements</a>
+</li>
+</ol>
+</li><li number="5.4.3.49">
+<a href="lexical/IfcRelConnectsPortToElement.html">IfcRelConnectsPortToElement</a>
+</li><li number="5.4.3.50">
+<a href="lexical/IfcRelConnectsPorts.html">IfcRelConnectsPorts</a>
+</li><li number="7.10.3.1">
+<a href="lexical/IfcRelConnectsStructuralActivity.html">IfcRelConnectsStructuralActivity</a>
+</li><li number="7.10.3.2">
+<a href="lexical/IfcRelConnectsStructuralMember.html">IfcRelConnectsStructuralMember</a>
+<ol class="referenced-list">
+<li number="7.10.3.3">
+<a href="lexical/IfcRelConnectsWithEccentricity.html">IfcRelConnectsWithEccentricity</a>
+</li>
+</ol>
+</li><li number="5.4.3.52">
+<a href="lexical/IfcRelContainedInSpatialStructure.html">IfcRelContainedInSpatialStructure</a>
+</li><li number="6.1.3.29">
+<a href="lexical/IfcRelCoversBldgElements.html">IfcRelCoversBldgElements</a>
+</li><li number="6.1.3.30">
+<a href="lexical/IfcRelCoversSpaces.html">IfcRelCoversSpaces</a>
+</li><li number="5.4.3.53">
+<a href="lexical/IfcRelFillsElement.html">IfcRelFillsElement</a>
+</li><li number="6.2.3.26">
+<a href="lexical/IfcRelFlowControlElements.html">IfcRelFlowControlElements</a>
+</li><li number="5.4.3.54">
+<a href="lexical/IfcRelInterferesElements.html">IfcRelInterferesElements</a>
+</li><li number="5.4.3.55">
+<a href="lexical/IfcRelPositions.html">IfcRelPositions</a>
+</li><li number="5.4.3.57">
+<a href="lexical/IfcRelReferencedInSpatialStructure.html">IfcRelReferencedInSpatialStructure</a>
+</li><li number="5.3.3.5">
+<a href="lexical/IfcRelSequence.html">IfcRelSequence</a>
+</li><li number="5.4.3.58">
+<a href="lexical/IfcRelServicesBuildings.html">IfcRelServicesBuildings</a>
+</li><li number="5.4.3.59">
+<a href="lexical/IfcRelSpaceBoundary.html">IfcRelSpaceBoundary</a>
+<ol class="referenced-list">
+<li number="5.4.3.60">
+<a href="lexical/IfcRelSpaceBoundary1stLevel.html">IfcRelSpaceBoundary1stLevel</a>
+<ol class="referenced-list">
+<li number="5.4.3.61">
+<a href="lexical/IfcRelSpaceBoundary2ndLevel.html">IfcRelSpaceBoundary2ndLevel</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="5.1.3.34">
+<a href="lexical/IfcRelDeclares.html">IfcRelDeclares</a>
+</li><li number="5.1.3.35">
+<a href="lexical/IfcRelDecomposes.html">IfcRelDecomposes</a>
+<ol class="referenced-list">
+<li number="5.4.3.45">
+<a href="lexical/IfcRelAdheresToElement.html">IfcRelAdheresToElement</a>
+</li><li number="5.1.3.20">
+<a href="lexical/IfcRelAggregates.html">IfcRelAggregates</a>
+</li><li number="5.1.3.41">
+<a href="lexical/IfcRelNests.html">IfcRelNests</a>
+</li><li number="5.4.3.56">
+<a href="lexical/IfcRelProjectsElement.html">IfcRelProjectsElement</a>
+</li><li number="5.4.3.62">
+<a href="lexical/IfcRelVoidsElement.html">IfcRelVoidsElement</a>
+</li>
+</ol>
+</li><li number="5.1.3.36">
+<a href="lexical/IfcRelDefines.html">IfcRelDefines</a>
+<ol class="referenced-list">
+<li number="5.1.3.37">
+<a href="lexical/IfcRelDefinesByObject.html">IfcRelDefinesByObject</a>
+</li><li number="5.1.3.38">
+<a href="lexical/IfcRelDefinesByProperties.html">IfcRelDefinesByProperties</a>
+</li><li number="5.1.3.39">
+<a href="lexical/IfcRelDefinesByTemplate.html">IfcRelDefinesByTemplate</a>
+</li><li number="5.1.3.40">
+<a href="lexical/IfcRelDefinesByType.html">IfcRelDefinesByType</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.5.3.8">
+<a href="lexical/IfcSchedulingTime.html">IfcSchedulingTime</a>
+<ol class="referenced-list">
+<li number="8.5.3.1">
+<a href="lexical/IfcEventTime.html">IfcEventTime</a>
+</li><li number="8.5.3.4">
+<a href="lexical/IfcLagTime.html">IfcLagTime</a>
+</li><li number="8.5.3.7">
+<a href="lexical/IfcResourceTime.html">IfcResourceTime</a>
+</li><li number="8.5.3.9">
+<a href="lexical/IfcTaskTime.html">IfcTaskTime</a>
+<ol class="referenced-list">
+<li number="8.5.3.10">
+<a href="lexical/IfcTaskTimeRecurring.html">IfcTaskTimeRecurring</a>
+</li>
+</ol>
+</li><li number="8.5.3.14">
+<a href="lexical/IfcWorkTime.html">IfcWorkTime</a>
+</li>
+</ol>
+</li><li number="8.18.3.15">
+<a href="lexical/IfcShapeAspect.html">IfcShapeAspect</a>
+</li><li number="8.19.3.8">
+<a href="lexical/IfcStructuralConnectionCondition.html">IfcStructuralConnectionCondition</a>
+<ol class="referenced-list">
+<li number="8.19.3.6">
+<a href="lexical/IfcFailureConnectionCondition.html">IfcFailureConnectionCondition</a>
+</li><li number="8.19.3.7">
+<a href="lexical/IfcSlippageConnectionCondition.html">IfcSlippageConnectionCondition</a>
+</li>
+</ol>
+</li><li number="8.19.3.9">
+<a href="lexical/IfcStructuralLoad.html">IfcStructuralLoad</a>
+<ol class="referenced-list">
+<li number="8.19.3.10">
+<a href="lexical/IfcStructuralLoadConfiguration.html">IfcStructuralLoadConfiguration</a>
+</li><li number="8.19.3.12">
+<a href="lexical/IfcStructuralLoadOrResult.html">IfcStructuralLoadOrResult</a>
+<ol class="referenced-list">
+<li number="8.19.3.18">
+<a href="lexical/IfcStructuralLoadStatic.html">IfcStructuralLoadStatic</a>
+<ol class="referenced-list">
+<li number="8.19.3.11">
+<a href="lexical/IfcStructuralLoadLinearForce.html">IfcStructuralLoadLinearForce</a>
+</li><li number="8.19.3.13">
+<a href="lexical/IfcStructuralLoadPlanarForce.html">IfcStructuralLoadPlanarForce</a>
+</li><li number="8.19.3.14">
+<a href="lexical/IfcStructuralLoadSingleDisplacement.html">IfcStructuralLoadSingleDisplacement</a>
+<ol class="referenced-list">
+<li number="8.19.3.15">
+<a href="lexical/IfcStructuralLoadSingleDisplacementDistortion.html">IfcStructuralLoadSingleDisplacementDistortion</a>
+</li>
+</ol>
+</li><li number="8.19.3.16">
+<a href="lexical/IfcStructuralLoadSingleForce.html">IfcStructuralLoadSingleForce</a>
+<ol class="referenced-list">
+<li number="8.19.3.17">
+<a href="lexical/IfcStructuralLoadSingleForceWarping.html">IfcStructuralLoadSingleForceWarping</a>
+</li>
+</ol>
+</li><li number="8.19.3.19">
+<a href="lexical/IfcStructuralLoadTemperature.html">IfcStructuralLoadTemperature</a>
+</li>
+</ol>
+</li><li number="8.19.3.20">
+<a href="lexical/IfcSurfaceReinforcementArea.html">IfcSurfaceReinforcementArea</a>
+</li>
+</ol>
+</li>
+</ol>
+</li><li number="8.21.3.3">
+<a href="lexical/IfcTable.html">IfcTable</a>
+</li><li number="8.21.3.4">
+<a href="lexical/IfcTableColumn.html">IfcTableColumn</a>
+</li><li number="8.21.3.5">
+<a href="lexical/IfcTableRow.html">IfcTableRow</a>
+</li><li number="8.12.3.42">
+<a href="lexical/IfcTextureCoordinateIndices.html">IfcTextureCoordinateIndices</a>
+<ol class="referenced-list">
+<li number="8.12.3.43">
+<a href="lexical/IfcTextureCoordinateIndicesWithVoids.html">IfcTextureCoordinateIndicesWithVoids</a>
+</li>
+</ol>
+</li><li number="8.5.3.11">
+<a href="lexical/IfcTimePeriod.html">IfcTimePeriod</a>
+</li><li number="8.5.3.12">
+<a href="lexical/IfcTimeSeries.html">IfcTimeSeries</a>
+<ol class="referenced-list">
+<li number="8.5.3.2">
+<a href="lexical/IfcIrregularTimeSeries.html">IfcIrregularTimeSeries</a>
+</li><li number="8.5.3.6">
+<a href="lexical/IfcRegularTimeSeries.html">IfcRegularTimeSeries</a>
+</li>
+</ol>
+</li><li number="8.5.3.13">
+<a href="lexical/IfcTimeSeriesValue.html">IfcTimeSeriesValue</a>
+</li><li number="8.11.3.11">
+<a href="lexical/IfcUnitAssignment.html">IfcUnitAssignment</a>
+</li><li number="8.7.3.16">
+<a href="lexical/IfcVirtualGridIntersection.html">IfcVirtualGridIntersection</a>
+</li><li number="8.18.3.21">
+<a href="lexical/IfcWellKnownText.html">IfcWellKnownText</a>
+</li></ol>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': '',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

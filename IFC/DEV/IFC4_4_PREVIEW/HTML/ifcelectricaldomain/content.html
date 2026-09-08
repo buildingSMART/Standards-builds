@@ -1,0 +1,1328 @@
+<html lang="en">
+<head>
+<link href="../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>7.4 IfcElectricalDomain - IFC 4.4.0.0 Documentation</title>
+<link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="..">
+                             Cover
+                        </a>
+<a href="../toc.html">
+                             Contents
+                        </a>
+<a href="../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a class="current" href="../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a class="sublink-1" href="../ifcarchitecturedomain/content.html">
+                            7.1 IfcArchitectureDomain
+                        </a>
+<a class="sublink-1" href="../ifcbuildingcontrolsdomain/content.html">
+                            7.2 IfcBuildingControlsDomain
+                        </a>
+<a class="sublink-1" href="../ifcconstructionmgmtdomain/content.html">
+                            7.3 IfcConstructionMgmtDomain
+                        </a>
+<a class="sublink-1 current" href="content.html">
+                            7.4 IfcElectricalDomain
+                        </a>
+<a class="sublink-1" href="../ifchvacdomain/content.html">
+                            7.5 IfcHvacDomain
+                        </a>
+<a class="sublink-1" href="../ifcplumbingfireprotectiondomain/content.html">
+                            7.6 IfcPlumbingFireProtectionDomain
+                        </a>
+<a class="sublink-1" href="../ifcportsandwaterwaysdomain/content.html">
+                            7.7 IfcPortsAndWaterwaysDomain
+                        </a>
+<a class="sublink-1" href="../ifcraildomain/content.html">
+                            7.8 IfcRailDomain
+                        </a>
+<a class="sublink-1" href="../ifcroaddomain/content.html">
+                            7.9 IfcRoadDomain
+                        </a>
+<a class="sublink-1" href="../ifcstructuralanalysisdomain/content.html">
+                            7.10 IfcStructuralAnalysisDomain
+                        </a>
+<a class="sublink-1" href="../ifcstructuralelementsdomain/content.html">
+                            7.11 IfcStructuralElementsDomain
+                        </a>
+<a href="../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>7.4 IfcElectricalDomain</h1>
+<h2><a class="anchor" id="7.4.1-Schema-definition"></a>
+    7.4.1 Schema definition
+<a class="link" href="#7.4.1-Schema-definition"><i data-feather="link"></i></a></h2>
+<p>The <em>IfcElectricalDomain</em> schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the <em>IfcSharedBldgServiceElements</em> schema. It defines concepts of cabled systems where the cabling carries electrical supply, data, telephone signals or other forms of cable transmission.</p>
+<p>Additionally the schema defines various devices that are connected by cabling, protection of electrical devices, provision and concepts of light fixtures within buildings, the cabling itself and methods for supporting and carrying cables.</p>
+<p>The scope of the <em>IfcElectricalDomain</em> is defined as:</p>
+<ol>
+<li>cabled systems for power distribution and lighting, data, telecommunications, security, signalling, control and audio visual purposes,</li>
+<li>equipment that is used within such systems,</li>
+<li>connection of equipment to circuits, distribution points etc,</li>
+<li>steady state operation of electrical installations,</li>
+<li>light fixtures (fittings), their types and the provision of such information as is necessary to enable lighting calculations that provide physically accurate illuminance.</li>
+</ol>
+<p>Note that for electrical systems, the schema has the particular scope of low voltage electrical installations according to Volts (V) and Alternating Current (AC) or Direct Current (DC), from 12V (AC/DC) to 1000V (AC) or 1500V (DC) in accordance with ISO/IEC definitions where installations in scope are considered to commence at a meter where the public utility supply terminates or at a transformer where voltage is stepped down to the low voltage range in scope.</p>
+<p>Other electrical systems including extra low, medium and high voltage may be specified using this schema but the provisions of such systems have not yet been specifically provided for.</p>
+<p>Similarly, whilst the electrical domain schema may be used for data, telecommunications, security, signalling, control and audio visual purposes, the specific provisions required of these types of systems are not yet fully captured and elaborated within the model.</p>
+<p>The <em>IfcElectricalDomain</em> schema supports ideas including types of:</p>
+<ul>
+<li>audio-visual appliance,</li>
+<li>cable carrier fittings (for conduit, cable tray, cable duct and ladder),</li>
+<li>electrical appliance,</li>
+<li>electric motor,</li>
+<li>distribution panels,</li>
+<li>generator,</li>
+<li>junction box,</li>
+<li>light fixture,</li>
+<li>lamp,</li>
+<li>outlet,</li>
+<li>protective device,</li>
+<li>protective device tripping unit,</li>
+<li>switching device,</li>
+<li>transformer,</li>
+</ul>
+<p>The following items are in scope but not elaborated:</p>
+<ul>
+<li>medium and high voltage installations over 1000V AC and 1500V DC</li>
+<li>systems with voltage of less than 12 volts (AC/DC)</li>
+<li>audio-visual systems</li>
+<li>telecommunications systems</li>
+<li>data systems</li>
+<li>cabling for signal and control systems</li>
+<li>cable routers (cable ladders)</li>
+<li>computer network cabling and devices used on networks</li>
+</ul>
+<p>The following are deemed to be out of scope of the <em>IfcElectricalDomain</em> schema at this time:</p>
+<ul>
+<li>public utility supply of electrical services</li>
+<li>non steady state/transient states of operation of electrical installations</li>
+<li>security arrangements associated with safety of electrical installations</li>
+<li>communication signals between automation devices or bus systems</li>
+<li>sensors (which are dealt with in the <em>IfcBuildingControlsDomain</em> schema)</li>
+<li>spotlight mirror systems whereby a spotlight is directed towards a distant mirror that the distributes the light energy (other than as a group of separately defined objects)</li>
+<li>lighting for specialist purposes (for example, stage, painting)</li>
+</ul>
+<p>An electrical circuit is formed from electrical devices connected together with power carrying cables. Up to IFC4, an instance of an electrical circuit has been defined as an <em>IfcElectricalCircuit</em> (subtype of <em><a href="../lexical/IfcSystem.html">IfcSystem</a></em>). This is now deleted as of IFC4. Instead, electrical systems together with other cable systems and other forms of distribution system are now identified through the <em><a href="../lexical/IfcDistributionSystem.html">IfcDistributionSystem</a>.PredefinedType::<a href="../lexical/IfcDistributionSystemEnum.html">IfcDistributionSystemEnum</a></em>, along with specific property sets.</p>
+<aside class="aside-history"><mark>HISTORY</mark>  New schema in IFC2x.</aside>
+<p>{ .change-ifc2x4}</p>
+<aside class="aside-ifc4"><mark>IFC4-CHANGE</mark>  Electrical circuit specification modified, scope expanded to support communications systems.</aside>
+<h2><a class="anchor" id="7.4.2-Types"></a>
+    7.4.2 Types
+<a class="link" href="#7.4.2-Types"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.4.2.1">
+<a href="../lexical/IfcAudioVisualApplianceTypeEnum.html">
+            IfcAudioVisualApplianceTypeEnum
+        </a>
+</li><li number="7.4.2.2">
+<a href="../lexical/IfcCableCarrierFittingTypeEnum.html">
+            IfcCableCarrierFittingTypeEnum
+        </a>
+</li><li number="7.4.2.3">
+<a href="../lexical/IfcCableCarrierSegmentTypeEnum.html">
+            IfcCableCarrierSegmentTypeEnum
+        </a>
+</li><li number="7.4.2.4">
+<a href="../lexical/IfcCableFittingTypeEnum.html">
+            IfcCableFittingTypeEnum
+        </a>
+</li><li number="7.4.2.5">
+<a href="../lexical/IfcCableSegmentTypeEnum.html">
+            IfcCableSegmentTypeEnum
+        </a>
+</li><li number="7.4.2.6">
+<a href="../lexical/IfcCommunicationsApplianceTypeEnum.html">
+            IfcCommunicationsApplianceTypeEnum
+        </a>
+</li><li number="7.4.2.7">
+<a href="../lexical/IfcDistributionBoardTypeEnum.html">
+            IfcDistributionBoardTypeEnum
+        </a>
+</li><li number="7.4.2.8">
+<a href="../lexical/IfcElectricApplianceTypeEnum.html">
+            IfcElectricApplianceTypeEnum
+        </a>
+</li><li number="7.4.2.9">
+<a href="../lexical/IfcElectricDistributionBoardTypeEnum.html">
+            IfcElectricDistributionBoardTypeEnum
+        </a>
+</li><li number="7.4.2.10">
+<a href="../lexical/IfcElectricFlowStorageDeviceTypeEnum.html">
+            IfcElectricFlowStorageDeviceTypeEnum
+        </a>
+</li><li number="7.4.2.11">
+<a href="../lexical/IfcElectricFlowTreatmentDeviceTypeEnum.html">
+            IfcElectricFlowTreatmentDeviceTypeEnum
+        </a>
+</li><li number="7.4.2.12">
+<a href="../lexical/IfcElectricGeneratorTypeEnum.html">
+            IfcElectricGeneratorTypeEnum
+        </a>
+</li><li number="7.4.2.13">
+<a href="../lexical/IfcElectricMotorTypeEnum.html">
+            IfcElectricMotorTypeEnum
+        </a>
+</li><li number="7.4.2.14">
+<a href="../lexical/IfcElectricTimeControlTypeEnum.html">
+            IfcElectricTimeControlTypeEnum
+        </a>
+</li><li number="7.4.2.15">
+<a href="../lexical/IfcJunctionBoxTypeEnum.html">
+            IfcJunctionBoxTypeEnum
+        </a>
+</li><li number="7.4.2.16">
+<a href="../lexical/IfcLampTypeEnum.html">
+            IfcLampTypeEnum
+        </a>
+</li><li number="7.4.2.17">
+<a href="../lexical/IfcLightFixtureTypeEnum.html">
+            IfcLightFixtureTypeEnum
+        </a>
+</li><li number="7.4.2.18">
+<a href="../lexical/IfcMobileTelecommunicationsApplianceTypeEnum.html">
+            IfcMobileTelecommunicationsApplianceTypeEnum
+        </a>
+</li><li number="7.4.2.19">
+<a href="../lexical/IfcMotorConnectionTypeEnum.html">
+            IfcMotorConnectionTypeEnum
+        </a>
+</li><li number="7.4.2.20">
+<a href="../lexical/IfcOutletTypeEnum.html">
+            IfcOutletTypeEnum
+        </a>
+</li><li number="7.4.2.21">
+<a href="../lexical/IfcProtectiveDeviceTrippingUnitTypeEnum.html">
+            IfcProtectiveDeviceTrippingUnitTypeEnum
+        </a>
+</li><li number="7.4.2.22">
+<a href="../lexical/IfcProtectiveDeviceTypeEnum.html">
+            IfcProtectiveDeviceTypeEnum
+        </a>
+</li><li number="7.4.2.23">
+<a href="../lexical/IfcSolarDeviceTypeEnum.html">
+            IfcSolarDeviceTypeEnum
+        </a>
+</li><li number="7.4.2.24">
+<a href="../lexical/IfcSwitchingDeviceTypeEnum.html">
+            IfcSwitchingDeviceTypeEnum
+        </a>
+</li><li number="7.4.2.25">
+<a href="../lexical/IfcTransformerTypeEnum.html">
+            IfcTransformerTypeEnum
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.4.3-Entities"></a>
+    7.4.3 Entities
+<a class="link" href="#7.4.3-Entities"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.4.3.1">
+<a href="../lexical/IfcAudioVisualAppliance.html">
+            IfcAudioVisualAppliance
+        </a>
+</li><li number="7.4.3.2">
+<a href="../lexical/IfcAudioVisualApplianceType.html">
+            IfcAudioVisualApplianceType
+        </a>
+</li><li number="7.4.3.3">
+<a href="../lexical/IfcCableCarrierFitting.html">
+            IfcCableCarrierFitting
+        </a>
+</li><li number="7.4.3.4">
+<a href="../lexical/IfcCableCarrierFittingType.html">
+            IfcCableCarrierFittingType
+        </a>
+</li><li number="7.4.3.5">
+<a href="../lexical/IfcCableCarrierSegment.html">
+            IfcCableCarrierSegment
+        </a>
+</li><li number="7.4.3.6">
+<a href="../lexical/IfcCableCarrierSegmentType.html">
+            IfcCableCarrierSegmentType
+        </a>
+</li><li number="7.4.3.7">
+<a href="../lexical/IfcCableFitting.html">
+            IfcCableFitting
+        </a>
+</li><li number="7.4.3.8">
+<a href="../lexical/IfcCableFittingType.html">
+            IfcCableFittingType
+        </a>
+</li><li number="7.4.3.9">
+<a href="../lexical/IfcCableSegment.html">
+            IfcCableSegment
+        </a>
+</li><li number="7.4.3.10">
+<a href="../lexical/IfcCableSegmentType.html">
+            IfcCableSegmentType
+        </a>
+</li><li number="7.4.3.11">
+<a href="../lexical/IfcCommunicationsAppliance.html">
+            IfcCommunicationsAppliance
+        </a>
+</li><li number="7.4.3.12">
+<a href="../lexical/IfcCommunicationsApplianceType.html">
+            IfcCommunicationsApplianceType
+        </a>
+</li><li number="7.4.3.13">
+<a href="../lexical/IfcDistributionBoard.html">
+            IfcDistributionBoard
+        </a>
+</li><li number="7.4.3.14">
+<a href="../lexical/IfcDistributionBoardType.html">
+            IfcDistributionBoardType
+        </a>
+</li><li number="7.4.3.15">
+<a href="../lexical/IfcElectricAppliance.html">
+            IfcElectricAppliance
+        </a>
+</li><li number="7.4.3.16">
+<a href="../lexical/IfcElectricApplianceType.html">
+            IfcElectricApplianceType
+        </a>
+</li><li number="7.4.3.17">
+<a href="../lexical/IfcElectricDistributionBoard.html">
+            IfcElectricDistributionBoard
+        </a>
+</li><li number="7.4.3.18">
+<a href="../lexical/IfcElectricDistributionBoardType.html">
+            IfcElectricDistributionBoardType
+        </a>
+</li><li number="7.4.3.19">
+<a href="../lexical/IfcElectricFlowStorageDevice.html">
+            IfcElectricFlowStorageDevice
+        </a>
+</li><li number="7.4.3.20">
+<a href="../lexical/IfcElectricFlowStorageDeviceType.html">
+            IfcElectricFlowStorageDeviceType
+        </a>
+</li><li number="7.4.3.21">
+<a href="../lexical/IfcElectricFlowTreatmentDevice.html">
+            IfcElectricFlowTreatmentDevice
+        </a>
+</li><li number="7.4.3.22">
+<a href="../lexical/IfcElectricFlowTreatmentDeviceType.html">
+            IfcElectricFlowTreatmentDeviceType
+        </a>
+</li><li number="7.4.3.23">
+<a href="../lexical/IfcElectricGenerator.html">
+            IfcElectricGenerator
+        </a>
+</li><li number="7.4.3.24">
+<a href="../lexical/IfcElectricGeneratorType.html">
+            IfcElectricGeneratorType
+        </a>
+</li><li number="7.4.3.25">
+<a href="../lexical/IfcElectricMotor.html">
+            IfcElectricMotor
+        </a>
+</li><li number="7.4.3.26">
+<a href="../lexical/IfcElectricMotorType.html">
+            IfcElectricMotorType
+        </a>
+</li><li number="7.4.3.27">
+<a href="../lexical/IfcElectricTimeControl.html">
+            IfcElectricTimeControl
+        </a>
+</li><li number="7.4.3.28">
+<a href="../lexical/IfcElectricTimeControlType.html">
+            IfcElectricTimeControlType
+        </a>
+</li><li number="7.4.3.29">
+<a href="../lexical/IfcJunctionBox.html">
+            IfcJunctionBox
+        </a>
+</li><li number="7.4.3.30">
+<a href="../lexical/IfcJunctionBoxType.html">
+            IfcJunctionBoxType
+        </a>
+</li><li number="7.4.3.31">
+<a href="../lexical/IfcLamp.html">
+            IfcLamp
+        </a>
+</li><li number="7.4.3.32">
+<a href="../lexical/IfcLampType.html">
+            IfcLampType
+        </a>
+</li><li number="7.4.3.33">
+<a href="../lexical/IfcLightFixture.html">
+            IfcLightFixture
+        </a>
+</li><li number="7.4.3.34">
+<a href="../lexical/IfcLightFixtureType.html">
+            IfcLightFixtureType
+        </a>
+</li><li number="7.4.3.35">
+<a href="../lexical/IfcMobileTelecommunicationsAppliance.html">
+            IfcMobileTelecommunicationsAppliance
+        </a>
+</li><li number="7.4.3.36">
+<a href="../lexical/IfcMobileTelecommunicationsApplianceType.html">
+            IfcMobileTelecommunicationsApplianceType
+        </a>
+</li><li number="7.4.3.37">
+<a href="../lexical/IfcMotorConnection.html">
+            IfcMotorConnection
+        </a>
+</li><li number="7.4.3.38">
+<a href="../lexical/IfcMotorConnectionType.html">
+            IfcMotorConnectionType
+        </a>
+</li><li number="7.4.3.39">
+<a href="../lexical/IfcOutlet.html">
+            IfcOutlet
+        </a>
+</li><li number="7.4.3.40">
+<a href="../lexical/IfcOutletType.html">
+            IfcOutletType
+        </a>
+</li><li number="7.4.3.41">
+<a href="../lexical/IfcProtectiveDevice.html">
+            IfcProtectiveDevice
+        </a>
+</li><li number="7.4.3.42">
+<a href="../lexical/IfcProtectiveDeviceTrippingUnit.html">
+            IfcProtectiveDeviceTrippingUnit
+        </a>
+</li><li number="7.4.3.43">
+<a href="../lexical/IfcProtectiveDeviceTrippingUnitType.html">
+            IfcProtectiveDeviceTrippingUnitType
+        </a>
+</li><li number="7.4.3.44">
+<a href="../lexical/IfcProtectiveDeviceType.html">
+            IfcProtectiveDeviceType
+        </a>
+</li><li number="7.4.3.45">
+<a href="../lexical/IfcSolarDevice.html">
+            IfcSolarDevice
+        </a>
+</li><li number="7.4.3.46">
+<a href="../lexical/IfcSolarDeviceType.html">
+            IfcSolarDeviceType
+        </a>
+</li><li number="7.4.3.47">
+<a href="../lexical/IfcSwitchingDevice.html">
+            IfcSwitchingDevice
+        </a>
+</li><li number="7.4.3.48">
+<a href="../lexical/IfcSwitchingDeviceType.html">
+            IfcSwitchingDeviceType
+        </a>
+</li><li number="7.4.3.49">
+<a href="../lexical/IfcTransformer.html">
+            IfcTransformer
+        </a>
+</li><li number="7.4.3.50">
+<a href="../lexical/IfcTransformerType.html">
+            IfcTransformerType
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.4.4-Property-Sets"></a>
+    7.4.4 Property Sets
+<a class="link" href="#7.4.4-Property-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.4.4.1">
+<a href="../lexical/Pset_AudioVisualAppliancePHistory.html">
+            Pset_AudioVisualAppliancePHistory
+        </a>
+</li><li number="7.4.4.2">
+<a href="../lexical/Pset_AudioVisualApplianceTypeAmplifier.html">
+            Pset_AudioVisualApplianceTypeAmplifier
+        </a>
+</li><li number="7.4.4.3">
+<a href="../lexical/Pset_AudioVisualApplianceTypeCamera.html">
+            Pset_AudioVisualApplianceTypeCamera
+        </a>
+</li><li number="7.4.4.4">
+<a href="../lexical/Pset_AudioVisualApplianceTypeCommon.html">
+            Pset_AudioVisualApplianceTypeCommon
+        </a>
+</li><li number="7.4.4.5">
+<a href="../lexical/Pset_AudioVisualApplianceTypeDisplay.html">
+            Pset_AudioVisualApplianceTypeDisplay
+        </a>
+</li><li number="7.4.4.6">
+<a href="../lexical/Pset_AudioVisualApplianceTypePlayer.html">
+            Pset_AudioVisualApplianceTypePlayer
+        </a>
+</li><li number="7.4.4.7">
+<a href="../lexical/Pset_AudioVisualApplianceTypeProjector.html">
+            Pset_AudioVisualApplianceTypeProjector
+        </a>
+</li><li number="7.4.4.8">
+<a href="../lexical/Pset_AudioVisualApplianceTypeReceiver.html">
+            Pset_AudioVisualApplianceTypeReceiver
+        </a>
+</li><li number="7.4.4.9">
+<a href="../lexical/Pset_AudioVisualApplianceTypeSpeaker.html">
+            Pset_AudioVisualApplianceTypeSpeaker
+        </a>
+</li><li number="7.4.4.10">
+<a href="../lexical/Pset_AudioVisualApplianceTypeTuner.html">
+            Pset_AudioVisualApplianceTypeTuner
+        </a>
+</li><li number="7.4.4.11">
+<a href="../lexical/Pset_CableCarrierFittingTypeCommon.html">
+            Pset_CableCarrierFittingTypeCommon
+        </a>
+</li><li number="7.4.4.12">
+<a href="../lexical/Pset_CableCarrierSegmentTypeCableLadderSegment.html">
+            Pset_CableCarrierSegmentTypeCableLadderSegment
+        </a>
+</li><li number="7.4.4.13">
+<a href="../lexical/Pset_CableCarrierSegmentTypeCableTraySegment.html">
+            Pset_CableCarrierSegmentTypeCableTraySegment
+        </a>
+</li><li number="7.4.4.14">
+<a href="../lexical/Pset_CableCarrierSegmentTypeCableTrunkingSegment.html">
+            Pset_CableCarrierSegmentTypeCableTrunkingSegment
+        </a>
+</li><li number="7.4.4.15">
+<a href="../lexical/Pset_CableCarrierSegmentTypeCommon.html">
+            Pset_CableCarrierSegmentTypeCommon
+        </a>
+</li><li number="7.4.4.16">
+<a href="../lexical/Pset_CableCarrierSegmentTypeConduitSegment.html">
+            Pset_CableCarrierSegmentTypeConduitSegment
+        </a>
+</li><li number="7.4.4.17">
+<a href="../lexical/Pset_CableFittingTypeCommon.html">
+            Pset_CableFittingTypeCommon
+        </a>
+</li><li number="7.4.4.18">
+<a href="../lexical/Pset_CableSegmentOccurrence.html">
+            Pset_CableSegmentOccurrence
+        </a>
+</li><li number="7.4.4.19">
+<a href="../lexical/Pset_CableSegmentTypeBusBarSegment.html">
+            Pset_CableSegmentTypeBusBarSegment
+        </a>
+</li><li number="7.4.4.20">
+<a href="../lexical/Pset_CableSegmentTypeCableSegment.html">
+            Pset_CableSegmentTypeCableSegment
+        </a>
+</li><li number="7.4.4.21">
+<a href="../lexical/Pset_CableSegmentTypeCommon.html">
+            Pset_CableSegmentTypeCommon
+        </a>
+</li><li number="7.4.4.22">
+<a href="../lexical/Pset_CableSegmentTypeConductorSegment.html">
+            Pset_CableSegmentTypeConductorSegment
+        </a>
+</li><li number="7.4.4.23">
+<a href="../lexical/Pset_CableSegmentTypeCoreSegment.html">
+            Pset_CableSegmentTypeCoreSegment
+        </a>
+</li><li number="7.4.4.24">
+<a href="../lexical/Pset_CommunicationsAppliancePHistory.html">
+            Pset_CommunicationsAppliancePHistory
+        </a>
+</li><li number="7.4.4.25">
+<a href="../lexical/Pset_CommunicationsApplianceTypeCommon.html">
+            Pset_CommunicationsApplianceTypeCommon
+        </a>
+</li><li number="7.4.4.26">
+<a href="../lexical/Pset_DistributionBoardOccurrence.html">
+            Pset_DistributionBoardOccurrence
+        </a>
+</li><li number="7.4.4.27">
+<a href="../lexical/Pset_DistributionBoardTypeCommon.html">
+            Pset_DistributionBoardTypeCommon
+        </a>
+</li><li number="7.4.4.28">
+<a href="../lexical/Pset_ElectricAppliancePHistory.html">
+            Pset_ElectricAppliancePHistory
+        </a>
+</li><li number="7.4.4.29">
+<a href="../lexical/Pset_ElectricApplianceTypeCommon.html">
+            Pset_ElectricApplianceTypeCommon
+        </a>
+</li><li number="7.4.4.30">
+<a href="../lexical/Pset_ElectricApplianceTypeDishwasher.html">
+            Pset_ElectricApplianceTypeDishwasher
+        </a>
+</li><li number="7.4.4.31">
+<a href="../lexical/Pset_ElectricApplianceTypeElectricCooker.html">
+            Pset_ElectricApplianceTypeElectricCooker
+        </a>
+</li><li number="7.4.4.32">
+<a href="../lexical/Pset_ElectricFlowStorageDeviceTypeCommon.html">
+            Pset_ElectricFlowStorageDeviceTypeCommon
+        </a>
+</li><li number="7.4.4.33">
+<a href="../lexical/Pset_ElectricGeneratorTypeCommon.html">
+            Pset_ElectricGeneratorTypeCommon
+        </a>
+</li><li number="7.4.4.34">
+<a href="../lexical/Pset_ElectricMotorTypeCommon.html">
+            Pset_ElectricMotorTypeCommon
+        </a>
+</li><li number="7.4.4.35">
+<a href="../lexical/Pset_ElectricTimeControlTypeCommon.html">
+            Pset_ElectricTimeControlTypeCommon
+        </a>
+</li><li number="7.4.4.36">
+<a href="../lexical/Pset_ElectricalDeviceCommon.html">
+            Pset_ElectricalDeviceCommon
+        </a>
+</li><li number="7.4.4.37">
+<a href="../lexical/Pset_JunctionBoxTypeCommon.html">
+            Pset_JunctionBoxTypeCommon
+        </a>
+</li><li number="7.4.4.38">
+<a href="../lexical/Pset_LampTypeCommon.html">
+            Pset_LampTypeCommon
+        </a>
+</li><li number="7.4.4.39">
+<a href="../lexical/Pset_LightFixtureTypeCommon.html">
+            Pset_LightFixtureTypeCommon
+        </a>
+</li><li number="7.4.4.40">
+<a href="../lexical/Pset_LightFixtureTypeSecurityLighting.html">
+            Pset_LightFixtureTypeSecurityLighting
+        </a>
+</li><li number="7.4.4.41">
+<a href="../lexical/Pset_MotorConnectionTypeCommon.html">
+            Pset_MotorConnectionTypeCommon
+        </a>
+</li><li number="7.4.4.42">
+<a href="../lexical/Pset_OutletTypeCommon.html">
+            Pset_OutletTypeCommon
+        </a>
+</li><li number="7.4.4.43">
+<a href="../lexical/Pset_ProtectiveDeviceBreakerUnitI2TCurve.html">
+            Pset_ProtectiveDeviceBreakerUnitI2TCurve
+        </a>
+</li><li number="7.4.4.44">
+<a href="../lexical/Pset_ProtectiveDeviceBreakerUnitI2TFuseCurve.html">
+            Pset_ProtectiveDeviceBreakerUnitI2TFuseCurve
+        </a>
+</li><li number="7.4.4.45">
+<a href="../lexical/Pset_ProtectiveDeviceBreakerUnitIPICurve.html">
+            Pset_ProtectiveDeviceBreakerUnitIPICurve
+        </a>
+</li><li number="7.4.4.46">
+<a href="../lexical/Pset_ProtectiveDeviceBreakerUnitTypeMCB.html">
+            Pset_ProtectiveDeviceBreakerUnitTypeMCB
+        </a>
+</li><li number="7.4.4.47">
+<a href="../lexical/Pset_ProtectiveDeviceBreakerUnitTypeMotorProtection.html">
+            Pset_ProtectiveDeviceBreakerUnitTypeMotorProtection
+        </a>
+</li><li number="7.4.4.48">
+<a href="../lexical/Pset_ProtectiveDeviceOccurrence.html">
+            Pset_ProtectiveDeviceOccurrence
+        </a>
+</li><li number="7.4.4.49">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingCurve.html">
+            Pset_ProtectiveDeviceTrippingCurve
+        </a>
+</li><li number="7.4.4.50">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingFunctionGCurve.html">
+            Pset_ProtectiveDeviceTrippingFunctionGCurve
+        </a>
+</li><li number="7.4.4.51">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingFunctionICurve.html">
+            Pset_ProtectiveDeviceTrippingFunctionICurve
+        </a>
+</li><li number="7.4.4.52">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingFunctionLCurve.html">
+            Pset_ProtectiveDeviceTrippingFunctionLCurve
+        </a>
+</li><li number="7.4.4.53">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingFunctionSCurve.html">
+            Pset_ProtectiveDeviceTrippingFunctionSCurve
+        </a>
+</li><li number="7.4.4.54">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitCurrentAdjustment.html">
+            Pset_ProtectiveDeviceTrippingUnitCurrentAdjustment
+        </a>
+</li><li number="7.4.4.55">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitTimeAdjustment.html">
+            Pset_ProtectiveDeviceTrippingUnitTimeAdjustment
+        </a>
+</li><li number="7.4.4.56">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitTypeCommon.html">
+            Pset_ProtectiveDeviceTrippingUnitTypeCommon
+        </a>
+</li><li number="7.4.4.57">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitTypeElectroMagnetic.html">
+            Pset_ProtectiveDeviceTrippingUnitTypeElectroMagnetic
+        </a>
+</li><li number="7.4.4.58">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitTypeElectronic.html">
+            Pset_ProtectiveDeviceTrippingUnitTypeElectronic
+        </a>
+</li><li number="7.4.4.59">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitTypeResidualCurrent.html">
+            Pset_ProtectiveDeviceTrippingUnitTypeResidualCurrent
+        </a>
+</li><li number="7.4.4.60">
+<a href="../lexical/Pset_ProtectiveDeviceTrippingUnitTypeThermal.html">
+            Pset_ProtectiveDeviceTrippingUnitTypeThermal
+        </a>
+</li><li number="7.4.4.61">
+<a href="../lexical/Pset_ProtectiveDeviceTypeCircuitBreaker.html">
+            Pset_ProtectiveDeviceTypeCircuitBreaker
+        </a>
+</li><li number="7.4.4.62">
+<a href="../lexical/Pset_ProtectiveDeviceTypeCommon.html">
+            Pset_ProtectiveDeviceTypeCommon
+        </a>
+</li><li number="7.4.4.63">
+<a href="../lexical/Pset_ProtectiveDeviceTypeEarthLeakageCircuitBreaker.html">
+            Pset_ProtectiveDeviceTypeEarthLeakageCircuitBreaker
+        </a>
+</li><li number="7.4.4.64">
+<a href="../lexical/Pset_ProtectiveDeviceTypeFuseDisconnector.html">
+            Pset_ProtectiveDeviceTypeFuseDisconnector
+        </a>
+</li><li number="7.4.4.65">
+<a href="../lexical/Pset_ProtectiveDeviceTypeResidualCurrentCircuitBreaker.html">
+            Pset_ProtectiveDeviceTypeResidualCurrentCircuitBreaker
+        </a>
+</li><li number="7.4.4.66">
+<a href="../lexical/Pset_ProtectiveDeviceTypeResidualCurrentSwitch.html">
+            Pset_ProtectiveDeviceTypeResidualCurrentSwitch
+        </a>
+</li><li number="7.4.4.67">
+<a href="../lexical/Pset_ProtectiveDeviceTypeVaristor.html">
+            Pset_ProtectiveDeviceTypeVaristor
+        </a>
+</li><li number="7.4.4.68">
+<a href="../lexical/Pset_SolarDeviceTypeCommon.html">
+            Pset_SolarDeviceTypeCommon
+        </a>
+</li><li number="7.4.4.69">
+<a href="../lexical/Pset_SwitchingDeviceTypeCommon.html">
+            Pset_SwitchingDeviceTypeCommon
+        </a>
+</li><li number="7.4.4.70">
+<a href="../lexical/Pset_SwitchingDeviceTypeContactor.html">
+            Pset_SwitchingDeviceTypeContactor
+        </a>
+</li><li number="7.4.4.71">
+<a href="../lexical/Pset_SwitchingDeviceTypeDimmerSwitch.html">
+            Pset_SwitchingDeviceTypeDimmerSwitch
+        </a>
+</li><li number="7.4.4.72">
+<a href="../lexical/Pset_SwitchingDeviceTypeEmergencyStop.html">
+            Pset_SwitchingDeviceTypeEmergencyStop
+        </a>
+</li><li number="7.4.4.73">
+<a href="../lexical/Pset_SwitchingDeviceTypeKeypad.html">
+            Pset_SwitchingDeviceTypeKeypad
+        </a>
+</li><li number="7.4.4.74">
+<a href="../lexical/Pset_SwitchingDeviceTypeMomentarySwitch.html">
+            Pset_SwitchingDeviceTypeMomentarySwitch
+        </a>
+</li><li number="7.4.4.75">
+<a href="../lexical/Pset_SwitchingDeviceTypePHistory.html">
+            Pset_SwitchingDeviceTypePHistory
+        </a>
+</li><li number="7.4.4.76">
+<a href="../lexical/Pset_SwitchingDeviceTypeSelectorSwitch.html">
+            Pset_SwitchingDeviceTypeSelectorSwitch
+        </a>
+</li><li number="7.4.4.77">
+<a href="../lexical/Pset_SwitchingDeviceTypeStarter.html">
+            Pset_SwitchingDeviceTypeStarter
+        </a>
+</li><li number="7.4.4.78">
+<a href="../lexical/Pset_SwitchingDeviceTypeSwitchDisconnector.html">
+            Pset_SwitchingDeviceTypeSwitchDisconnector
+        </a>
+</li><li number="7.4.4.79">
+<a href="../lexical/Pset_SwitchingDeviceTypeToggleSwitch.html">
+            Pset_SwitchingDeviceTypeToggleSwitch
+        </a>
+</li><li number="7.4.4.80">
+<a href="../lexical/Pset_TransformerTypeCommon.html">
+            Pset_TransformerTypeCommon
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.4.5-Quantity-Sets"></a>
+    7.4.5 Quantity Sets
+<a class="link" href="#7.4.5-Quantity-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.4.5.1">
+<a href="../lexical/Qto_AudioVisualApplianceBaseQuantities.html">
+            Qto_AudioVisualApplianceBaseQuantities
+        </a>
+</li><li number="7.4.5.2">
+<a href="../lexical/Qto_CableCarrierFittingBaseQuantities.html">
+            Qto_CableCarrierFittingBaseQuantities
+        </a>
+</li><li number="7.4.5.3">
+<a href="../lexical/Qto_CableCarrierSegmentBaseQuantities.html">
+            Qto_CableCarrierSegmentBaseQuantities
+        </a>
+</li><li number="7.4.5.4">
+<a href="../lexical/Qto_CableFittingBaseQuantities.html">
+            Qto_CableFittingBaseQuantities
+        </a>
+</li><li number="7.4.5.5">
+<a href="../lexical/Qto_CableSegmentBaseQuantities.html">
+            Qto_CableSegmentBaseQuantities
+        </a>
+</li><li number="7.4.5.6">
+<a href="../lexical/Qto_CommunicationsApplianceBaseQuantities.html">
+            Qto_CommunicationsApplianceBaseQuantities
+        </a>
+</li><li number="7.4.5.7">
+<a href="../lexical/Qto_DistributionBoardBaseQuantities.html">
+            Qto_DistributionBoardBaseQuantities
+        </a>
+</li><li number="7.4.5.8">
+<a href="../lexical/Qto_ElectricApplianceBaseQuantities.html">
+            Qto_ElectricApplianceBaseQuantities
+        </a>
+</li><li number="7.4.5.9">
+<a href="../lexical/Qto_ElectricFlowStorageDeviceBaseQuantities.html">
+            Qto_ElectricFlowStorageDeviceBaseQuantities
+        </a>
+</li><li number="7.4.5.10">
+<a href="../lexical/Qto_ElectricGeneratorBaseQuantities.html">
+            Qto_ElectricGeneratorBaseQuantities
+        </a>
+</li><li number="7.4.5.11">
+<a href="../lexical/Qto_ElectricMotorBaseQuantities.html">
+            Qto_ElectricMotorBaseQuantities
+        </a>
+</li><li number="7.4.5.12">
+<a href="../lexical/Qto_ElectricTimeControlBaseQuantities.html">
+            Qto_ElectricTimeControlBaseQuantities
+        </a>
+</li><li number="7.4.5.13">
+<a href="../lexical/Qto_JunctionBoxBaseQuantities.html">
+            Qto_JunctionBoxBaseQuantities
+        </a>
+</li><li number="7.4.5.14">
+<a href="../lexical/Qto_LampBaseQuantities.html">
+            Qto_LampBaseQuantities
+        </a>
+</li><li number="7.4.5.15">
+<a href="../lexical/Qto_LightFixtureBaseQuantities.html">
+            Qto_LightFixtureBaseQuantities
+        </a>
+</li><li number="7.4.5.16">
+<a href="../lexical/Qto_MotorConnectionBaseQuantities.html">
+            Qto_MotorConnectionBaseQuantities
+        </a>
+</li><li number="7.4.5.17">
+<a href="../lexical/Qto_OutletBaseQuantities.html">
+            Qto_OutletBaseQuantities
+        </a>
+</li><li number="7.4.5.18">
+<a href="../lexical/Qto_ProtectiveDeviceBaseQuantities.html">
+            Qto_ProtectiveDeviceBaseQuantities
+        </a>
+</li><li number="7.4.5.19">
+<a href="../lexical/Qto_ProtectiveDeviceTrippingUnitBaseQuantities.html">
+            Qto_ProtectiveDeviceTrippingUnitBaseQuantities
+        </a>
+</li><li number="7.4.5.20">
+<a href="../lexical/Qto_SolarDeviceBaseQuantities.html">
+            Qto_SolarDeviceBaseQuantities
+        </a>
+</li><li number="7.4.5.21">
+<a href="../lexical/Qto_SwitchingDeviceBaseQuantities.html">
+            Qto_SwitchingDeviceBaseQuantities
+        </a>
+</li><li number="7.4.5.22">
+<a href="../lexical/Qto_TransformerBaseQuantities.html">
+            Qto_TransformerBaseQuantities
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.4.6-Functions"></a>
+    7.4.6 Functions
+<a class="link" href="#7.4.6-Functions"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="7.4.7-Rules"></a>
+    7.4.7 Rules
+<a class="link" href="#7.4.7-Rules"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="7.4.8-PropertyEnumerations"></a>
+    7.4.8 PropertyEnumerations
+<a class="link" href="#7.4.8-PropertyEnumerations"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.4.8.1">
+<a href="../lexical/PEnum_AddressabilityType.html">
+            PEnum_AddressabilityType
+        </a>
+</li><li number="7.4.8.2">
+<a href="../lexical/PEnum_AudioVisualAmplifierType.html">
+            PEnum_AudioVisualAmplifierType
+        </a>
+</li><li number="7.4.8.3">
+<a href="../lexical/PEnum_AudioVisualCameraType.html">
+            PEnum_AudioVisualCameraType
+        </a>
+</li><li number="7.4.8.4">
+<a href="../lexical/PEnum_AudioVisualDisplayTouchScreen.html">
+            PEnum_AudioVisualDisplayTouchScreen
+        </a>
+</li><li number="7.4.8.5">
+<a href="../lexical/PEnum_AudioVisualDisplayType.html">
+            PEnum_AudioVisualDisplayType
+        </a>
+</li><li number="7.4.8.6">
+<a href="../lexical/PEnum_AudioVisualPlayerType.html">
+            PEnum_AudioVisualPlayerType
+        </a>
+</li><li number="7.4.8.7">
+<a href="../lexical/PEnum_AudioVisualProjectorType.html">
+            PEnum_AudioVisualProjectorType
+        </a>
+</li><li number="7.4.8.8">
+<a href="../lexical/PEnum_AudioVisualReceiverType.html">
+            PEnum_AudioVisualReceiverType
+        </a>
+</li><li number="7.4.8.9">
+<a href="../lexical/PEnum_AudioVisualSpeakerMounting.html">
+            PEnum_AudioVisualSpeakerMounting
+        </a>
+</li><li number="7.4.8.10">
+<a href="../lexical/PEnum_AudioVisualSpeakerType.html">
+            PEnum_AudioVisualSpeakerType
+        </a>
+</li><li number="7.4.8.11">
+<a href="../lexical/PEnum_AudioVisualTunerType.html">
+            PEnum_AudioVisualTunerType
+        </a>
+</li><li number="7.4.8.12">
+<a href="../lexical/PEnum_BackupSupplySystemType.html">
+            PEnum_BackupSupplySystemType
+        </a>
+</li><li number="7.4.8.13">
+<a href="../lexical/PEnum_ConduitShapeType.html">
+            PEnum_ConduitShapeType
+        </a>
+</li><li number="7.4.8.14">
+<a href="../lexical/PEnum_ConstructionEnum.html">
+            PEnum_ConstructionEnum
+        </a>
+</li><li number="7.4.8.15">
+<a href="../lexical/PEnum_ContactorType.html">
+            PEnum_ContactorType
+        </a>
+</li><li number="7.4.8.16">
+<a href="../lexical/PEnum_CoreColoursEnum.html">
+            PEnum_CoreColoursEnum
+        </a>
+</li><li number="7.4.8.17">
+<a href="../lexical/PEnum_EarthFailureDeviceType.html">
+            PEnum_EarthFailureDeviceType
+        </a>
+</li><li number="7.4.8.18">
+<a href="../lexical/PEnum_ElectricApplianceDishwasherType.html">
+            PEnum_ElectricApplianceDishwasherType
+        </a>
+</li><li number="7.4.8.19">
+<a href="../lexical/PEnum_ElectricApplianceElectricCookerType.html">
+            PEnum_ElectricApplianceElectricCookerType
+        </a>
+</li><li number="7.4.8.20">
+<a href="../lexical/PEnum_ElectroMagneticTrippingUnitType.html">
+            PEnum_ElectroMagneticTrippingUnitType
+        </a>
+</li><li number="7.4.8.21">
+<a href="../lexical/PEnum_ElectronicTrippingUnitType.html">
+            PEnum_ElectronicTrippingUnitType
+        </a>
+</li><li number="7.4.8.22">
+<a href="../lexical/PEnum_FunctionEnum.html">
+            PEnum_FunctionEnum
+        </a>
+</li><li number="7.4.8.23">
+<a href="../lexical/PEnum_FuseDisconnectorType.html">
+            PEnum_FuseDisconnectorType
+        </a>
+</li><li number="7.4.8.24">
+<a href="../lexical/PEnum_InstallationMethodFlagEnum.html">
+            PEnum_InstallationMethodFlagEnum
+        </a>
+</li><li number="7.4.8.25">
+<a href="../lexical/PEnum_InsulationStandardClass.html">
+            PEnum_InsulationStandardClass
+        </a>
+</li><li number="7.4.8.26">
+<a href="../lexical/PEnum_JunctionBoxMountingType.html">
+            PEnum_JunctionBoxMountingType
+        </a>
+</li><li number="7.4.8.27">
+<a href="../lexical/PEnum_JunctionBoxPlacingType.html">
+            PEnum_JunctionBoxPlacingType
+        </a>
+</li><li number="7.4.8.28">
+<a href="../lexical/PEnum_JunctionBoxShapeType.html">
+            PEnum_JunctionBoxShapeType
+        </a>
+</li><li number="7.4.8.29">
+<a href="../lexical/PEnum_LampBallastType.html">
+            PEnum_LampBallastType
+        </a>
+</li><li number="7.4.8.30">
+<a href="../lexical/PEnum_LampCompensationType.html">
+            PEnum_LampCompensationType
+        </a>
+</li><li number="7.4.8.31">
+<a href="../lexical/PEnum_LightFixtureMountingType.html">
+            PEnum_LightFixtureMountingType
+        </a>
+</li><li number="7.4.8.32">
+<a href="../lexical/PEnum_LightFixturePlacingType.html">
+            PEnum_LightFixturePlacingType
+        </a>
+</li><li number="7.4.8.33">
+<a href="../lexical/PEnum_LightFixtureSecurityLightingType.html">
+            PEnum_LightFixtureSecurityLightingType
+        </a>
+</li><li number="7.4.8.34">
+<a href="../lexical/PEnum_LoadDisconnectionType.html">
+            PEnum_LoadDisconnectionType
+        </a>
+</li><li number="7.4.8.35">
+<a href="../lexical/PEnum_MaterialEnum.html">
+            PEnum_MaterialEnum
+        </a>
+</li><li number="7.4.8.36">
+<a href="../lexical/PEnum_MotorEnclosureType.html">
+            PEnum_MotorEnclosureType
+        </a>
+</li><li number="7.4.8.37">
+<a href="../lexical/PEnum_MountingMethodEnum.html">
+            PEnum_MountingMethodEnum
+        </a>
+</li><li number="7.4.8.38">
+<a href="../lexical/PEnum_PictogramEscapeDirectionType.html">
+            PEnum_PictogramEscapeDirectionType
+        </a>
+</li><li number="7.4.8.39">
+<a href="../lexical/PEnum_PoleUsage.html">
+            PEnum_PoleUsage
+        </a>
+</li><li number="7.4.8.40">
+<a href="../lexical/PEnum_SecondaryCurrentType.html">
+            PEnum_SecondaryCurrentType
+        </a>
+</li><li number="7.4.8.41">
+<a href="../lexical/PEnum_SelfTestType.html">
+            PEnum_SelfTestType
+        </a>
+</li><li number="7.4.8.42">
+<a href="../lexical/PEnum_ShapeEnum.html">
+            PEnum_ShapeEnum
+        </a>
+</li><li number="7.4.8.43">
+<a href="../lexical/PEnum_StarterType.html">
+            PEnum_StarterType
+        </a>
+</li><li number="7.4.8.44">
+<a href="../lexical/PEnum_SwitchDisconnectorType.html">
+            PEnum_SwitchDisconnectorType
+        </a>
+</li><li number="7.4.8.45">
+<a href="../lexical/PEnum_SwitchFunctionType.html">
+            PEnum_SwitchFunctionType
+        </a>
+</li><li number="7.4.8.46">
+<a href="../lexical/PEnum_SwitchingDeviceEmergencyStopType.html">
+            PEnum_SwitchingDeviceEmergencyStopType
+        </a>
+</li><li number="7.4.8.47">
+<a href="../lexical/PEnum_SwitchingDeviceKeypadType.html">
+            PEnum_SwitchingDeviceKeypadType
+        </a>
+</li><li number="7.4.8.48">
+<a href="../lexical/PEnum_SwitchingDeviceMomentarySwitchType.html">
+            PEnum_SwitchingDeviceMomentarySwitchType
+        </a>
+</li><li number="7.4.8.49">
+<a href="../lexical/PEnum_SwitchingDeviceToggleSwitchType.html">
+            PEnum_SwitchingDeviceToggleSwitchType
+        </a>
+</li><li number="7.4.8.50">
+<a href="../lexical/PEnum_ThermalTrippingUnitType.html">
+            PEnum_ThermalTrippingUnitType
+        </a>
+</li><li number="7.4.8.51">
+<a href="../lexical/PEnum_TransformerVectorGroup.html">
+            PEnum_TransformerVectorGroup
+        </a>
+</li><li number="7.4.8.52">
+<a href="../lexical/PEnum_TrippingCurveType.html">
+            PEnum_TrippingCurveType
+        </a>
+</li><li number="7.4.8.53">
+<a href="../lexical/PEnum_TrippingUnitReleaseCurrent.html">
+            PEnum_TrippingUnitReleaseCurrent
+        </a>
+</li><li number="7.4.8.54">
+<a href="../lexical/PEnum_VaristorType.html">
+            PEnum_VaristorType
+        </a>
+</li></ol>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/domain/IfcElectricalDomain/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>Change to official repo names</em> by Thomas Krijnen on 2026-09-08T13:56:10+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/schemas/domain/IfcElectricalDomain/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

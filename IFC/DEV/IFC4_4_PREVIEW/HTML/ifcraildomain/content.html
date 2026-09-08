@@ -1,0 +1,1338 @@
+<html lang="en">
+<head>
+<link href="../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>7.8 IfcRailDomain - IFC 4.4.0.0 Documentation</title>
+<link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="..">
+                             Cover
+                        </a>
+<a href="../toc.html">
+                             Contents
+                        </a>
+<a href="../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a class="current" href="../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a class="sublink-1" href="../ifcarchitecturedomain/content.html">
+                            7.1 IfcArchitectureDomain
+                        </a>
+<a class="sublink-1" href="../ifcbuildingcontrolsdomain/content.html">
+                            7.2 IfcBuildingControlsDomain
+                        </a>
+<a class="sublink-1" href="../ifcconstructionmgmtdomain/content.html">
+                            7.3 IfcConstructionMgmtDomain
+                        </a>
+<a class="sublink-1" href="../ifcelectricaldomain/content.html">
+                            7.4 IfcElectricalDomain
+                        </a>
+<a class="sublink-1" href="../ifchvacdomain/content.html">
+                            7.5 IfcHvacDomain
+                        </a>
+<a class="sublink-1" href="../ifcplumbingfireprotectiondomain/content.html">
+                            7.6 IfcPlumbingFireProtectionDomain
+                        </a>
+<a class="sublink-1" href="../ifcportsandwaterwaysdomain/content.html">
+                            7.7 IfcPortsAndWaterwaysDomain
+                        </a>
+<a class="sublink-1 current" href="content.html">
+                            7.8 IfcRailDomain
+                        </a>
+<a class="sublink-1" href="../ifcroaddomain/content.html">
+                            7.9 IfcRoadDomain
+                        </a>
+<a class="sublink-1" href="../ifcstructuralanalysisdomain/content.html">
+                            7.10 IfcStructuralAnalysisDomain
+                        </a>
+<a class="sublink-1" href="../ifcstructuralelementsdomain/content.html">
+                            7.11 IfcStructuralElementsDomain
+                        </a>
+<a href="../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>7.8 IfcRailDomain</h1>
+<h2><a class="anchor" id="7.8.1-Schema-definition"></a>
+    7.8.1 Schema definition
+<a class="link" href="#7.8.1-Schema-definition"><i data-feather="link"></i></a></h2>
+<p>The <em>IfcRailDomain</em> schema defines specific object concepts used in the rail domain that have not been covered in lower level schemas or schemas in the same level.</p>
+<aside class="aside-note"><mark>NOTE</mark>  Most elements used in the rail domain are shared with other domains and are consequently declared in lower level schemas or schemas in the same level, such as <em>IfcProductExtension</em>, <em>IfcSharedInfrastructureElements</em>, <em>IfcSharedBldgElements</em>, <em>IfcSharedBldgServiceElements</em>, or <em>IfcElectricalDomain</em>.</aside>
+<p>Specific rail elements that are not already covered by other schemas are defined here:</p>
+<ul>
+<li>different types of rails for ensuring guidance of moving for vehicles or other kinds of machineries.</li>
+<li>specific elements used in the track sub-domain, e.g. sleeper, frog, derailer, etc.</li>
+<li>spatial structure types for breaking down railway projects.</li>
+</ul>
+<aside class="aside-history"><mark>HISTORY</mark>  New schema in IFC4.3</aside>
+<h2><a class="anchor" id="7.8.2-Types"></a>
+    7.8.2 Types
+<a class="link" href="#7.8.2-Types"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.8.2.1">
+<a href="../lexical/IfcRailTypeEnum.html">
+            IfcRailTypeEnum
+        </a>
+</li><li number="7.8.2.2">
+<a href="../lexical/IfcRailwayPartTypeEnum.html">
+            IfcRailwayPartTypeEnum
+        </a>
+</li><li number="7.8.2.3">
+<a href="../lexical/IfcRailwayTypeEnum.html">
+            IfcRailwayTypeEnum
+        </a>
+</li><li number="7.8.2.4">
+<a href="../lexical/IfcTrackElementTypeEnum.html">
+            IfcTrackElementTypeEnum
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.8.3-Entities"></a>
+    7.8.3 Entities
+<a class="link" href="#7.8.3-Entities"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.8.3.1">
+<a href="../lexical/IfcRail.html">
+            IfcRail
+        </a>
+</li><li number="7.8.3.2">
+<a href="../lexical/IfcRailType.html">
+            IfcRailType
+        </a>
+</li><li number="7.8.3.3">
+<a href="../lexical/IfcRailway.html">
+            IfcRailway
+        </a>
+</li><li number="7.8.3.4">
+<a href="../lexical/IfcRailwayPart.html">
+            IfcRailwayPart
+        </a>
+</li><li number="7.8.3.5">
+<a href="../lexical/IfcTrackElement.html">
+            IfcTrackElement
+        </a>
+</li><li number="7.8.3.6">
+<a href="../lexical/IfcTrackElementType.html">
+            IfcTrackElementType
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.8.4-Property-Sets"></a>
+    7.8.4 Property Sets
+<a class="link" href="#7.8.4-Property-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.8.4.1">
+<a href="../lexical/Pset_AudioVisualApplianceTypeRailwayCommunicationTerminal.html">
+            Pset_AudioVisualApplianceTypeRailwayCommunicationTerminal
+        </a>
+</li><li number="7.8.4.2">
+<a href="../lexical/Pset_AudioVisualApplianceTypeRecordingEquipment.html">
+            Pset_AudioVisualApplianceTypeRecordingEquipment
+        </a>
+</li><li number="7.8.4.3">
+<a href="../lexical/Pset_AxleCountingEquipment.html">
+            Pset_AxleCountingEquipment
+        </a>
+</li><li number="7.8.4.4">
+<a href="../lexical/Pset_BalanceWeightTensionerDesignCriteria.html">
+            Pset_BalanceWeightTensionerDesignCriteria
+        </a>
+</li><li number="7.8.4.5">
+<a href="../lexical/Pset_BuiltSystemRailwayLine.html">
+            Pset_BuiltSystemRailwayLine
+        </a>
+</li><li number="7.8.4.6">
+<a href="../lexical/Pset_BuiltSystemRailwayTrack.html">
+            Pset_BuiltSystemRailwayTrack
+        </a>
+</li><li number="7.8.4.7">
+<a href="../lexical/Pset_CableCarrierSegmentTypeCatenaryWire.html">
+            Pset_CableCarrierSegmentTypeCatenaryWire
+        </a>
+</li><li number="7.8.4.8">
+<a href="../lexical/Pset_CableCarrierSegmentTypeDropper.html">
+            Pset_CableCarrierSegmentTypeDropper
+        </a>
+</li><li number="7.8.4.9">
+<a href="../lexical/Pset_CableFittingTypeExit.html">
+            Pset_CableFittingTypeExit
+        </a>
+</li><li number="7.8.4.10">
+<a href="../lexical/Pset_CableFittingTypeFanout.html">
+            Pset_CableFittingTypeFanout
+        </a>
+</li><li number="7.8.4.11">
+<a href="../lexical/Pset_CableSegmentConnector.html">
+            Pset_CableSegmentConnector
+        </a>
+</li><li number="7.8.4.12">
+<a href="../lexical/Pset_CableSegmentOccurenceFiberSegment.html">
+            Pset_CableSegmentOccurenceFiberSegment
+        </a>
+</li><li number="7.8.4.13">
+<a href="../lexical/Pset_CableSegmentTypeContactWire.html">
+            Pset_CableSegmentTypeContactWire
+        </a>
+</li><li number="7.8.4.14">
+<a href="../lexical/Pset_CableSegmentTypeEarthingConductor.html">
+            Pset_CableSegmentTypeEarthingConductor
+        </a>
+</li><li number="7.8.4.15">
+<a href="../lexical/Pset_CableSegmentTypeFiberSegment.html">
+            Pset_CableSegmentTypeFiberSegment
+        </a>
+</li><li number="7.8.4.16">
+<a href="../lexical/Pset_CableSegmentTypeFiberTubeSegment.html">
+            Pset_CableSegmentTypeFiberTubeSegment
+        </a>
+</li><li number="7.8.4.17">
+<a href="../lexical/Pset_CableSegmentTypeOpticalCableSegment.html">
+            Pset_CableSegmentTypeOpticalCableSegment
+        </a>
+</li><li number="7.8.4.18">
+<a href="../lexical/Pset_CableSegmentTypeStitchWire.html">
+            Pset_CableSegmentTypeStitchWire
+        </a>
+</li><li number="7.8.4.19">
+<a href="../lexical/Pset_CableSegmentTypeWirePairSegment.html">
+            Pset_CableSegmentTypeWirePairSegment
+        </a>
+</li><li number="7.8.4.20">
+<a href="../lexical/Pset_CessBetweenRails.html">
+            Pset_CessBetweenRails
+        </a>
+</li><li number="7.8.4.21">
+<a href="../lexical/Pset_CoaxialCable.html">
+            Pset_CoaxialCable
+        </a>
+</li><li number="7.8.4.22">
+<a href="../lexical/Pset_CommunicationsApplianceTypeAntenna.html">
+            Pset_CommunicationsApplianceTypeAntenna
+        </a>
+</li><li number="7.8.4.23">
+<a href="../lexical/Pset_CommunicationsApplianceTypeAutomaton.html">
+            Pset_CommunicationsApplianceTypeAutomaton
+        </a>
+</li><li number="7.8.4.24">
+<a href="../lexical/Pset_CommunicationsApplianceTypeComputer.html">
+            Pset_CommunicationsApplianceTypeComputer
+        </a>
+</li><li number="7.8.4.25">
+<a href="../lexical/Pset_CommunicationsApplianceTypeGateway.html">
+            Pset_CommunicationsApplianceTypeGateway
+        </a>
+</li><li number="7.8.4.26">
+<a href="../lexical/Pset_CommunicationsApplianceTypeIntelligentPeripheral.html">
+            Pset_CommunicationsApplianceTypeIntelligentPeripheral
+        </a>
+</li><li number="7.8.4.27">
+<a href="../lexical/Pset_CommunicationsApplianceTypeIpNetworkEquipment.html">
+            Pset_CommunicationsApplianceTypeIpNetworkEquipment
+        </a>
+</li><li number="7.8.4.28">
+<a href="../lexical/Pset_CommunicationsApplianceTypeModem.html">
+            Pset_CommunicationsApplianceTypeModem
+        </a>
+</li><li number="7.8.4.29">
+<a href="../lexical/Pset_CommunicationsApplianceTypeOpticalLineTerminal.html">
+            Pset_CommunicationsApplianceTypeOpticalLineTerminal
+        </a>
+</li><li number="7.8.4.30">
+<a href="../lexical/Pset_CommunicationsApplianceTypeOpticalNetworkUnit.html">
+            Pset_CommunicationsApplianceTypeOpticalNetworkUnit
+        </a>
+</li><li number="7.8.4.31">
+<a href="../lexical/Pset_CommunicationsApplianceTypeTelecommand.html">
+            Pset_CommunicationsApplianceTypeTelecommand
+        </a>
+</li><li number="7.8.4.32">
+<a href="../lexical/Pset_CommunicationsApplianceTypeTelephonyExchange.html">
+            Pset_CommunicationsApplianceTypeTelephonyExchange
+        </a>
+</li><li number="7.8.4.33">
+<a href="../lexical/Pset_CommunicationsApplianceTypeTransportEquipment.html">
+            Pset_CommunicationsApplianceTypeTransportEquipment
+        </a>
+</li><li number="7.8.4.34">
+<a href="../lexical/Pset_CoveringTypeMembrane.html">
+            Pset_CoveringTypeMembrane
+        </a>
+</li><li number="7.8.4.35">
+<a href="../lexical/Pset_CurrentInstrumentTransformer.html">
+            Pset_CurrentInstrumentTransformer
+        </a>
+</li><li number="7.8.4.36">
+<a href="../lexical/Pset_DataTransmissionUnit.html">
+            Pset_DataTransmissionUnit
+        </a>
+</li><li number="7.8.4.37">
+<a href="../lexical/Pset_DiscreteAccessoryTypeBracket.html">
+            Pset_DiscreteAccessoryTypeBracket
+        </a>
+</li><li number="7.8.4.38">
+<a href="../lexical/Pset_DiscreteAccessoryTypeCableArranger.html">
+            Pset_DiscreteAccessoryTypeCableArranger
+        </a>
+</li><li number="7.8.4.39">
+<a href="../lexical/Pset_DiscreteAccessoryTypeInsulator.html">
+            Pset_DiscreteAccessoryTypeInsulator
+        </a>
+</li><li number="7.8.4.40">
+<a href="../lexical/Pset_DiscreteAccessoryTypeLock.html">
+            Pset_DiscreteAccessoryTypeLock
+        </a>
+</li><li number="7.8.4.41">
+<a href="../lexical/Pset_DiscreteAccessoryTypeRailBrace.html">
+            Pset_DiscreteAccessoryTypeRailBrace
+        </a>
+</li><li number="7.8.4.42">
+<a href="../lexical/Pset_DiscreteAccessoryTypeRailLubrication.html">
+            Pset_DiscreteAccessoryTypeRailLubrication
+        </a>
+</li><li number="7.8.4.43">
+<a href="../lexical/Pset_DiscreteAccessoryTypeRailPad.html">
+            Pset_DiscreteAccessoryTypeRailPad
+        </a>
+</li><li number="7.8.4.44">
+<a href="../lexical/Pset_DiscreteAccessoryTypeSlidingChair.html">
+            Pset_DiscreteAccessoryTypeSlidingChair
+        </a>
+</li><li number="7.8.4.45">
+<a href="../lexical/Pset_DiscreteAccessoryTypeSoundAbsorption.html">
+            Pset_DiscreteAccessoryTypeSoundAbsorption
+        </a>
+</li><li number="7.8.4.46">
+<a href="../lexical/Pset_DiscreteAccessoryTypeTensioningEquipment.html">
+            Pset_DiscreteAccessoryTypeTensioningEquipment
+        </a>
+</li><li number="7.8.4.47">
+<a href="../lexical/Pset_DistributionBoardTypeDispatchingBoard.html">
+            Pset_DistributionBoardTypeDispatchingBoard
+        </a>
+</li><li number="7.8.4.48">
+<a href="../lexical/Pset_DistributionBoardTypeDistributionFrame.html">
+            Pset_DistributionBoardTypeDistributionFrame
+        </a>
+</li><li number="7.8.4.49">
+<a href="../lexical/Pset_DistributionSystemTypeOverheadContactlineSystem.html">
+            Pset_DistributionSystemTypeOverheadContactlineSystem
+        </a>
+</li><li number="7.8.4.50">
+<a href="../lexical/Pset_DoorTypeTurnstile.html">
+            Pset_DoorTypeTurnstile
+        </a>
+</li><li number="7.8.4.51">
+<a href="../lexical/Pset_ElectricFlowStorageDeviceTypeBattery.html">
+            Pset_ElectricFlowStorageDeviceTypeBattery
+        </a>
+</li><li number="7.8.4.52">
+<a href="../lexical/Pset_ElectricFlowStorageDeviceTypeCapacitor.html">
+            Pset_ElectricFlowStorageDeviceTypeCapacitor
+        </a>
+</li><li number="7.8.4.53">
+<a href="../lexical/Pset_ElectricFlowStorageDeviceTypeInductor.html">
+            Pset_ElectricFlowStorageDeviceTypeInductor
+        </a>
+</li><li number="7.8.4.54">
+<a href="../lexical/Pset_ElectricFlowStorageDeviceTypeRecharger.html">
+            Pset_ElectricFlowStorageDeviceTypeRecharger
+        </a>
+</li><li number="7.8.4.55">
+<a href="../lexical/Pset_ElectricFlowStorageDeviceTypeUPS.html">
+            Pset_ElectricFlowStorageDeviceTypeUPS
+        </a>
+</li><li number="7.8.4.56">
+<a href="../lexical/Pset_ElectricFlowTreatmentDeviceTypeElectronicFilter.html">
+            Pset_ElectricFlowTreatmentDeviceTypeElectronicFilter
+        </a>
+</li><li number="7.8.4.57">
+<a href="../lexical/Pset_ElectricalDeviceCompliance.html">
+            Pset_ElectricalDeviceCompliance
+        </a>
+</li><li number="7.8.4.58">
+<a href="../lexical/Pset_ElectricalFeederLine.html">
+            Pset_ElectricalFeederLine
+        </a>
+</li><li number="7.8.4.59">
+<a href="../lexical/Pset_ElementAssemblyTypeCantilever.html">
+            Pset_ElementAssemblyTypeCantilever
+        </a>
+</li><li number="7.8.4.60">
+<a href="../lexical/Pset_ElementAssemblyTypeDilatationPanel.html">
+            Pset_ElementAssemblyTypeDilatationPanel
+        </a>
+</li><li number="7.8.4.61">
+<a href="../lexical/Pset_ElementAssemblyTypeHeadSpan.html">
+            Pset_ElementAssemblyTypeHeadSpan
+        </a>
+</li><li number="7.8.4.62">
+<a href="../lexical/Pset_ElementAssemblyTypeMast.html">
+            Pset_ElementAssemblyTypeMast
+        </a>
+</li><li number="7.8.4.63">
+<a href="../lexical/Pset_ElementAssemblyTypeOCSSuspension.html">
+            Pset_ElementAssemblyTypeOCSSuspension
+        </a>
+</li><li number="7.8.4.64">
+<a href="../lexical/Pset_ElementAssemblyTypeRigidFrame.html">
+            Pset_ElementAssemblyTypeRigidFrame
+        </a>
+</li><li number="7.8.4.65">
+<a href="../lexical/Pset_ElementAssemblyTypeSteadyDevice.html">
+            Pset_ElementAssemblyTypeSteadyDevice
+        </a>
+</li><li number="7.8.4.66">
+<a href="../lexical/Pset_ElementAssemblyTypeSupportingAssembly.html">
+            Pset_ElementAssemblyTypeSupportingAssembly
+        </a>
+</li><li number="7.8.4.67">
+<a href="../lexical/Pset_ElementAssemblyTypeTrackPanel.html">
+            Pset_ElementAssemblyTypeTrackPanel
+        </a>
+</li><li number="7.8.4.68">
+<a href="../lexical/Pset_ElementAssemblyTypeTractionSwitchingAssembly.html">
+            Pset_ElementAssemblyTypeTractionSwitchingAssembly
+        </a>
+</li><li number="7.8.4.69">
+<a href="../lexical/Pset_ElementAssemblyTypeTurnoutPanel.html">
+            Pset_ElementAssemblyTypeTurnoutPanel
+        </a>
+</li><li number="7.8.4.70">
+<a href="../lexical/Pset_EmbeddedTrack.html">
+            Pset_EmbeddedTrack
+        </a>
+</li><li number="7.8.4.71">
+<a href="../lexical/Pset_EnvironmentalCondition.html">
+            Pset_EnvironmentalCondition
+        </a>
+</li><li number="7.8.4.72">
+<a href="../lexical/Pset_FastenerRailWeld.html">
+            Pset_FastenerRailWeld
+        </a>
+</li><li number="7.8.4.73">
+<a href="../lexical/Pset_FootingTypePadFooting.html">
+            Pset_FootingTypePadFooting
+        </a>
+</li><li number="7.8.4.74">
+<a href="../lexical/Pset_ImpactProtectionDeviceOccurrenceBumper.html">
+            Pset_ImpactProtectionDeviceOccurrenceBumper
+        </a>
+</li><li number="7.8.4.75">
+<a href="../lexical/Pset_ImpactProtectionDeviceTypeBumper.html">
+            Pset_ImpactProtectionDeviceTypeBumper
+        </a>
+</li><li number="7.8.4.76">
+<a href="../lexical/Pset_InstallationOccurrence.html">
+            Pset_InstallationOccurrence
+        </a>
+</li><li number="7.8.4.77">
+<a href="../lexical/Pset_IpNetworkEquipmentPHistory.html">
+            Pset_IpNetworkEquipmentPHistory
+        </a>
+</li><li number="7.8.4.78">
+<a href="../lexical/Pset_JunctionBoxTypeData.html">
+            Pset_JunctionBoxTypeData
+        </a>
+</li><li number="7.8.4.79">
+<a href="../lexical/Pset_MarkerGeneral.html">
+            Pset_MarkerGeneral
+        </a>
+</li><li number="7.8.4.80">
+<a href="../lexical/Pset_MechanicalFastenerOCSFitting.html">
+            Pset_MechanicalFastenerOCSFitting
+        </a>
+</li><li number="7.8.4.81">
+<a href="../lexical/Pset_MechanicalFastenerTypeRailFastening.html">
+            Pset_MechanicalFastenerTypeRailFastening
+        </a>
+</li><li number="7.8.4.82">
+<a href="../lexical/Pset_MechanicalFastenerTypeRailJoint.html">
+            Pset_MechanicalFastenerTypeRailJoint
+        </a>
+</li><li number="7.8.4.83">
+<a href="../lexical/Pset_MemberTypeAnchoringBar.html">
+            Pset_MemberTypeAnchoringBar
+        </a>
+</li><li number="7.8.4.84">
+<a href="../lexical/Pset_MemberTypeCatenaryStay.html">
+            Pset_MemberTypeCatenaryStay
+        </a>
+</li><li number="7.8.4.85">
+<a href="../lexical/Pset_MemberTypeOCSRigidSupport.html">
+            Pset_MemberTypeOCSRigidSupport
+        </a>
+</li><li number="7.8.4.86">
+<a href="../lexical/Pset_MemberTypePost.html">
+            Pset_MemberTypePost
+        </a>
+</li><li number="7.8.4.87">
+<a href="../lexical/Pset_MemberTypeTieBar.html">
+            Pset_MemberTypeTieBar
+        </a>
+</li><li number="7.8.4.88">
+<a href="../lexical/Pset_MobileTeleCommunicationsApplianceTypeRemoteRadioUnit.html">
+            Pset_MobileTeleCommunicationsApplianceTypeRemoteRadioUnit
+        </a>
+</li><li number="7.8.4.89">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeAccessPoint.html">
+            Pset_MobileTelecommunicationsApplianceTypeAccessPoint
+        </a>
+</li><li number="7.8.4.90">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeBaseTransceiverStation.html">
+            Pset_MobileTelecommunicationsApplianceTypeBaseTransceiverStation
+        </a>
+</li><li number="7.8.4.91">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeBasebandUnit.html">
+            Pset_MobileTelecommunicationsApplianceTypeBasebandUnit
+        </a>
+</li><li number="7.8.4.92">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeCommon.html">
+            Pset_MobileTelecommunicationsApplianceTypeCommon
+        </a>
+</li><li number="7.8.4.93">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeEUtranNodeB.html">
+            Pset_MobileTelecommunicationsApplianceTypeEUtranNodeB
+        </a>
+</li><li number="7.8.4.94">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeMSCServer.html">
+            Pset_MobileTelecommunicationsApplianceTypeMSCServer
+        </a>
+</li><li number="7.8.4.95">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeMasterUnit.html">
+            Pset_MobileTelecommunicationsApplianceTypeMasterUnit
+        </a>
+</li><li number="7.8.4.96">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeMobileSwitchingCenter.html">
+            Pset_MobileTelecommunicationsApplianceTypeMobileSwitchingCenter
+        </a>
+</li><li number="7.8.4.97">
+<a href="../lexical/Pset_MobileTelecommunicationsApplianceTypeRemoteUnit.html">
+            Pset_MobileTelecommunicationsApplianceTypeRemoteUnit
+        </a>
+</li><li number="7.8.4.98">
+<a href="../lexical/Pset_OnSiteTelecomControlUnit.html">
+            Pset_OnSiteTelecomControlUnit
+        </a>
+</li><li number="7.8.4.99">
+<a href="../lexical/Pset_OpticalAdapter.html">
+            Pset_OpticalAdapter
+        </a>
+</li><li number="7.8.4.100">
+<a href="../lexical/Pset_OpticalPigtail.html">
+            Pset_OpticalPigtail
+        </a>
+</li><li number="7.8.4.101">
+<a href="../lexical/Pset_OpticalSplitter.html">
+            Pset_OpticalSplitter
+        </a>
+</li><li number="7.8.4.102">
+<a href="../lexical/Pset_PatchCordCable.html">
+            Pset_PatchCordCable
+        </a>
+</li><li number="7.8.4.103">
+<a href="../lexical/Pset_PointMachine.html">
+            Pset_PointMachine
+        </a>
+</li><li number="7.8.4.104">
+<a href="../lexical/Pset_PowerControlSystem.html">
+            Pset_PowerControlSystem
+        </a>
+</li><li number="7.8.4.105">
+<a href="../lexical/Pset_ProtectiveDeviceTypeAntiArcingDevice.html">
+            Pset_ProtectiveDeviceTypeAntiArcingDevice
+        </a>
+</li><li number="7.8.4.106">
+<a href="../lexical/Pset_ProtectiveDeviceTypeSparkGap.html">
+            Pset_ProtectiveDeviceTypeSparkGap
+        </a>
+</li><li number="7.8.4.107">
+<a href="../lexical/Pset_RailTypeBlade.html">
+            Pset_RailTypeBlade
+        </a>
+</li><li number="7.8.4.108">
+<a href="../lexical/Pset_RailTypeCheckRail.html">
+            Pset_RailTypeCheckRail
+        </a>
+</li><li number="7.8.4.109">
+<a href="../lexical/Pset_RailTypeGuardRail.html">
+            Pset_RailTypeGuardRail
+        </a>
+</li><li number="7.8.4.110">
+<a href="../lexical/Pset_RailTypeRail.html">
+            Pset_RailTypeRail
+        </a>
+</li><li number="7.8.4.111">
+<a href="../lexical/Pset_RailTypeStockRail.html">
+            Pset_RailTypeStockRail
+        </a>
+</li><li number="7.8.4.112">
+<a href="../lexical/Pset_RailwayBalise.html">
+            Pset_RailwayBalise
+        </a>
+</li><li number="7.8.4.113">
+<a href="../lexical/Pset_RailwayCableCarrier.html">
+            Pset_RailwayCableCarrier
+        </a>
+</li><li number="7.8.4.114">
+<a href="../lexical/Pset_RailwayLevelCrossing.html">
+            Pset_RailwayLevelCrossing
+        </a>
+</li><li number="7.8.4.115">
+<a href="../lexical/Pset_RailwaySignalAspect.html">
+            Pset_RailwaySignalAspect
+        </a>
+</li><li number="7.8.4.116">
+<a href="../lexical/Pset_RailwaySignalOccurrence.html">
+            Pset_RailwaySignalOccurrence
+        </a>
+</li><li number="7.8.4.117">
+<a href="../lexical/Pset_RailwaySignalSighting.html">
+            Pset_RailwaySignalSighting
+        </a>
+</li><li number="7.8.4.118">
+<a href="../lexical/Pset_RailwaySignalType.html">
+            Pset_RailwaySignalType
+        </a>
+</li><li number="7.8.4.119">
+<a href="../lexical/Pset_RailwayTrackStructurePart.html">
+            Pset_RailwayTrackStructurePart
+        </a>
+</li><li number="7.8.4.120">
+<a href="../lexical/Pset_RepairOccurrence.html">
+            Pset_RepairOccurrence
+        </a>
+</li><li number="7.8.4.121">
+<a href="../lexical/Pset_SectionInsulator.html">
+            Pset_SectionInsulator
+        </a>
+</li><li number="7.8.4.122">
+<a href="../lexical/Pset_SectioningDevice.html">
+            Pset_SectioningDevice
+        </a>
+</li><li number="7.8.4.123">
+<a href="../lexical/Pset_SensorTypeEarthquakeSensor.html">
+            Pset_SensorTypeEarthquakeSensor
+        </a>
+</li><li number="7.8.4.124">
+<a href="../lexical/Pset_SensorTypeForeignObjectDetectionSensor.html">
+            Pset_SensorTypeForeignObjectDetectionSensor
+        </a>
+</li><li number="7.8.4.125">
+<a href="../lexical/Pset_SensorTypeRainSensor.html">
+            Pset_SensorTypeRainSensor
+        </a>
+</li><li number="7.8.4.126">
+<a href="../lexical/Pset_SensorTypeSnowSensor.html">
+            Pset_SensorTypeSnowSensor
+        </a>
+</li><li number="7.8.4.127">
+<a href="../lexical/Pset_SensorTypeTurnoutClosureSensor.html">
+            Pset_SensorTypeTurnoutClosureSensor
+        </a>
+</li><li number="7.8.4.128">
+<a href="../lexical/Pset_SignalFrame.html">
+            Pset_SignalFrame
+        </a>
+</li><li number="7.8.4.129">
+<a href="../lexical/Pset_SlabTypeTrackSlab.html">
+            Pset_SlabTypeTrackSlab
+        </a>
+</li><li number="7.8.4.130">
+<a href="../lexical/Pset_SpringTensioner.html">
+            Pset_SpringTensioner
+        </a>
+</li><li number="7.8.4.131">
+<a href="../lexical/Pset_SwitchingDeviceTypeRelay.html">
+            Pset_SwitchingDeviceTypeRelay
+        </a>
+</li><li number="7.8.4.132">
+<a href="../lexical/Pset_SymmetricPairCable.html">
+            Pset_SymmetricPairCable
+        </a>
+</li><li number="7.8.4.133">
+<a href="../lexical/Pset_SystemFurnitureElementTypeSubrack.html">
+            Pset_SystemFurnitureElementTypeSubrack
+        </a>
+</li><li number="7.8.4.134">
+<a href="../lexical/Pset_TelecomCableGeneral.html">
+            Pset_TelecomCableGeneral
+        </a>
+</li><li number="7.8.4.135">
+<a href="../lexical/Pset_TicketProcessing.html">
+            Pset_TicketProcessing
+        </a>
+</li><li number="7.8.4.136">
+<a href="../lexical/Pset_TicketVendingMachine.html">
+            Pset_TicketVendingMachine
+        </a>
+</li><li number="7.8.4.137">
+<a href="../lexical/Pset_TrackBase.html">
+            Pset_TrackBase
+        </a>
+</li><li number="7.8.4.138">
+<a href="../lexical/Pset_TrackElementOccurrenceSleeper.html">
+            Pset_TrackElementOccurrenceSleeper
+        </a>
+</li><li number="7.8.4.139">
+<a href="../lexical/Pset_TrackElementPHistoryDerailer.html">
+            Pset_TrackElementPHistoryDerailer
+        </a>
+</li><li number="7.8.4.140">
+<a href="../lexical/Pset_TrackElementTypeDerailer.html">
+            Pset_TrackElementTypeDerailer
+        </a>
+</li><li number="7.8.4.141">
+<a href="../lexical/Pset_TrackElementTypeSleeper.html">
+            Pset_TrackElementTypeSleeper
+        </a>
+</li><li number="7.8.4.142">
+<a href="../lexical/Pset_TractionPowerSystem.html">
+            Pset_TractionPowerSystem
+        </a>
+</li><li number="7.8.4.143">
+<a href="../lexical/Pset_TransportEquipmentOTN.html">
+            Pset_TransportEquipmentOTN
+        </a>
+</li><li number="7.8.4.144">
+<a href="../lexical/Pset_UnitaryControlElementBaseStationController.html">
+            Pset_UnitaryControlElementBaseStationController
+        </a>
+</li><li number="7.8.4.145">
+<a href="../lexical/Pset_UnitaryControlElementTypeControlPanel.html">
+            Pset_UnitaryControlElementTypeControlPanel
+        </a>
+</li><li number="7.8.4.146">
+<a href="../lexical/Pset_VoltageInstrumentTransformer.html">
+            Pset_VoltageInstrumentTransformer
+        </a>
+</li><li number="7.8.4.147">
+<a href="../lexical/Pset_WiredCommunicationPortCommon.html">
+            Pset_WiredCommunicationPortCommon
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.8.5-Quantity-Sets"></a>
+    7.8.5 Quantity Sets
+<a class="link" href="#7.8.5-Quantity-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.8.5.1">
+<a href="../lexical/Qto_ConduitSegmentBaseQuantities.html">
+            Qto_ConduitSegmentBaseQuantities
+        </a>
+</li><li number="7.8.5.2">
+<a href="../lexical/Qto_RailBaseQuantities.html">
+            Qto_RailBaseQuantities
+        </a>
+</li><li number="7.8.5.3">
+<a href="../lexical/Qto_SleeperBaseQuantities.html">
+            Qto_SleeperBaseQuantities
+        </a>
+</li><li number="7.8.5.4">
+<a href="../lexical/Qto_SpatialZoneBaseQuantities.html">
+            Qto_SpatialZoneBaseQuantities
+        </a>
+</li></ol>
+<h2><a class="anchor" id="7.8.6-Functions"></a>
+    7.8.6 Functions
+<a class="link" href="#7.8.6-Functions"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="7.8.7-Rules"></a>
+    7.8.7 Rules
+<a class="link" href="#7.8.7-Rules"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="7.8.8-PropertyEnumerations"></a>
+    7.8.8 PropertyEnumerations
+<a class="link" href="#7.8.8-PropertyEnumerations"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="7.8.8.1">
+<a href="../lexical/PEnum_AntennaType.html">
+            PEnum_AntennaType
+        </a>
+</li><li number="7.8.8.2">
+<a href="../lexical/PEnum_ArrangerPositionEnum.html">
+            PEnum_ArrangerPositionEnum
+        </a>
+</li><li number="7.8.8.3">
+<a href="../lexical/PEnum_AxleCountingEquipmentType.html">
+            PEnum_AxleCountingEquipmentType
+        </a>
+</li><li number="7.8.8.4">
+<a href="../lexical/PEnum_BatteryChargingType.html">
+            PEnum_BatteryChargingType
+        </a>
+</li><li number="7.8.8.5">
+<a href="../lexical/PEnum_BladesOrientation.html">
+            PEnum_BladesOrientation
+        </a>
+</li><li number="7.8.8.6">
+<a href="../lexical/PEnum_BranchLineDirection.html">
+            PEnum_BranchLineDirection
+        </a>
+</li><li number="7.8.8.7">
+<a href="../lexical/PEnum_BumperOrientation.html">
+            PEnum_BumperOrientation
+        </a>
+</li><li number="7.8.8.8">
+<a href="../lexical/PEnum_CableArmourType.html">
+            PEnum_CableArmourType
+        </a>
+</li><li number="7.8.8.9">
+<a href="../lexical/PEnum_CableFunctionType.html">
+            PEnum_CableFunctionType
+        </a>
+</li><li number="7.8.8.10">
+<a href="../lexical/PEnum_CantileverAssemblyType.html">
+            PEnum_CantileverAssemblyType
+        </a>
+</li><li number="7.8.8.11">
+<a href="../lexical/PEnum_CatenaryStayType.html">
+            PEnum_CatenaryStayType
+        </a>
+</li><li number="7.8.8.12">
+<a href="../lexical/PEnum_CheckRailType.html">
+            PEnum_CheckRailType
+        </a>
+</li><li number="7.8.8.13">
+<a href="../lexical/PEnum_CommonInterfaceType.html">
+            PEnum_CommonInterfaceType
+        </a>
+</li><li number="7.8.8.14">
+<a href="../lexical/PEnum_CommunicationStandard.html">
+            PEnum_CommunicationStandard
+        </a>
+</li><li number="7.8.8.15">
+<a href="../lexical/PEnum_ComputerUIType.html">
+            PEnum_ComputerUIType
+        </a>
+</li><li number="7.8.8.16">
+<a href="../lexical/PEnum_ControllerInterfaceType.html">
+            PEnum_ControllerInterfaceType
+        </a>
+</li><li number="7.8.8.17">
+<a href="../lexical/PEnum_DataConnectionType.html">
+            PEnum_DataConnectionType
+        </a>
+</li><li number="7.8.8.18">
+<a href="../lexical/PEnum_DataTransmissionUnitUsage.html">
+            PEnum_DataTransmissionUnitUsage
+        </a>
+</li><li number="7.8.8.19">
+<a href="../lexical/PEnum_DispatchingBoardType.html">
+            PEnum_DispatchingBoardType
+        </a>
+</li><li number="7.8.8.20">
+<a href="../lexical/PEnum_DrillOnRail.html">
+            PEnum_DrillOnRail
+        </a>
+</li><li number="7.8.8.21">
+<a href="../lexical/PEnum_EarthquakeSensorType.html">
+            PEnum_EarthquakeSensorType
+        </a>
+</li><li number="7.8.8.22">
+<a href="../lexical/PEnum_ElectricalFeederType.html">
+            PEnum_ElectricalFeederType
+        </a>
+</li><li number="7.8.8.23">
+<a href="../lexical/PEnum_ElectrificationType.html">
+            PEnum_ElectrificationType
+        </a>
+</li><li number="7.8.8.24">
+<a href="../lexical/PEnum_ElectronicFilterType.html">
+            PEnum_ElectronicFilterType
+        </a>
+</li><li number="7.8.8.25">
+<a href="../lexical/PEnum_ExpansionDirection.html">
+            PEnum_ExpansionDirection
+        </a>
+</li><li number="7.8.8.26">
+<a href="../lexical/PEnum_FiberMode.html">
+            PEnum_FiberMode
+        </a>
+</li><li number="7.8.8.27">
+<a href="../lexical/PEnum_ForeignObjectDetectionSensorType.html">
+            PEnum_ForeignObjectDetectionSensorType
+        </a>
+</li><li number="7.8.8.28">
+<a href="../lexical/PEnum_GuardRailConnection.html">
+            PEnum_GuardRailConnection
+        </a>
+</li><li number="7.8.8.29">
+<a href="../lexical/PEnum_GuardRailType.html">
+            PEnum_GuardRailType
+        </a>
+</li><li number="7.8.8.30">
+<a href="../lexical/PEnum_ImageShootingMode.html">
+            PEnum_ImageShootingMode
+        </a>
+</li><li number="7.8.8.31">
+<a href="../lexical/PEnum_InstalledCondition.html">
+            PEnum_InstalledCondition
+        </a>
+</li><li number="7.8.8.32">
+<a href="../lexical/PEnum_InsulatorType.html">
+            PEnum_InsulatorType
+        </a>
+</li><li number="7.8.8.33">
+<a href="../lexical/PEnum_LineCharacteristic.html">
+            PEnum_LineCharacteristic
+        </a>
+</li><li number="7.8.8.34">
+<a href="../lexical/PEnum_LubricationPowerSupply.html">
+            PEnum_LubricationPowerSupply
+        </a>
+</li><li number="7.8.8.35">
+<a href="../lexical/PEnum_LubricationSystemType.html">
+            PEnum_LubricationSystemType
+        </a>
+</li><li number="7.8.8.36">
+<a href="../lexical/PEnum_MarkerType.html">
+            PEnum_MarkerType
+        </a>
+</li><li number="7.8.8.37">
+<a href="../lexical/PEnum_MasterUnitType.html">
+            PEnum_MasterUnitType
+        </a>
+</li><li number="7.8.8.38">
+<a href="../lexical/PEnum_MechanicalStressType.html">
+            PEnum_MechanicalStressType
+        </a>
+</li><li number="7.8.8.39">
+<a href="../lexical/PEnum_ModemTrafficInterfaceType.html">
+            PEnum_ModemTrafficInterfaceType
+        </a>
+</li><li number="7.8.8.40">
+<a href="../lexical/PEnum_OCSFasteningType.html">
+            PEnum_OCSFasteningType
+        </a>
+</li><li number="7.8.8.41">
+<a href="../lexical/PEnum_OpticalCableStructureType.html">
+            PEnum_OpticalCableStructureType
+        </a>
+</li><li number="7.8.8.42">
+<a href="../lexical/PEnum_OpticalNetworkUnitType.html">
+            PEnum_OpticalNetworkUnitType
+        </a>
+</li><li number="7.8.8.43">
+<a href="../lexical/PEnum_OpticalSplitterType.html">
+            PEnum_OpticalSplitterType
+        </a>
+</li><li number="7.8.8.44">
+<a href="../lexical/PEnum_OverheadContactLineType.html">
+            PEnum_OverheadContactLineType
+        </a>
+</li><li number="7.8.8.45">
+<a href="../lexical/PEnum_PaymentMethod.html">
+            PEnum_PaymentMethod
+        </a>
+</li><li number="7.8.8.46">
+<a href="../lexical/PEnum_PolarizationMode.html">
+            PEnum_PolarizationMode
+        </a>
+</li><li number="7.8.8.47">
+<a href="../lexical/PEnum_PowerSupplyMode.html">
+            PEnum_PowerSupplyMode
+        </a>
+</li><li number="7.8.8.48">
+<a href="../lexical/PEnum_RadiationPattern.html">
+            PEnum_RadiationPattern
+        </a>
+</li><li number="7.8.8.49">
+<a href="../lexical/PEnum_RailCondition.html">
+            PEnum_RailCondition
+        </a>
+</li><li number="7.8.8.50">
+<a href="../lexical/PEnum_RailDeliveryState.html">
+            PEnum_RailDeliveryState
+        </a>
+</li><li number="7.8.8.51">
+<a href="../lexical/PEnum_RailElementaryLength.html">
+            PEnum_RailElementaryLength
+        </a>
+</li><li number="7.8.8.52">
+<a href="../lexical/PEnum_RailPadStiffness.html">
+            PEnum_RailPadStiffness
+        </a>
+</li><li number="7.8.8.53">
+<a href="../lexical/PEnum_RailwayBaliseType.html">
+            PEnum_RailwayBaliseType
+        </a>
+</li><li number="7.8.8.54">
+<a href="../lexical/PEnum_RailwayCommunicationTerminalType.html">
+            PEnum_RailwayCommunicationTerminalType
+        </a>
+</li><li number="7.8.8.55">
+<a href="../lexical/PEnum_RailwaySignalType.html">
+            PEnum_RailwaySignalType
+        </a>
+</li><li number="7.8.8.56">
+<a href="../lexical/PEnum_RainSensorType.html">
+            PEnum_RainSensorType
+        </a>
+</li><li number="7.8.8.57">
+<a href="../lexical/PEnum_SectioningDeviceType.html">
+            PEnum_SectioningDeviceType
+        </a>
+</li><li number="7.8.8.58">
+<a href="../lexical/PEnum_SleeperArrangement.html">
+            PEnum_SleeperArrangement
+        </a>
+</li><li number="7.8.8.59">
+<a href="../lexical/PEnum_SleeperType.html">
+            PEnum_SleeperType
+        </a>
+</li><li number="7.8.8.60">
+<a href="../lexical/PEnum_SnowSensorType.html">
+            PEnum_SnowSensorType
+        </a>
+</li><li number="7.8.8.61">
+<a href="../lexical/PEnum_SparkGapType.html">
+            PEnum_SparkGapType
+        </a>
+</li><li number="7.8.8.62">
+<a href="../lexical/PEnum_SteadyDeviceType.html">
+            PEnum_SteadyDeviceType
+        </a>
+</li><li number="7.8.8.63">
+<a href="../lexical/PEnum_SupportingSystemType.html">
+            PEnum_SupportingSystemType
+        </a>
+</li><li number="7.8.8.64">
+<a href="../lexical/PEnum_TicketVendingMachineType.html">
+            PEnum_TicketVendingMachineType
+        </a>
+</li><li number="7.8.8.65">
+<a href="../lexical/PEnum_TrackCharacteristic.html">
+            PEnum_TrackCharacteristic
+        </a>
+</li><li number="7.8.8.66">
+<a href="../lexical/PEnum_TrackFasteningElasticityType.html">
+            PEnum_TrackFasteningElasticityType
+        </a>
+</li><li number="7.8.8.67">
+<a href="../lexical/PEnum_TrackSupportingStructure.html">
+            PEnum_TrackSupportingStructure
+        </a>
+</li><li number="7.8.8.68">
+<a href="../lexical/PEnum_TrackUsage.html">
+            PEnum_TrackUsage
+        </a>
+</li><li number="7.8.8.69">
+<a href="../lexical/PEnum_TrainCategory.html">
+            PEnum_TrainCategory
+        </a>
+</li><li number="7.8.8.70">
+<a href="../lexical/PEnum_TransmissionType.html">
+            PEnum_TransmissionType
+        </a>
+</li><li number="7.8.8.71">
+<a href="../lexical/PEnum_TransmittedSignal.html">
+            PEnum_TransmittedSignal
+        </a>
+</li><li number="7.8.8.72">
+<a href="../lexical/PEnum_TransportEquipmentAssemblyType.html">
+            PEnum_TransportEquipmentAssemblyType
+        </a>
+</li><li number="7.8.8.73">
+<a href="../lexical/PEnum_TransportEquipmentType.html">
+            PEnum_TransportEquipmentType
+        </a>
+</li><li number="7.8.8.74">
+<a href="../lexical/PEnum_TurnoutHeaterType.html">
+            PEnum_TurnoutHeaterType
+        </a>
+</li><li number="7.8.8.75">
+<a href="../lexical/PEnum_TurnoutPanelOrientation.html">
+            PEnum_TurnoutPanelOrientation
+        </a>
+</li><li number="7.8.8.76">
+<a href="../lexical/PEnum_TurnstileType.html">
+            PEnum_TurnstileType
+        </a>
+</li><li number="7.8.8.77">
+<a href="../lexical/PEnum_TypeOfCurvedTurnout.html">
+            PEnum_TypeOfCurvedTurnout
+        </a>
+</li><li number="7.8.8.78">
+<a href="../lexical/PEnum_TypeOfDrivingDevice.html">
+            PEnum_TypeOfDrivingDevice
+        </a>
+</li><li number="7.8.8.79">
+<a href="../lexical/PEnum_TypeOfJunction.html">
+            PEnum_TypeOfJunction
+        </a>
+</li><li number="7.8.8.80">
+<a href="../lexical/PEnum_TypeOfTurnout.html">
+            PEnum_TypeOfTurnout
+        </a>
+</li><li number="7.8.8.81">
+<a href="../lexical/PEnum_UnderSleeperPadStiffness.html">
+            PEnum_UnderSleeperPadStiffness
+        </a>
+</li><li number="7.8.8.82">
+<a href="../lexical/PEnum_UsagePurpose.html">
+            PEnum_UsagePurpose
+        </a>
+</li><li number="7.8.8.83">
+<a href="../lexical/PEnum_VendingMachineUserInterface.html">
+            PEnum_VendingMachineUserInterface
+        </a>
+</li><li number="7.8.8.84">
+<a href="../lexical/PEnum_WirePairType.html">
+            PEnum_WirePairType
+        </a>
+</li></ol>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/domain/IfcRailDomain/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>Change to official repo names</em> by Thomas Krijnen on 2026-09-08T13:56:10+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/schemas/domain/IfcRailDomain/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

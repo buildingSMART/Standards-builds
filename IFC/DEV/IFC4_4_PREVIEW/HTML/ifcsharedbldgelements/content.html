@@ -1,0 +1,904 @@
+<html lang="en">
+<head>
+<link href="../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>6.1 IfcSharedBldgElements - IFC 4.4.0.0 Documentation</title>
+<link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="..">
+                             Cover
+                        </a>
+<a href="../toc.html">
+                             Contents
+                        </a>
+<a href="../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a class="current" href="../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a class="sublink-1 current" href="content.html">
+                            6.1 IfcSharedBldgElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedbldgserviceelements/content.html">
+                            6.2 IfcSharedBldgServiceElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedcomponentelements/content.html">
+                            6.3 IfcSharedComponentElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedfacilitieselements/content.html">
+                            6.4 IfcSharedFacilitiesElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedmgmtelements/content.html">
+                            6.5 IfcSharedMgmtElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedinfrastructureelements/content.html">
+                            6.6 IfcSharedInfrastructureElements
+                        </a>
+<a href="../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>6.1 IfcSharedBldgElements</h1>
+<h2><a class="anchor" id="6.1.1-Schema-definition"></a>
+    6.1.1 Schema definition
+<a class="link" href="#6.1.1-Schema-definition"><i data-feather="link"></i></a></h2>
+<p>The shared building elements (<em>IfcSharedBldgElements</em>) define the subtypes of <em><a href="../lexical/IfcBuiltElement.html">IfcBuiltElement</a></em>, which is defined in the <em>IfcProductExtension</em>. Those subtypes are the major elements, which constitutes the architectural design of the building structure.</p>
+<p>The elements (e.g. wall, beam, column, slab, roof, stair, ramp, window, door and covering) are the main components of the raw building (or carcass) which is central for the exchange of project data. For each of those elements a geometric use definition is provided, which introduces the correct application of available shape representation types for the elements.</p>
+<h2><a class="anchor" id="6.1.2-Types"></a>
+    6.1.2 Types
+<a class="link" href="#6.1.2-Types"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.1.2.1">
+<a href="../lexical/IfcBeamTypeEnum.html">
+            IfcBeamTypeEnum
+        </a>
+</li><li number="6.1.2.2">
+<a href="../lexical/IfcBearingTypeEnum.html">
+            IfcBearingTypeEnum
+        </a>
+</li><li number="6.1.2.3">
+<a href="../lexical/IfcBuildingElementProxyTypeEnum.html">
+            IfcBuildingElementProxyTypeEnum
+        </a>
+</li><li number="6.1.2.4">
+<a href="../lexical/IfcBuildingSystemTypeEnum.html">
+            IfcBuildingSystemTypeEnum
+        </a>
+</li><li number="6.1.2.5">
+<a href="../lexical/IfcChimneyTypeEnum.html">
+            IfcChimneyTypeEnum
+        </a>
+</li><li number="6.1.2.6">
+<a href="../lexical/IfcColumnTypeEnum.html">
+            IfcColumnTypeEnum
+        </a>
+</li><li number="6.1.2.7">
+<a href="../lexical/IfcConnectionTypeEnum.html">
+            IfcConnectionTypeEnum
+        </a>
+</li><li number="6.1.2.8">
+<a href="../lexical/IfcCoveringTypeEnum.html">
+            IfcCoveringTypeEnum
+        </a>
+</li><li number="6.1.2.9">
+<a href="../lexical/IfcCurtainWallTypeEnum.html">
+            IfcCurtainWallTypeEnum
+        </a>
+</li><li number="6.1.2.10">
+<a href="../lexical/IfcDoorTypeEnum.html">
+            IfcDoorTypeEnum
+        </a>
+</li><li number="6.1.2.11">
+<a href="../lexical/IfcDoorTypeOperationEnum.html">
+            IfcDoorTypeOperationEnum
+        </a>
+</li><li number="6.1.2.12">
+<a href="../lexical/IfcMemberTypeEnum.html">
+            IfcMemberTypeEnum
+        </a>
+</li><li number="6.1.2.13">
+<a href="../lexical/IfcPlateTypeEnum.html">
+            IfcPlateTypeEnum
+        </a>
+</li><li number="6.1.2.14">
+<a href="../lexical/IfcRailingTypeEnum.html">
+            IfcRailingTypeEnum
+        </a>
+</li><li number="6.1.2.15">
+<a href="../lexical/IfcRampFlightTypeEnum.html">
+            IfcRampFlightTypeEnum
+        </a>
+</li><li number="6.1.2.16">
+<a href="../lexical/IfcRampTypeEnum.html">
+            IfcRampTypeEnum
+        </a>
+</li><li number="6.1.2.17">
+<a href="../lexical/IfcRoofTypeEnum.html">
+            IfcRoofTypeEnum
+        </a>
+</li><li number="6.1.2.18">
+<a href="../lexical/IfcShadingDeviceTypeEnum.html">
+            IfcShadingDeviceTypeEnum
+        </a>
+</li><li number="6.1.2.19">
+<a href="../lexical/IfcSlabTypeEnum.html">
+            IfcSlabTypeEnum
+        </a>
+</li><li number="6.1.2.20">
+<a href="../lexical/IfcStairFlightTypeEnum.html">
+            IfcStairFlightTypeEnum
+        </a>
+</li><li number="6.1.2.21">
+<a href="../lexical/IfcStairTypeEnum.html">
+            IfcStairTypeEnum
+        </a>
+</li><li number="6.1.2.22">
+<a href="../lexical/IfcWallTypeEnum.html">
+            IfcWallTypeEnum
+        </a>
+</li><li number="6.1.2.23">
+<a href="../lexical/IfcWindowTypeEnum.html">
+            IfcWindowTypeEnum
+        </a>
+</li><li number="6.1.2.24">
+<a href="../lexical/IfcWindowTypePartitioningEnum.html">
+            IfcWindowTypePartitioningEnum
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.1.3-Entities"></a>
+    6.1.3 Entities
+<a class="link" href="#6.1.3-Entities"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.1.3.1">
+<a href="../lexical/IfcBeam.html">
+            IfcBeam
+        </a>
+</li><li number="6.1.3.2">
+<a href="../lexical/IfcBeamType.html">
+            IfcBeamType
+        </a>
+</li><li number="6.1.3.3">
+<a href="../lexical/IfcBearing.html">
+            IfcBearing
+        </a>
+</li><li number="6.1.3.4">
+<a href="../lexical/IfcBearingType.html">
+            IfcBearingType
+        </a>
+</li><li number="6.1.3.5">
+<a href="../lexical/IfcBuildingElementProxy.html">
+            IfcBuildingElementProxy
+        </a>
+</li><li number="6.1.3.6">
+<a href="../lexical/IfcBuildingElementProxyType.html">
+            IfcBuildingElementProxyType
+        </a>
+</li><li number="6.1.3.7">
+<a href="../lexical/IfcBuildingSystem.html">
+            IfcBuildingSystem
+        </a>
+</li><li number="6.1.3.8">
+<a href="../lexical/IfcChimney.html">
+            IfcChimney
+        </a>
+</li><li number="6.1.3.9">
+<a href="../lexical/IfcChimneyType.html">
+            IfcChimneyType
+        </a>
+</li><li number="6.1.3.10">
+<a href="../lexical/IfcColumn.html">
+            IfcColumn
+        </a>
+</li><li number="6.1.3.11">
+<a href="../lexical/IfcColumnType.html">
+            IfcColumnType
+        </a>
+</li><li number="6.1.3.12">
+<a href="../lexical/IfcCovering.html">
+            IfcCovering
+        </a>
+</li><li number="6.1.3.13">
+<a href="../lexical/IfcCoveringType.html">
+            IfcCoveringType
+        </a>
+</li><li number="6.1.3.14">
+<a href="../lexical/IfcCurtainWall.html">
+            IfcCurtainWall
+        </a>
+</li><li number="6.1.3.15">
+<a href="../lexical/IfcCurtainWallType.html">
+            IfcCurtainWallType
+        </a>
+</li><li number="6.1.3.16">
+<a href="../lexical/IfcDoor.html">
+            IfcDoor
+        </a>
+</li><li number="6.1.3.17">
+<a href="../lexical/IfcDoorType.html">
+            IfcDoorType
+        </a>
+</li><li number="6.1.3.18">
+<a href="../lexical/IfcMember.html">
+            IfcMember
+        </a>
+</li><li number="6.1.3.19">
+<a href="../lexical/IfcMemberType.html">
+            IfcMemberType
+        </a>
+</li><li number="6.1.3.20">
+<a href="../lexical/IfcPlate.html">
+            IfcPlate
+        </a>
+</li><li number="6.1.3.21">
+<a href="../lexical/IfcPlateType.html">
+            IfcPlateType
+        </a>
+</li><li number="6.1.3.22">
+<a href="../lexical/IfcRailing.html">
+            IfcRailing
+        </a>
+</li><li number="6.1.3.23">
+<a href="../lexical/IfcRailingType.html">
+            IfcRailingType
+        </a>
+</li><li number="6.1.3.24">
+<a href="../lexical/IfcRamp.html">
+            IfcRamp
+        </a>
+</li><li number="6.1.3.25">
+<a href="../lexical/IfcRampFlight.html">
+            IfcRampFlight
+        </a>
+</li><li number="6.1.3.26">
+<a href="../lexical/IfcRampFlightType.html">
+            IfcRampFlightType
+        </a>
+</li><li number="6.1.3.27">
+<a href="../lexical/IfcRampType.html">
+            IfcRampType
+        </a>
+</li><li number="6.1.3.28">
+<a href="../lexical/IfcRelConnectsPathElements.html">
+            IfcRelConnectsPathElements
+        </a>
+</li><li number="6.1.3.29">
+<a href="../lexical/IfcRelCoversBldgElements.html">
+            IfcRelCoversBldgElements
+        </a>
+</li><li number="6.1.3.30">
+<a href="../lexical/IfcRelCoversSpaces.html">
+            IfcRelCoversSpaces
+        </a>
+</li><li number="6.1.3.31">
+<a href="../lexical/IfcRoof.html">
+            IfcRoof
+        </a>
+</li><li number="6.1.3.32">
+<a href="../lexical/IfcRoofType.html">
+            IfcRoofType
+        </a>
+</li><li number="6.1.3.33">
+<a href="../lexical/IfcShadingDevice.html">
+            IfcShadingDevice
+        </a>
+</li><li number="6.1.3.34">
+<a href="../lexical/IfcShadingDeviceType.html">
+            IfcShadingDeviceType
+        </a>
+</li><li number="6.1.3.35">
+<a href="../lexical/IfcSlab.html">
+            IfcSlab
+        </a>
+</li><li number="6.1.3.36">
+<a href="../lexical/IfcSlabType.html">
+            IfcSlabType
+        </a>
+</li><li number="6.1.3.37">
+<a href="../lexical/IfcStair.html">
+            IfcStair
+        </a>
+</li><li number="6.1.3.38">
+<a href="../lexical/IfcStairFlight.html">
+            IfcStairFlight
+        </a>
+</li><li number="6.1.3.39">
+<a href="../lexical/IfcStairFlightType.html">
+            IfcStairFlightType
+        </a>
+</li><li number="6.1.3.40">
+<a href="../lexical/IfcStairType.html">
+            IfcStairType
+        </a>
+</li><li number="6.1.3.41">
+<a href="../lexical/IfcWall.html">
+            IfcWall
+        </a>
+</li><li number="6.1.3.42">
+<a href="../lexical/IfcWallStandardCase.html">
+            IfcWallStandardCase
+        </a>
+</li><li number="6.1.3.43">
+<a href="../lexical/IfcWallType.html">
+            IfcWallType
+        </a>
+</li><li number="6.1.3.44">
+<a href="../lexical/IfcWindow.html">
+            IfcWindow
+        </a>
+</li><li number="6.1.3.45">
+<a href="../lexical/IfcWindowType.html">
+            IfcWindowType
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.1.4-Property-Sets"></a>
+    6.1.4 Property Sets
+<a class="link" href="#6.1.4-Property-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.1.4.1">
+<a href="../lexical/Pset_BeamCommon.html">
+            Pset_BeamCommon
+        </a>
+</li><li number="6.1.4.2">
+<a href="../lexical/Pset_BearingCommon.html">
+            Pset_BearingCommon
+        </a>
+</li><li number="6.1.4.3">
+<a href="../lexical/Pset_BuildingElementProxyCommon.html">
+            Pset_BuildingElementProxyCommon
+        </a>
+</li><li number="6.1.4.4">
+<a href="../lexical/Pset_BuildingSystemCommon.html">
+            Pset_BuildingSystemCommon
+        </a>
+</li><li number="6.1.4.5">
+<a href="../lexical/Pset_ChimneyCommon.html">
+            Pset_ChimneyCommon
+        </a>
+</li><li number="6.1.4.6">
+<a href="../lexical/Pset_ColumnCommon.html">
+            Pset_ColumnCommon
+        </a>
+</li><li number="6.1.4.7">
+<a href="../lexical/Pset_CoveringCommon.html">
+            Pset_CoveringCommon
+        </a>
+</li><li number="6.1.4.8">
+<a href="../lexical/Pset_CoveringFlooring.html">
+            Pset_CoveringFlooring
+        </a>
+</li><li number="6.1.4.9">
+<a href="../lexical/Pset_CurtainWallCommon.html">
+            Pset_CurtainWallCommon
+        </a>
+</li><li number="6.1.4.10">
+<a href="../lexical/Pset_DoorCommon.html">
+            Pset_DoorCommon
+        </a>
+</li><li number="6.1.4.11">
+<a href="../lexical/Pset_DoorWindowGlazingType.html">
+            Pset_DoorWindowGlazingType
+        </a>
+</li><li number="6.1.4.12">
+<a href="../lexical/Pset_MemberCommon.html">
+            Pset_MemberCommon
+        </a>
+</li><li number="6.1.4.13">
+<a href="../lexical/Pset_PlateCommon.html">
+            Pset_PlateCommon
+        </a>
+</li><li number="6.1.4.14">
+<a href="../lexical/Pset_RailingCommon.html">
+            Pset_RailingCommon
+        </a>
+</li><li number="6.1.4.15">
+<a href="../lexical/Pset_RampCommon.html">
+            Pset_RampCommon
+        </a>
+</li><li number="6.1.4.16">
+<a href="../lexical/Pset_RampFlightCommon.html">
+            Pset_RampFlightCommon
+        </a>
+</li><li number="6.1.4.17">
+<a href="../lexical/Pset_RoofCommon.html">
+            Pset_RoofCommon
+        </a>
+</li><li number="6.1.4.18">
+<a href="../lexical/Pset_ShadingDeviceCommon.html">
+            Pset_ShadingDeviceCommon
+        </a>
+</li><li number="6.1.4.19">
+<a href="../lexical/Pset_SlabCommon.html">
+            Pset_SlabCommon
+        </a>
+</li><li number="6.1.4.20">
+<a href="../lexical/Pset_StairCommon.html">
+            Pset_StairCommon
+        </a>
+</li><li number="6.1.4.21">
+<a href="../lexical/Pset_StairFlightCommon.html">
+            Pset_StairFlightCommon
+        </a>
+</li><li number="6.1.4.22">
+<a href="../lexical/Pset_Tiling.html">
+            Pset_Tiling
+        </a>
+</li><li number="6.1.4.23">
+<a href="../lexical/Pset_WallCommon.html">
+            Pset_WallCommon
+        </a>
+</li><li number="6.1.4.24">
+<a href="../lexical/Pset_WindowCommon.html">
+            Pset_WindowCommon
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.1.5-Quantity-Sets"></a>
+    6.1.5 Quantity Sets
+<a class="link" href="#6.1.5-Quantity-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.1.5.1">
+<a href="../lexical/Qto_BeamBaseQuantities.html">
+            Qto_BeamBaseQuantities
+        </a>
+</li><li number="6.1.5.2">
+<a href="../lexical/Qto_BuildingElementProxyQuantities.html">
+            Qto_BuildingElementProxyQuantities
+        </a>
+</li><li number="6.1.5.3">
+<a href="../lexical/Qto_ChimneyBaseQuantities.html">
+            Qto_ChimneyBaseQuantities
+        </a>
+</li><li number="6.1.5.4">
+<a href="../lexical/Qto_ColumnBaseQuantities.html">
+            Qto_ColumnBaseQuantities
+        </a>
+</li><li number="6.1.5.5">
+<a href="../lexical/Qto_CoveringBaseQuantities.html">
+            Qto_CoveringBaseQuantities
+        </a>
+</li><li number="6.1.5.6">
+<a href="../lexical/Qto_CurtainWallQuantities.html">
+            Qto_CurtainWallQuantities
+        </a>
+</li><li number="6.1.5.7">
+<a href="../lexical/Qto_DoorBaseQuantities.html">
+            Qto_DoorBaseQuantities
+        </a>
+</li><li number="6.1.5.8">
+<a href="../lexical/Qto_MemberBaseQuantities.html">
+            Qto_MemberBaseQuantities
+        </a>
+</li><li number="6.1.5.9">
+<a href="../lexical/Qto_PlateBaseQuantities.html">
+            Qto_PlateBaseQuantities
+        </a>
+</li><li number="6.1.5.10">
+<a href="../lexical/Qto_RailingBaseQuantities.html">
+            Qto_RailingBaseQuantities
+        </a>
+</li><li number="6.1.5.11">
+<a href="../lexical/Qto_RampFlightBaseQuantities.html">
+            Qto_RampFlightBaseQuantities
+        </a>
+</li><li number="6.1.5.12">
+<a href="../lexical/Qto_RoofBaseQuantities.html">
+            Qto_RoofBaseQuantities
+        </a>
+</li><li number="6.1.5.13">
+<a href="../lexical/Qto_SlabBaseQuantities.html">
+            Qto_SlabBaseQuantities
+        </a>
+</li><li number="6.1.5.14">
+<a href="../lexical/Qto_StairFlightBaseQuantities.html">
+            Qto_StairFlightBaseQuantities
+        </a>
+</li><li number="6.1.5.15">
+<a href="../lexical/Qto_WallBaseQuantities.html">
+            Qto_WallBaseQuantities
+        </a>
+</li><li number="6.1.5.16">
+<a href="../lexical/Qto_WindowBaseQuantities.html">
+            Qto_WindowBaseQuantities
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.1.6-Functions"></a>
+    6.1.6 Functions
+<a class="link" href="#6.1.6-Functions"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="6.1.7-Rules"></a>
+    6.1.7 Rules
+<a class="link" href="#6.1.7-Rules"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="6.1.8-PropertyEnumerations"></a>
+    6.1.8 PropertyEnumerations
+<a class="link" href="#6.1.8-PropertyEnumerations"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.1.8.1">
+<a href="../lexical/PEnum_AdjustmentValueType.html">
+            PEnum_AdjustmentValueType
+        </a>
+</li><li number="6.1.8.2">
+<a href="../lexical/PEnum_AssemblyPlace.html">
+            PEnum_AssemblyPlace
+        </a>
+</li><li number="6.1.8.3">
+<a href="../lexical/PEnum_AssetRating.html">
+            PEnum_AssetRating
+        </a>
+</li><li number="6.1.8.4">
+<a href="../lexical/PEnum_BackInletPatternType.html">
+            PEnum_BackInletPatternType
+        </a>
+</li><li number="6.1.8.5">
+<a href="../lexical/PEnum_ConductorFunctionEnum.html">
+            PEnum_ConductorFunctionEnum
+        </a>
+</li><li number="6.1.8.6">
+<a href="../lexical/PEnum_DataCollectionType.html">
+            PEnum_DataCollectionType
+        </a>
+</li><li number="6.1.8.7">
+<a href="../lexical/PEnum_ElementShading.html">
+            PEnum_ElementShading
+        </a>
+</li><li number="6.1.8.8">
+<a href="../lexical/PEnum_ElementStatus.html">
+            PEnum_ElementStatus
+        </a>
+</li><li number="6.1.8.9">
+<a href="../lexical/PEnum_EndShapeType.html">
+            PEnum_EndShapeType
+        </a>
+</li><li number="6.1.8.10">
+<a href="../lexical/PEnum_EnergySource.html">
+            PEnum_EnergySource
+        </a>
+</li><li number="6.1.8.11">
+<a href="../lexical/PEnum_FiberColour.html">
+            PEnum_FiberColour
+        </a>
+</li><li number="6.1.8.12">
+<a href="../lexical/PEnum_FiberType.html">
+            PEnum_FiberType
+        </a>
+</li><li number="6.1.8.13">
+<a href="../lexical/PEnum_FireDamperActuationType.html">
+            PEnum_FireDamperActuationType
+        </a>
+</li><li number="6.1.8.14">
+<a href="../lexical/PEnum_FireDamperClosureRating.html">
+            PEnum_FireDamperClosureRating
+        </a>
+</li><li number="6.1.8.15">
+<a href="../lexical/PEnum_FurniturePanelType.html">
+            PEnum_FurniturePanelType
+        </a>
+</li><li number="6.1.8.16">
+<a href="../lexical/PEnum_GullyType.html">
+            PEnum_GullyType
+        </a>
+</li><li number="6.1.8.17">
+<a href="../lexical/PEnum_InputOutputSignalType.html">
+            PEnum_InputOutputSignalType
+        </a>
+</li><li number="6.1.8.18">
+<a href="../lexical/PEnum_PriorityType.html">
+            PEnum_PriorityType
+        </a>
+</li><li number="6.1.8.19">
+<a href="../lexical/PEnum_RefrigerantClass.html">
+            PEnum_RefrigerantClass
+        </a>
+</li><li number="6.1.8.20">
+<a href="../lexical/PEnum_RelativePosition.html">
+            PEnum_RelativePosition
+        </a>
+</li><li number="6.1.8.21">
+<a href="../lexical/PEnum_RiskRating.html">
+            PEnum_RiskRating
+        </a>
+</li><li number="6.1.8.22">
+<a href="../lexical/PEnum_SanitaryMounting.html">
+            PEnum_SanitaryMounting
+        </a>
+</li><li number="6.1.8.23">
+<a href="../lexical/PEnum_SectionType.html">
+            PEnum_SectionType
+        </a>
+</li><li number="6.1.8.24">
+<a href="../lexical/PEnum_SerialInterfaceType.html">
+            PEnum_SerialInterfaceType
+        </a>
+</li><li number="6.1.8.25">
+<a href="../lexical/PEnum_SideType.html">
+            PEnum_SideType
+        </a>
+</li><li number="6.1.8.26">
+<a href="../lexical/PEnum_SignalIndicatorType.html">
+            PEnum_SignalIndicatorType
+        </a>
+</li><li number="6.1.8.27">
+<a href="../lexical/PEnum_SwitchActivation.html">
+            PEnum_SwitchActivation
+        </a>
+</li><li number="6.1.8.28">
+<a href="../lexical/PEnum_SwitchUsage.html">
+            PEnum_SwitchUsage
+        </a>
+</li><li number="6.1.8.29">
+<a href="../lexical/PEnum_SwitchingDeviceDimmerSwitchType.html">
+            PEnum_SwitchingDeviceDimmerSwitchType
+        </a>
+</li><li number="6.1.8.30">
+<a href="../lexical/PEnum_TankPatternType.html">
+            PEnum_TankPatternType
+        </a>
+</li><li number="6.1.8.31">
+<a href="../lexical/PEnum_TrapType.html">
+            PEnum_TrapType
+        </a>
+</li><li number="6.1.8.32">
+<a href="../lexical/PEnum_UnitConnectionType.html">
+            PEnum_UnitConnectionType
+        </a>
+</li><li number="6.1.8.33">
+<a href="../lexical/PEnum_VoltageLevels.html">
+            PEnum_VoltageLevels
+        </a>
+</li></ol>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/shared/IfcSharedBldgElements/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>Change to official repo names</em> by Thomas Krijnen on 2026-09-08T13:56:10+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/schemas/shared/IfcSharedBldgElements/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

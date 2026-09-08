@@ -1,0 +1,858 @@
+<html lang="en">
+<head>
+<link href="../../../../../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../../../../../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>4.1.7.1.4.1 Body AdvancedBrep Geometry - IFC 4.4.0.0 Documentation</title>
+<link href="../../../../../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../../../../../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="../../../../..">
+                             Cover
+                        </a>
+<a href="../../../../../toc.html">
+                             Contents
+                        </a>
+<a href="../../../../../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../../../../../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../../../../../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../../../../../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../../../../../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a class="current" href="../../../../content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../../../../../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../../../../../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a href="../../../../../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="../../../../../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../../../../../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../../../../../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../../../../../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../../../../../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../../../../../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../../../../../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../../../../../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../../../../../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>4.1.7.1.4.1 Body AdvancedBrep Geometry</h1>
+<p>The <em>Body Brep Geometry</em> is the representation of the 3D shape of a product by boundary representation models, including NURBS.</p>
+<p>The following attribute values for the <em><a href="../../../../../lexical/IfcShapeRepresentation.html">IfcShapeRepresentation</a></em> holding this geometric representation shall be used:</p>
+<ul>
+<li><em><a href="../../../../../lexical/IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>.<em>RepresentationIdentifier</em> = 'Body'</li>
+<li><em><a href="../../../../../lexical/IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>.<em>RepresentationType</em> = 'AdvancedBrep'</li>
+<li><em><a href="../../../../../lexical/IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>.<em>Items</em> = <em><a href="../../../../../lexical/IfcAdvancedBrep.html">IfcAdvancedBrep</a></em>, <em><a href="../../../../../lexical/IfcFacetedBrep.html">IfcFacetedBrep</a></em></li>
+</ul>
+<p class="search-skip">
+    The following diagram shows the generic classes and relationships used when applying this concept.
+    In addition, concepts may have particular importance to common or standardised industry practices and scenarios. For these specific usage scenarios, the table below shows a recommended list of general usage patterns that users may adopt.
+</p>
+<div class="concept-diagram-canvas" data-diagram="concept">
+<figure><a class="anchor" id="Figure-4.1.7.1.4.1.A"></a><svg height="735px" viewbox="0.00 0.00 1665.00 981.50" width="1248px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 977.5)">
+<title>G</title>
+<polygon fill="transparent" points="-4,4 -4,-977.5 1661,-977.5 1661,4 -4,4" stroke="transparent"></polygon>
+<!-- IfcElement -->
+<g class="node" id="node1">
+<title>IfcElement</title>
+<polygon fill="#1976d2" points="8,-942 8,-969 258,-969 258,-942 8,-942" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-942 258,-942 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="14" y="-952.8">IfcElement</text>
+<polygon fill="#1976d2" points="258,-942 258,-969 304,-969 304,-942 258,-942" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-942 304,-942 " stroke="black"></polyline>
+<polygon fill="white" points="8,-915 8,-942 258,-942 258,-915 8,-915" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-915 258,-915 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-924.8">1. GlobalId</text>
+<polygon fill="white" points="258,-915 258,-942 304,-942 304,-915 258,-915" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-915 304,-915 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-924.8">[1:1]</text>
+<polygon fill="white" points="8,-888 8,-915 258,-915 258,-888 8,-888" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-888 258,-888 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-897.8">2. OwnerHistory</text>
+<polygon fill="white" points="258,-888 258,-915 304,-915 304,-888 258,-888" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-888 304,-888 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-897.8">[0:1]</text>
+<polygon fill="white" points="8,-861 8,-888 258,-888 258,-861 8,-861" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-861 258,-861 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-870.8">3. Name</text>
+<polygon fill="white" points="258,-861 258,-888 304,-888 304,-861 258,-861" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-861 304,-861 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-870.8">[0:1]</text>
+<polygon fill="white" points="8,-834 8,-861 258,-861 258,-834 8,-834" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-834 258,-834 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-843.8">4. Description</text>
+<polygon fill="white" points="258,-834 258,-861 304,-861 304,-834 258,-834" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-834 304,-834 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-843.8">[0:1]</text>
+<polygon fill="white" points="8,-807 8,-834 258,-834 258,-807 8,-807" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-807 258,-807 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-816.8">      Decomposes</text>
+<polygon fill="white" points="258,-807 258,-834 304,-834 304,-807 258,-807" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-807 304,-807 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-816.8">[0:1]</text>
+<polygon fill="white" points="8,-780 8,-807 258,-807 258,-780 8,-780" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-780 258,-780 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-789.8">      HasAssignments</text>
+<polygon fill="white" points="258,-780 258,-807 304,-807 304,-780 258,-780" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-780 304,-780 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-789.8">[0:?]</text>
+<polygon fill="white" points="8,-753 8,-780 258,-780 258,-753 8,-753" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-753 258,-753 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-762.8">      HasAssociations</text>
+<polygon fill="white" points="258,-753 258,-780 304,-780 304,-753 258,-753" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-753 304,-753 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-762.8">[0:?]</text>
+<polygon fill="white" points="8,-726 8,-753 258,-753 258,-726 8,-726" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-726 258,-726 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-735.8">      HasContext</text>
+<polygon fill="white" points="258,-726 258,-753 304,-753 304,-726 258,-726" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-726 304,-726 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-735.8">[0:1]</text>
+<polygon fill="white" points="8,-699 8,-726 258,-726 258,-699 8,-699" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-699 258,-699 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-708.8">      IsDecomposedBy</text>
+<polygon fill="white" points="258,-699 258,-726 304,-726 304,-699 258,-699" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-699 304,-699 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-708.8">[0:?]</text>
+<polygon fill="white" points="8,-672 8,-699 258,-699 258,-672 8,-672" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-672 258,-672 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-681.8">      IsNestedBy</text>
+<polygon fill="white" points="258,-672 258,-699 304,-699 304,-672 258,-672" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-672 304,-672 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-681.8">[0:?]</text>
+<polygon fill="white" points="8,-645 8,-672 258,-672 258,-645 8,-645" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-645 258,-645 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-654.8">      Nests</text>
+<polygon fill="white" points="258,-645 258,-672 304,-672 304,-645 258,-645" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-645 304,-645 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-654.8">[0:1]</text>
+<polygon fill="white" points="8,-618 8,-645 258,-645 258,-618 8,-618" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-618 258,-618 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-627.8">5. ObjectType</text>
+<polygon fill="white" points="258,-618 258,-645 304,-645 304,-618 258,-618" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-618 304,-618 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-627.8">[0:1]</text>
+<polygon fill="white" points="8,-591 8,-618 258,-618 258,-591 8,-591" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-591 258,-591 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-600.8">      Declares</text>
+<polygon fill="white" points="258,-591 258,-618 304,-618 304,-591 258,-591" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-591 304,-591 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-600.8">[0:?]</text>
+<polygon fill="white" points="8,-564 8,-591 258,-591 258,-564 8,-564" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-564 258,-564 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-573.8">      IsDeclaredBy</text>
+<polygon fill="white" points="258,-564 258,-591 304,-591 304,-564 258,-564" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-564 304,-564 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-573.8">[0:1]</text>
+<polygon fill="white" points="8,-537 8,-564 258,-564 258,-537 8,-537" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-537 258,-537 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-546.8">      IsDefinedBy</text>
+<polygon fill="white" points="258,-537 258,-564 304,-564 304,-537 258,-537" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-537 304,-537 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-546.8">[0:?]</text>
+<polygon fill="white" points="8,-510 8,-537 258,-537 258,-510 8,-510" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-510 258,-510 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-519.8">      IsTypedBy</text>
+<polygon fill="white" points="258,-510 258,-537 304,-537 304,-510 258,-510" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-510 304,-510 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-519.8">[0:1]</text>
+<polygon fill="white" points="8,-483 8,-510 258,-510 258,-483 8,-483" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-483 258,-483 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-492.8">6. ObjectPlacement</text>
+<polygon fill="white" points="258,-483 258,-510 304,-510 304,-483 258,-483" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-483 304,-483 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-492.8">[0:1]</text>
+<polygon fill="#dddddd" points="8,-456 8,-483 258,-483 258,-456 8,-456" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-456 258,-456 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-465.8">7. Representation</text>
+<polygon fill="#dddddd" points="258,-456 258,-483 304,-483 304,-456 258,-456" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-456 304,-456 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-465.8">[0:1]</text>
+<polygon fill="white" points="8,-429 8,-456 258,-456 258,-429 8,-429" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-429 258,-429 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-438.8">      PositionedRelativeTo</text>
+<polygon fill="white" points="258,-429 258,-456 304,-456 304,-429 258,-429" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-429 304,-429 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-438.8">[0:?]</text>
+<polygon fill="white" points="8,-402 8,-429 258,-429 258,-402 8,-402" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-402 258,-402 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-411.8">      ReferencedBy</text>
+<polygon fill="white" points="258,-402 258,-429 304,-429 304,-402 258,-402" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-402 304,-402 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-411.8">[0:?]</text>
+<polygon fill="white" points="8,-375 8,-402 258,-402 258,-375 8,-375" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-375 258,-375 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-384.8">      ReferencedInStructures</text>
+<polygon fill="white" points="258,-375 258,-402 304,-402 304,-375 258,-375" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-375 304,-375 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-384.8">[0:?]</text>
+<polygon fill="white" points="8,-348 8,-375 258,-375 258,-348 8,-348" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-348 258,-348 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-357.8">8. Tag</text>
+<polygon fill="white" points="258,-348 258,-375 304,-375 304,-348 258,-348" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-348 304,-348 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-357.8">[0:1]</text>
+<polygon fill="white" points="8,-321 8,-348 258,-348 258,-321 8,-321" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-321 258,-321 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-330.8">      ConnectedFrom</text>
+<polygon fill="white" points="258,-321 258,-348 304,-348 304,-321 258,-321" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-321 304,-321 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-330.8">[0:?]</text>
+<polygon fill="white" points="8,-294 8,-321 258,-321 258,-294 8,-294" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-294 258,-294 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-303.8">      ConnectedTo</text>
+<polygon fill="white" points="258,-294 258,-321 304,-321 304,-294 258,-294" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-294 304,-294 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-303.8">[0:?]</text>
+<polygon fill="white" points="8,-267 8,-294 258,-294 258,-267 8,-267" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-267 258,-267 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-276.8">      ContainedInStructure</text>
+<polygon fill="white" points="258,-267 258,-294 304,-294 304,-267 258,-267" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-267 304,-267 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-276.8">[0:1]</text>
+<polygon fill="white" points="8,-240 8,-267 258,-267 258,-240 8,-240" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-240 258,-240 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-249.8">      FillsVoids</text>
+<polygon fill="white" points="258,-240 258,-267 304,-267 304,-240 258,-240" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-240 304,-240 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-249.8">[0:1]</text>
+<polygon fill="white" points="8,-213 8,-240 258,-240 258,-213 8,-213" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-213 258,-213 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-222.8">      HasCoverings</text>
+<polygon fill="white" points="258,-213 258,-240 304,-240 304,-213 258,-213" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-213 304,-213 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-222.8">[0:?]</text>
+<polygon fill="white" points="8,-186 8,-213 258,-213 258,-186 8,-186" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-186 258,-186 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-195.8">      HasOpenings</text>
+<polygon fill="white" points="258,-186 258,-213 304,-213 304,-186 258,-186" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-186 304,-186 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-195.8">[0:?]</text>
+<polygon fill="white" points="8,-159 8,-186 258,-186 258,-159 8,-159" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-159 258,-159 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-168.8">      HasProjections</text>
+<polygon fill="white" points="258,-159 258,-186 304,-186 304,-159 258,-159" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-159 304,-159 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-168.8">[0:?]</text>
+<polygon fill="white" points="8,-132 8,-159 258,-159 258,-132 8,-132" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-132 258,-132 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-141.8">      HasSurfaceFeatures</text>
+<polygon fill="white" points="258,-132 258,-159 304,-159 304,-132 258,-132" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-132 304,-132 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-141.8">[0:?]</text>
+<polygon fill="white" points="8,-105 8,-132 258,-132 258,-105 8,-105" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-105 258,-105 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-114.8">      InterferesElements</text>
+<polygon fill="white" points="258,-105 258,-132 304,-132 304,-105 258,-105" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-105 304,-105 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-114.8">[0:?]</text>
+<polygon fill="white" points="8,-78 8,-105 258,-105 258,-78 8,-78" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-78 258,-78 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-87.8">      IsConnectionRealization</text>
+<polygon fill="white" points="258,-78 258,-105 304,-105 304,-78 258,-78" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-78 304,-78 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-87.8">[0:?]</text>
+<polygon fill="white" points="8,-51 8,-78 258,-78 258,-51 8,-51" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-51 258,-51 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-60.8">      IsInterferedByElements</text>
+<polygon fill="white" points="258,-51 258,-78 304,-78 304,-51 258,-51" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-51 304,-51 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-60.8">[0:?]</text>
+<polygon fill="white" points="8,-24 8,-51 258,-51 258,-24 8,-24" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-24 258,-24 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-33.8">      ProvidesBoundaries</text>
+<polygon fill="white" points="258,-24 258,-51 304,-51 304,-24 258,-24" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-24 304,-24 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-33.8">[0:?]</text>
+</g>
+<!-- IfcProductDefinitionShape -->
+<g class="node" id="node2">
+<title>IfcProductDefinitionShape</title>
+<polygon fill="#1976d2" points="356,-455 356,-482 606,-482 606,-455 356,-455" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-455 606,-455 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="362" y="-465.8">IfcProductDefinitionShape</text>
+<polygon fill="#1976d2" points="606,-455 606,-482 652,-482 652,-455 606,-455" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-455 652,-455 " stroke="black"></polyline>
+<polygon fill="white" points="356,-428 356,-455 606,-455 606,-428 356,-428" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-428 606,-428 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-437.8">1. Name</text>
+<polygon fill="white" points="606,-428 606,-455 652,-455 652,-428 606,-428" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-428 652,-428 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-437.8">[0:1]</text>
+<polygon fill="white" points="356,-401 356,-428 606,-428 606,-401 356,-401" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-401 606,-401 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-410.8">2. Description</text>
+<polygon fill="white" points="606,-401 606,-428 652,-428 652,-401 606,-401" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-401 652,-401 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-410.8">[0:1]</text>
+<polygon fill="#dddddd" points="356,-374 356,-401 606,-401 606,-374 356,-374" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-374 606,-374 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-383.8">3. Representations</text>
+<polygon fill="#dddddd" points="606,-374 606,-401 652,-401 652,-374 606,-374" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-374 652,-374 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="614" y="-383.8">[1:?]</text>
+<polygon fill="white" points="356,-347 356,-374 606,-374 606,-347 356,-347" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-347 606,-347 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-356.8">      HasShapeAspects</text>
+<polygon fill="white" points="606,-347 606,-374 652,-374 652,-347 606,-347" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-347 652,-347 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="614" y="-356.8">[0:?]</text>
+<polygon fill="white" points="356,-320 356,-347 606,-347 606,-320 356,-320" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-320 606,-320 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-329.8">      ShapeOfProduct</text>
+<polygon fill="white" points="606,-320 606,-347 652,-347 652,-320 606,-320" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-320 652,-320 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="614" y="-329.8">[1:?]</text>
+</g>
+<!-- IfcElement&#45;&gt;IfcProductDefinitionShape -->
+<g class="edge" id="edge1">
+<title>IfcElement:Representation1-&gt;IfcProductDefinitionShape:IfcProductDefinitionShape0</title>
+<path d="M305,-469C305,-469 330.27,-469 344.88,-469" fill="none" stroke="black"></path>
+<polygon fill="black" points="345,-472.5 355,-469 345,-465.5 345,-472.5" stroke="black"></polygon>
+</g>
+<!-- IfcShapeRepresentation -->
+<g class="node" id="node3">
+<title>IfcShapeRepresentation</title>
+<polygon fill="#1976d2" points="704,-373 704,-400 954,-400 954,-373 704,-373" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-373 954,-373 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="710" y="-383.8">IfcShapeRepresentation</text>
+<polygon fill="#1976d2" points="954,-373 954,-400 1000,-400 1000,-373 954,-373" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-373 1000,-373 " stroke="black"></polyline>
+<polygon fill="#dddddd" points="704,-346 704,-373 954,-373 954,-346 704,-346" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-346 954,-346 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-355.8">1. ContextOfItems</text>
+<polygon fill="#dddddd" points="954,-346 954,-373 1000,-373 1000,-346 954,-346" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-346 1000,-346 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-355.8">[1:1]</text>
+<polygon fill="#eeeeee" points="704,-319 704,-346 954,-346 954,-319 704,-319" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-319 954,-319 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="791" y="-329.8">Identifier</text>
+<polygon fill="#eeeeee" points="954,-319 954,-346 1000,-346 1000,-319 954,-319" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-319 1000,-319 " stroke="black"></polyline>
+<polygon fill="#dddddd" points="704,-292 704,-319 954,-319 954,-292 704,-292" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-292 954,-292 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-301.8">2. RepresentationIdentifier</text>
+<polygon fill="#dddddd" points="954,-292 954,-319 1000,-319 1000,-292 954,-292" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-292 1000,-292 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-301.8">[0:1]</text>
+<polygon fill="#eeeeee" points="704,-265 704,-292 954,-292 954,-265 704,-265" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-265 954,-265 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="810.5" y="-275.8">Type</text>
+<polygon fill="#eeeeee" points="954,-265 954,-292 1000,-292 1000,-265 954,-265" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-265 1000,-265 " stroke="black"></polyline>
+<polygon fill="#dddddd" points="704,-238 704,-265 954,-265 954,-238 704,-238" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-238 954,-238 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-247.8">3. RepresentationType</text>
+<polygon fill="#dddddd" points="954,-238 954,-265 1000,-265 1000,-238 954,-238" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-238 1000,-238 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-247.8">[0:1]</text>
+<polygon fill="#eeeeee" points="704,-211 704,-238 954,-238 954,-211 704,-211" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-211 954,-211 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="806" y="-221.8">Items</text>
+<polygon fill="#eeeeee" points="954,-211 954,-238 1000,-238 1000,-211 954,-211" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-211 1000,-211 " stroke="black"></polyline>
+<polygon fill="#dddddd" points="704,-184 704,-211 954,-211 954,-184 704,-184" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-184 954,-184 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-193.8">4. Items</text>
+<polygon fill="#dddddd" points="954,-184 954,-211 1000,-211 1000,-184 954,-184" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-184 1000,-184 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-193.8">[1:?]</text>
+<polygon fill="white" points="704,-157 704,-184 954,-184 954,-157 704,-157" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-157 954,-157 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-166.8">      LayerAssignments</text>
+<polygon fill="white" points="954,-157 954,-184 1000,-184 1000,-157 954,-157" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-157 1000,-157 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-166.8">[0:?]</text>
+<polygon fill="white" points="704,-130 704,-157 954,-157 954,-130 704,-130" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-130 954,-130 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-139.8">      OfProductRepresentation</text>
+<polygon fill="white" points="954,-130 954,-157 1000,-157 1000,-130 954,-130" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-130 1000,-130 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-139.8">[0:?]</text>
+<polygon fill="white" points="704,-103 704,-130 954,-130 954,-103 704,-103" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-103 954,-103 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-112.8">      RepresentationMap</text>
+<polygon fill="white" points="954,-103 954,-130 1000,-130 1000,-103 954,-103" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-103 1000,-103 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-112.8">[0:1]</text>
+<polygon fill="white" points="704,-76 704,-103 954,-103 954,-76 704,-76" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-76 954,-76 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-85.8">      OfShapeAspect</text>
+<polygon fill="white" points="954,-76 954,-103 1000,-103 1000,-76 954,-76" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-76 1000,-76 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-85.8">[0:1]</text>
+</g>
+<!-- IfcProductDefinitionShape&#45;&gt;IfcShapeRepresentation -->
+<g class="edge" id="edge2">
+<title>IfcProductDefinitionShape:Representations1-&gt;IfcShapeRepresentation:IfcShapeRepresentation0</title>
+<path d="M653,-387C653,-387 678.27,-387 692.88,-387" fill="none" stroke="black"></path>
+<polygon fill="black" points="693,-390.5 703,-387 693,-383.5 693,-390.5" stroke="black"></polygon>
+</g>
+<!-- IfcGeometricRepresentationContext -->
+<g class="node" id="node4">
+<title>IfcGeometricRepresentationContext</title>
+<polygon fill="#1976d2" points="1052.5,-579 1052.5,-606 1351.5,-606 1351.5,-579 1052.5,-579" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-579 1351.5,-579 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="1058.5" y="-589.8">IfcGeometricRepresentationContext</text>
+<polygon fill="#1976d2" points="1351.5,-579 1351.5,-606 1397.5,-606 1397.5,-579 1351.5,-579" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-579 1397.5,-579 " stroke="black"></polyline>
+<polygon fill="white" points="1052.5,-552 1052.5,-579 1351.5,-579 1351.5,-552 1052.5,-552" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-552 1351.5,-552 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-561.8">1. ContextIdentifier</text>
+<polygon fill="white" points="1351.5,-552 1351.5,-579 1397.5,-579 1397.5,-552 1351.5,-552" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-552 1397.5,-552 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-561.8">[0:1]</text>
+<polygon fill="white" points="1052.5,-525 1052.5,-552 1351.5,-552 1351.5,-525 1052.5,-525" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-525 1351.5,-525 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-534.8">2. ContextType</text>
+<polygon fill="white" points="1351.5,-525 1351.5,-552 1397.5,-552 1397.5,-525 1351.5,-525" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-525 1397.5,-525 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-534.8">[0:1]</text>
+<polygon fill="white" points="1052.5,-498 1052.5,-525 1351.5,-525 1351.5,-498 1052.5,-498" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-498 1351.5,-498 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-507.8">      RepresentationsInContext</text>
+<polygon fill="white" points="1351.5,-498 1351.5,-525 1397.5,-525 1397.5,-498 1351.5,-498" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-498 1397.5,-498 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1359.5" y="-507.8">[0:?]</text>
+<polygon fill="white" points="1052.5,-471 1052.5,-498 1351.5,-498 1351.5,-471 1052.5,-471" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-471 1351.5,-471 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-480.8">3. CoordinateSpaceDimension</text>
+<polygon fill="white" points="1351.5,-471 1351.5,-498 1397.5,-498 1397.5,-471 1351.5,-471" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-471 1397.5,-471 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-480.8">[1:1]</text>
+<polygon fill="white" points="1052.5,-444 1052.5,-471 1351.5,-471 1351.5,-444 1052.5,-444" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-444 1351.5,-444 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-453.8">4. Precision</text>
+<polygon fill="white" points="1351.5,-444 1351.5,-471 1397.5,-471 1397.5,-444 1351.5,-444" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-444 1397.5,-444 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-453.8">[0:1]</text>
+<polygon fill="white" points="1052.5,-417 1052.5,-444 1351.5,-444 1351.5,-417 1052.5,-417" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-417 1351.5,-417 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-426.8">5. WorldCoordinateSystem</text>
+<polygon fill="white" points="1351.5,-417 1351.5,-444 1397.5,-444 1397.5,-417 1351.5,-417" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-417 1397.5,-417 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-426.8">[1:1]</text>
+<polygon fill="white" points="1052.5,-390 1052.5,-417 1351.5,-417 1351.5,-390 1052.5,-390" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-390 1351.5,-390 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-399.8">6. TrueNorth</text>
+<polygon fill="white" points="1351.5,-390 1351.5,-417 1397.5,-417 1397.5,-390 1351.5,-390" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-390 1397.5,-390 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-399.8">[0:1]</text>
+<polygon fill="white" points="1052.5,-363 1052.5,-390 1351.5,-390 1351.5,-363 1052.5,-363" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-363 1351.5,-363 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-372.8">      HasCoordinateOperation</text>
+<polygon fill="white" points="1351.5,-363 1351.5,-390 1397.5,-390 1397.5,-363 1351.5,-363" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-363 1397.5,-363 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1357.5" y="-372.8">[0:1]</text>
+<polygon fill="white" points="1052.5,-336 1052.5,-363 1351.5,-363 1351.5,-336 1052.5,-336" stroke="transparent"></polygon>
+<polyline fill="none" points="1052.5,-336 1351.5,-336 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1058.5" y="-345.8">      HasSubContexts</text>
+<polygon fill="white" points="1351.5,-336 1351.5,-363 1397.5,-363 1397.5,-336 1351.5,-336" stroke="transparent"></polygon>
+<polyline fill="none" points="1351.5,-336 1397.5,-336 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1359.5" y="-345.8">[0:?]</text>
+</g>
+<!-- IfcShapeRepresentation&#45;&gt;IfcGeometricRepresentationContext -->
+<g class="edge" id="edge3">
+<title>IfcShapeRepresentation:ContextOfItems1-&gt;IfcGeometricRepresentationContext:IfcGeometricRepresentationContext0</title>
+<path d="M1001,-360C1001,-360 1039.66,-538.39 1049.33,-582.99" fill="none" stroke="black"></path>
+<polygon fill="black" points="1045.96,-583.97 1051.5,-593 1052.8,-582.49 1045.96,-583.97" stroke="black"></polygon>
+</g>
+<!-- IfcLabel_0 -->
+<g class="node" id="node5">
+<title>IfcLabel_0</title>
+<polygon fill="#1976d2" points="1089.5,-293 1089.5,-320 1339.5,-320 1339.5,-293 1089.5,-293" stroke="transparent"></polygon>
+<polyline fill="none" points="1089.5,-293 1339.5,-293 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="1095.5" y="-303.8">IfcLabel</text>
+<polygon fill="#1976d2" points="1339.5,-293 1339.5,-320 1359.5,-320 1359.5,-293 1339.5,-293" stroke="transparent"></polygon>
+<polyline fill="none" points="1339.5,-293 1359.5,-293 " stroke="black"></polyline>
+</g>
+<!-- IfcShapeRepresentation&#45;&gt;IfcLabel_0 -->
+<g class="edge" id="edge4">
+<title>IfcShapeRepresentation:RepresentationIdentifier1-&gt;IfcLabel_0:IfcLabel0</title>
+<path d="M1001,-306C1001,-306 1055.48,-306 1078.46,-306" fill="none" stroke="black"></path>
+<polygon fill="black" points="1078.5,-309.5 1088.5,-306 1078.5,-302.5 1078.5,-309.5" stroke="black"></polygon>
+</g>
+<!-- IfcLabel_1 -->
+<g class="node" id="node6">
+<title>IfcLabel_1</title>
+<polygon fill="#1976d2" points="1089.5,-250 1089.5,-277 1339.5,-277 1339.5,-250 1089.5,-250" stroke="transparent"></polygon>
+<polyline fill="none" points="1089.5,-250 1339.5,-250 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="1095.5" y="-260.8">IfcLabel</text>
+<polygon fill="#1976d2" points="1339.5,-250 1339.5,-277 1359.5,-277 1359.5,-250 1339.5,-250" stroke="transparent"></polygon>
+<polyline fill="none" points="1339.5,-250 1359.5,-250 " stroke="black"></polyline>
+</g>
+<!-- IfcShapeRepresentation&#45;&gt;IfcLabel_1 -->
+<g class="edge" id="edge5">
+<title>IfcShapeRepresentation:RepresentationType1-&gt;IfcLabel_1:IfcLabel0</title>
+<path d="M1001,-252C1001,-252 1055.48,-258.85 1078.46,-261.74" fill="none" stroke="black"></path>
+<polygon fill="black" points="1078.14,-265.23 1088.5,-263 1079.01,-258.28 1078.14,-265.23" stroke="black"></polygon>
+</g>
+<!-- IfcAdvancedBrep -->
+<g class="node" id="node7">
+<title>IfcAdvancedBrep</title>
+<polygon fill="#1976d2" points="1076.5,-208 1076.5,-235 1326.5,-235 1326.5,-208 1076.5,-208" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-208 1326.5,-208 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="1082.5" y="-218.8">IfcAdvancedBrep</text>
+<polygon fill="#1976d2" points="1326.5,-208 1326.5,-235 1372.5,-235 1372.5,-208 1326.5,-208" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-208 1372.5,-208 " stroke="black"></polyline>
+<polygon fill="white" points="1076.5,-181 1076.5,-208 1326.5,-208 1326.5,-181 1076.5,-181" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-181 1326.5,-181 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1082.5" y="-190.8">      LayerAssignment</text>
+<polygon fill="white" points="1326.5,-181 1326.5,-208 1372.5,-208 1372.5,-181 1326.5,-181" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-181 1372.5,-181 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1332.5" y="-190.8">[0:1]</text>
+<polygon fill="white" points="1076.5,-154 1076.5,-181 1326.5,-181 1326.5,-154 1076.5,-154" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-154 1326.5,-154 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1082.5" y="-163.8">      StyledByItem</text>
+<polygon fill="white" points="1326.5,-154 1326.5,-181 1372.5,-181 1372.5,-154 1326.5,-154" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-154 1372.5,-154 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1332.5" y="-163.8">[0:1]</text>
+<polygon fill="white" points="1076.5,-127 1076.5,-154 1326.5,-154 1326.5,-127 1076.5,-127" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-127 1326.5,-127 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1082.5" y="-136.8">1. Outer</text>
+<polygon fill="white" points="1326.5,-127 1326.5,-154 1372.5,-154 1372.5,-127 1326.5,-127" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-127 1372.5,-127 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1332.5" y="-136.8">[1:1]</text>
+</g>
+<!-- IfcShapeRepresentation&#45;&gt;IfcAdvancedBrep -->
+<g class="edge" id="edge6">
+<title>IfcShapeRepresentation:Items1-&gt;IfcAdvancedBrep:IfcAdvancedBrep0</title>
+<path d="M1001,-224C1001,-224 1045.12,-222.82 1065.45,-222.27" fill="none" stroke="black"></path>
+<polygon fill="black" points="1065.6,-225.77 1075.5,-222 1065.41,-218.77 1065.6,-225.77" stroke="black"></polygon>
+</g>
+<!-- IfcFacetedBrep -->
+<g class="node" id="node8">
+<title>IfcFacetedBrep</title>
+<polygon fill="#1976d2" points="1076.5,-85 1076.5,-112 1326.5,-112 1326.5,-85 1076.5,-85" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-85 1326.5,-85 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="1082.5" y="-95.8">IfcFacetedBrep</text>
+<polygon fill="#1976d2" points="1326.5,-85 1326.5,-112 1372.5,-112 1372.5,-85 1326.5,-85" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-85 1372.5,-85 " stroke="black"></polyline>
+<polygon fill="white" points="1076.5,-58 1076.5,-85 1326.5,-85 1326.5,-58 1076.5,-58" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-58 1326.5,-58 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1082.5" y="-67.8">      LayerAssignment</text>
+<polygon fill="white" points="1326.5,-58 1326.5,-85 1372.5,-85 1372.5,-58 1326.5,-58" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-58 1372.5,-58 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1332.5" y="-67.8">[0:1]</text>
+<polygon fill="white" points="1076.5,-31 1076.5,-58 1326.5,-58 1326.5,-31 1076.5,-31" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-31 1326.5,-31 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1082.5" y="-40.8">      StyledByItem</text>
+<polygon fill="white" points="1326.5,-31 1326.5,-58 1372.5,-58 1372.5,-31 1326.5,-31" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-31 1372.5,-31 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1332.5" y="-40.8">[0:1]</text>
+<polygon fill="white" points="1076.5,-4 1076.5,-31 1326.5,-31 1326.5,-4 1076.5,-4" stroke="transparent"></polygon>
+<polyline fill="none" points="1076.5,-4 1326.5,-4 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="1082.5" y="-13.8">1. Outer</text>
+<polygon fill="white" points="1326.5,-4 1326.5,-31 1372.5,-31 1372.5,-4 1326.5,-4" stroke="transparent"></polygon>
+<polyline fill="none" points="1326.5,-4 1372.5,-4 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="1332.5" y="-13.8">[1:1]</text>
+</g>
+<!-- IfcShapeRepresentation&#45;&gt;IfcFacetedBrep -->
+<g class="edge" id="edge7">
+<title>IfcShapeRepresentation:Items1-&gt;IfcFacetedBrep:IfcFacetedBrep0</title>
+<path d="M1001,-224C1001,-224 1044,-120 1044,-120 1044,-120 1057.57,-110.96 1066.89,-104.74" fill="none" stroke="black"></path>
+<polygon fill="black" points="1069.12,-107.46 1075.5,-99 1065.24,-101.63 1069.12,-107.46" stroke="black"></polygon>
+</g>
+<!-- constraint_0 -->
+<g class="node" id="node9">
+<title>constraint_0</title>
+<polygon fill="#ffaaaa" points="1657,-325 1441,-325 1441,-289 1657,-289 1657,-325" stroke="black"></polygon>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1549" y="-303.3">=Body</text>
+</g>
+<!-- IfcLabel_0&#45;&gt;constraint_0 -->
+<g class="edge" id="edge8">
+<title>IfcLabel_0-&gt;constraint_0</title>
+<path d="M1367.89,-307C1388.82,-307 1410.18,-307 1430.54,-307" fill="none" stroke="black"></path>
+<polygon fill="black" points="1430.76,-310.5 1440.76,-307 1430.76,-303.5 1430.76,-310.5" stroke="black"></polygon>
+</g>
+<!-- constraint_1 -->
+<g class="node" id="node10">
+<title>constraint_1</title>
+<polygon fill="#ffaaaa" points="1657,-282 1441,-282 1441,-246 1657,-246 1657,-282" stroke="black"></polygon>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1549" y="-260.3">=AdvancedBrep</text>
+</g>
+<!-- IfcLabel_1&#45;&gt;constraint_1 -->
+<g class="edge" id="edge9">
+<title>IfcLabel_1-&gt;constraint_1</title>
+<path d="M1367.89,-264C1388.82,-264 1410.18,-264 1430.54,-264" fill="none" stroke="black"></path>
+<polygon fill="black" points="1430.76,-267.5 1440.76,-264 1430.76,-260.5 1430.76,-267.5" stroke="black"></polygon>
+</g>
+<!-- Advanced_Brep_Geometry -->
+<g class="node" id="node11">
+<title>Advanced_Brep_Geometry</title>
+<g id="a_node11"><a xlink:href="/concepts/Partial_Templates/Geometry/Solid_Model_Geometry/Advanced_Brep_Geometry/content.html" xlink:title="Advanced Brep Geometry">
+<polygon fill="#aaffaa" points="1657,-199 1441,-199 1441,-163 1657,-163 1657,-199" stroke="black"></polygon>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1549" y="-177.3">Advanced Brep Geometry</text>
+</a>
+</g>
+</g>
+<!-- IfcAdvancedBrep&#45;&gt;Advanced_Brep_Geometry -->
+<g class="edge" id="edge10">
+<title>IfcAdvancedBrep-&gt;Advanced_Brep_Geometry</title>
+<path d="M1380.61,-181C1397.45,-181 1414.37,-181 1430.65,-181" fill="none" stroke="black"></path>
+<polygon fill="black" points="1430.7,-184.5 1440.7,-181 1430.7,-177.5 1430.7,-184.5" stroke="black"></polygon>
+</g>
+<!-- Faceted_Brep_Geometry -->
+<g class="node" id="node12">
+<title>Faceted_Brep_Geometry</title>
+<g id="a_node12"><a xlink:href="/concepts/Partial_Templates/Geometry/Solid_Model_Geometry/Faceted_Brep_Geometry/content.html" xlink:title="Faceted Brep Geometry">
+<polygon fill="#aaffaa" points="1657,-76 1441,-76 1441,-40 1657,-40 1657,-76" stroke="black"></polygon>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1549" y="-54.3">Faceted Brep Geometry</text>
+</a>
+</g>
+</g>
+<!-- IfcFacetedBrep&#45;&gt;Faceted_Brep_Geometry -->
+<g class="edge" id="edge11">
+<title>IfcFacetedBrep-&gt;Faceted_Brep_Geometry</title>
+<path d="M1380.61,-58C1397.45,-58 1414.37,-58 1430.65,-58" fill="none" stroke="black"></path>
+<polygon fill="black" points="1430.7,-61.5 1440.7,-58 1430.7,-54.5 1430.7,-61.5" stroke="black"></polygon>
+</g>
+</g>
+</svg><figcaption>Figure 4.1.7.1.4.1.A<a class="link" href="#Figure-4.1.7.1.4.1.A"><i data-feather="link"></i></a></figcaption></figure>
+</div>
+<h3><a class="anchor" id="General-Usage"></a>General Usage<a class="link" href="#General-Usage"><i data-feather="link"></i></a></h3><figure><a class="anchor" id="Table-A"></a><table>
+<thead>
+<tr><th>ApplicableEntity<br/> </th></tr>
+</thead>
+<tbody>
+<tr><td><a href="../../../../../lexical/IfcElement.html">IfcElement</a>            </td></tr>
+</tbody>
+</table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/templates/Product Shape/Product Geometric Representation/Body Geometry/Body AdvancedBrep Geometry/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>Change to official repo names</em> by Thomas Krijnen on 2026-09-08T13:56:10+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../../../../../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/templates/Product Shape/Product Geometric Representation/Body Geometry/Body AdvancedBrep Geometry/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../../../../../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../../../../../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../../../../../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

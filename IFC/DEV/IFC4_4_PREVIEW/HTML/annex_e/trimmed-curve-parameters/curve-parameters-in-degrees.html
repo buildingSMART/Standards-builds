@@ -1,0 +1,443 @@
+<html lang="en">
+<head>
+<link href="../../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Annex E(informative)Examples - IFC 4.4.0.0 Documentation</title>
+<link href="../../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="annex">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="../..">
+                             Cover
+                        </a>
+<a href="../../toc.html">
+                             Contents
+                        </a>
+<a href="../../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a href="../../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="../../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>Annex E<br/>
+<span style="font-weight:lighter">(informative)</span><br/>
+<br/>
+Examples</h1>
+<h2><a class="anchor" id="E.11.1-Curve-Parameters-In-Degrees"></a>E.11.1 - Curve Parameters In Degrees<a class="link" href="#E.11.1-Curve-Parameters-In-Degrees"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="Example-overview"></a>
+    Example overview
+<a class="link" href="#Example-overview"><i data-feather="link"></i></a></h2>
+<p>﻿This example illustrates extruded solids based on trimmed arcs using degrees. The resulting solid is identical to the corresponding example in radians.</p>
+<ul class="thumbnails">
+</ul>
+<h2><a class="anchor" id="IFC-SPF-source"></a>
+    IFC-SPF source
+<a class="link" href="#IFC-SPF-source"><i data-feather="link"></i></a></h2>
+<pre><code class="language-step21 pygments" data-highlighted="generator"><span class="tok-kd">ISO-10303-21</span><span class="tok-p">;</span>
+<span class="tok-kd">HEADER</span><span class="tok-p">;</span>
+<span class="tok-n">FILE_DESCRIPTION</span><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-s1">'ViewDefinition [NotAssigned]'</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-s1">'2;1'</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">FILE_NAME</span><span class="tok-p">(</span>
+<span class="tok-cm">/* name */</span> <span class="tok-s1">'curve-parameters-in-degrees.ifc'</span><span class="tok-p">,</span>
+<span class="tok-cm">/* time_stamp */</span> <span class="tok-s1">'2017-06-28T23:09:53'</span><span class="tok-p">,</span>
+<span class="tok-cm">/* author */</span> <span class="tok-p">(</span><span class="tok-s1">'redacted'</span><span class="tok-p">)</span><span class="tok-p">,</span>
+<span class="tok-cm">/* organization */</span> <span class="tok-p">(</span><span class="tok-s1">'redacted'</span><span class="tok-p">)</span><span class="tok-p">,</span>
+<span class="tok-cm">/* preprocessor_version */</span> <span class="tok-s1">'redacted'</span><span class="tok-p">,</span>
+<span class="tok-cm">/* originating_system */</span> <span class="tok-s1">'redacted - redacted - 3.14159'</span><span class="tok-p">,</span>
+<span class="tok-cm">/* authorization */</span> <span class="tok-s1">'None'</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">FILE_SCHEMA</span> <span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-s1">'IFC4X4'</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-kd">ENDSEC</span><span class="tok-p">;</span>
+<span class="tok-kd">DATA</span><span class="tok-p">;</span>
+<a id="10"></a><span class="tok-nl">#10</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="11"></a><span class="tok-nl">#11</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement3D.html"><span class="tok-nc">IFCAXIS2PLACEMENT3D</span></a><span class="tok-p">(</span><a href="#10"><span class="tok-nl">#10</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="12"></a><span class="tok-nl">#12</span><span class="tok-o">=</span> <a href="../../lexical/IfcLocalPlacement.html"><span class="tok-nc">IFCLOCALPLACEMENT</span></a><span class="tok-p">(</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#11"><span class="tok-nl">#11</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-cm">/* defines the default building (as required as the minimum spatial element)  */</span>
+<span class="tok-cm">/* These profile curves are intentionally expressed in a more complicated manner than necessary to test parameterization */</span>
+<a id="13"></a><span class="tok-nl">#13</span><span class="tok-o">=</span> <a href="../../lexical/IfcBuilding.html"><span class="tok-nc">IFCBUILDING</span></a><span class="tok-p">(</span><span class="tok-s1">'39t4Pu3nTC4ekXYRIHJB9W'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'IfcBuilding'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#12"><span class="tok-nl">#12</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#18"><span class="tok-nl">#18</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="14"></a><span class="tok-nl">#14</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelContainedInSpatialStructure.html"><span class="tok-nc">IFCRELCONTAINEDINSPATIALSTRUCTURE</span></a><span class="tok-p">(</span><span class="tok-s1">'3Sa3dTJGn0H8TQIGiuGQd5'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'Building'</span><span class="tok-p">,</span><span class="tok-s1">'Building Container for Elements'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#77"><span class="tok-nl">#77</span></a><span class="tok-p">,</span><a href="#131"><span class="tok-nl">#131</span></a><span class="tok-p">,</span><a href="#180"><span class="tok-nl">#180</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#13"><span class="tok-nl">#13</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="15"></a><span class="tok-nl">#15</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="16"></a><span class="tok-nl">#16</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement3D.html"><span class="tok-nc">IFCAXIS2PLACEMENT3D</span></a><span class="tok-p">(</span><a href="#15"><span class="tok-nl">#15</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="18"></a><span class="tok-nl">#18</span><span class="tok-o">=</span> <a href="../../lexical/IfcPostalAddress.html"><span class="tok-nc">IFCPOSTALADDRESS</span></a><span class="tok-p">(</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><span class="tok-s1">'Unknown'</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'Unknown'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'Unknown'</span><span class="tok-p">,</span><span class="tok-s1">'Unknown'</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-cm">/* general entities required for all IFC data sets, defining the context for the exchange */</span>
+<a id="20"></a><span class="tok-nl">#20</span><span class="tok-o">=</span> <a href="../../lexical/IfcProject.html"><span class="tok-nc">IFCPROJECT</span></a><span class="tok-p">(</span><span class="tok-s1">'0$WU4A9R19$vKWO$AdOnKA'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'IfcProject'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#31"><span class="tok-nl">#31</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#21"><span class="tok-nl">#21</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="21"></a><span class="tok-nl">#21</span><span class="tok-o">=</span> <a href="../../lexical/IfcUnitAssignment.html"><span class="tok-nc">IFCUNITASSIGNMENT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#22"><span class="tok-nl">#22</span></a><span class="tok-p">,</span><a href="#23"><span class="tok-nl">#23</span></a><span class="tok-p">,</span><a href="#24"><span class="tok-nl">#24</span></a><span class="tok-p">,</span><a href="#27"><span class="tok-nl">#27</span></a><span class="tok-p">,</span><a href="#29"><span class="tok-nl">#29</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="22"></a><span class="tok-nl">#22</span><span class="tok-o">=</span> <a href="../../lexical/IfcSIUnit.html"><span class="tok-nc">IFCSIUNIT</span></a><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-no">.LENGTHUNIT.</span><span class="tok-p">,</span><span class="tok-no">.MILLI.</span><span class="tok-p">,</span><span class="tok-no">.METRE.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="23"></a><span class="tok-nl">#23</span><span class="tok-o">=</span> <a href="../../lexical/IfcSIUnit.html"><span class="tok-nc">IFCSIUNIT</span></a><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-no">.AREAUNIT.</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.SQUARE_METRE.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="24"></a><span class="tok-nl">#24</span><span class="tok-o">=</span> <a href="../../lexical/IfcSIUnit.html"><span class="tok-nc">IFCSIUNIT</span></a><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-no">.VOLUMEUNIT.</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.CUBIC_METRE.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="25"></a><span class="tok-nl">#25</span><span class="tok-o">=</span> <a href="../../lexical/IfcSIUnit.html"><span class="tok-nc">IFCSIUNIT</span></a><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-no">.PLANEANGLEUNIT.</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.RADIAN.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="26"></a><span class="tok-nl">#26</span><span class="tok-o">=</span> <a href="../../lexical/IfcMeasureWithUnit.html"><span class="tok-nc">IFCMEASUREWITHUNIT</span></a><span class="tok-p">(</span><a href="../../lexical/IfcPlaneAngleMeasure.html"><span class="tok-nc">IFCPLANEANGLEMEASURE</span></a><span class="tok-p">(</span><span class="tok-m">0.0174532925199433</span><span class="tok-p">)</span><span class="tok-p">,</span><a href="#25"><span class="tok-nl">#25</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="27"></a><span class="tok-nl">#27</span><span class="tok-o">=</span> <a href="../../lexical/IfcConversionBasedUnit.html"><span class="tok-nc">IFCCONVERSIONBASEDUNIT</span></a><span class="tok-p">(</span><a href="#28"><span class="tok-nl">#28</span></a><span class="tok-p">,</span><span class="tok-no">.PLANEANGLEUNIT.</span><span class="tok-p">,</span><span class="tok-s1">'DEGREE'</span><span class="tok-p">,</span><a href="#26"><span class="tok-nl">#26</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="28"></a><span class="tok-nl">#28</span><span class="tok-o">=</span> <a href="../../lexical/IfcDimensionalExponents.html"><span class="tok-nc">IFCDIMENSIONALEXPONENTS</span></a><span class="tok-p">(</span><span class="tok-m">0</span><span class="tok-p">,</span><span class="tok-m">0</span><span class="tok-p">,</span><span class="tok-m">0</span><span class="tok-p">,</span><span class="tok-m">0</span><span class="tok-p">,</span><span class="tok-m">0</span><span class="tok-p">,</span><span class="tok-m">0</span><span class="tok-p">,</span><span class="tok-m">0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="29"></a><span class="tok-nl">#29</span><span class="tok-o">=</span> <a href="../../lexical/IfcSIUnit.html"><span class="tok-nc">IFCSIUNIT</span></a><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-no">.TIMEUNIT.</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.SECOND.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="30"></a><span class="tok-nl">#30</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAggregates.html"><span class="tok-nc">IFCRELAGGREGATES</span></a><span class="tok-p">(</span><span class="tok-s1">'091a6ewbvCMQ2Vyiqspa7a'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'Project Container'</span><span class="tok-p">,</span><span class="tok-s1">'Project Container for Buildings'</span><span class="tok-p">,</span><a href="#20"><span class="tok-nl">#20</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="#13"><span class="tok-nl">#13</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="31"></a><span class="tok-nl">#31</span><span class="tok-o">=</span> <a href="../../lexical/IfcGeometricRepresentationContext.html"><span class="tok-nc">IFCGEOMETRICREPRESENTATIONCONTEXT</span></a><span class="tok-p">(</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'Model'</span><span class="tok-p">,</span><span class="tok-m">3</span><span class="tok-p">,</span><span class="tok-m">0.0001</span><span class="tok-p">,</span><a href="#33"><span class="tok-nl">#33</span></a><span class="tok-p">,</span><a href="#34"><span class="tok-nl">#34</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="32"></a><span class="tok-nl">#32</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="33"></a><span class="tok-nl">#33</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement3D.html"><span class="tok-nc">IFCAXIS2PLACEMENT3D</span></a><span class="tok-p">(</span><a href="#32"><span class="tok-nl">#32</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="34"></a><span class="tok-nl">#34</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">1.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="35"></a><span class="tok-nl">#35</span><span class="tok-o">=</span> <a href="../../lexical/IfcGeometricRepresentationSubContext.html"><span class="tok-nc">IFCGEOMETRICREPRESENTATIONSUBCONTEXT</span></a><span class="tok-p">(</span><span class="tok-s1">'Body'</span><span class="tok-p">,</span><span class="tok-s1">'Model'</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><a href="#31"><span class="tok-nl">#31</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.MODEL_VIEW.</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-cm">/* Example data for CurveParametersDegrees */</span>
+<a id="50"></a><span class="tok-nl">#50</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterial.html"><span class="tok-nc">IFCMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'Steel'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="52"></a><span class="tok-nl">#52</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">-1000.0</span><span class="tok-p">,</span><span class="tok-m">1000.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="53"></a><span class="tok-nl">#53</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.70710678</span><span class="tok-p">,</span><span class="tok-m">-0.70710678</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="54"></a><span class="tok-nl">#54</span><span class="tok-o">=</span> <a href="../../lexical/IfcVector.html"><span class="tok-nc">IFCVECTOR</span></a><span class="tok-p">(</span><a href="#53"><span class="tok-nl">#53</span></a><span class="tok-p">,</span><span class="tok-m">1414.2135623731</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="55"></a><span class="tok-nl">#55</span><span class="tok-o">=</span> <a href="../../lexical/IfcLine.html"><span class="tok-nc">IFCLINE</span></a><span class="tok-p">(</span><a href="#52"><span class="tok-nl">#52</span></a><span class="tok-p">,</span><a href="#54"><span class="tok-nl">#54</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="56"></a><span class="tok-nl">#56</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#55"><span class="tok-nl">#55</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">0.292893218813453</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">1.70710678118655</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="57"></a><span class="tok-nl">#57</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#56"><span class="tok-nl">#56</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="58"></a><span class="tok-nl">#58</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="59"></a><span class="tok-nl">#59</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement2D.html"><span class="tok-nc">IFCAXIS2PLACEMENT2D</span></a><span class="tok-p">(</span><a href="#58"><span class="tok-nl">#58</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="60"></a><span class="tok-nl">#60</span><span class="tok-o">=</span> <a href="../../lexical/IfcCircle.html"><span class="tok-nc">IFCCIRCLE</span></a><span class="tok-p">(</span><a href="#59"><span class="tok-nl">#59</span></a><span class="tok-p">,</span><span class="tok-m">1000.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="61"></a><span class="tok-nl">#61</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#60"><span class="tok-nl">#60</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">315.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">135.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="62"></a><span class="tok-nl">#62</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#61"><span class="tok-nl">#61</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="63"></a><span class="tok-nl">#63</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurve.html"><span class="tok-nc">IFCCOMPOSITECURVE</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#57"><span class="tok-nl">#57</span></a><span class="tok-p">,</span><a href="#62"><span class="tok-nl">#62</span></a><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.U.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="64"></a><span class="tok-nl">#64</span><span class="tok-o">=</span> <a href="../../lexical/IfcArbitraryClosedProfileDef.html"><span class="tok-nc">IFCARBITRARYCLOSEDPROFILEDEF</span></a><span class="tok-p">(</span><span class="tok-no">.AREA.</span><span class="tok-p">,</span><span class="tok-s1">'SemiCircle'</span><span class="tok-p">,</span><a href="#63"><span class="tok-nl">#63</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="65"></a><span class="tok-nl">#65</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfile.html"><span class="tok-nc">IFCMATERIALPROFILE</span></a><span class="tok-p">(</span><span class="tok-s1">'SemiCircle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#50"><span class="tok-nl">#50</span></a><span class="tok-p">,</span><a href="#64"><span class="tok-nl">#64</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="67"></a><span class="tok-nl">#67</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfileSet.html"><span class="tok-nc">IFCMATERIALPROFILESET</span></a><span class="tok-p">(</span><span class="tok-s1">'SemiCircle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#65"><span class="tok-nl">#65</span></a><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="68"></a><span class="tok-nl">#68</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAssociatesMaterial.html"><span class="tok-nc">IFCRELASSOCIATESMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'1gdVo5TjPETPZlW8HSRupM'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'MatAssoc'</span><span class="tok-p">,</span><span class="tok-s1">'Material Associates'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#69"><span class="tok-nl">#69</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#67"><span class="tok-nl">#67</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="69"></a><span class="tok-nl">#69</span><span class="tok-o">=</span> <a href="../../lexical/IfcColumnType.html"><span class="tok-nc">IFCCOLUMNTYPE</span></a><span class="tok-p">(</span><span class="tok-s1">'24mq0gwVr7bgEMXPmo$TrF'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'SemiCircle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.COLUMN.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="70"></a><span class="tok-nl">#70</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelDefinesByType.html"><span class="tok-nc">IFCRELDEFINESBYTYPE</span></a><span class="tok-p">(</span><span class="tok-s1">'0devdSRyf3uBEQbSqWTDjo'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'NameNotAssigned'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#77"><span class="tok-nl">#77</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#69"><span class="tok-nl">#69</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="71"></a><span class="tok-nl">#71</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelDeclares.html"><span class="tok-nc">IFCRELDECLARES</span></a><span class="tok-p">(</span><span class="tok-s1">'1Cjr05W9T0fx0M3_mdVqMd'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#20"><span class="tok-nl">#20</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="#69"><span class="tok-nl">#69</span></a><span class="tok-p">,</span><a href="#124"><span class="tok-nl">#124</span></a><span class="tok-p">,</span><a href="#173"><span class="tok-nl">#173</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="72"></a><span class="tok-nl">#72</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfileSetUsage.html"><span class="tok-nc">IFCMATERIALPROFILESETUSAGE</span></a><span class="tok-p">(</span><a href="#67"><span class="tok-nl">#67</span></a><span class="tok-p">,</span><span class="tok-m">5</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="73"></a><span class="tok-nl">#73</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAssociatesMaterial.html"><span class="tok-nc">IFCRELASSOCIATESMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'35z8gDFbb6gvrCOz$24tUJ'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'MatAssoc'</span><span class="tok-p">,</span><span class="tok-s1">'Material Associates'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#77"><span class="tok-nl">#77</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#72"><span class="tok-nl">#72</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="74"></a><span class="tok-nl">#74</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="75"></a><span class="tok-nl">#75</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement3D.html"><span class="tok-nc">IFCAXIS2PLACEMENT3D</span></a><span class="tok-p">(</span><a href="#74"><span class="tok-nl">#74</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="76"></a><span class="tok-nl">#76</span><span class="tok-o">=</span> <a href="../../lexical/IfcLocalPlacement.html"><span class="tok-nc">IFCLOCALPLACEMENT</span></a><span class="tok-p">(</span><a href="#12"><span class="tok-nl">#12</span></a><span class="tok-p">,</span><a href="#75"><span class="tok-nl">#75</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="77"></a><span class="tok-nl">#77</span><span class="tok-o">=</span> <a href="../../lexical/IfcColumn.html"><span class="tok-nc">IFCCOLUMN</span></a><span class="tok-p">(</span><span class="tok-s1">'0RGc8lepr7BRF_EtHrWJ45'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'SemiCircle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#76"><span class="tok-nl">#76</span></a><span class="tok-p">,</span><a href="#85"><span class="tok-nl">#85</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="78"></a><span class="tok-nl">#78</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">2000.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="79"></a><span class="tok-nl">#79</span><span class="tok-o">=</span> <a href="../../lexical/IfcPolyline.html"><span class="tok-nc">IFCPOLYLINE</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#15"><span class="tok-nl">#15</span></a><span class="tok-p">,</span><a href="#78"><span class="tok-nl">#78</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="80"></a><span class="tok-nl">#80</span><span class="tok-o">=</span> <a href="../../lexical/IfcGeometricRepresentationSubContext.html"><span class="tok-nc">IFCGEOMETRICREPRESENTATIONSUBCONTEXT</span></a><span class="tok-p">(</span><span class="tok-s1">'Axis'</span><span class="tok-p">,</span><span class="tok-s1">'Model'</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><span class="tok-o">*</span><span class="tok-p">,</span><a href="#31"><span class="tok-nl">#31</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.MODEL_VIEW.</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="81"></a><span class="tok-nl">#81</span><span class="tok-o">=</span> <a href="../../lexical/IfcShapeRepresentation.html"><span class="tok-nc">IFCSHAPEREPRESENTATION</span></a><span class="tok-p">(</span><a href="#80"><span class="tok-nl">#80</span></a><span class="tok-p">,</span><span class="tok-s1">'Axis'</span><span class="tok-p">,</span><span class="tok-s1">'Curve3D'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#79"><span class="tok-nl">#79</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="82"></a><span class="tok-nl">#82</span><span class="tok-o">=</span> <a href="../../lexical/IfcExtrudedAreaSolid.html"><span class="tok-nc">IFCEXTRUDEDAREASOLID</span></a><span class="tok-p">(</span><a href="#64"><span class="tok-nl">#64</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#83"><span class="tok-nl">#83</span></a><span class="tok-p">,</span><span class="tok-m">2000.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="83"></a><span class="tok-nl">#83</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">1.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="84"></a><span class="tok-nl">#84</span><span class="tok-o">=</span> <a href="../../lexical/IfcShapeRepresentation.html"><span class="tok-nc">IFCSHAPEREPRESENTATION</span></a><span class="tok-p">(</span><a href="#35"><span class="tok-nl">#35</span></a><span class="tok-p">,</span><span class="tok-s1">'Body'</span><span class="tok-p">,</span><span class="tok-s1">'SweptSolid'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#82"><span class="tok-nl">#82</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="85"></a><span class="tok-nl">#85</span><span class="tok-o">=</span> <a href="../../lexical/IfcProductDefinitionShape.html"><span class="tok-nc">IFCPRODUCTDEFINITIONSHAPE</span></a><span class="tok-p">(</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#81"><span class="tok-nl">#81</span></a><span class="tok-p">,</span><a href="#84"><span class="tok-nl">#84</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="100"></a><span class="tok-nl">#100</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">1000.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="101"></a><span class="tok-nl">#101</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement2D.html"><span class="tok-nc">IFCAXIS2PLACEMENT2D</span></a><span class="tok-p">(</span><a href="#100"><span class="tok-nl">#100</span></a><span class="tok-p">,</span><a href="#102"><span class="tok-nl">#102</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="102"></a><span class="tok-nl">#102</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">-1.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="103"></a><span class="tok-nl">#103</span><span class="tok-o">=</span> <a href="../../lexical/IfcCircle.html"><span class="tok-nc">IFCCIRCLE</span></a><span class="tok-p">(</span><a href="#101"><span class="tok-nl">#101</span></a><span class="tok-p">,</span><span class="tok-m">1732.05081</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="104"></a><span class="tok-nl">#104</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#103"><span class="tok-nl">#103</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">60.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">120.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="105"></a><span class="tok-nl">#105</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#104"><span class="tok-nl">#104</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="106"></a><span class="tok-nl">#106</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">-866.0254</span><span class="tok-p">,</span><span class="tok-m">-500.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="107"></a><span class="tok-nl">#107</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement2D.html"><span class="tok-nc">IFCAXIS2PLACEMENT2D</span></a><span class="tok-p">(</span><a href="#106"><span class="tok-nl">#106</span></a><span class="tok-p">,</span><a href="#108"><span class="tok-nl">#108</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="108"></a><span class="tok-nl">#108</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">-1.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="109"></a><span class="tok-nl">#109</span><span class="tok-o">=</span> <a href="../../lexical/IfcCircle.html"><span class="tok-nc">IFCCIRCLE</span></a><span class="tok-p">(</span><a href="#107"><span class="tok-nl">#107</span></a><span class="tok-p">,</span><span class="tok-m">1732.05081</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="110"></a><span class="tok-nl">#110</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#109"><span class="tok-nl">#109</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">90.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">150.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="111"></a><span class="tok-nl">#111</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#110"><span class="tok-nl">#110</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="112"></a><span class="tok-nl">#112</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">866.0254</span><span class="tok-p">,</span><span class="tok-m">-500.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="113"></a><span class="tok-nl">#113</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement2D.html"><span class="tok-nc">IFCAXIS2PLACEMENT2D</span></a><span class="tok-p">(</span><a href="#112"><span class="tok-nl">#112</span></a><span class="tok-p">,</span><a href="#114"><span class="tok-nl">#114</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="114"></a><span class="tok-nl">#114</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">1.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="115"></a><span class="tok-nl">#115</span><span class="tok-o">=</span> <a href="../../lexical/IfcCircle.html"><span class="tok-nc">IFCCIRCLE</span></a><span class="tok-p">(</span><a href="#113"><span class="tok-nl">#113</span></a><span class="tok-p">,</span><span class="tok-m">1732.05081</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="116"></a><span class="tok-nl">#116</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#115"><span class="tok-nl">#115</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">30.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">90.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="117"></a><span class="tok-nl">#117</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#116"><span class="tok-nl">#116</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="118"></a><span class="tok-nl">#118</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurve.html"><span class="tok-nc">IFCCOMPOSITECURVE</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#105"><span class="tok-nl">#105</span></a><span class="tok-p">,</span><a href="#111"><span class="tok-nl">#111</span></a><span class="tok-p">,</span><a href="#117"><span class="tok-nl">#117</span></a><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.U.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="119"></a><span class="tok-nl">#119</span><span class="tok-o">=</span> <a href="../../lexical/IfcArbitraryClosedProfileDef.html"><span class="tok-nc">IFCARBITRARYCLOSEDPROFILEDEF</span></a><span class="tok-p">(</span><span class="tok-no">.AREA.</span><span class="tok-p">,</span><span class="tok-s1">'CurviLinearTriangle'</span><span class="tok-p">,</span><a href="#118"><span class="tok-nl">#118</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="120"></a><span class="tok-nl">#120</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfile.html"><span class="tok-nc">IFCMATERIALPROFILE</span></a><span class="tok-p">(</span><span class="tok-s1">'CurviLinearTriangle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#50"><span class="tok-nl">#50</span></a><span class="tok-p">,</span><a href="#119"><span class="tok-nl">#119</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="122"></a><span class="tok-nl">#122</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfileSet.html"><span class="tok-nc">IFCMATERIALPROFILESET</span></a><span class="tok-p">(</span><span class="tok-s1">'CurviLinearTriangle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#120"><span class="tok-nl">#120</span></a><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="123"></a><span class="tok-nl">#123</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAssociatesMaterial.html"><span class="tok-nc">IFCRELASSOCIATESMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'1qSyS$HSb8TRu4PVnIUzZM'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'MatAssoc'</span><span class="tok-p">,</span><span class="tok-s1">'Material Associates'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#124"><span class="tok-nl">#124</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#122"><span class="tok-nl">#122</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="124"></a><span class="tok-nl">#124</span><span class="tok-o">=</span> <a href="../../lexical/IfcColumnType.html"><span class="tok-nc">IFCCOLUMNTYPE</span></a><span class="tok-p">(</span><span class="tok-s1">'0JgmY6eGLC9AwX_nMFf5CT'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'CurviLinearTriangle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.COLUMN.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="125"></a><span class="tok-nl">#125</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelDefinesByType.html"><span class="tok-nc">IFCRELDEFINESBYTYPE</span></a><span class="tok-p">(</span><span class="tok-s1">'1N1PpBCJLB4QMrIjidnGaj'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'NameNotAssigned'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#131"><span class="tok-nl">#131</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#124"><span class="tok-nl">#124</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="126"></a><span class="tok-nl">#126</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfileSetUsage.html"><span class="tok-nc">IFCMATERIALPROFILESETUSAGE</span></a><span class="tok-p">(</span><a href="#122"><span class="tok-nl">#122</span></a><span class="tok-p">,</span><span class="tok-m">5</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="127"></a><span class="tok-nl">#127</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAssociatesMaterial.html"><span class="tok-nc">IFCRELASSOCIATESMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'00Bah4pIPCa9jB2F34kUX_'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'MatAssoc'</span><span class="tok-p">,</span><span class="tok-s1">'Material Associates'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#131"><span class="tok-nl">#131</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#126"><span class="tok-nl">#126</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="128"></a><span class="tok-nl">#128</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">2500.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="129"></a><span class="tok-nl">#129</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement3D.html"><span class="tok-nc">IFCAXIS2PLACEMENT3D</span></a><span class="tok-p">(</span><a href="#128"><span class="tok-nl">#128</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="130"></a><span class="tok-nl">#130</span><span class="tok-o">=</span> <a href="../../lexical/IfcLocalPlacement.html"><span class="tok-nc">IFCLOCALPLACEMENT</span></a><span class="tok-p">(</span><a href="#12"><span class="tok-nl">#12</span></a><span class="tok-p">,</span><a href="#129"><span class="tok-nl">#129</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="131"></a><span class="tok-nl">#131</span><span class="tok-o">=</span> <a href="../../lexical/IfcColumn.html"><span class="tok-nc">IFCCOLUMN</span></a><span class="tok-p">(</span><span class="tok-s1">'3vcm8ZmFfDwhpgzzT7EP8n'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'CurviLinearTriangle'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#130"><span class="tok-nl">#130</span></a><span class="tok-p">,</span><a href="#137"><span class="tok-nl">#137</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="132"></a><span class="tok-nl">#132</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">2000.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="133"></a><span class="tok-nl">#133</span><span class="tok-o">=</span> <a href="../../lexical/IfcPolyline.html"><span class="tok-nc">IFCPOLYLINE</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#15"><span class="tok-nl">#15</span></a><span class="tok-p">,</span><a href="#132"><span class="tok-nl">#132</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="134"></a><span class="tok-nl">#134</span><span class="tok-o">=</span> <a href="../../lexical/IfcShapeRepresentation.html"><span class="tok-nc">IFCSHAPEREPRESENTATION</span></a><span class="tok-p">(</span><a href="#80"><span class="tok-nl">#80</span></a><span class="tok-p">,</span><span class="tok-s1">'Axis'</span><span class="tok-p">,</span><span class="tok-s1">'Curve3D'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#133"><span class="tok-nl">#133</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="135"></a><span class="tok-nl">#135</span><span class="tok-o">=</span> <a href="../../lexical/IfcExtrudedAreaSolid.html"><span class="tok-nc">IFCEXTRUDEDAREASOLID</span></a><span class="tok-p">(</span><a href="#119"><span class="tok-nl">#119</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#83"><span class="tok-nl">#83</span></a><span class="tok-p">,</span><span class="tok-m">2000.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="136"></a><span class="tok-nl">#136</span><span class="tok-o">=</span> <a href="../../lexical/IfcShapeRepresentation.html"><span class="tok-nc">IFCSHAPEREPRESENTATION</span></a><span class="tok-p">(</span><a href="#35"><span class="tok-nl">#35</span></a><span class="tok-p">,</span><span class="tok-s1">'Body'</span><span class="tok-p">,</span><span class="tok-s1">'SweptSolid'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#135"><span class="tok-nl">#135</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="137"></a><span class="tok-nl">#137</span><span class="tok-o">=</span> <a href="../../lexical/IfcProductDefinitionShape.html"><span class="tok-nc">IFCPRODUCTDEFINITIONSHAPE</span></a><span class="tok-p">(</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#134"><span class="tok-nl">#134</span></a><span class="tok-p">,</span><a href="#136"><span class="tok-nl">#136</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="150"></a><span class="tok-nl">#150</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="151"></a><span class="tok-nl">#151</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement2D.html"><span class="tok-nc">IFCAXIS2PLACEMENT2D</span></a><span class="tok-p">(</span><a href="#150"><span class="tok-nl">#150</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="152"></a><span class="tok-nl">#152</span><span class="tok-o">=</span> <a href="../../lexical/IfcEllipse.html"><span class="tok-nc">IFCELLIPSE</span></a><span class="tok-p">(</span><a href="#151"><span class="tok-nl">#151</span></a><span class="tok-p">,</span><span class="tok-m">1000.0</span><span class="tok-p">,</span><span class="tok-m">500.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="153"></a><span class="tok-nl">#153</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#152"><span class="tok-nl">#152</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">45.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="154"></a><span class="tok-nl">#154</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#153"><span class="tok-nl">#153</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="155"></a><span class="tok-nl">#155</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="156"></a><span class="tok-nl">#156</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.89442719</span><span class="tok-p">,</span><span class="tok-m">0.4472136</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="157"></a><span class="tok-nl">#157</span><span class="tok-o">=</span> <a href="../../lexical/IfcVector.html"><span class="tok-nc">IFCVECTOR</span></a><span class="tok-p">(</span><a href="#156"><span class="tok-nl">#156</span></a><span class="tok-p">,</span><span class="tok-m">1.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="158"></a><span class="tok-nl">#158</span><span class="tok-o">=</span> <a href="../../lexical/IfcLine.html"><span class="tok-nc">IFCLINE</span></a><span class="tok-p">(</span><a href="#155"><span class="tok-nl">#155</span></a><span class="tok-p">,</span><a href="#157"><span class="tok-nl">#157</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="159"></a><span class="tok-nl">#159</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#158"><span class="tok-nl">#158</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">790.569415042095</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.F.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="160"></a><span class="tok-nl">#160</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#159"><span class="tok-nl">#159</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="161"></a><span class="tok-nl">#161</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="162"></a><span class="tok-nl">#162</span><span class="tok-o">=</span> <a href="../../lexical/IfcDirection.html"><span class="tok-nc">IFCDIRECTION</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">1.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="163"></a><span class="tok-nl">#163</span><span class="tok-o">=</span> <a href="../../lexical/IfcVector.html"><span class="tok-nc">IFCVECTOR</span></a><span class="tok-p">(</span><a href="#162"><span class="tok-nl">#162</span></a><span class="tok-p">,</span><span class="tok-m">1.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="164"></a><span class="tok-nl">#164</span><span class="tok-o">=</span> <a href="../../lexical/IfcLine.html"><span class="tok-nc">IFCLINE</span></a><span class="tok-p">(</span><a href="#161"><span class="tok-nl">#161</span></a><span class="tok-p">,</span><a href="#163"><span class="tok-nl">#163</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="165"></a><span class="tok-nl">#165</span><span class="tok-o">=</span> <a href="../../lexical/IfcTrimmedCurve.html"><span class="tok-nc">IFCTRIMMEDCURVE</span></a><span class="tok-p">(</span><a href="#164"><span class="tok-nl">#164</span></a><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="../../lexical/IfcParameterValue.html"><span class="tok-nc">IFCPARAMETERVALUE</span></a><span class="tok-p">(</span><span class="tok-m">1000.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><span class="tok-no">.PARAMETER.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="166"></a><span class="tok-nl">#166</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurveSegment.html"><span class="tok-nc">IFCCOMPOSITECURVESEGMENT</span></a><span class="tok-p">(</span><span class="tok-no">.CONTINUOUS.</span><span class="tok-p">,</span><span class="tok-no">.T.</span><span class="tok-p">,</span><a href="#165"><span class="tok-nl">#165</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="167"></a><span class="tok-nl">#167</span><span class="tok-o">=</span> <a href="../../lexical/IfcCompositeCurve.html"><span class="tok-nc">IFCCOMPOSITECURVE</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#154"><span class="tok-nl">#154</span></a><span class="tok-p">,</span><a href="#160"><span class="tok-nl">#160</span></a><span class="tok-p">,</span><a href="#166"><span class="tok-nl">#166</span></a><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-no">.U.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="168"></a><span class="tok-nl">#168</span><span class="tok-o">=</span> <a href="../../lexical/IfcArbitraryClosedProfileDef.html"><span class="tok-nc">IFCARBITRARYCLOSEDPROFILEDEF</span></a><span class="tok-p">(</span><span class="tok-no">.AREA.</span><span class="tok-p">,</span><span class="tok-s1">'PartialEllipse'</span><span class="tok-p">,</span><a href="#167"><span class="tok-nl">#167</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="169"></a><span class="tok-nl">#169</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfile.html"><span class="tok-nc">IFCMATERIALPROFILE</span></a><span class="tok-p">(</span><span class="tok-s1">'PartialEllipse'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#50"><span class="tok-nl">#50</span></a><span class="tok-p">,</span><a href="#168"><span class="tok-nl">#168</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="171"></a><span class="tok-nl">#171</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfileSet.html"><span class="tok-nc">IFCMATERIALPROFILESET</span></a><span class="tok-p">(</span><span class="tok-s1">'PartialEllipse'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#169"><span class="tok-nl">#169</span></a><span class="tok-p">)</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="172"></a><span class="tok-nl">#172</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAssociatesMaterial.html"><span class="tok-nc">IFCRELASSOCIATESMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'2V$PMUw5f3PgVGq_LG8lb7'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'MatAssoc'</span><span class="tok-p">,</span><span class="tok-s1">'Material Associates'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#173"><span class="tok-nl">#173</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#171"><span class="tok-nl">#171</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="173"></a><span class="tok-nl">#173</span><span class="tok-o">=</span> <a href="../../lexical/IfcColumnType.html"><span class="tok-nc">IFCCOLUMNTYPE</span></a><span class="tok-p">(</span><span class="tok-s1">'32anvmJgjFPOL650_UAlfM'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'PartialEllipse'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-no">.COLUMN.</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="174"></a><span class="tok-nl">#174</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelDefinesByType.html"><span class="tok-nc">IFCRELDEFINESBYTYPE</span></a><span class="tok-p">(</span><span class="tok-s1">'1YdxXK2rrC6RnMj56iAUZG'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'NameNotAssigned'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#180"><span class="tok-nl">#180</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#173"><span class="tok-nl">#173</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="175"></a><span class="tok-nl">#175</span><span class="tok-o">=</span> <a href="../../lexical/IfcMaterialProfileSetUsage.html"><span class="tok-nc">IFCMATERIALPROFILESETUSAGE</span></a><span class="tok-p">(</span><a href="#171"><span class="tok-nl">#171</span></a><span class="tok-p">,</span><span class="tok-m">5</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="176"></a><span class="tok-nl">#176</span><span class="tok-o">=</span> <a href="../../lexical/IfcRelAssociatesMaterial.html"><span class="tok-nc">IFCRELASSOCIATESMATERIAL</span></a><span class="tok-p">(</span><span class="tok-s1">'1k_RZ6rAPBe92Lvj8VqnvM'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'MatAssoc'</span><span class="tok-p">,</span><span class="tok-s1">'Material Associates'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#180"><span class="tok-nl">#180</span></a><span class="tok-p">)</span><span class="tok-p">,</span><a href="#175"><span class="tok-nl">#175</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="177"></a><span class="tok-nl">#177</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">5000.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="178"></a><span class="tok-nl">#178</span><span class="tok-o">=</span> <a href="../../lexical/IfcAxis2Placement3D.html"><span class="tok-nc">IFCAXIS2PLACEMENT3D</span></a><span class="tok-p">(</span><a href="#177"><span class="tok-nl">#177</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="179"></a><span class="tok-nl">#179</span><span class="tok-o">=</span> <a href="../../lexical/IfcLocalPlacement.html"><span class="tok-nc">IFCLOCALPLACEMENT</span></a><span class="tok-p">(</span><a href="#12"><span class="tok-nl">#12</span></a><span class="tok-p">,</span><a href="#178"><span class="tok-nl">#178</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="180"></a><span class="tok-nl">#180</span><span class="tok-o">=</span> <a href="../../lexical/IfcColumn.html"><span class="tok-nc">IFCCOLUMN</span></a><span class="tok-p">(</span><span class="tok-s1">'0gw7Zq2jn3b91J9aZCStsR'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-s1">'PartialEllipse'</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#179"><span class="tok-nl">#179</span></a><span class="tok-p">,</span><a href="#186"><span class="tok-nl">#186</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="181"></a><span class="tok-nl">#181</span><span class="tok-o">=</span> <a href="../../lexical/IfcCartesianPoint.html"><span class="tok-nc">IFCCARTESIANPOINT</span></a><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">0.0</span><span class="tok-p">,</span><span class="tok-m">2000.0</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="182"></a><span class="tok-nl">#182</span><span class="tok-o">=</span> <a href="../../lexical/IfcPolyline.html"><span class="tok-nc">IFCPOLYLINE</span></a><span class="tok-p">(</span><span class="tok-p">(</span><a href="#15"><span class="tok-nl">#15</span></a><span class="tok-p">,</span><a href="#181"><span class="tok-nl">#181</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="183"></a><span class="tok-nl">#183</span><span class="tok-o">=</span> <a href="../../lexical/IfcShapeRepresentation.html"><span class="tok-nc">IFCSHAPEREPRESENTATION</span></a><span class="tok-p">(</span><a href="#80"><span class="tok-nl">#80</span></a><span class="tok-p">,</span><span class="tok-s1">'Axis'</span><span class="tok-p">,</span><span class="tok-s1">'Curve3D'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#182"><span class="tok-nl">#182</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="184"></a><span class="tok-nl">#184</span><span class="tok-o">=</span> <a href="../../lexical/IfcExtrudedAreaSolid.html"><span class="tok-nc">IFCEXTRUDEDAREASOLID</span></a><span class="tok-p">(</span><a href="#168"><span class="tok-nl">#168</span></a><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><a href="#83"><span class="tok-nl">#83</span></a><span class="tok-p">,</span><span class="tok-m">2000.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="185"></a><span class="tok-nl">#185</span><span class="tok-o">=</span> <a href="../../lexical/IfcShapeRepresentation.html"><span class="tok-nc">IFCSHAPEREPRESENTATION</span></a><span class="tok-p">(</span><a href="#35"><span class="tok-nl">#35</span></a><span class="tok-p">,</span><span class="tok-s1">'Body'</span><span class="tok-p">,</span><span class="tok-s1">'SweptSolid'</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#184"><span class="tok-nl">#184</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<a id="186"></a><span class="tok-nl">#186</span><span class="tok-o">=</span> <a href="../../lexical/IfcProductDefinitionShape.html"><span class="tok-nc">IFCPRODUCTDEFINITIONSHAPE</span></a><span class="tok-p">(</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-kc">$</span><span class="tok-p">,</span><span class="tok-p">(</span><a href="#183"><span class="tok-nl">#183</span></a><span class="tok-p">,</span><a href="#185"><span class="tok-nl">#185</span></a><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-kd">ENDSEC</span><span class="tok-p">;</span>
+<span class="tok-kd">END-ISO-10303-21</span><span class="tok-p">;</span>
+</code></pre>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-sample-models/blob/main/models/trimmed-curve-parameters/curve-parameters-in-degrees/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">1 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/> </span><br/>
+<span id="last-change">Last change: <em>Revise README for IFC 4.x specification models
+
+Updated repository description and links for clarity.</em> by ArturTomczak on 2026-08-21T14:19:26+01:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'models/trimmed-curve-parameters/curve-parameters-in-degrees/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-sample-models',
+            'resourceApi': null,
+            'searchIndex': '/assets/search/search-index.json',
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>
