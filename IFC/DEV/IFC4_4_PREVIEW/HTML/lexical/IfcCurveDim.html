@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.9.6.8 IfcCurveDim - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -321,9 +322,6 @@ This function checks the dimensionality of various subtypes of curve. It returns
 <span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCOFFSETCURVEBYDISTANCES'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCURVESEGMENT2D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
-<span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">2</span><span class="tok-p">)</span><span class="tok-p">;</span>
-<span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPOLYNOMIALCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-kd">IF</span> <span class="tok-p">(</span> <span class="tok-nb">NOT</span> <span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcPolynomialCurve.html"><span class="tok-nc">IfcPolynomialCurve</span></a><span class="tok-p">.</span><span class="tok-n">CoefficientsZ</span><span class="tok-p">)</span> <span class="tok-nb">AND</span> <span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcPolynomialCurve.html"><span class="tok-nc">IfcPolynomialCurve</span></a><span class="tok-p">.</span><span class="tok-n">Position</span><span class="tok-p">.</span><span class="tok-n">Dim</span> <span class="tok-o">=</span> <span class="tok-m">2</span> <span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">2</span><span class="tok-p">)</span><span class="tok-p">;</span>
@@ -407,7 +405,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

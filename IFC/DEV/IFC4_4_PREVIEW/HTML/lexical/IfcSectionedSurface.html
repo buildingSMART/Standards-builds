@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.8.3.37 IfcSectionedSurface - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -729,7 +730,7 @@
 </tr>
 <tr>
 <td colspan="2">
-<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">CrossSections</span> <span class="tok-p">|</span> <span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">ProfileType</span> <span class="tok-o">=</span> <a href="IfcProfileTypeEnum.html"><span class="tok-nc">IfcProfileTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">CURVE</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-o">&lt;&gt;</span> <span class="tok-m">0</span></code></pre>
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">CrossSections</span> <span class="tok-p">|</span> <span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">ProfileType</span> <span class="tok-o">&lt;&gt;</span> <a href="IfcProfileTypeEnum.html"><span class="tok-nc">IfcProfileTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">CURVE</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-m">0</span></code></pre>
 </td>
 </tr>
 <tr>
@@ -787,7 +788,7 @@
 <span class="tok-n">CrossSectionPositions</span> <span class="tok-o">:</span> <span class="tok-nb">LIST</span> <span class="tok-p">[</span><span class="tok-m">2</span><span class="tok-o">:</span><span class="tok-err">?</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcAxis2PlacementLinear.html"><span class="tok-nc">IfcAxis2PlacementLinear</span></a><span class="tok-p">;</span>
 <span class="tok-n">CrossSections</span> <span class="tok-o">:</span> <span class="tok-nb">LIST</span> <span class="tok-p">[</span><span class="tok-m">2</span><span class="tok-o">:</span><span class="tok-err">?</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcProfileDef.html"><span class="tok-nc">IfcProfileDef</span></a><span class="tok-p">;</span>
 <span class="tok-k">WHERE</span>
-<span class="tok-n">AreaProfileTypes</span> <span class="tok-o">:</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">CrossSections</span> <span class="tok-p">|</span> <span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">ProfileType</span> <span class="tok-o">=</span> <a href="IfcProfileTypeEnum.html"><span class="tok-nc">IfcProfileTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">CURVE</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-o">&lt;&gt;</span> <span class="tok-m">0</span><span class="tok-p">;</span>
+<span class="tok-n">AreaProfileTypes</span> <span class="tok-o">:</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">CrossSections</span> <span class="tok-p">|</span> <span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">ProfileType</span> <span class="tok-o">&lt;&gt;</span> <a href="IfcProfileTypeEnum.html"><span class="tok-nc">IfcProfileTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">CURVE</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-m">0</span><span class="tok-p">;</span>
 <span class="tok-n">CorrespondingSectionPositions</span> <span class="tok-o">:</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-n">CrossSections</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-n">CrossSectionPositions</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">DirectrixIs3D</span> <span class="tok-o">:</span> <span class="tok-n">Directrix</span><span class="tok-p">.</span><span class="tok-n">Dim</span> <span class="tok-o">=</span> <span class="tok-m">3</span><span class="tok-p">;</span>
 <span class="tok-n">NoOffsets</span> <span class="tok-o">:</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">CrossSectionPositions</span> <span class="tok-p">|</span> <span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">.</span><span class="tok-n">OffsetLateral</span><span class="tok-p">)</span> <span class="tok-nb">OR</span> <span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">.</span><span class="tok-n">OffsetVertical</span><span class="tok-p">)</span> <span class="tok-nb">OR</span> <span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">temp</span><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">.</span><span class="tok-n">OffsetLongitudinal</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-m">0</span><span class="tok-p">;</span>
@@ -859,7 +860,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

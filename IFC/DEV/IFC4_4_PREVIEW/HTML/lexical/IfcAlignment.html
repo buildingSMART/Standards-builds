@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>5.4.3.1 IfcAlignment - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -553,6 +554,7 @@ Generally, contemporary engineering follows these steps when defining an alignme
 <ul class="classes classes-in-chain">
 <li class="abstract ancestor"><a href="IfcPositioningElement.html">IfcPositioningElement</a></li>
 <li class=""><a href="IfcAnnotation.html">IfcAnnotation</a></li>
+<li class="abstract"><a href="IfcComplementaryData.html">IfcComplementaryData</a></li>
 <li class="abstract"><a href="IfcElement.html">IfcElement</a></li>
 <li class=""><a href="IfcLinearElement.html">IfcLinearElement</a></li>
 <li class="abstract"><a href="IfcPort.html">IfcPort</a></li>
@@ -900,9 +902,33 @@ Generally, contemporary engineering follows these steps when defining an alignme
 </tr>
 </tbody>
 </table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
-<h2><a class="anchor" id="5.4.3.1.4-Property-sets"></a>
-    5.4.3.1.4 Property sets
-<a class="link" href="#5.4.3.1.4-Property-sets"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="5.4.3.1.4-Formal-propositions"></a>
+    5.4.3.1.4 Formal propositions
+<a class="link" href="#5.4.3.1.4-Formal-propositions"><i data-feather="link"></i></a></h2>
+<figure><a class="anchor" id="Table-B"></a><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlignmentRepresentation</td>
+<td>
+<p>Only <a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a>.RepresentationIdentifier='Axis' and <a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a>.RepresentationType='Curve2D' or 'Curve3D' are allowed. If both 'Curve2D' and 'Curve3D' are defined, then the horizontal alignment 2D curve shall be the basis of the 3D curve.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<pre><code class="language-express pygments" data-highlighted="generator"><a href="IfcAlignmentRepresentation.html"><span class="tok-nc">IfcAlignmentRepresentation</span></a><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-p">)</span></code></pre>
+</td>
+</tr>
+</tbody>
+</table><figcaption>Table B<a class="link" href="#Table-B"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="5.4.3.1.5-Property-sets"></a>
+    5.4.3.1.5 Property sets
+<a class="link" href="#5.4.3.1.5-Property-sets"><i data-feather="link"></i></a></h2>
 <ul class="psets">
 <li>
             <a href="Pset_LinearReferencingMethod.html">Pset_LinearReferencingMethod</a>
@@ -980,10 +1006,10 @@ Generally, contemporary engineering follows these steps when defining an alignme
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="5.4.3.1.5-Concept-usage"></a>
-    5.4.3.1.5 Concept usage
-<a class="link" href="#5.4.3.1.5-Concept-usage"><i data-feather="link"></i></a></h2>
-<figure><a class="anchor" id="Table-B"></a><table class="striped grouped concepts">
+<h2><a class="anchor" id="5.4.3.1.6-Concept-usage"></a>
+    5.4.3.1.6 Concept usage
+<a class="link" href="#5.4.3.1.6-Concept-usage"><i data-feather="link"></i></a></h2>
+<figure><a class="anchor" id="Table-C"></a><table class="striped grouped concepts">
 <thead>
 <tr>
 <th>Concept</th>
@@ -1546,7 +1572,7 @@ Generally, contemporary engineering follows these steps when defining an alignme
 <li>Multiple Vertical layouts based on the same Horizontal Layout, with a Cant layout applied</li>
 </ol>
 <p>(4) and (5) are used in scenarios where multiple alignments re-use the same horizontal layout definition. See <strong>Alignment Layout - Reusing Horizontal Layout</strong> and <strong>Alignment Geometry - Reusing Horizontal Layout</strong> for details on how to relate parent and child alignments in these cases.</p>
-<figure><a class="anchor" id="Figure-C-Common-configurations-of-alignment-layouts"></a><img alt="Alignment configurations" src="../figures/IfcAlignment-possible-configurations.png"/><figcaption>Figure C — Common configurations of alignment layouts<a class="link" href="#Figure-C-Common-configurations-of-alignment-layouts"><i data-feather="link"></i></a></figcaption></figure>
+<figure><a class="anchor" id="Figure-D-Common-configurations-of-alignment-layouts"></a><img alt="Alignment configurations" src="../figures/IfcAlignment-possible-configurations.png"/><figcaption>Figure D — Common configurations of alignment layouts<a class="link" href="#Figure-D-Common-configurations-of-alignment-layouts"><i data-feather="link"></i></a></figcaption></figure>
 
 </td>
 </tr>
@@ -1679,18 +1705,21 @@ Generally, contemporary engineering follows these steps when defining an alignme
 </td>
 </tr>
 </tbody>
-</table><figcaption>Table B<a class="link" href="#Table-B"><i data-feather="link"></i></a></figcaption></figure>
-<h2><a class="anchor" id="5.4.3.1.6-Formal-representation"></a>
-    5.4.3.1.6 Formal representation
-<a class="link" href="#5.4.3.1.6-Formal-representation"><i data-feather="link"></i></a></h2>
+</table><figcaption>Table C<a class="link" href="#Table-C"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="5.4.3.1.7-Formal-representation"></a>
+    5.4.3.1.7 Formal representation
+<a class="link" href="#5.4.3.1.7-Formal-representation"><i data-feather="link"></i></a></h2>
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">ENTITY</span> <a href="IfcAlignment.html"><span class="tok-nc">IfcAlignment</span></a>
 <span class="tok-k">SUBTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><a href="IfcLinearPositioningElement.html"><span class="tok-nc">IfcLinearPositioningElement</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">PredefinedType</span> <span class="tok-o">:</span> <span class="tok-nb">OPTIONAL</span> <a href="IfcAlignmentTypeEnum.html"><span class="tok-nc">IfcAlignmentTypeEnum</span></a><span class="tok-p">;</span>
+<span class="tok-k">WHERE</span>
+<span class="tok-n">AlignmentRepresentation</span> <span class="tok-o">:</span> <a href="IfcAlignmentRepresentation.html"><span class="tok-nc">IfcAlignmentRepresentation</span></a><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
-<h2><a class="anchor" id="5.4.3.1.7-References"></a>
-    5.4.3.1.7 References
-<a class="link" href="#5.4.3.1.7-References"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="5.4.3.1.8-References"></a>
+    5.4.3.1.8 References
+<a class="link" href="#5.4.3.1.8-References"><i data-feather="link"></i></a></h2>
 <ul class="references">
+<li><i data-feather="paperclip"></i><a href="IfcAlignmentRepresentation.html">IfcAlignmentRepresentation</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcLinearPositioningElement.html">IfcLinearPositioningElement</a></li>
 </ul>
 </div>
@@ -1702,9 +1731,8 @@ Generally, contemporary engineering follows these steps when defining an alignme
 <p>
 <small>
 <span id="contributors">6 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/><img alt="luzpaz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luzpaz"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
-<span id="last-change">Last change: <em>Fix various typos
-Found via `codespell -q 3 -S "./schemas,./reference_schemas" -L cant,co-ordinate,complies,nd,tread,trough,unkown,uupper,wallthickness`</em> by luzpaz on 2024-10-29T12:09:51Z</span>
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/><img alt="luzpaz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luzpaz"/> </span><br/>
+<span id="last-change">Last change: <em>[TM11] Add documentation string for WR AlignmentRepresentation</em> by Thomas Krijnen on 2026-05-24T09:36:37+02:00</span>
 </small>
 </p>
 <p>
@@ -1738,7 +1766,6 @@ Found via `codespell -q 3 -S "./schemas,./reference_schemas" -L cant,co-ordinate
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

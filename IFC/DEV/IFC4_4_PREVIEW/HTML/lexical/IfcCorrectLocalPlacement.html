@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.7.6.1 IfcCorrectLocalPlacement - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -278,9 +279,9 @@
 <h2><a class="anchor" id="8.7.6.1.1-Semantic-definition"></a>
     8.7.6.1.1 Semantic definition
 <a class="link" href="#8.7.6.1.1-Semantic-definition"><i data-feather="link"></i></a></h2>
-<p>The function checks that a relative placement (i.e. relative to another local placement, and not grid placement) of a 3D local placement has to be relative to a 3D parent placement (and not to a 2D parent placement).</p>
+<p>The function checks that a relative placement (i.e. relative to another local placement or linear placement, and not grid placement) of a 3D local placement has to be relative to a 3D parent placement (and not to a 2D parent placement).</p>
 <!-- end of short definition -->
-<p>HISTORY: New function in Release IFC2x Edition 2.</p>
+<aside class="aside-history:"><mark>HISTORY:</mark> New function in Release IFC2x Edition 2.</aside><aside class="aside-ifc4.4.0.0"><mark>IFC4.4.0.0-CHANGE</mark> Add branch to handle <a href="IfcLinearPlacement.html">IfcLinearPlacement</a> explicitly</aside>
 <h2><a class="anchor" id="8.7.6.1.2-Formal-representation"></a>
     8.7.6.1.2 Formal representation
 <a class="link" href="#8.7.6.1.2-Formal-representation"><i data-feather="link"></i></a></h2>
@@ -303,6 +304,9 @@
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCLINEARPLACEMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">RelPlacement</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">TRUE</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">TRUE</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
@@ -322,25 +326,9 @@
 </p>
 <p>
 <small>
-<span id="contributors">2 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
-<span id="last-change">Last change: <em>Improve definition split (#876)
-
-* bring back headers
-
-headers were previously removed by mistake, now bringing them back
-
-* add new lines and rename the tag
-
-add the word 'short' in it
-
-* unify newlines
-
-make exactly one newline before and two after the tag
-
-* resolving typos
-
-Because bringing back headers required to go back in time to previous version, I'm now re-resolving the issues: #861, #860, #856</em> by ArturTomczak on 2024-07-16T16:07:28+02:00</span>
+<span id="contributors">3 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
+<span id="last-change">Last change: <em>[ED] Add IFC4.4.0.0 CHANGE notion to <a href="IfcCorrectLocalPlacement.html">IfcCorrectLocalPlacement</a></em> by Thomas Krijnen on 2026-05-23T21:44:23+02:00</span>
 </small>
 </p>
 <p>
@@ -374,7 +362,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

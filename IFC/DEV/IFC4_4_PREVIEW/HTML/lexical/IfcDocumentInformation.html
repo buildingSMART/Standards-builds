@@ -4,8 +4,9 @@
 <link href="../assets/css/style.css" rel="stylesheet"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta charset="utf-8"/>
-<title>8.6.3.3 IfcDocumentInformation - IFC 4.4.0.0 Documentation</title>
+<title>8.6.3.5 IfcDocumentInformation - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -274,7 +275,7 @@
 </nav>
 </div>
 <div class="col-md-8" id="main-content">
-<h1>8.6.3.3 <a href="IfcDocumentInformation.html">IfcDocumentInformation</a></h1>
+<h1>8.6.3.5 <a href="IfcDocumentInformation.html">IfcDocumentInformation</a></h1>
 <aside class="aside-note search-skip" id="translations-aside">
 <div class="translation lang-arabic" style="display:none">
 <div>
@@ -512,18 +513,18 @@
 </div>
 </aside>
 <p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
-<h2><a class="anchor" id="8.6.3.3.1-Semantic-definition"></a>
-    8.6.3.3.1 Semantic definition
-<a class="link" href="#8.6.3.3.1-Semantic-definition"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.6.3.5.1-Semantic-definition"></a>
+    8.6.3.5.1 Semantic definition
+<a class="link" href="#8.6.3.5.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p><em><a href="IfcDocumentInformation.html">IfcDocumentInformation</a></em> captures "metadata" of an external document. The actual content of the document is not defined in this specification; instead, it can be found following the <em>Location</em> attribute.</p>
 <!-- end of short definition -->
 <p>The same <em><a href="IfcDocumentInformation.html">IfcDocumentInformation</a></em> can be referenced from the exchange structure in total or in parts (e.g. by referring to particular chapters or paragraphs) using the <em><a href="IfcDocumentReference.html">IfcDocumentReference</a></em>. All <em><a href="IfcDocumentReference.html">IfcDocumentReference</a></em>'s that utilize the <em><a href="IfcDocumentInformation.html">IfcDocumentInformation</a></em> are accessible by the inverse relationship <em>HasDocumentReferences</em>.</p>
 <aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2x.</aside>
 <p>{ .change-ifc2x4}</p>
 <aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> Attribute <em>HasDocumentReferences</em> changed to be inverse, attribute <em>Location</em> added, and attribute <em>ElectronicFormat</em> modified.</aside>
-<h2><a class="anchor" id="8.6.3.3.2-Entity-inheritance"></a>
-    8.6.3.3.2 Entity inheritance
-<a class="link" href="#8.6.3.3.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.6.3.5.2-Entity-inheritance"></a>
+    8.6.3.5.2 Entity inheritance
+<a class="link" href="#8.6.3.5.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
 <ol class="tier">
 <li>
 <i data-feather="arrow-up"></i>
@@ -539,10 +540,16 @@
 <li class=""><a href="IfcLibraryInformation.html">IfcLibraryInformation</a></li>
 </ul>
 </li>
+<li>
+<i data-feather="arrow-up"></i>
+<ul class="classes">
+<li class=""><a href="IfcDatasetInformation.html">IfcDatasetInformation</a></li>
+</ul>
+</li>
 </ol>
-<h2><a class="anchor" id="8.6.3.3.3-Attributes"></a>
-    8.6.3.3.3 Attributes
-<a class="link" href="#8.6.3.3.3-Attributes"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.6.3.5.3-Attributes"></a>
+    8.6.3.5.3 Attributes
+<a class="link" href="#8.6.3.5.3-Attributes"><i data-feather="link"></i></a></h2>
 <!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
 <figure><a class="anchor" id="Table-A"></a><table class="striped grouped attributes">
 <colgroup>
@@ -790,10 +797,12 @@
 </tr>
 </tbody>
 </table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
-<h2><a class="anchor" id="8.6.3.3.4-Formal-representation"></a>
-    8.6.3.3.4 Formal representation
-<a class="link" href="#8.6.3.3.4-Formal-representation"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.6.3.5.4-Formal-representation"></a>
+    8.6.3.5.4 Formal representation
+<a class="link" href="#8.6.3.5.4-Formal-representation"><i data-feather="link"></i></a></h2>
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">ENTITY</span> <a href="IfcDocumentInformation.html"><span class="tok-nc">IfcDocumentInformation</span></a>
+<span class="tok-k">SUPERTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><span class="tok-nb">ONEOF</span>
+<span class="tok-p">(</span><a href="IfcDatasetInformation.html"><span class="tok-nc">IfcDatasetInformation</span></a><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-k">SUBTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><a href="IfcExternalInformation.html"><span class="tok-nc">IfcExternalInformation</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">Identification</span> <span class="tok-o">:</span> <a href="IfcIdentifier.html"><span class="tok-nc">IfcIdentifier</span></a><span class="tok-p">;</span>
 <span class="tok-n">Name</span> <span class="tok-o">:</span> <a href="IfcLabel.html"><span class="tok-nc">IfcLabel</span></a><span class="tok-p">;</span>
@@ -818,10 +827,11 @@
 <span class="tok-n">IsPointedTo</span> <span class="tok-o">:</span> <span class="tok-nb">SET</span> <span class="tok-p">[</span><span class="tok-m">0</span><span class="tok-o">:</span><span class="tok-err">?</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcDocumentInformationRelationship.html"><span class="tok-nc">IfcDocumentInformationRelationship</span></a> <span class="tok-k">FOR</span> <span class="tok-n">RelatedDocuments</span><span class="tok-p">;</span>
 <span class="tok-n">IsPointer</span> <span class="tok-o">:</span> <span class="tok-nb">SET</span> <span class="tok-p">[</span><span class="tok-m">0</span><span class="tok-o">:</span><span class="tok-m">1</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcDocumentInformationRelationship.html"><span class="tok-nc">IfcDocumentInformationRelationship</span></a> <span class="tok-k">FOR</span> <span class="tok-n">RelatingDocument</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
-<h2><a class="anchor" id="8.6.3.3.5-References"></a>
-    8.6.3.3.5 References
-<a class="link" href="#8.6.3.3.5-References"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.6.3.5.5-References"></a>
+    8.6.3.5.5 References
+<a class="link" href="#8.6.3.5.5-References"><i data-feather="link"></i></a></h2>
 <ul class="references">
+<li><i data-feather="paperclip"></i><a href="IfcDatasetInformation.html">IfcDatasetInformation</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcDocumentInformationRelationship.html">IfcDocumentInformationRelationship</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcDocumentReference.html">IfcDocumentReference</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcDocumentSelect.html">IfcDocumentSelect</a></li>
@@ -887,7 +897,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.8.3.45 IfcTessellatedFaceSet - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -594,6 +595,7 @@
 <ul class="classes classes-in-chain">
 <li class="abstract current ancestor"><a href="IfcTessellatedFaceSet.html">IfcTessellatedFaceSet</a></li>
 <li class=""><a href="IfcIndexedPolygonalFace.html">IfcIndexedPolygonalFace</a></li>
+<li class=""><a href="IfcVoxelGrid.html">IfcVoxelGrid</a></li>
 </ul>
 </li>
 <li>
@@ -652,22 +654,38 @@
 <aside class="aside-ifc2x3"><mark>IFC2x3-CHANGE</mark> The inverse attribute <em>StyledByItem</em> has been added.</aside>
 </td>
 </tr>
+<tr class="group-inherited">
+<td colspan="4">
+                <a href="IfcTessellatedItem.html">IfcTessellatedItem</a>
+                <small>(1)</small>
+</td>
+</tr>
+<tr class="inherited" data-type="attribute">
+<td data-label="#"></td>
+<td data-label="Name">
+<em>HasColours</em>
+</td>
+<td data-label="Type">SET [0:1] OF <a href="IfcIndexedColourMap.html">IfcIndexedColourMap</a> FOR MappedTo</td>
+<td data-label="Description">
+<p>Reference to the indexed colour map providing the corresponding colour RGB values to the faces of the subtypes of <em><a href="IfcTessellatedFaceSet.html">IfcTessellatedFaceSet</a></em>.</p>
+</td>
+</tr>
 <tr class="preview">
 <td colspan="4">
 <small class="show-inherited" data-type="attribute">
 <i data-feather="eye-off"></i>
-                    Click to show 2 hidden inherited attributes
+                    Click to show 3 hidden inherited attributes
                 </small>
 <small class="hide-inherited" data-type="attribute">
 <i data-feather="eye-off"></i>
-                    Click to hide 2 inherited attributes
+                    Click to hide 3 inherited attributes
                 </small>
 </td>
 </tr>
 <tr class="group">
 <td colspan="4">
                 <a href="IfcTessellatedFaceSet.html">IfcTessellatedFaceSet</a>
-                <small>(4)</small>
+                <small>(3)</small>
 </td>
 </tr>
 <tr>
@@ -678,16 +696,6 @@
 <td data-label="Type"><a href="IfcCartesianPointList3D.html">IfcCartesianPointList3D</a></td>
 <td data-label="Description">
 <p>An ordered list of Cartesian points used by the coordinate index defined at the subtypes of <em><a href="IfcTessellatedFaceSet.html">IfcTessellatedFaceSet</a></em>.</p>
-</td>
-</tr>
-<tr>
-<td data-label="#"></td>
-<td data-label="Name">
-<em>HasColours</em>
-</td>
-<td data-label="Type">SET [0:1] OF <a href="IfcIndexedColourMap.html">IfcIndexedColourMap</a> FOR MappedTo</td>
-<td data-label="Description">
-<p>Reference to the indexed colour map providing the corresponding colour RGB values to the faces of the subtypes of <em><a href="IfcTessellatedFaceSet.html">IfcTessellatedFaceSet</a></em>.</p>
 </td>
 </tr>
 <tr>
@@ -728,7 +736,6 @@
 <span class="tok-k">DERIVE</span>
 <span class="tok-n">Dim</span> <span class="tok-o">:</span> <a href="IfcDimensionCount.html"><span class="tok-nc">IfcDimensionCount</span></a> <span class="tok-o">:=</span> <span class="tok-m">3</span><span class="tok-p">;</span>
 <span class="tok-k">INVERSE</span>
-<span class="tok-n">HasColours</span> <span class="tok-o">:</span> <span class="tok-nb">SET</span> <span class="tok-p">[</span><span class="tok-m">0</span><span class="tok-o">:</span><span class="tok-m">1</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcIndexedColourMap.html"><span class="tok-nc">IfcIndexedColourMap</span></a> <span class="tok-k">FOR</span> <span class="tok-n">MappedTo</span><span class="tok-p">;</span>
 <span class="tok-n">HasTextures</span> <span class="tok-o">:</span> <span class="tok-nb">SET</span> <span class="tok-p">[</span><span class="tok-m">0</span><span class="tok-o">:</span><span class="tok-err">?</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcIndexedTextureMap.html"><span class="tok-nc">IfcIndexedTextureMap</span></a> <span class="tok-k">FOR</span> <span class="tok-n">MappedTo</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
 <h2><a class="anchor" id="8.8.3.45.5-References"></a>
@@ -736,7 +743,6 @@
 <a class="link" href="#8.8.3.45.5-References"><i data-feather="link"></i></a></h2>
 <ul class="references">
 <li><i data-feather="paperclip"></i><a href="IfcBooleanOperand.html">IfcBooleanOperand</a></li>
-<li><i data-feather="paperclip"></i><a href="IfcIndexedColourMap.html">IfcIndexedColourMap</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcIndexedTextureMap.html">IfcIndexedTextureMap</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcPolygonalFaceSet.html">IfcPolygonalFaceSet</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcTessellatedItem.html">IfcTessellatedItem</a></li>
@@ -751,9 +757,8 @@
 <p>
 <small>
 <span id="contributors">6 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="luzpaz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luzpaz"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="Thomas Liebich" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEw8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Liebich"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
-<span id="last-change">Last change: <em>Fix various typos
-Found via `codespell -q 3 -S "./schemas,./reference_schemas" -L cant,co-ordinate,complies,nd,tread,trough,unkown,uupper,wallthickness`</em> by luzpaz on 2024-10-29T12:09:51Z</span>
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="luzpaz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luzpaz"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="Thomas Liebich" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEw8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Liebich"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
+<span id="last-change">Last change: <em>[TM12] Move documentation for HasColours inverse up</em> by Thomas Krijnen on 2026-05-24T10:01:56+02:00</span>
 </small>
 </p>
 <p>
@@ -787,7 +792,6 @@ Found via `codespell -q 3 -S "./schemas,./reference_schemas" -L cant,co-ordinate
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

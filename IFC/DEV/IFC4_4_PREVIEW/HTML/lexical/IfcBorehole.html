@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>6.6.3.1 IfcBorehole - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -467,10 +468,9 @@
 <h2><a class="anchor" id="6.6.3.1.1-Semantic-definition"></a>
     6.6.3.1.1 Semantic definition
 <a class="link" href="#6.6.3.1.1-Semantic-definition"><i data-feather="link"></i></a></h2>
-<p>Representation of the concept of a linear geological and geotechnical model, usually an interpretation but sometimes created direct from ground penetrating measurement</p>
+<p>A Borehole is the generalized term for any narrow shaft drilled in the ground, either vertically, horizontally, or inclined. </p>
 <!-- end of short definition -->
-<p>The assembly may contain one of more strata and other elements such as capping and lining. The contained subtypes of <em><a href="IfcGeotechnicalStratum.html">IfcGeotechnicalStratum</a></em> will have shape representations made from straight or bent tubes reflecting the bore diameter, or discs if a 'Yabuki' top surface model is being used.</p>
-<aside class="aside-note"><mark>NOTE</mark> This <a href="IfcElement.html">IfcElement</a> subtype is an anomaly in the sense that it does not have a PredefinedType attribute. This is to be provided in subsequent versions of the standard.</aside>
+<aside class="aside-note"><mark>NOTE</mark> In the context of ground models, <a href="IfcBorehole.html">IfcBorehole</a> is mainly used as a space where observations of the ground conditions are made, and results from tests in place (in-situ) or on samples collected from the borehole are located.</aside><aside class="aside-note"><mark>NOTE</mark> The <a href="IfcBorehole.html">IfcBorehole</a> may aggregate other elements such as installations and lining and have <a href="IfcGeoScienceObservation.html">IfcGeoScienceObservation</a> instances assigned to represent e.g. intervals and points. Further, the <a href="IfcGeoScienceObservation.html">IfcGeoScienceObservation</a> instances can represent the ground classification described by <a href="IfcGeoScienceModel.html">IfcGeoScienceModel</a>, and link a certain part (interval) of the borehole to an <a href="IfcGeoScienceFeature.html">IfcGeoScienceFeature</a> like a geotechnical unit. </aside><aside class="aside-note"><mark>NOTE</mark> The assembly may also contain one or more strata. The contained subtypes of <em><a href="IfcGeotechnicalStratum.html">IfcGeotechnicalStratum</a></em> will have shape representations made from straight or bent tubes reflecting the bore diameter, or discs if a 'Yabuki' top surface model is being used.</aside>
 <h2><a class="anchor" id="6.6.3.1.2-Entity-inheritance"></a>
     6.6.3.1.2 Entity inheritance
 <a class="link" href="#6.6.3.1.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
@@ -513,6 +513,7 @@
 <ul class="classes classes-in-chain">
 <li class="abstract ancestor"><a href="IfcElement.html">IfcElement</a></li>
 <li class=""><a href="IfcAnnotation.html">IfcAnnotation</a></li>
+<li class="abstract"><a href="IfcComplementaryData.html">IfcComplementaryData</a></li>
 <li class=""><a href="IfcLinearElement.html">IfcLinearElement</a></li>
 <li class="abstract"><a href="IfcPort.html">IfcPort</a></li>
 <li class="abstract"><a href="IfcPositioningElement.html">IfcPositioningElement</a></li>
@@ -524,7 +525,7 @@
 <li>
 <i data-feather="arrow-up"></i>
 <ul class="classes classes-in-chain">
-<li class="abstract ancestor"><a href="IfcGeotechnicalElement.html">IfcGeotechnicalElement</a></li>
+<li class="abstract ancestor"><a href="IfcGeoScienceElement.html">IfcGeoScienceElement</a></li>
 <li class=""><a href="IfcBuiltElement.html">IfcBuiltElement</a></li>
 <li class="deprecated"><a href="IfcCivilElement.html">IfcCivilElement</a></li>
 <li class=""><a href="IfcDistributionElement.html">IfcDistributionElement</a></li>
@@ -533,6 +534,7 @@
 <li class="abstract"><a href="IfcFeatureElement.html">IfcFeatureElement</a></li>
 <li class=""><a href="IfcFurnishingElement.html">IfcFurnishingElement</a></li>
 <li class=""><a href="IfcGeographicElement.html">IfcGeographicElement</a></li>
+<li class="abstract deprecated"><a href="IfcGeotechnicalElement.html">IfcGeotechnicalElement</a></li>
 <li class="abstract"><a href="IfcTransportationDevice.html">IfcTransportationDevice</a></li>
 <li class=""><a href="IfcVirtualElement.html">IfcVirtualElement</a></li>
 </ul>
@@ -540,16 +542,9 @@
 <li>
 <i data-feather="arrow-up"></i>
 <ul class="classes classes-in-chain">
-<li class="abstract ancestor"><a href="IfcGeotechnicalAssembly.html">IfcGeotechnicalAssembly</a></li>
-<li class=""><a href="IfcGeotechnicalStratum.html">IfcGeotechnicalStratum</a></li>
-</ul>
-</li>
-<li>
-<i data-feather="arrow-up"></i>
-<ul class="classes classes-in-chain">
 <li class="current ancestor"><a href="IfcBorehole.html">IfcBorehole</a></li>
-<li class=""><a href="IfcGeomodel.html">IfcGeomodel</a></li>
-<li class=""><a href="IfcGeoslice.html">IfcGeoslice</a></li>
+<li class=""><a href="IfcGeoScienceFeature.html">IfcGeoScienceFeature</a></li>
+<li class=""><a href="IfcGeoScienceModel.html">IfcGeoScienceModel</a></li>
 </ul>
 </li>
 </ol>
@@ -817,25 +812,13 @@
 <p>Reference to the objectified relationship <em><a href="IfcRelReferencedInSpatialStructure.html">IfcRelReferencedInSpatialStructure</a></em> may be used to relate a product to one or more spatial structure elements in addition to the one in which it is primarily contained.</p>
 </td>
 </tr>
-<tr class="preview">
-<td colspan="4">
-<small class="show-inherited" data-type="attribute">
-<i data-feather="eye-off"></i>
-                    Click to show 21 hidden inherited attributes
-                </small>
-<small class="hide-inherited" data-type="attribute">
-<i data-feather="eye-off"></i>
-                    Click to hide 21 inherited attributes
-                </small>
-</td>
-</tr>
-<tr class="group">
+<tr class="group-inherited">
 <td colspan="4">
                 <a href="IfcElement.html">IfcElement</a>
                 <small>(13)</small>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#">8</td>
 <td data-label="Name">
                 Tag
@@ -845,7 +828,7 @@
 <p>The tag (or label) identifier at the particular instance of a product, e.g. the serial number, or the position number. It is the identifier at the occurrence level.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>ConnectedFrom</em>
@@ -855,7 +838,7 @@
 <p>Reference to the element connection relationship. The relationship then refers to the other element that is connected to this element.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>ConnectedTo</em>
@@ -865,7 +848,7 @@
 <p>Reference to the element connection relationship. The relationship then refers to the other element to which this element is connected to.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>ContainedInStructure</em>
@@ -875,7 +858,7 @@
 <p>Containment relationship to the spatial structure element, to which the element is primarily associated. This containment relationship has to be hierarchical, i.e. an element may only be assigned directly to zero or one spatial structure.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>FillsVoids</em>
@@ -885,7 +868,7 @@
 <p>Reference to the <em><a href="IfcRelFillsElement.html">IfcRelFillsElement</a></em> relationship that puts the element as a filling into the opening created within another element.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>HasCoverings</em>
@@ -895,7 +878,7 @@
 <p>Reference to <em><a href="IfcCovering.html">IfcCovering</a></em> by virtue of the objectified relationship <em><a href="IfcRelCoversBldgElements.html">IfcRelCoversBldgElements</a></em>. It defines the concept of an element having coverings associated.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>HasOpenings</em>
@@ -905,7 +888,7 @@
 <p>Reference to the <em><a href="IfcRelVoidsElement.html">IfcRelVoidsElement</a></em> relationship that creates an opening in an element. An element can incorporate zero-to-many openings. For each opening, that voids the element, a new relationship <em><a href="IfcRelVoidsElement.html">IfcRelVoidsElement</a></em> is generated.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>HasProjections</em>
@@ -915,7 +898,7 @@
 <p>Projection relationship that adds a feature (using a Boolean union) to the <em><a href="IfcBuiltElement.html">IfcBuiltElement</a></em>.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>HasSurfaceFeatures</em>
@@ -925,7 +908,7 @@
 <p>Reference to the <em><a href="IfcRelAdheresToElement.html">IfcRelAdheresToElement</a></em> relationship that adheres a <em><a href="IfcSurfaceFeature.html">IfcSurfaceFeature</a></em> to an element. An element can incorporate zero-to-many surface features in one relationship.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>InterferesElements</em>
@@ -936,7 +919,7 @@
 <aside class="aside-note"><mark>NOTE</mark> There is no indication of precedence between <em>IsInterferedByElements</em> and <em>InterferesElements</em>.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> New inverse relationship.</aside>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>IsConnectionRealization</em>
@@ -946,7 +929,7 @@
 <p>Reference to the connection relationship with realizing element. The relationship, if provided, assigns this element as the realizing element to the connection, which provides the physical manifestation of the connection relationship.</p>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>IsInterferedByElements</em>
@@ -957,7 +940,7 @@
 <aside class="aside-note"><mark>NOTE</mark> There is no indication of precedence between <em>IsInterferedByElements</em> and <em>InterferesElements</em>.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> New inverse relationship.</aside>
 </td>
 </tr>
-<tr>
+<tr class="inherited" data-type="attribute">
 <td data-label="#"></td>
 <td data-label="Name">
 <em>ProvidesBoundaries</em>
@@ -967,11 +950,77 @@
 <p>Reference to space boundaries by virtue of the objectified relationship <em><a href="IfcRelSpaceBoundary.html">IfcRelSpaceBoundary</a></em>. It defines the concept of an element bounding spaces.</p>
 </td>
 </tr>
+<tr class="preview">
+<td colspan="4">
+<small class="show-inherited" data-type="attribute">
+<i data-feather="eye-off"></i>
+                    Click to show 34 hidden inherited attributes
+                </small>
+<small class="hide-inherited" data-type="attribute">
+<i data-feather="eye-off"></i>
+                    Click to hide 34 inherited attributes
+                </small>
+</td>
+</tr>
+<tr class="group">
+<td colspan="4">
+                <a href="IfcBorehole.html">IfcBorehole</a>
+                <small>(1)</small>
+</td>
+</tr>
+<tr>
+<td data-label="#">9</td>
+<td data-label="Name">
+                PredefinedType
+            </td>
+<td data-label="Type">OPTIONAL <a href="IfcBoreholeTypeEnum.html">IfcBoreholeTypeEnum</a></td>
+<td data-label="Description">
+<p>Specifies the type for which the value is selected from a predefined type enumeration. This type may associate additional specific property sets.</p>
+</td>
+</tr>
 </tbody>
 </table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
-<h2><a class="anchor" id="6.6.3.1.4-Property-sets"></a>
-    6.6.3.1.4 Property sets
-<a class="link" href="#6.6.3.1.4-Property-sets"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="6.6.3.1.4-Formal-propositions"></a>
+    6.6.3.1.4 Formal propositions
+<a class="link" href="#6.6.3.1.4-Formal-propositions"><i data-feather="link"></i></a></h2>
+<figure><a class="anchor" id="Table-B"></a><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CorrectPredefinedType</td>
+<td>
+<p>Either the <em>PredefinedType</em> attribute is unset (e.g. because an <em><a href="IfcBoreholeType.html">IfcBoreholeType</a></em> is associated), or the inherited attribute <em>ObjectType</em> shall be provided, if the <em>PredefinedType</em> is set to USERDEFINED.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-nb">NOT</span><span class="tok-p">(</span><span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">PredefinedType</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-n">PredefinedType</span> <span class="tok-o">&lt;&gt;</span> <a href="IfcBoreholeTypeEnum.html"><span class="tok-nc">IfcBoreholeTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">USERDEFINED</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-n">PredefinedType</span> <span class="tok-o">=</span> <a href="IfcBoreholeTypeEnum.html"><span class="tok-nc">IfcBoreholeTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">USERDEFINED</span><span class="tok-p">)</span> <span class="tok-nb">AND</span> <span class="tok-nb">EXISTS</span> <span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObject.html"><span class="tok-nc">IfcObject</span></a><span class="tok-p">.</span><span class="tok-n">ObjectType</span><span class="tok-p">)</span><span class="tok-p">)</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>CorrectTypeAssigned</td>
+<td>
+<p>Either there is no type object associated, i.e. the <em>IsTypedBy</em> inverse relationship is not provided, or the associated type object has to be of type <em><a href="IfcBoreholeType.html">IfcBoreholeType</a></em>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-p">(</span><span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-n">IsTypedBy</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-m">0</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCBOREHOLETYPE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObject.html"><span class="tok-nc">IfcObject</span></a><span class="tok-p">.</span><span class="tok-n">IsTypedBy</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">.</span><span class="tok-n">RelatingType</span><span class="tok-p">)</span><span class="tok-p">)</span></code></pre>
+</td>
+</tr>
+</tbody>
+</table><figcaption>Table B<a class="link" href="#Table-B"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="6.6.3.1.5-Property-sets"></a>
+    6.6.3.1.5 Property sets
+<a class="link" href="#6.6.3.1.5-Property-sets"><i data-feather="link"></i></a></h2>
 <ul class="psets">
 <li>
             <a href="Pset_BoreholeCommon.html">Pset_BoreholeCommon</a>
@@ -1091,12 +1140,20 @@
 </ul>
 </li>
 <li>
-            <a href="Pset_GeotechnicalAssemblyCommon.html">Pset_GeotechnicalAssemblyCommon</a>
+            <a href="Pset_GeoObsCommon.html">Pset_GeoObsCommon</a>
             <ul>
-<li>Limitations</li>
-<li>Methodology</li>
-<li>BoreHolePurpose</li>
-<li>Status</li>
+<li>Lithology</li>
+<li>ObservationEndDate</li>
+<li>ObservationStartDate</li>
+</ul>
+</li>
+<li>
+            <a href="Pset_GeoScienceObservationBoreholeConstruction.html">Pset_GeoScienceObservationBoreholeConstruction</a>
+            <ul>
+<li>BoreholeFilter</li>
+<li>BoreholeInstallation</li>
+<li>DrillingDiameter</li>
+<li>LiningMaterial</li>
 </ul>
 </li>
 <li>
@@ -1206,6 +1263,20 @@
 </ul>
 </li>
 <li>
+            <a href="Pset_SpatialGeoScienceObservationBorehole.html">Pset_SpatialGeoScienceObservationBorehole</a>
+            <ul>
+<li>BoreholeAzimuth</li>
+<li>BoreholeElevation</li>
+<li>BoreholeInclination</li>
+<li>BoreholeLengthDrilled</li>
+<li>BoreholeLengthPlanned</li>
+<li>BoreholePurpose</li>
+<li>DrillingContractor</li>
+<li>DrillingMethod</li>
+<li>Operator</li>
+</ul>
+</li>
+<li>
             <a href="Pset_Tolerance.html">Pset_Tolerance</a>
             <ul>
 <li>ToleranceDescription</li>
@@ -1263,10 +1334,10 @@
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="6.6.3.1.5-Concept-usage"></a>
-    6.6.3.1.5 Concept usage
-<a class="link" href="#6.6.3.1.5-Concept-usage"><i data-feather="link"></i></a></h2>
-<figure><a class="anchor" id="Table-B"></a><table class="striped grouped concepts">
+<h2><a class="anchor" id="6.6.3.1.6-Concept-usage"></a>
+    6.6.3.1.6 Concept usage
+<a class="link" href="#6.6.3.1.6-Concept-usage"><i data-feather="link"></i></a></h2>
+<figure><a class="anchor" id="Table-C"></a><table class="striped grouped concepts">
 <thead>
 <tr>
 <th>Concept</th>
@@ -1821,9 +1892,9 @@
             </td>
 <td data-label="Description">
 <p>Any <em><a href="IfcElement.html">IfcElement</a></em> (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple Boundary Representation models (which are restricted to be faceted Brep's with or without voids). The Brep representation allows for the representation of complex element shape.</p>
-<figure><a class="anchor" id="Figure-C-Building-element-body-boundary-representation"></a><img alt="Brep representation" src="../figures/ifcbuildingelement-brep-layout1.gif"/><figcaption>Figure C — Building element body boundary representation<a class="link" href="#Figure-C-Building-element-body-boundary-representation"><i data-feather="link"></i></a></figcaption></figure>
+<figure><a class="anchor" id="Figure-D-Building-element-body-boundary-representation"></a><img alt="Brep representation" src="../figures/ifcbuildingelement-brep-layout1.gif"/><figcaption>Figure D — Building element body boundary representation<a class="link" href="#Figure-D-Building-element-body-boundary-representation"><i data-feather="link"></i></a></figcaption></figure>
 
-<aside class="aside-example"><mark>EXAMPLE</mark>  As shown in Figure C, the Brep representation is given by an <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>, which includes one or more items, all of type <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em>. In some cases it may be useful to also expose a simple representation as a bounding box representation of the same complex shape.</aside>
+<aside class="aside-example"><mark>EXAMPLE</mark>  As shown in Figure D, the Brep representation is given by an <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>, which includes one or more items, all of type <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em>. In some cases it may be useful to also expose a simple representation as a bounding box representation of the same complex shape.</aside>
 </td>
 </tr>
 <tr class="inherited" data-type="concept">
@@ -1860,9 +1931,9 @@
             </td>
 <td data-label="Description">
 <p>Any <em><a href="IfcElement.html">IfcElement</a></em> (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple surface models, based on either shell or face based surface models. It may also include tessellated models.</p>
-<figure><a class="anchor" id="Figure-D-Element-surface-model-representation"></a><img alt="surface model" src="../figures/ifcbuildingelement-surfacemodel-layout1.gif"/><figcaption>Figure D — Element surface model representation<a class="link" href="#Figure-D-Element-surface-model-representation"><i data-feather="link"></i></a></figcaption></figure>
+<figure><a class="anchor" id="Figure-E-Element-surface-model-representation"></a><img alt="surface model" src="../figures/ifcbuildingelement-surfacemodel-layout1.gif"/><figcaption>Figure E — Element surface model representation<a class="link" href="#Figure-E-Element-surface-model-representation"><i data-feather="link"></i></a></figcaption></figure>
 
-<aside class="aside-example"><mark>EXAMPLE</mark> As shown in Figure D, the surface model representation is given by an <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>, which includes a single item which is either an <em><a href="IfcShellBasedSurfaceModel.html">IfcShellBasedSurfaceModel</a></em>, or an <em><a href="IfcFaceBasedSurfaceModel.html">IfcFaceBasedSurfaceModel</a></em>. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.</aside>
+<aside class="aside-example"><mark>EXAMPLE</mark> As shown in Figure E, the surface model representation is given by an <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>, which includes a single item which is either an <em><a href="IfcShellBasedSurfaceModel.html">IfcShellBasedSurfaceModel</a></em>, or an <em><a href="IfcFaceBasedSurfaceModel.html">IfcFaceBasedSurfaceModel</a></em>. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.</aside>
 </td>
 </tr>
 <tr class="inherited" data-type="concept">
@@ -1953,9 +2024,9 @@
                         This is a further elaboration on an inherited concept.
                     </small>
 </aside>
-<figure><a class="anchor" id="Figure-E-Building-element-box-representation"></a><img alt="bounding box" src="../figures/ifcbuildingelement-boundingbox-layout1.gif"/><figcaption>Figure E — Building element box representation<a class="link" href="#Figure-E-Building-element-box-representation"><i data-feather="link"></i></a></figcaption></figure>
+<figure><a class="anchor" id="Figure-F-Building-element-box-representation"></a><img alt="bounding box" src="../figures/ifcbuildingelement-boundingbox-layout1.gif"/><figcaption>Figure F — Building element box representation<a class="link" href="#Figure-F-Building-element-box-representation"><i data-feather="link"></i></a></figcaption></figure>
 
-<aside class="aside-example"><mark>EXAMPLE</mark>  Any <em><a href="IfcElement.html">IfcElement</a></em> may be represented by a bounding box, which shows the maximum extent of the body within the object coordinate system established by the <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em>. As shown in Figure E, the bounding box representation is given by an <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em> that includes a single item: an <em><a href="IfcBoundingBox.html">IfcBoundingBox</a></em>.</aside>
+<aside class="aside-example"><mark>EXAMPLE</mark>  Any <em><a href="IfcElement.html">IfcElement</a></em> may be represented by a bounding box, which shows the maximum extent of the body within the object coordinate system established by the <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em>. As shown in Figure F, the bounding box representation is given by an <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em> that includes a single item: an <em><a href="IfcBoundingBox.html">IfcBoundingBox</a></em>.</aside>
 </td>
 </tr>
 <tr class="inherited" data-type="concept">
@@ -2402,69 +2473,38 @@
 </p>
 </td>
 </tr>
-<tr class="group-inherited">
-<td colspan="3">
-                <a href="IfcGeotechnicalElement.html">IfcGeotechnicalElement</a>
-                <small>(1)</small>
-</td>
-</tr>
-<tr class="inherited" data-type="concept">
-<td data-label="Name">
-<a href="../concepts/Object_Composition/Element_Voiding/Earthworks_Cuttings/content.html">Earthworks Cuttings</a>
-</td>
-<td data-label="Usage">
-                General
-            </td>
-<td data-label="Description">
-<p class="search-skip">
-<em>No description available.</em>
-</p>
-</td>
-</tr>
-<tr class="group-inherited">
-<td colspan="3">
-                <a href="IfcGeotechnicalAssembly.html">IfcGeotechnicalAssembly</a>
-                <small>(1)</small>
-</td>
-</tr>
-<tr class="inherited" data-type="concept">
-<td data-label="Name">
-<a href="../concepts/Object_Definition/Property_Sets/Property_Sets_for_Objects/content.html">Property Sets for Objects</a>
-</td>
-<td data-label="Usage">
-                General
-            </td>
-<td data-label="Description">
-<aside class="inherited search-skip">
-<small>
-<i data-feather="paperclip"></i>
-                        This is a further elaboration on an inherited concept.
-                    </small>
-</aside>
-<p class="search-skip">This concept can be applied to the following resources:</p>
-<ul>
-<li>
-                        <a href="Pset_GeotechnicalAssemblyCommon.html">Pset_GeotechnicalAssemblyCommon</a>
-                    </li>
-</ul>
-</td>
-</tr>
 <tr class="preview">
 <td colspan="4">
 <small class="show-inherited" data-type="concept">
 <i data-feather="eye-off"></i>
-                    Click to show 80 hidden inherited concepts
+                    Click to show 78 hidden inherited concepts
                 </small>
 <small class="hide-inherited" data-type="concept">
 <i data-feather="eye-off"></i>
-                    Click to hide 80 inherited concepts
+                    Click to hide 78 inherited concepts
                 </small>
 </td>
 </tr>
 <tr class="group">
 <td colspan="3">
                 <a href="IfcBorehole.html">IfcBorehole</a>
-                <small>(1)</small>
+                <small>(2)</small>
+</td>
+</tr>
+<tr>
+<td data-label="Name">
+<a href="../concepts/Object_Definition/Object_Typing/content.html">Object Typing</a>
+</td>
+<td data-label="Usage">
+                General
+            </td>
+<td data-label="Description">
+<p class="search-skip">This concept can be applied to the following resources:</p>
+<ul>
+<li>
+                        <a href="IfcBoreholeType.html">IfcBoreholeType</a>
+                    </li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -2484,24 +2524,40 @@
 <p class="search-skip">This concept can be applied to the following resources:</p>
 <ul>
 <li>
+                        <a href="Pset_SpatialGeoScienceObservationBorehole.html">Pset_SpatialGeoScienceObservationBorehole</a>
+                    </li>
+<li>
                         <a href="Pset_BoreholeCommon.html">Pset_BoreholeCommon</a>
+                    </li>
+<li>
+                        <a href="Pset_GeoObsCommon.html">Pset_GeoObsCommon</a>
+                    </li>
+<li>
+                        <a href="Pset_GeoScienceObservationBoreholeConstruction.html">Pset_GeoScienceObservationBoreholeConstruction</a>
                     </li>
 </ul>
 </td>
 </tr>
 </tbody>
-</table><figcaption>Table B<a class="link" href="#Table-B"><i data-feather="link"></i></a></figcaption></figure>
-<h2><a class="anchor" id="6.6.3.1.6-Formal-representation"></a>
-    6.6.3.1.6 Formal representation
-<a class="link" href="#6.6.3.1.6-Formal-representation"><i data-feather="link"></i></a></h2>
+</table><figcaption>Table C<a class="link" href="#Table-C"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="6.6.3.1.7-Formal-representation"></a>
+    6.6.3.1.7 Formal representation
+<a class="link" href="#6.6.3.1.7-Formal-representation"><i data-feather="link"></i></a></h2>
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">ENTITY</span> <a href="IfcBorehole.html"><span class="tok-nc">IfcBorehole</span></a>
-<span class="tok-k">SUBTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><a href="IfcGeotechnicalAssembly.html"><span class="tok-nc">IfcGeotechnicalAssembly</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-k">SUBTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><a href="IfcGeoScienceElement.html"><span class="tok-nc">IfcGeoScienceElement</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">PredefinedType</span> <span class="tok-o">:</span> <span class="tok-nb">OPTIONAL</span> <a href="IfcBoreholeTypeEnum.html"><span class="tok-nc">IfcBoreholeTypeEnum</span></a><span class="tok-p">;</span>
+<span class="tok-k">WHERE</span>
+<span class="tok-n">CorrectPredefinedType</span> <span class="tok-o">:</span> <span class="tok-nb">NOT</span><span class="tok-p">(</span><span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">PredefinedType</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-n">PredefinedType</span> <span class="tok-o">&lt;&gt;</span> <a href="IfcBoreholeTypeEnum.html"><span class="tok-nc">IfcBoreholeTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">USERDEFINED</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-n">PredefinedType</span> <span class="tok-o">=</span> <a href="IfcBoreholeTypeEnum.html"><span class="tok-nc">IfcBoreholeTypeEnum</span></a><span class="tok-p">.</span><span class="tok-n">USERDEFINED</span><span class="tok-p">)</span> <span class="tok-nb">AND</span> <span class="tok-nb">EXISTS</span> <span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObject.html"><span class="tok-nc">IfcObject</span></a><span class="tok-p">.</span><span class="tok-n">ObjectType</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">CorrectTypeAssigned</span> <span class="tok-o">:</span> <span class="tok-p">(</span><span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-n">IsTypedBy</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-m">0</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCBOREHOLETYPE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObject.html"><span class="tok-nc">IfcObject</span></a><span class="tok-p">.</span><span class="tok-n">IsTypedBy</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">.</span><span class="tok-n">RelatingType</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
-<h2><a class="anchor" id="6.6.3.1.7-References"></a>
-    6.6.3.1.7 References
-<a class="link" href="#6.6.3.1.7-References"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="6.6.3.1.8-References"></a>
+    6.6.3.1.8 References
+<a class="link" href="#6.6.3.1.8-References"><i data-feather="link"></i></a></h2>
 <ul class="references">
-<li><i data-feather="paperclip"></i><a href="IfcGeotechnicalAssembly.html">IfcGeotechnicalAssembly</a></li>
+<li><i data-feather="paperclip"></i><a href="IfcGeoScienceElement.html">IfcGeoScienceElement</a></li>
 </ul>
 </div>
 <div class="col-md-2 rightpanel">
@@ -2513,23 +2569,7 @@
 <small>
 <span id="contributors">4 contributor(s):
 <img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/> </span><br/>
-<span id="last-change">Last change: <em>Improve definition split (#876)
-
-* bring back headers
-
-headers were previously removed by mistake, now bringing them back
-
-* add new lines and rename the tag
-
-add the word 'short' in it
-
-* unify newlines
-
-make exactly one newline before and two after the tag
-
-* resolving typos
-
-Because bringing back headers required to go back in time to previous version, I'm now re-resolving the issues: #861, #860, #856</em> by ArturTomczak on 2024-07-16T16:07:28+02:00</span>
+<span id="last-change">Last change: <em>[ED] Add end of short definition token</em> by Thomas Krijnen on 2026-06-03T11:34:57+02:00</span>
 </small>
 </p>
 <p>
@@ -2563,7 +2603,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

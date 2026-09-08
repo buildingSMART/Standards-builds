@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.7.3.13 IfcLinearPlacement - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -638,17 +639,44 @@ an object coordinate system for instances of <em><a href="IfcProduct.html">IfcPr
 </tr>
 </tbody>
 </table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
-<h2><a class="anchor" id="8.7.3.13.4-Formal-representation"></a>
-    8.7.3.13.4 Formal representation
-<a class="link" href="#8.7.3.13.4-Formal-representation"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.7.3.13.4-Formal-propositions"></a>
+    8.7.3.13.4 Formal propositions
+<a class="link" href="#8.7.3.13.4-Formal-propositions"><i data-feather="link"></i></a></h2>
+<figure><a class="anchor" id="Table-B"></a><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CorrectLinearPlacement</td>
+<td>
+<p>A linear placement is always relative to a local placement which sets the georeferencing context i.e. provide the indirect reference to <a href="IfcProject.html">IfcProject</a> with assigned Project Global Positioning.</p>
+<aside class="aside-history"><mark>HISTORY</mark> New rule in IFC4.4.0.0</aside>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObjectPlacement.html"><span class="tok-nc">IfcObjectPlacement</span></a><span class="tok-p">.</span><span class="tok-n">PlacementRelTo</span><span class="tok-p">)</span> <span class="tok-nb">AND</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCLOCALPLACEMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObjectPlacement.html"><span class="tok-nc">IfcObjectPlacement</span></a><span class="tok-p">.</span><span class="tok-n">PlacementRelTo</span><span class="tok-p">)</span><span class="tok-p">)</span></code></pre>
+</td>
+</tr>
+</tbody>
+</table><figcaption>Table B<a class="link" href="#Table-B"><i data-feather="link"></i></a></figcaption></figure>
+<h2><a class="anchor" id="8.7.3.13.5-Formal-representation"></a>
+    8.7.3.13.5 Formal representation
+<a class="link" href="#8.7.3.13.5-Formal-representation"><i data-feather="link"></i></a></h2>
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">ENTITY</span> <a href="IfcLinearPlacement.html"><span class="tok-nc">IfcLinearPlacement</span></a>
 <span class="tok-k">SUBTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><a href="IfcObjectPlacement.html"><span class="tok-nc">IfcObjectPlacement</span></a><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">RelativePlacement</span> <span class="tok-o">:</span> <a href="IfcAxis2PlacementLinear.html"><span class="tok-nc">IfcAxis2PlacementLinear</span></a><span class="tok-p">;</span>
 <span class="tok-n">CartesianPosition</span> <span class="tok-o">:</span> <span class="tok-nb">OPTIONAL</span> <a href="IfcAxis2Placement3D.html"><span class="tok-nc">IfcAxis2Placement3D</span></a><span class="tok-p">;</span>
+<span class="tok-k">WHERE</span>
+<span class="tok-n">CorrectLinearPlacement</span> <span class="tok-o">:</span> <span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObjectPlacement.html"><span class="tok-nc">IfcObjectPlacement</span></a><span class="tok-p">.</span><span class="tok-n">PlacementRelTo</span><span class="tok-p">)</span> <span class="tok-nb">AND</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCLOCALPLACEMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcObjectPlacement.html"><span class="tok-nc">IfcObjectPlacement</span></a><span class="tok-p">.</span><span class="tok-n">PlacementRelTo</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
-<h2><a class="anchor" id="8.7.3.13.5-References"></a>
-    8.7.3.13.5 References
-<a class="link" href="#8.7.3.13.5-References"><i data-feather="link"></i></a></h2>
+<h2><a class="anchor" id="8.7.3.13.6-References"></a>
+    8.7.3.13.6 References
+<a class="link" href="#8.7.3.13.6-References"><i data-feather="link"></i></a></h2>
 <ul class="references">
 <li><i data-feather="paperclip"></i><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></li>
 </ul>
@@ -660,25 +688,9 @@ an object coordinate system for instances of <em><a href="IfcProduct.html">IfcPr
 </p>
 <p>
 <small>
-<span id="contributors">3 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
-<span id="last-change">Last change: <em>Improve definition split (#876)
-
-* bring back headers
-
-headers were previously removed by mistake, now bringing them back
-
-* add new lines and rename the tag
-
-add the word 'short' in it
-
-* unify newlines
-
-make exactly one newline before and two after the tag
-
-* resolving typos
-
-Because bringing back headers required to go back in time to previous version, I'm now re-resolving the issues: #861, #860, #856</em> by ArturTomczak on 2024-07-16T16:07:28+02:00</span>
+<span id="contributors">4 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
+<span id="last-change">Last change: <em>[TF04] Add CorrectLinearPlacement description</em> by Thomas Krijnen on 2026-05-23T21:49:35+02:00</span>
 </small>
 </p>
 <p>
@@ -712,7 +724,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

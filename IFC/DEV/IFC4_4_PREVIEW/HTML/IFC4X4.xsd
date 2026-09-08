@@ -439,6 +439,22 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcArchElement" type="ifc:IfcArchElement" substitutionGroup="ifc:IfcBuiltElement" nillable="true"/>
+	<xs:complexType name="IfcArchElement">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcBuiltElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcArchElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcArchElementType" type="ifc:IfcArchElementType" substitutionGroup="ifc:IfcBuiltElementType" nillable="true"/>
+	<xs:complexType name="IfcArchElementType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcBuiltElementType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcArchElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcAsset" type="ifc:IfcAsset" substitutionGroup="ifc:IfcGroup" nillable="true"/>
 	<xs:complexType name="IfcAsset">
 		<xs:complexContent>
@@ -761,10 +777,20 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="IfcBorehole" type="ifc:IfcBorehole" substitutionGroup="ifc:IfcGeotechnicalAssembly" nillable="true"/>
+	<xs:element name="IfcBorehole" type="ifc:IfcBorehole" substitutionGroup="ifc:IfcGeoScienceElement" nillable="true"/>
 	<xs:complexType name="IfcBorehole">
 		<xs:complexContent>
-			<xs:extension base="ifc:IfcGeotechnicalAssembly"/>
+			<xs:extension base="ifc:IfcGeoScienceElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcBoreholeTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcBoreholeType" type="ifc:IfcBoreholeType" substitutionGroup="ifc:IfcGeoScienceElementType" nillable="true"/>
+	<xs:complexType name="IfcBoreholeType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcGeoScienceElementType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcBoreholeTypeEnum" use="optional"/>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="IfcBoundaryCondition" type="ifc:IfcBoundaryCondition" abstract="true" substitutionGroup="ifc:Entity" nillable="true"/>
@@ -1486,6 +1512,12 @@
 			<xs:extension base="ifc:IfcFlowTerminalType">
 				<xs:attribute name="PredefinedType" type="ifc:IfcCommunicationsApplianceTypeEnum" use="optional"/>
 			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcComplementaryData" type="ifc:IfcComplementaryData" abstract="true" substitutionGroup="ifc:IfcProduct" nillable="true"/>
+	<xs:complexType name="IfcComplementaryData" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcProduct"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="IfcComplexProperty" type="ifc:IfcComplexProperty" substitutionGroup="ifc:IfcProperty" nillable="true"/>
@@ -2335,6 +2367,26 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcDatasetInformation" type="ifc:IfcDatasetInformation" substitutionGroup="ifc:IfcDocumentInformation" nillable="true"/>
+	<xs:complexType name="IfcDatasetInformation">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcDocumentInformation">
+				<xs:attribute name="SchemaReference" type="ifc:IfcURIReference" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcDatasetReference" type="ifc:IfcDatasetReference" substitutionGroup="ifc:IfcExternalReference" nillable="true"/>
+	<xs:complexType name="IfcDatasetReference">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcExternalReference">
+				<xs:sequence>
+					<xs:element name="ReferencedDataset" type="ifc:IfcDatasetInformation" minOccurs="0" nillable="true"/>
+				</xs:sequence>
+				<xs:attribute name="Description" type="ifc:IfcText" use="optional"/>
+				<xs:attribute name="Filter" type="ifc:IfcText" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcDeepFoundation" type="ifc:IfcDeepFoundation" substitutionGroup="ifc:IfcBuiltElement" nillable="true"/>
 	<xs:complexType name="IfcDeepFoundation">
 		<xs:complexContent>
@@ -2747,10 +2799,26 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="IfcEarthworksCut" type="ifc:IfcEarthworksCut" substitutionGroup="ifc:IfcFeatureElementSubtraction" nillable="true"/>
+	<xs:element name="IfcEarthingElement" type="ifc:IfcEarthingElement" substitutionGroup="ifc:IfcFlowTerminal" nillable="true"/>
+	<xs:complexType name="IfcEarthingElement">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcFlowTerminal">
+				<xs:attribute name="PredefinedType" type="ifc:IfcEarthingElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcEarthingElementType" type="ifc:IfcEarthingElementType" substitutionGroup="ifc:IfcFlowTerminalType" nillable="true"/>
+	<xs:complexType name="IfcEarthingElementType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcFlowTerminalType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcEarthingElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcEarthworksCut" type="ifc:IfcEarthworksCut" substitutionGroup="ifc:IfcExcavation" nillable="true"/>
 	<xs:complexType name="IfcEarthworksCut">
 		<xs:complexContent>
-			<xs:extension base="ifc:IfcFeatureElementSubtraction">
+			<xs:extension base="ifc:IfcExcavation">
 				<xs:attribute name="PredefinedType" type="ifc:IfcEarthworksCutTypeEnum" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -3113,6 +3181,12 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcExcavation" type="ifc:IfcExcavation" abstract="true" substitutionGroup="ifc:IfcFeatureElementSubtraction" nillable="true"/>
+	<xs:complexType name="IfcExcavation" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcFeatureElementSubtraction"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcExtendedProperties" type="ifc:IfcExtendedProperties" abstract="true" substitutionGroup="ifc:IfcPropertyAbstraction" nillable="true"/>
 	<xs:complexType name="IfcExtendedProperties" abstract="true">
 		<xs:complexContent>
@@ -3267,6 +3341,14 @@
 					<xs:element name="Bound" type="ifc:IfcLoop" nillable="true"/>
 				</xs:sequence>
 				<xs:attribute name="Orientation" type="ifc:IfcBoolean" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcFaceExcavation" type="ifc:IfcFaceExcavation" substitutionGroup="ifc:IfcUndergroundExcavation" nillable="true"/>
+	<xs:complexType name="IfcFaceExcavation">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcUndergroundExcavation">
+				<xs:attribute name="PredefinedType" type="ifc:IfcFaceExcavationTypeEnum" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -3460,6 +3542,22 @@
 					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="TilingScale" type="ifc:IfcPositiveRatioMeasure" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcFillElement" type="ifc:IfcFillElement" substitutionGroup="ifc:IfcBuiltElement" nillable="true"/>
+	<xs:complexType name="IfcFillElement">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcBuiltElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcFillElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcFillElementType" type="ifc:IfcFillElementType" substitutionGroup="ifc:IfcBuiltElementType" nillable="true"/>
+	<xs:complexType name="IfcFillElementType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcBuiltElementType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcFillElementTypeEnum" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -3663,6 +3761,58 @@
 			<xs:extension base="ifc:IfcFurnishingElementType">
 				<xs:attribute name="AssemblyPlace" type="ifc:IfcAssemblyPlaceEnum" use="optional"/>
 				<xs:attribute name="PredefinedType" type="ifc:IfcFurnitureTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceElement" type="ifc:IfcGeoScienceElement" abstract="true" substitutionGroup="ifc:IfcElement" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceElement" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcElement"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceElementType" type="ifc:IfcGeoScienceElementType" abstract="true" substitutionGroup="ifc:IfcElementType" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceElementType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcElementType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceFeature" type="ifc:IfcGeoScienceFeature" substitutionGroup="ifc:IfcGeoScienceElement" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceFeature">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcGeoScienceElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGeoScienceFeatureTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceFeatureType" type="ifc:IfcGeoScienceFeatureType" substitutionGroup="ifc:IfcGeoScienceElementType" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceFeatureType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcGeoScienceElementType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGeoScienceFeatureTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceModel" type="ifc:IfcGeoScienceModel" substitutionGroup="ifc:IfcGeoScienceElement" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceModel">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcGeoScienceElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGeoScienceModelTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceModelType" type="ifc:IfcGeoScienceModelType" substitutionGroup="ifc:IfcGeoScienceElementType" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceModelType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcGeoScienceElementType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGeoScienceModelTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGeoScienceObservation" type="ifc:IfcGeoScienceObservation" substitutionGroup="ifc:IfcObservation" nillable="true"/>
+	<xs:complexType name="IfcGeoScienceObservation">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcObservation">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGeoScienceObservationTypeEnum" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -3892,6 +4042,22 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcGroundReinforcementElement" type="ifc:IfcGroundReinforcementElement" substitutionGroup="ifc:IfcBuiltElement" nillable="true"/>
+	<xs:complexType name="IfcGroundReinforcementElement">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcBuiltElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGroundReinforcementElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcGroundReinforcementElementType" type="ifc:IfcGroundReinforcementElementType" substitutionGroup="ifc:IfcBuiltElementType" nillable="true"/>
+	<xs:complexType name="IfcGroundReinforcementElementType">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcBuiltElementType">
+				<xs:attribute name="PredefinedType" type="ifc:IfcGroundReinforcementElementTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcGroup" type="ifc:IfcGroup" substitutionGroup="ifc:IfcObject" nillable="true"/>
 	<xs:complexType name="IfcGroup">
 		<xs:complexContent>
@@ -3976,6 +4142,14 @@
 		<xs:complexContent>
 			<xs:extension base="ifc:IfcElementComponentType">
 				<xs:attribute name="PredefinedType" type="ifc:IfcImpactProtectionDeviceTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcImprovedGround" type="ifc:IfcImprovedGround" substitutionGroup="ifc:IfcEarthworksElement" nillable="true"/>
+	<xs:complexType name="IfcImprovedGround">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcEarthworksElement">
+				<xs:attribute name="PredefinedType" type="ifc:IfcImprovedGroundTypeEnum" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -4091,6 +4265,29 @@
 								<xs:list itemType="ifc:IfcPositiveInteger"/>
 							</xs:simpleType>
 							<xs:minLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcIntegerVoxelData" type="ifc:IfcIntegerVoxelData" substitutionGroup="ifc:IfcVoxelData" nillable="true"/>
+	<xs:complexType name="IfcIntegerVoxelData">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcVoxelData">
+				<xs:sequence>
+					<xs:element name="Unit" minOccurs="0" nillable="true">
+						<xs:complexType>
+							<xs:group ref="ifc:IfcUnit"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="ValueData" use="optional">
+					<xs:simpleType>
+						<xs:restriction>
+							<xs:simpleType>
+								<xs:list itemType="ifc:IfcInteger"/>
+							</xs:simpleType>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
@@ -4226,6 +4423,22 @@
 				<xs:attribute name="FilletRadius" type="ifc:IfcNonNegativeLengthMeasure" use="optional"/>
 				<xs:attribute name="EdgeRadius" type="ifc:IfcNonNegativeLengthMeasure" use="optional"/>
 				<xs:attribute name="LegSlope" type="ifc:IfcPlaneAngleMeasure" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcLabelVoxelData" type="ifc:IfcLabelVoxelData" substitutionGroup="ifc:IfcVoxelData" nillable="true"/>
+	<xs:complexType name="IfcLabelVoxelData">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcVoxelData">
+				<xs:attribute name="ValueData" use="optional">
+					<xs:simpleType>
+						<xs:restriction>
+							<xs:simpleType>
+								<xs:list itemType="ifc:IfcLabel"/>
+							</xs:simpleType>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -4478,6 +4691,12 @@
 			<xs:extension base="ifc:IfcPositioningElement"/>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcLinearZone" type="ifc:IfcLinearZone" abstract="true" substitutionGroup="ifc:IfcLinearElement" nillable="true"/>
+	<xs:complexType name="IfcLinearZone" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcLinearElement"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcLiquidTerminal" type="ifc:IfcLiquidTerminal" substitutionGroup="ifc:IfcFlowTerminal" nillable="true"/>
 	<xs:complexType name="IfcLiquidTerminal">
 		<xs:complexContent>
@@ -4505,6 +4724,22 @@
 						</xs:complexType>
 					</xs:element>
 				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcLogicalVoxelData" type="ifc:IfcLogicalVoxelData" substitutionGroup="ifc:IfcVoxelData" nillable="true"/>
+	<xs:complexType name="IfcLogicalVoxelData">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcVoxelData">
+				<xs:attribute name="ValueData" use="optional">
+					<xs:simpleType>
+						<xs:restriction>
+							<xs:simpleType>
+								<xs:list itemType="ifc:IfcLogical"/>
+							</xs:simpleType>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -5139,6 +5374,12 @@
 				<xs:attribute name="ObjectiveQualifier" type="ifc:IfcObjectiveEnum" use="optional"/>
 				<xs:attribute name="UserDefinedQualifier" type="ifc:IfcLabel" use="optional"/>
 			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcObservation" type="ifc:IfcObservation" substitutionGroup="ifc:IfcComplementaryData" nillable="true"/>
+	<xs:complexType name="IfcObservation">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcComplementaryData"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="IfcOccupant" type="ifc:IfcOccupant" substitutionGroup="ifc:IfcActor" nillable="true"/>
@@ -6522,6 +6763,14 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcRadialExcavation" type="ifc:IfcRadialExcavation" substitutionGroup="ifc:IfcUndergroundExcavation" nillable="true"/>
+	<xs:complexType name="IfcRadialExcavation">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcUndergroundExcavation">
+				<xs:attribute name="PredefinedType" type="ifc:IfcRadialExcavationTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcRail" type="ifc:IfcRail" substitutionGroup="ifc:IfcBuiltElement" nillable="true"/>
 	<xs:complexType name="IfcRail">
 		<xs:complexContent>
@@ -6635,6 +6884,29 @@
 						</xs:complexType>
 					</xs:element>
 				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcRealVoxelData" type="ifc:IfcRealVoxelData" substitutionGroup="ifc:IfcVoxelData" nillable="true"/>
+	<xs:complexType name="IfcRealVoxelData">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcVoxelData">
+				<xs:sequence>
+					<xs:element name="Unit" minOccurs="0" nillable="true">
+						<xs:complexType>
+							<xs:group ref="ifc:IfcUnit"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="ValueData" use="optional">
+					<xs:simpleType>
+						<xs:restriction>
+							<xs:simpleType>
+								<xs:list itemType="ifc:IfcReal"/>
+							</xs:simpleType>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -7106,6 +7378,20 @@
 					<xs:element name="RelatingConstraint" type="ifc:IfcConstraint" nillable="true"/>
 				</xs:sequence>
 				<xs:attribute name="Intent" type="ifc:IfcLabel" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcRelAssociatesDataset" type="ifc:IfcRelAssociatesDataset" substitutionGroup="ifc:IfcRelAssociates" nillable="true"/>
+	<xs:complexType name="IfcRelAssociatesDataset">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcRelAssociates">
+				<xs:sequence>
+					<xs:element name="RelatingDataset">
+						<xs:complexType>
+							<xs:group ref="ifc:IfcDatasetSelect"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -9533,7 +9819,6 @@
 			<xs:extension base="ifc:IfcTessellatedItem">
 				<xs:sequence>
 					<xs:element name="Coordinates" type="ifc:IfcCartesianPointList3D" nillable="true"/>
-					<xs:element name="HasColours" type="ifc:IfcIndexedColourMap" nillable="true" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="HasTextures" minOccurs="0" nillable="true">
 						<xs:complexType>
 							<xs:sequence>
@@ -10051,6 +10336,30 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="IfcTunnel" type="ifc:IfcTunnel" substitutionGroup="ifc:IfcFacility" nillable="true"/>
+	<xs:complexType name="IfcTunnel">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcFacility">
+				<xs:attribute name="PredefinedType" type="ifc:IfcTunnelTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcTunnelPart" type="ifc:IfcTunnelPart" substitutionGroup="ifc:IfcFacilityPart" nillable="true"/>
+	<xs:complexType name="IfcTunnelPart">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcFacilityPart">
+				<xs:attribute name="PredefinedType" type="ifc:IfcTunnelPartTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcTunnelTypicalSection" type="ifc:IfcTunnelTypicalSection" substitutionGroup="ifc:IfcLinearZone" nillable="true"/>
+	<xs:complexType name="IfcTunnelTypicalSection">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcLinearZone">
+				<xs:attribute name="PredefinedType" type="ifc:IfcTunnelTypicalSectionTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="IfcTypeObject" type="ifc:IfcTypeObject" substitutionGroup="ifc:IfcObjectDefinition" nillable="true"/>
 	<xs:complexType name="IfcTypeObject">
 		<xs:complexContent>
@@ -10123,6 +10432,12 @@
 				<xs:attribute name="EdgeRadius" type="ifc:IfcNonNegativeLengthMeasure" use="optional"/>
 				<xs:attribute name="FlangeSlope" type="ifc:IfcPlaneAngleMeasure" use="optional"/>
 			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcUndergroundExcavation" type="ifc:IfcUndergroundExcavation" abstract="true" substitutionGroup="ifc:IfcExcavation" nillable="true"/>
+	<xs:complexType name="IfcUndergroundExcavation" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcExcavation"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="IfcUnitAssignment" type="ifc:IfcUnitAssignment" substitutionGroup="ifc:Entity" nillable="true"/>
@@ -10198,6 +10513,30 @@
 					<xs:element name="Orientation" type="ifc:IfcDirection" nillable="true"/>
 				</xs:sequence>
 				<xs:attribute name="Magnitude" type="ifc:IfcLengthMeasure" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcVectorVoxelData" type="ifc:IfcVectorVoxelData" substitutionGroup="ifc:IfcVoxelData" nillable="true"/>
+	<xs:complexType name="IfcVectorVoxelData">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcVoxelData">
+				<xs:sequence>
+					<xs:element name="ValueData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="ifc:IfcVector" maxOccurs="unbounded"/>
+							</xs:sequence>
+							<xs:attribute ref="ifc:itemType" fixed="ifc:IfcVector"/>
+							<xs:attribute ref="ifc:cType" fixed="list"/>
+							<xs:attribute ref="ifc:arraySize" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Unit" minOccurs="0" nillable="true">
+						<xs:complexType>
+							<xs:group ref="ifc:IfcUnit"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -10318,6 +10657,36 @@
 		<xs:complexContent>
 			<xs:extension base="ifc:IfcFeatureElementSubtraction">
 				<xs:attribute name="PredefinedType" type="ifc:IfcVoidingFeatureTypeEnum" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcVoxelData" type="ifc:IfcVoxelData" abstract="true" substitutionGroup="ifc:IfcComplementaryData" nillable="true"/>
+	<xs:complexType name="IfcVoxelData" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcComplementaryData">
+				<xs:attribute name="ValueType" type="ifc:IfcLabel" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IfcVoxelGrid" type="ifc:IfcVoxelGrid" substitutionGroup="ifc:IfcTessellatedItem" nillable="true"/>
+	<xs:complexType name="IfcVoxelGrid">
+		<xs:complexContent>
+			<xs:extension base="ifc:IfcTessellatedItem">
+				<xs:attribute name="VoxelSizeX" type="ifc:IfcNonNegativeLengthMeasure" use="optional"/>
+				<xs:attribute name="VoxelSizeY" type="ifc:IfcNonNegativeLengthMeasure" use="optional"/>
+				<xs:attribute name="VoxelSizeZ" type="ifc:IfcNonNegativeLengthMeasure" use="optional"/>
+				<xs:attribute name="NumberOfVoxelsX" type="ifc:IfcPositiveInteger" use="optional"/>
+				<xs:attribute name="NumberOfVoxelsY" type="ifc:IfcPositiveInteger" use="optional"/>
+				<xs:attribute name="NumberOfVoxelsZ" type="ifc:IfcPositiveInteger" use="optional"/>
+				<xs:attribute name="Voxels" use="optional">
+					<xs:simpleType>
+						<xs:restriction>
+							<xs:simpleType>
+								<xs:list itemType="ifc:IfcBoolean"/>
+							</xs:simpleType>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -10566,6 +10935,7 @@
 			<xs:element ref="ifc:IfcElectricCurrentMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricResistanceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricVoltageMeasure-wrapper"/>
+			<xs:element ref="ifc:IfcElectricalResistivityMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcEnergyMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcForceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcFrequencyMeasure-wrapper"/>
@@ -10743,6 +11113,12 @@
 			<xs:element ref="ifc:IfcPreDefinedCurveFont"/>
 		</xs:choice>
 	</xs:group>
+	<xs:group name="IfcDatasetSelect">
+		<xs:choice>
+			<xs:element ref="ifc:IfcDatasetInformation"/>
+			<xs:element ref="ifc:IfcDatasetReference"/>
+		</xs:choice>
+	</xs:group>
 	<xs:group name="IfcDefinitionSelect">
 		<xs:choice>
 			<xs:element ref="ifc:IfcObjectDefinition"/>
@@ -10764,6 +11140,7 @@
 			<xs:element ref="ifc:IfcElectricConductanceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricResistanceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricVoltageMeasure-wrapper"/>
+			<xs:element ref="ifc:IfcElectricalResistivityMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcEnergyMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcForceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcFrequencyMeasure-wrapper"/>
@@ -10944,6 +11321,7 @@
 			<xs:element ref="ifc:IfcElectricCurrentMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricResistanceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricVoltageMeasure-wrapper"/>
+			<xs:element ref="ifc:IfcElectricalResistivityMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcEnergyMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcForceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcFrequencyMeasure-wrapper"/>
@@ -11273,6 +11651,7 @@
 			<xs:element ref="ifc:IfcElectricCurrentMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricResistanceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcElectricVoltageMeasure-wrapper"/>
+			<xs:element ref="ifc:IfcElectricalResistivityMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcEnergyMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcForceMeasure-wrapper"/>
 			<xs:element ref="ifc:IfcFrequencyMeasure-wrapper"/>
@@ -11562,6 +11941,15 @@
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IfcArchElementTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="lining"/>
+			<xs:enumeration value="segment"/>
+			<xs:enumeration value="steelrib"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IfcArithmeticOperatorEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="add"/>
@@ -11581,6 +11969,7 @@
 	<xs:simpleType name="IfcAudioVisualApplianceTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="amplifier"/>
+			<xs:enumeration value="beacon"/>
 			<xs:enumeration value="camera"/>
 			<xs:enumeration value="communicationterminal"/>
 			<xs:enumeration value="display"/>
@@ -11589,6 +11978,7 @@
 			<xs:enumeration value="projector"/>
 			<xs:enumeration value="receiver"/>
 			<xs:enumeration value="recordingequipment"/>
+			<xs:enumeration value="siren"/>
 			<xs:enumeration value="speaker"/>
 			<xs:enumeration value="switcher"/>
 			<xs:enumeration value="telephone"/>
@@ -11683,6 +12073,16 @@
 			<xs:enumeration value="union"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IfcBoreholeTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="coredrilling"/>
+			<xs:enumeration value="destructivedrilling"/>
+			<xs:enumeration value="dewatering"/>
+			<xs:enumeration value="trialpit"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IfcBridgePartTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="abutment"/>
@@ -11751,6 +12151,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="erosionprevention"/>
 			<xs:enumeration value="fenestration"/>
+			<xs:enumeration value="fireprotection"/>
 			<xs:enumeration value="foundation"/>
 			<xs:enumeration value="loadbearing"/>
 			<xs:enumeration value="mooring"/>
@@ -11762,6 +12163,10 @@
 			<xs:enumeration value="shading"/>
 			<xs:enumeration value="trackcircuit"/>
 			<xs:enumeration value="transport"/>
+			<xs:enumeration value="tunnel_lining"/>
+			<xs:enumeration value="tunnel_presupport"/>
+			<xs:enumeration value="tunnel_support"/>
+			<xs:enumeration value="waterproofing"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -12226,7 +12631,9 @@
 			<xs:enumeration value="shoe"/>
 			<xs:enumeration value="slidingchair"/>
 			<xs:enumeration value="soundabsorption"/>
+			<xs:enumeration value="structural_sealing"/>
 			<xs:enumeration value="tensioningequipment"/>
+			<xs:enumeration value="water_barrier"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -12308,6 +12715,7 @@
 			<xs:enumeration value="rainwater"/>
 			<xs:enumeration value="refrigeration"/>
 			<xs:enumeration value="return_circuit"/>
+			<xs:enumeration value="safety"/>
 			<xs:enumeration value="security"/>
 			<xs:enumeration value="sewage"/>
 			<xs:enumeration value="signal"/>
@@ -12433,9 +12841,23 @@
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IfcEarthingElementTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="earthingstrip"/>
+			<xs:enumeration value="fixedterminal"/>
+			<xs:enumeration value="groundingmesh"/>
+			<xs:enumeration value="groundingplate"/>
+			<xs:enumeration value="groundingrod"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IfcEarthworksCutTypeEnum">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="anchoredopenexcavation"/>
 			<xs:enumeration value="base_excavation"/>
+			<xs:enumeration value="bracedopenexcavation"/>
+			<xs:enumeration value="confinedopenexcavation"/>
 			<xs:enumeration value="cut"/>
 			<xs:enumeration value="dredging"/>
 			<xs:enumeration value="excavation"/>
@@ -12554,15 +12976,19 @@
 			<xs:enumeration value="cross_bracing"/>
 			<xs:enumeration value="deck"/>
 			<xs:enumeration value="dilatationpanel"/>
+			<xs:enumeration value="ductbank"/>
 			<xs:enumeration value="entranceworks"/>
 			<xs:enumeration value="girder"/>
 			<xs:enumeration value="grid"/>
 			<xs:enumeration value="mast"/>
 			<xs:enumeration value="pier"/>
+			<xs:enumeration value="presupportface"/>
+			<xs:enumeration value="presupportvault"/>
 			<xs:enumeration value="pylon"/>
 			<xs:enumeration value="rail_mechanical_equipment_assembly"/>
 			<xs:enumeration value="reinforcement_unit"/>
 			<xs:enumeration value="rigid_frame"/>
+			<xs:enumeration value="ring"/>
 			<xs:enumeration value="shelter"/>
 			<xs:enumeration value="signalassembly"/>
 			<xs:enumeration value="slab_field"/>
@@ -12649,6 +13075,18 @@
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IfcFaceExcavationTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="crossconnection"/>
+			<xs:enumeration value="fullface"/>
+			<xs:enumeration value="pilotbore"/>
+			<xs:enumeration value="reaming"/>
+			<xs:enumeration value="shaft"/>
+			<xs:enumeration value="staged"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IfcFacilityPartCommonTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="aboveground"/>
@@ -12679,6 +13117,7 @@
 			<xs:enumeration value="centrifugalbackwardinclinedcurved"/>
 			<xs:enumeration value="centrifugalforwardcurved"/>
 			<xs:enumeration value="centrifugalradial"/>
+			<xs:enumeration value="jet"/>
 			<xs:enumeration value="propelloraxial"/>
 			<xs:enumeration value="tubeaxial"/>
 			<xs:enumeration value="vaneaxial"/>
@@ -12691,6 +13130,14 @@
 			<xs:enumeration value="glue"/>
 			<xs:enumeration value="mortar"/>
 			<xs:enumeration value="weld"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcFillElementTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="annulargapfill"/>
+			<xs:enumeration value="invertfill"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -12778,6 +13225,48 @@
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IfcGeoScienceFeatureTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="contact"/>
+			<xs:enumeration value="discretediscontinuity"/>
+			<xs:enumeration value="fault"/>
+			<xs:enumeration value="fluidbody"/>
+			<xs:enumeration value="fold"/>
+			<xs:enumeration value="geologicunit"/>
+			<xs:enumeration value="geotechnicalunit"/>
+			<xs:enumeration value="hazardarea"/>
+			<xs:enumeration value="hydrogeounit"/>
+			<xs:enumeration value="physicalpropertydistribution"/>
+			<xs:enumeration value="piezometricwaterlevel"/>
+			<xs:enumeration value="voidbody"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcGeoScienceModelTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="geohazardmodel"/>
+			<xs:enumeration value="geologymodel"/>
+			<xs:enumeration value="geotechmodel"/>
+			<xs:enumeration value="geotechsynthesismodel"/>
+			<xs:enumeration value="hydrogeomodel"/>
+			<xs:enumeration value="physicalpropertydistibutionmodel"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcGeoScienceObservationTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="boreholelog"/>
+			<xs:enumeration value="geophysicalsurveyresult"/>
+			<xs:enumeration value="insitutestresult"/>
+			<xs:enumeration value="labtestresult"/>
+			<xs:enumeration value="localinformation"/>
+			<xs:enumeration value="mappedfeature"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IfcGeographicElementTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="soil_boring_point"/>
@@ -12825,6 +13314,19 @@
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IfcGroundReinforcementElementTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bar"/>
+			<xs:enumeration value="bolt"/>
+			<xs:enumeration value="fabric"/>
+			<xs:enumeration value="pile"/>
+			<xs:enumeration value="plate"/>
+			<xs:enumeration value="tendon"/>
+			<xs:enumeration value="tube"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IfcHeatExchangerTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="plate"/>
@@ -12859,6 +13361,23 @@
 			<xs:enumeration value="crashcushion"/>
 			<xs:enumeration value="dampingsystem"/>
 			<xs:enumeration value="fender"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcImprovedGroundTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="deepmixed"/>
+			<xs:enumeration value="dewatered"/>
+			<xs:enumeration value="dynamicallycompacted"/>
+			<xs:enumeration value="frozen"/>
+			<xs:enumeration value="injectiongrouted"/>
+			<xs:enumeration value="jetgrouted"/>
+			<xs:enumeration value="laterallydrained"/>
+			<xs:enumeration value="replaced"/>
+			<xs:enumeration value="rollercompacted"/>
+			<xs:enumeration value="surchargepreloaded"/>
+			<xs:enumeration value="verticallydrained"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -13319,6 +13838,7 @@
 			<xs:enumeration value="curtain_panel"/>
 			<xs:enumeration value="flange_plate"/>
 			<xs:enumeration value="gusset_plate"/>
+			<xs:enumeration value="lagging"/>
 			<xs:enumeration value="sheet"/>
 			<xs:enumeration value="splice_plate"/>
 			<xs:enumeration value="stiffener_plate"/>
@@ -13427,6 +13947,15 @@
 			<xs:enumeration value="sumppump"/>
 			<xs:enumeration value="verticalinline"/>
 			<xs:enumeration value="verticalturbine"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcRadialExcavationTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="niche"/>
+			<xs:enumeration value="profileenlargement"/>
+			<xs:enumeration value="reprofiling"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -13586,6 +14115,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="IfcReinforcingMeshTypeEnum">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="steelstraps"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -13885,13 +14415,23 @@
 	</xs:simpleType>
 	<xs:simpleType name="IfcSpatialZoneTypeEnum">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="annulargap"/>
+			<xs:enumeration value="clearance"/>
+			<xs:enumeration value="compartment"/>
 			<xs:enumeration value="construction"/>
 			<xs:enumeration value="firesafety"/>
+			<xs:enumeration value="installation"/>
 			<xs:enumeration value="interference"/>
+			<xs:enumeration value="interior"/>
+			<xs:enumeration value="invert"/>
 			<xs:enumeration value="lighting"/>
+			<xs:enumeration value="lining"/>
+			<xs:enumeration value="mappedzone"/>
 			<xs:enumeration value="occupancy"/>
 			<xs:enumeration value="reservation"/>
 			<xs:enumeration value="security"/>
+			<xs:enumeration value="service"/>
+			<xs:enumeration value="testedzone"/>
 			<xs:enumeration value="thermal"/>
 			<xs:enumeration value="transport"/>
 			<xs:enumeration value="ventilation"/>
@@ -14204,6 +14744,43 @@
 	<xs:simpleType name="IfcTubeBundleTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="finned"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcTunnelPartTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="crossway"/>
+			<xs:enumeration value="portal"/>
+			<xs:enumeration value="ringsection"/>
+			<xs:enumeration value="tunnelsection"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcTunnelTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="accesstunnel"/>
+			<xs:enumeration value="bicycle"/>
+			<xs:enumeration value="bypass"/>
+			<xs:enumeration value="maintenance"/>
+			<xs:enumeration value="metro"/>
+			<xs:enumeration value="pedestrian"/>
+			<xs:enumeration value="railway"/>
+			<xs:enumeration value="ramp"/>
+			<xs:enumeration value="road"/>
+			<xs:enumeration value="shaft"/>
+			<xs:enumeration value="underground_facilities"/>
+			<xs:enumeration value="utilities"/>
+			<xs:enumeration value="userdefined"/>
+			<xs:enumeration value="notdefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IfcTunnelTypicalSectionTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="excavationsupport"/>
+			<xs:enumeration value="geotech"/>
+			<xs:enumeration value="risk"/>
 			<xs:enumeration value="userdefined"/>
 			<xs:enumeration value="notdefined"/>
 		</xs:restriction>
@@ -14598,6 +15175,9 @@
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<xs:simpleType name="IfcElectricVoltageMeasure">
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="IfcElectricalResistivityMeasure">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<xs:simpleType name="IfcEnergyMeasure">
@@ -15232,6 +15812,15 @@
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="ifc:IfcElectricVoltageMeasure">
+					<xs:attributeGroup ref="ifc:instanceAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IfcElectricalResistivityMeasure-wrapper" nillable="true">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="ifc:IfcElectricalResistivityMeasure">
 					<xs:attributeGroup ref="ifc:instanceAttributes"/>
 				</xs:extension>
 			</xs:simpleContent>

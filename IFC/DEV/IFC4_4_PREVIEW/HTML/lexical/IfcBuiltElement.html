@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>5.4.3.11 IfcBuiltElement - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -517,6 +518,7 @@
 <ul class="classes classes-in-chain">
 <li class="abstract ancestor"><a href="IfcElement.html">IfcElement</a></li>
 <li class=""><a href="IfcAnnotation.html">IfcAnnotation</a></li>
+<li class="abstract"><a href="IfcComplementaryData.html">IfcComplementaryData</a></li>
 <li class=""><a href="IfcLinearElement.html">IfcLinearElement</a></li>
 <li class="abstract"><a href="IfcPort.html">IfcPort</a></li>
 <li class="abstract"><a href="IfcPositioningElement.html">IfcPositioningElement</a></li>
@@ -535,8 +537,9 @@
 <li class="abstract"><a href="IfcElementComponent.html">IfcElementComponent</a></li>
 <li class="abstract"><a href="IfcFeatureElement.html">IfcFeatureElement</a></li>
 <li class=""><a href="IfcFurnishingElement.html">IfcFurnishingElement</a></li>
+<li class="abstract"><a href="IfcGeoScienceElement.html">IfcGeoScienceElement</a></li>
 <li class=""><a href="IfcGeographicElement.html">IfcGeographicElement</a></li>
-<li class="abstract"><a href="IfcGeotechnicalElement.html">IfcGeotechnicalElement</a></li>
+<li class="abstract deprecated"><a href="IfcGeotechnicalElement.html">IfcGeotechnicalElement</a></li>
 <li class="abstract"><a href="IfcTransportationDevice.html">IfcTransportationDevice</a></li>
 <li class=""><a href="IfcVirtualElement.html">IfcVirtualElement</a></li>
 </ul>
@@ -544,6 +547,7 @@
 <li>
 <i data-feather="arrow-up"></i>
 <ul class="classes">
+<li class=""><a href="IfcArchElement.html">IfcArchElement</a></li>
 <li class=""><a href="IfcBeam.html">IfcBeam</a></li>
 <li class=""><a href="IfcBearing.html">IfcBearing</a></li>
 <li class=""><a href="IfcBuildingElementProxy.html">IfcBuildingElementProxy</a></li>
@@ -555,7 +559,9 @@
 <li class=""><a href="IfcDeepFoundation.html">IfcDeepFoundation</a></li>
 <li class=""><a href="IfcDoor.html">IfcDoor</a></li>
 <li class=""><a href="IfcEarthworksElement.html">IfcEarthworksElement</a></li>
+<li class=""><a href="IfcFillElement.html">IfcFillElement</a></li>
 <li class=""><a href="IfcFooting.html">IfcFooting</a></li>
+<li class=""><a href="IfcGroundReinforcementElement.html">IfcGroundReinforcementElement</a></li>
 <li class=""><a href="IfcKerb.html">IfcKerb</a></li>
 <li class=""><a href="IfcMember.html">IfcMember</a></li>
 <li class=""><a href="IfcMooringDevice.html">IfcMooringDevice</a></li>
@@ -2506,7 +2512,8 @@
 <a class="link" href="#5.4.3.11.7-Formal-representation"><i data-feather="link"></i></a></h2>
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">ENTITY</span> <a href="IfcBuiltElement.html"><span class="tok-nc">IfcBuiltElement</span></a>
 <span class="tok-k">SUPERTYPE</span> <span class="tok-k">OF</span> <span class="tok-p">(</span><span class="tok-nb">ONEOF</span>
-<span class="tok-p">(</span><a href="IfcBeam.html"><span class="tok-nc">IfcBeam</span></a>
+<span class="tok-p">(</span><a href="IfcArchElement.html"><span class="tok-nc">IfcArchElement</span></a>
+<span class="tok-p">,</span><a href="IfcBeam.html"><span class="tok-nc">IfcBeam</span></a>
 <span class="tok-p">,</span><a href="IfcBearing.html"><span class="tok-nc">IfcBearing</span></a>
 <span class="tok-p">,</span><a href="IfcBuildingElementProxy.html"><span class="tok-nc">IfcBuildingElementProxy</span></a>
 <span class="tok-p">,</span><a href="IfcChimney.html"><span class="tok-nc">IfcChimney</span></a>
@@ -2517,7 +2524,9 @@
 <span class="tok-p">,</span><a href="IfcDeepFoundation.html"><span class="tok-nc">IfcDeepFoundation</span></a>
 <span class="tok-p">,</span><a href="IfcDoor.html"><span class="tok-nc">IfcDoor</span></a>
 <span class="tok-p">,</span><a href="IfcEarthworksElement.html"><span class="tok-nc">IfcEarthworksElement</span></a>
+<span class="tok-p">,</span><a href="IfcFillElement.html"><span class="tok-nc">IfcFillElement</span></a>
 <span class="tok-p">,</span><a href="IfcFooting.html"><span class="tok-nc">IfcFooting</span></a>
+<span class="tok-p">,</span><a href="IfcGroundReinforcementElement.html"><span class="tok-nc">IfcGroundReinforcementElement</span></a>
 <span class="tok-p">,</span><a href="IfcKerb.html"><span class="tok-nc">IfcKerb</span></a>
 <span class="tok-p">,</span><a href="IfcMember.html"><span class="tok-nc">IfcMember</span></a>
 <span class="tok-p">,</span><a href="IfcMooringDevice.html"><span class="tok-nc">IfcMooringDevice</span></a>
@@ -2546,6 +2555,7 @@
     5.4.3.11.8 References
 <a class="link" href="#5.4.3.11.8-References"><i data-feather="link"></i></a></h2>
 <ul class="references">
+<li><i data-feather="paperclip"></i><a href="IfcArchElement.html">IfcArchElement</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcBeam.html">IfcBeam</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcBearing.html">IfcBearing</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcBuildingElementProxy.html">IfcBuildingElementProxy</a></li>
@@ -2558,7 +2568,9 @@
 <li><i data-feather="paperclip"></i><a href="IfcDoor.html">IfcDoor</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcEarthworksElement.html">IfcEarthworksElement</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcElement.html">IfcElement</a></li>
+<li><i data-feather="paperclip"></i><a href="IfcFillElement.html">IfcFillElement</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcFooting.html">IfcFooting</a></li>
+<li><i data-feather="paperclip"></i><a href="IfcGroundReinforcementElement.html">IfcGroundReinforcementElement</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcKerb.html">IfcKerb</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcMember.html">IfcMember</a></li>
 <li><i data-feather="paperclip"></i><a href="IfcMooringDevice.html">IfcMooringDevice</a></li>
@@ -2638,7 +2650,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

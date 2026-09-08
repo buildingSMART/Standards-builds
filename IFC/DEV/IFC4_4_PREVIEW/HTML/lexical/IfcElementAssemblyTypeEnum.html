@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>5.4.2.7 IfcElementAssemblyTypeEnum - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -290,6 +291,12 @@
 </td>
 </code></td></tr>
 <tr>
+<td data-label="Name"><code>DUCTBANK
+            <td data-label="Description">
+<p>A Duct Bank is two or more ducts or conduits used as part of a system. A duct bank is designed to protect and group or consolidate data and electrical cables to and from a facility. The cables are laid in PVC pipes or conduits. These conduit are bundled together and protected with either steel or reinforced concrete casings. Duct banks are often located underground. They can carry cables for all electrical wiring and data requirements in the facility as well as extra cables that are not for immediate use, but may be valuable for future requirements.</p>
+</td>
+</code></td></tr>
+<tr>
 <td data-label="Name"><code>ENTRANCEWORKS
             <td data-label="Description">
 <p>An assembly forming the support structure of a chamber (lock, dock) gate and associated elements, plus the containment of operational equipment.</p>
@@ -320,6 +327,18 @@
 </td>
 </code></td></tr>
 <tr>
+<td data-label="Name"><code>PRESUPPORTFACE
+            <td data-label="Description">
+<p>Horizontal boreholes in the face of the tunnel with various types of support, reinforcing and stabilising the ground ahead of the face and removed during subsequent excavation.</p>
+</td>
+</code></td></tr>
+<tr>
+<td data-label="Name"><code>PRESUPPORTVAULT
+            <td data-label="Description">
+<p>Outwards inclined radial boreholes around the perimeter of the tunnel with various types of support forming a protective vault around and ahead of the excavation.</p>
+</td>
+</code></td></tr>
+<tr>
 <td data-label="Name"><code>PYLON
             <td data-label="Description">
 <p>A vertical structure supporting cables in suspended or stayed structure.</p>
@@ -341,6 +360,16 @@
 <td data-label="Name"><code>RIGID_FRAME
             <td data-label="Description">
 <p>A structure built up of beams, columns, etc. with moment-resisting joints, such as gantry.</p>
+</td>
+</code></td></tr>
+<tr>
+<td data-label="Name"><code>RING
+            <td data-label="Description">
+<p>The ring is the basic unit for construction progress in tunneling, and the position of the TBM (Tunnel Boring Machine) can be determined by the ring number.
+The rings are portions of cylinders with surfaces that can be either parallel or non-parallel, identified below:
+- parallel surfaces: straight ring
+- non parallel surfaces: tapered trapezoidal ring / tapered universal ring
+The ring is composed from <em>IfcArchElement</em> of type <em>SEGMENT</em>.</p>
 </td>
 </code></td></tr>
 <tr>
@@ -394,7 +423,8 @@
 <tr>
 <td data-label="Name"><code>TRAFFIC_CALMING_DEVICE
             <td data-label="Description">
-<p>A structure on the carriageway to control the speed of vehicles.</p><aside class="aside-note"><mark>NOTE</mark> Definition from ISO 6707-1: Encouragement of restrained and considerate behaviour by means such as road humps and reductions in width of the travelled way (US:traffic restraint, UK:speed bump).</aside><aside class="aside-note"><mark>NOTE</mark> Definition from PIARC: Local carriageway layout (staggered section, choker) or physical device (central island, round- or flat-top road hump, speed bump, rumble strips, etc.) to control the speed of road vehicles.</aside>
+<p>A structure on the carriageway to control the speed of vehicles.</p><p>NOTE Definition from ISO 6707-1: Encouragement of restrained and considerate behaviour by means such as road humps and reductions in width of the travelled way (US:traffic restraint, UK:speed bump).
+NOTE Definition from PIARC: Local carriageway layout (staggered section, choker) or physical device (central island, round- or flat-top road hump, speed bump, rumble strips, etc.) to control the speed of road vehicles.</p>
 </td>
 </code></td></tr>
 <tr>
@@ -435,15 +465,19 @@
 <span class="tok-p">,</span><span class="tok-n">CROSS_BRACING</span>
 <span class="tok-p">,</span><span class="tok-n">DECK</span>
 <span class="tok-p">,</span><span class="tok-n">DILATATIONPANEL</span>
+<span class="tok-p">,</span><span class="tok-n">DUCTBANK</span>
 <span class="tok-p">,</span><span class="tok-n">ENTRANCEWORKS</span>
 <span class="tok-p">,</span><span class="tok-n">GIRDER</span>
 <span class="tok-p">,</span><span class="tok-n">GRID</span>
 <span class="tok-p">,</span><span class="tok-n">MAST</span>
 <span class="tok-p">,</span><span class="tok-n">PIER</span>
+<span class="tok-p">,</span><span class="tok-n">PRESUPPORTFACE</span>
+<span class="tok-p">,</span><span class="tok-n">PRESUPPORTVAULT</span>
 <span class="tok-p">,</span><span class="tok-n">PYLON</span>
 <span class="tok-p">,</span><span class="tok-n">RAIL_MECHANICAL_EQUIPMENT_ASSEMBLY</span>
 <span class="tok-p">,</span><span class="tok-n">REINFORCEMENT_UNIT</span>
 <span class="tok-p">,</span><span class="tok-n">RIGID_FRAME</span>
+<span class="tok-p">,</span><span class="tok-n">RING</span>
 <span class="tok-p">,</span><span class="tok-n">SHELTER</span>
 <span class="tok-p">,</span><span class="tok-n">SIGNALASSEMBLY</span>
 <span class="tok-p">,</span><span class="tok-n">SLAB_FIELD</span>
@@ -473,9 +507,9 @@
 </p>
 <p>
 <small>
-<span id="contributors">5 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="stefkeB" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+U1Q8L3RleHQ+Cjwvc3ZnPg==" title="stefkeB"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="luz paz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luz paz"/> </span><br/>
-<span id="last-change">Last change: <em>Closing definitions with full stop for consistency</em> by ArturTomczak on 2026-04-27T16:08:07+02:00</span>
+<span id="contributors">6 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="stefkeB" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+U1Q8L3RleHQ+Cjwvc3ZnPg==" title="stefkeB"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="luz paz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luz paz"/> </span><br/>
+<span id="last-change">Last change: <em>[TM14] Add documentation for new enum literals</em> by Thomas Krijnen on 2026-06-02T13:11:32+02:00</span>
 </small>
 </p>
 <p>
@@ -509,7 +543,6 @@
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

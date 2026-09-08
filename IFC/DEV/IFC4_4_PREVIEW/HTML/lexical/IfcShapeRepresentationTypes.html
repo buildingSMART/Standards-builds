@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.18.6.3 IfcShapeRepresentationTypes - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -448,6 +449,10 @@
 <span class="tok-kd">BEGIN</span>
 <span class="tok-n">Count</span> <span class="tok-o">:=</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">Items</span> <span class="tok-p">|</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCMANIFOLDSOLIDBREP'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">temp</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END</span><span class="tok-p">;</span>
+<span class="tok-s1">'Voxel'</span> <span class="tok-o">:</span>
+<span class="tok-kd">BEGIN</span>
+<span class="tok-n">Count</span> <span class="tok-o">:=</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">Items</span> <span class="tok-p">|</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCVOXELGRID'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">temp</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-kd">END</span><span class="tok-p">;</span>
 <span class="tok-s1">'BoundingBox'</span> <span class="tok-o">:</span>
 <span class="tok-kd">BEGIN</span>
 <span class="tok-n">Count</span> <span class="tok-o">:=</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-nb">QUERY</span><span class="tok-p">(</span><span class="tok-n">temp</span> <span class="tok-o">&lt;*</span> <span class="tok-n">Items</span> <span class="tok-p">|</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCBOUNDINGBOX'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">temp</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
@@ -538,7 +543,6 @@ Because bringing back headers required to go back in time to previous version, I
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>
