@@ -1,0 +1,744 @@
+<html lang="en">
+<head>
+<link href="../../../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../../../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>4.1.6.1 Object Typing - IFC 4.4.0.0 Documentation</title>
+<link href="../../../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../../.." id="site-root"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../../../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="../../..">
+                             Cover
+                        </a>
+<a href="../../../toc.html">
+                             Contents
+                        </a>
+<a href="../../../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../../../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../../../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../../../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../../../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a class="current" href="../../content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../../../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../../../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a href="../../../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="../../../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../../../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../../../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../../../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../../../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../../../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../../../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../../../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../../../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>4.1.6.1 Object Typing</h1>
+<p>Object occurrences can be defined by a particular object type, using the <em>Object Typing</em> concept. A pair of entities are defined for most semantic objects - an object occurrence entity and a corresponding object type entity.</p>
+<aside class="aside-example"><mark>EXAMPLE</mark>  The <em><a href="../../../lexical/IfcTank.html">IfcTank</a></em> is the object occurrence entity that has a corresponding <em><a href="../../../lexical/IfcTankType.html">IfcTankType</a></em> being the object type entity.</aside>
+<p>On instance level, an object occurrence instance may have:</p>
+<ul>
+<li>similar state as its object type instance by applying all characteristics defined at the type;</li>
+<li>overridden state for particular characteristics;</li>
+<li>no defined object type instance.</li>
+</ul>
+<p>Characteristics defined at the object type level may include:</p>
+<ul>
+<li>common naming and predefined type;</li>
+<li>common properties within a type driven property set;</li>
+<li>common geometry representations, applied as mapped representation to each occurrence;</li>
+<li>common material assignments (with exception of material set usages);</li>
+<li>common definition of a decomposition structure.</li>
+</ul>
+<p>Many object occurrence and object type entities have an attribute named <em>PredefinedType</em> consisting of a specific enumeration. Such predefined type essentially provides another level of inheritance to further differentiate objects without the need for additional entities. Predefined types are not just informational; various rules apply such as applicable property sets, part composition, and distribution ports. If the object is typed by an <em><a href="../../../lexical/IfcTypeObject.html">IfcTypeObject</a></em>, then the <em>PredefinedType</em> at the <em><a href="../../../lexical/IfcObject.html">IfcObject</a></em> occurrence shall only be used if the <em>PredefinedType</em> at <em><a href="../../../lexical/IfcTypeObject.html">IfcTypeObject</a></em> is set to <em>NOTDEFINED</em>.</p>
+<aside class="aside-example"><mark>EXAMPLE</mark>  For scenarios of object types having part compositions, such parts may be reflected at object occurrences having separate state. For example, a <em>wall type</em> may define a particular arrangement of studs, a <em>wall occurrence</em> may reflect the same arrangement of studs, and studs within the wall occurrence may participate in specific relationships that do not exist at the type such as being connected to an electrical junction box.</aside><aside class="aside-note"><mark>NOTE</mark>  If the object type has aggregated elements, such objects are reflected at the object occurrence using the <em><a href="../../../lexical/IfcRelDefinesByObject.html">IfcRelDefinesByObject</a></em> relationship.</aside>
+<p class="search-skip">
+    The following diagram shows the generic classes and relationships used when applying this concept.
+    In addition, concepts may have particular importance to common or standardised industry practices and scenarios. For these specific usage scenarios, the table below shows a recommended list of general usage patterns that users may adopt.
+</p>
+<div class="concept-diagram-canvas" data-diagram="concept">
+<figure><a class="anchor" id="Figure-4.1.6.1.A"></a><svg height="699px" viewbox="0.00 0.00 1016.00 935.00" width="762px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 931)">
+<title>G</title>
+<polygon fill="transparent" points="-4,4 -4,-931 1012,-931 1012,4 -4,4" stroke="transparent"></polygon>
+<!-- IfcObject -->
+<g class="node" id="node1">
+<title>IfcObject</title>
+<polygon fill="#1976d2" points="8,-896 8,-923 258,-923 258,-896 8,-896" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-896 258,-896 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="14" y="-906.8">IfcObject</text>
+<polygon fill="#1976d2" points="258,-896 258,-923 304,-923 304,-896 258,-896" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-896 304,-896 " stroke="black"></polyline>
+<polygon fill="white" points="8,-869 8,-896 258,-896 258,-869 8,-869" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-869 258,-869 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-878.8">1. GlobalId</text>
+<polygon fill="white" points="258,-869 258,-896 304,-896 304,-869 258,-869" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-869 304,-869 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-878.8">[1:1]</text>
+<polygon fill="white" points="8,-842 8,-869 258,-869 258,-842 8,-842" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-842 258,-842 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-851.8">2. OwnerHistory</text>
+<polygon fill="white" points="258,-842 258,-869 304,-869 304,-842 258,-842" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-842 304,-842 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-851.8">[0:1]</text>
+<polygon fill="white" points="8,-815 8,-842 258,-842 258,-815 8,-815" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-815 258,-815 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-824.8">3. Name</text>
+<polygon fill="white" points="258,-815 258,-842 304,-842 304,-815 258,-815" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-815 304,-815 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-824.8">[0:1]</text>
+<polygon fill="white" points="8,-788 8,-815 258,-815 258,-788 8,-788" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-788 258,-788 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-797.8">4. Description</text>
+<polygon fill="white" points="258,-788 258,-815 304,-815 304,-788 258,-788" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-788 304,-788 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-797.8">[0:1]</text>
+<polygon fill="white" points="8,-761 8,-788 258,-788 258,-761 8,-761" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-761 258,-761 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-770.8">      Decomposes</text>
+<polygon fill="white" points="258,-761 258,-788 304,-788 304,-761 258,-761" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-761 304,-761 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-770.8">[0:1]</text>
+<polygon fill="white" points="8,-734 8,-761 258,-761 258,-734 8,-734" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-734 258,-734 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-743.8">      HasAssignments</text>
+<polygon fill="white" points="258,-734 258,-761 304,-761 304,-734 258,-734" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-734 304,-734 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-743.8">[0:?]</text>
+<polygon fill="white" points="8,-707 8,-734 258,-734 258,-707 8,-707" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-707 258,-707 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-716.8">      HasAssociations</text>
+<polygon fill="white" points="258,-707 258,-734 304,-734 304,-707 258,-707" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-707 304,-707 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-716.8">[0:?]</text>
+<polygon fill="white" points="8,-680 8,-707 258,-707 258,-680 8,-680" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-680 258,-680 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-689.8">      HasContext</text>
+<polygon fill="white" points="258,-680 258,-707 304,-707 304,-680 258,-680" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-680 304,-680 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-689.8">[0:1]</text>
+<polygon fill="white" points="8,-653 8,-680 258,-680 258,-653 8,-653" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-653 258,-653 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-662.8">      IsDecomposedBy</text>
+<polygon fill="white" points="258,-653 258,-680 304,-680 304,-653 258,-653" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-653 304,-653 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-662.8">[0:?]</text>
+<polygon fill="white" points="8,-626 8,-653 258,-653 258,-626 8,-626" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-626 258,-626 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-635.8">      IsNestedBy</text>
+<polygon fill="white" points="258,-626 258,-653 304,-653 304,-626 258,-626" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-626 304,-626 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-635.8">[0:?]</text>
+<polygon fill="white" points="8,-599 8,-626 258,-626 258,-599 8,-599" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-599 258,-599 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-608.8">      Nests</text>
+<polygon fill="white" points="258,-599 258,-626 304,-626 304,-599 258,-599" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-599 304,-599 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-608.8">[0:1]</text>
+<polygon fill="white" points="8,-572 8,-599 258,-599 258,-572 8,-572" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-572 258,-572 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-581.8">5. ObjectType</text>
+<polygon fill="white" points="258,-572 258,-599 304,-599 304,-572 258,-572" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-572 304,-572 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-581.8">[0:1]</text>
+<polygon fill="white" points="8,-545 8,-572 258,-572 258,-545 8,-545" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-545 258,-545 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-554.8">      Declares</text>
+<polygon fill="white" points="258,-545 258,-572 304,-572 304,-545 258,-545" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-545 304,-545 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-554.8">[0:?]</text>
+<polygon fill="white" points="8,-518 8,-545 258,-545 258,-518 8,-518" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-518 258,-518 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-527.8">      IsDeclaredBy</text>
+<polygon fill="white" points="258,-518 258,-545 304,-545 304,-518 258,-518" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-518 304,-518 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-527.8">[0:1]</text>
+<polygon fill="white" points="8,-491 8,-518 258,-518 258,-491 8,-491" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-491 258,-491 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-500.8">      IsDefinedBy</text>
+<polygon fill="white" points="258,-491 258,-518 304,-518 304,-491 258,-491" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-491 304,-491 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-500.8">[0:?]</text>
+<polygon fill="#eeeeee" points="8,-464 8,-491 258,-491 258,-464 8,-464" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-464 258,-464 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="99.5" y="-474.8">HasType</text>
+<polygon fill="#eeeeee" points="258,-464 258,-491 304,-491 304,-464 258,-464" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-464 304,-464 " stroke="black"></polyline>
+<polygon fill="#dddddd" points="8,-437 8,-464 258,-464 258,-437 8,-437" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-437 258,-437 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-446.8">      IsTypedBy</text>
+<polygon fill="#dddddd" points="258,-437 258,-464 304,-464 304,-437 258,-437" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-437 304,-437 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-446.8">[0:1]</text>
+</g>
+<!-- IfcRelDefinesByType -->
+<g class="node" id="node2">
+<title>IfcRelDefinesByType</title>
+<polygon fill="#1976d2" points="356,-572 356,-599 606,-599 606,-572 356,-572" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-572 606,-572 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="362" y="-582.8">IfcRelDefinesByType</text>
+<polygon fill="#1976d2" points="606,-572 606,-599 652,-599 652,-572 606,-572" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-572 652,-572 " stroke="black"></polyline>
+<polygon fill="white" points="356,-545 356,-572 606,-572 606,-545 356,-545" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-545 606,-545 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-554.8">1. GlobalId</text>
+<polygon fill="white" points="606,-545 606,-572 652,-572 652,-545 606,-545" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-545 652,-545 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-554.8">[1:1]</text>
+<polygon fill="white" points="356,-518 356,-545 606,-545 606,-518 356,-518" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-518 606,-518 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-527.8">2. OwnerHistory</text>
+<polygon fill="white" points="606,-518 606,-545 652,-545 652,-518 606,-518" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-518 652,-518 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-527.8">[0:1]</text>
+<polygon fill="white" points="356,-491 356,-518 606,-518 606,-491 356,-491" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-491 606,-491 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-500.8">3. Name</text>
+<polygon fill="white" points="606,-491 606,-518 652,-518 652,-491 606,-491" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-491 652,-491 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-500.8">[0:1]</text>
+<polygon fill="white" points="356,-464 356,-491 606,-491 606,-464 356,-464" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-464 606,-464 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-473.8">4. Description</text>
+<polygon fill="white" points="606,-464 606,-491 652,-491 652,-464 606,-464" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-464 652,-464 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-473.8">[0:1]</text>
+<polygon fill="#dddddd" points="356,-437 356,-464 606,-464 606,-437 356,-437" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-437 606,-437 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-446.8">5. RelatedObjects</text>
+<polygon fill="#dddddd" points="606,-437 606,-464 652,-464 652,-437 606,-437" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-437 652,-437 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="614" y="-446.8">[1:?]</text>
+<polygon fill="#eeeeee" points="356,-410 356,-437 606,-437 606,-410 356,-410" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-410 606,-410 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="429" y="-420.8">RelatingType</text>
+<polygon fill="#eeeeee" points="606,-410 606,-437 652,-437 652,-410 606,-410" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-410 652,-410 " stroke="black"></polyline>
+<polygon fill="#dddddd" points="356,-383 356,-410 606,-410 606,-383 356,-383" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-383 606,-383 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-392.8">6. RelatingType</text>
+<polygon fill="#dddddd" points="606,-383 606,-410 652,-410 652,-383 606,-383" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-383 652,-383 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-392.8">[1:1]</text>
+</g>
+<!-- IfcObject&#45;&gt;IfcRelDefinesByType -->
+<g class="edge" id="edge1">
+<title>IfcObject:IsTypedBy1-&gt;IfcRelDefinesByType:RelatedObjects0</title>
+<path d="M315.12,-450C329.73,-450 355,-450 355,-450" fill="none" stroke="black"></path>
+<polygon fill="black" points="315,-446.5 305,-450 315,-453.5 315,-446.5" stroke="black"></polygon>
+</g>
+<!-- IfcTypeObject -->
+<g class="node" id="node3">
+<title>IfcTypeObject</title>
+<polygon fill="#1976d2" points="704,-409 704,-436 954,-436 954,-409 704,-409" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-409 954,-409 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="710" y="-419.8">IfcTypeObject</text>
+<polygon fill="#1976d2" points="954,-409 954,-436 1000,-436 1000,-409 954,-409" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-409 1000,-409 " stroke="black"></polyline>
+<polygon fill="white" points="704,-382 704,-409 954,-409 954,-382 704,-382" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-382 954,-382 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-391.8">1. GlobalId</text>
+<polygon fill="white" points="954,-382 954,-409 1000,-409 1000,-382 954,-382" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-382 1000,-382 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-391.8">[1:1]</text>
+<polygon fill="white" points="704,-355 704,-382 954,-382 954,-355 704,-355" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-355 954,-355 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-364.8">2. OwnerHistory</text>
+<polygon fill="white" points="954,-355 954,-382 1000,-382 1000,-355 954,-355" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-355 1000,-355 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-364.8">[0:1]</text>
+<polygon fill="#eeeeee" points="704,-328 704,-355 954,-355 954,-328 704,-328" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-328 954,-328 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="788" y="-338.8">TypeName</text>
+<polygon fill="#eeeeee" points="954,-328 954,-355 1000,-355 1000,-328 954,-328" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-328 1000,-328 " stroke="black"></polyline>
+<polygon fill="#eeeeee" points="704,-301 704,-328 954,-328 954,-301 704,-301" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-301 954,-301 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-310.8">3. Name</text>
+<polygon fill="#eeeeee" points="954,-301 954,-328 1000,-328 1000,-301 954,-301" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-301 1000,-301 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-310.8">[0:1]</text>
+<polygon fill="white" points="704,-274 704,-301 954,-301 954,-274 704,-274" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-274 954,-274 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-283.8">4. Description</text>
+<polygon fill="white" points="954,-274 954,-301 1000,-301 1000,-274 954,-274" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-274 1000,-274 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-283.8">[0:1]</text>
+<polygon fill="white" points="704,-247 704,-274 954,-274 954,-247 704,-247" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-247 954,-247 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-256.8">      Decomposes</text>
+<polygon fill="white" points="954,-247 954,-274 1000,-274 1000,-247 954,-247" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-247 1000,-247 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-256.8">[0:1]</text>
+<polygon fill="white" points="704,-220 704,-247 954,-247 954,-220 704,-220" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-220 954,-220 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-229.8">      HasAssignments</text>
+<polygon fill="white" points="954,-220 954,-247 1000,-247 1000,-220 954,-220" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-220 1000,-220 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-229.8">[0:?]</text>
+<polygon fill="white" points="704,-193 704,-220 954,-220 954,-193 704,-193" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-193 954,-193 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-202.8">      HasAssociations</text>
+<polygon fill="white" points="954,-193 954,-220 1000,-220 1000,-193 954,-193" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-193 1000,-193 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-202.8">[0:?]</text>
+<polygon fill="white" points="704,-166 704,-193 954,-193 954,-166 704,-166" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-166 954,-166 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-175.8">      HasContext</text>
+<polygon fill="white" points="954,-166 954,-193 1000,-193 1000,-166 954,-166" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-166 1000,-166 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-175.8">[0:1]</text>
+<polygon fill="white" points="704,-139 704,-166 954,-166 954,-139 704,-139" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-139 954,-139 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-148.8">      IsDecomposedBy</text>
+<polygon fill="white" points="954,-139 954,-166 1000,-166 1000,-139 954,-139" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-139 1000,-139 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-148.8">[0:?]</text>
+<polygon fill="white" points="704,-112 704,-139 954,-139 954,-112 704,-112" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-112 954,-112 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-121.8">      IsNestedBy</text>
+<polygon fill="white" points="954,-112 954,-139 1000,-139 1000,-112 954,-112" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-112 1000,-112 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-121.8">[0:?]</text>
+<polygon fill="white" points="704,-85 704,-112 954,-112 954,-85 704,-85" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-85 954,-85 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-94.8">      Nests</text>
+<polygon fill="white" points="954,-85 954,-112 1000,-112 1000,-85 954,-85" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-85 1000,-85 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-94.8">[0:1]</text>
+<polygon fill="white" points="704,-58 704,-85 954,-85 954,-58 704,-58" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-58 954,-58 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-67.8">5. ApplicableOccurrence</text>
+<polygon fill="white" points="954,-58 954,-85 1000,-85 1000,-58 954,-58" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-58 1000,-58 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-67.8">[0:1]</text>
+<polygon fill="white" points="704,-31 704,-58 954,-58 954,-31 704,-31" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-31 954,-31 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-40.8">6. HasPropertySets</text>
+<polygon fill="white" points="954,-31 954,-58 1000,-58 1000,-31 954,-31" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-31 1000,-31 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="962" y="-40.8">[1:?]</text>
+<polygon fill="white" points="704,-4 704,-31 954,-31 954,-4 704,-4" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-4 954,-4 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="710" y="-13.8">      Types</text>
+<polygon fill="white" points="954,-4 954,-31 1000,-31 1000,-4 954,-4" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-4 1000,-4 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="960" y="-13.8">[0:1]</text>
+</g>
+<!-- IfcRelDefinesByType&#45;&gt;IfcTypeObject -->
+<g class="edge" id="edge2">
+<title>IfcRelDefinesByType:RelatingType1-&gt;IfcTypeObject:IfcTypeObject0</title>
+<path d="M653,-423C653,-423 678.27,-423 692.88,-423" fill="none" stroke="black"></path>
+<polygon fill="black" points="693,-426.5 703,-423 693,-419.5 693,-426.5" stroke="black"></polygon>
+</g>
+</g>
+</svg><figcaption>Figure 4.1.6.1.A<a class="link" href="#Figure-4.1.6.1.A"><i data-feather="link"></i></a></figcaption></figure>
+</div>
+<h3><a class="anchor" id="General-Usage"></a>General Usage<a class="link" href="#General-Usage"><i data-feather="link"></i></a></h3><figure><a class="anchor" id="Table-A"></a><table>
+<thead>
+<tr><th>ApplicableEntity<br/> </th><th>RelatingType<br/><a href="../../../lexical/IfcRelDefinesByType.html">IfcRelDefinesByType</a>.RelatingType  </th></tr>
+</thead>
+<tbody>
+<tr><td><a href="../../../lexical/IfcActuator.html">IfcActuator</a>                         </td><td><a href="../../../lexical/IfcActuatorType.html">IfcActuatorType</a>                                   </td></tr>
+<tr><td><a href="../../../lexical/IfcAirTerminal.html">IfcAirTerminal</a>                      </td><td><a href="../../../lexical/IfcAirTerminalType.html">IfcAirTerminalType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcAirTerminalBox.html">IfcAirTerminalBox</a>                   </td><td><a href="../../../lexical/IfcAirTerminalBoxType.html">IfcAirTerminalBoxType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcAirToAirHeatRecovery.html">IfcAirToAirHeatRecovery</a>             </td><td><a href="../../../lexical/IfcAirToAirHeatRecoveryType.html">IfcAirToAirHeatRecoveryType</a>                       </td></tr>
+<tr><td><a href="../../../lexical/IfcAlarm.html">IfcAlarm</a>                            </td><td><a href="../../../lexical/IfcAlarmType.html">IfcAlarmType</a>                                      </td></tr>
+<tr><td><a href="../../../lexical/IfcArchElement.html">IfcArchElement</a>                      </td><td><a href="../../../lexical/IfcArchElementType.html">IfcArchElementType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcAudioVisualAppliance.html">IfcAudioVisualAppliance</a>             </td><td><a href="../../../lexical/IfcAudioVisualApplianceType.html">IfcAudioVisualApplianceType</a>                       </td></tr>
+<tr><td><a href="../../../lexical/IfcBeam.html">IfcBeam</a>                             </td><td><a href="../../../lexical/IfcBeamType.html">IfcBeamType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcBearing.html">IfcBearing</a>                          </td><td><a href="../../../lexical/IfcBearingType.html">IfcBearingType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcBoiler.html">IfcBoiler</a>                           </td><td><a href="../../../lexical/IfcBoilerType.html">IfcBoilerType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcBorehole.html">IfcBorehole</a>                         </td><td><a href="../../../lexical/IfcBoreholeType.html">IfcBoreholeType</a>                                   </td></tr>
+<tr><td><a href="../../../lexical/IfcBuildingElementPart.html">IfcBuildingElementPart</a>              </td><td><a href="../../../lexical/IfcBuildingElementPartType.html">IfcBuildingElementPartType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcBuildingElementProxy.html">IfcBuildingElementProxy</a>             </td><td><a href="../../../lexical/IfcBuildingElementProxyType.html">IfcBuildingElementProxyType</a>                       </td></tr>
+<tr><td><a href="../../../lexical/IfcBuiltElement.html">IfcBuiltElement</a>                     </td><td><a href="../../../lexical/IfcBuiltElementType.html">IfcBuiltElementType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcBurner.html">IfcBurner</a>                           </td><td><a href="../../../lexical/IfcBurnerType.html">IfcBurnerType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcCableCarrierFitting.html">IfcCableCarrierFitting</a>              </td><td><a href="../../../lexical/IfcCableCarrierFittingType.html">IfcCableCarrierFittingType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcCableCarrierSegment.html">IfcCableCarrierSegment</a>              </td><td><a href="../../../lexical/IfcCableCarrierSegmentType.html">IfcCableCarrierSegmentType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcCableFitting.html">IfcCableFitting</a>                     </td><td><a href="../../../lexical/IfcCableFittingType.html">IfcCableFittingType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcCableSegment.html">IfcCableSegment</a>                     </td><td><a href="../../../lexical/IfcCableSegmentType.html">IfcCableSegmentType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcCaissonFoundation.html">IfcCaissonFoundation</a>                </td><td><a href="../../../lexical/IfcCaissonFoundationType.html">IfcCaissonFoundationType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcChiller.html">IfcChiller</a>                          </td><td><a href="../../../lexical/IfcChillerType.html">IfcChillerType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcChimney.html">IfcChimney</a>                          </td><td><a href="../../../lexical/IfcChimneyType.html">IfcChimneyType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcCivilElement.html">IfcCivilElement</a>                     </td><td><a href="../../../lexical/IfcCivilElementType.html">IfcCivilElementType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcCoil.html">IfcCoil</a>                             </td><td><a href="../../../lexical/IfcCoilType.html">IfcCoilType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcColumn.html">IfcColumn</a>                           </td><td><a href="../../../lexical/IfcColumnType.html">IfcColumnType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcCommunicationsAppliance.html">IfcCommunicationsAppliance</a>          </td><td><a href="../../../lexical/IfcCommunicationsApplianceType.html">IfcCommunicationsApplianceType</a>                    </td></tr>
+<tr><td><a href="../../../lexical/IfcCompressor.html">IfcCompressor</a>                       </td><td><a href="../../../lexical/IfcCompressorType.html">IfcCompressorType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcCondenser.html">IfcCondenser</a>                        </td><td><a href="../../../lexical/IfcCondenserType.html">IfcCondenserType</a>                                  </td></tr>
+<tr><td><a href="../../../lexical/IfcConstructionEquipmentResource.html">IfcConstructionEquipmentResource</a>    </td><td><a href="../../../lexical/IfcConstructionEquipmentResourceType.html">IfcConstructionEquipmentResourceType</a>              </td></tr>
+<tr><td><a href="../../../lexical/IfcConstructionMaterialResource.html">IfcConstructionMaterialResource</a>     </td><td><a href="../../../lexical/IfcConstructionMaterialResourceType.html">IfcConstructionMaterialResourceType</a>               </td></tr>
+<tr><td><a href="../../../lexical/IfcConstructionProductResource.html">IfcConstructionProductResource</a>      </td><td><a href="../../../lexical/IfcConstructionProductResourceType.html">IfcConstructionProductResourceType</a>                </td></tr>
+<tr><td><a href="../../../lexical/IfcConstructionResource.html">IfcConstructionResource</a>             </td><td><a href="../../../lexical/IfcConstructionResourceType.html">IfcConstructionResourceType</a>                       </td></tr>
+<tr><td><a href="../../../lexical/IfcController.html">IfcController</a>                       </td><td><a href="../../../lexical/IfcControllerType.html">IfcControllerType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcConveyorSegment.html">IfcConveyorSegment</a>                  </td><td><a href="../../../lexical/IfcConveyorSegmentType.html">IfcConveyorSegmentType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcCooledBeam.html">IfcCooledBeam</a>                       </td><td><a href="../../../lexical/IfcCooledBeamType.html">IfcCooledBeamType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcCoolingTower.html">IfcCoolingTower</a>                     </td><td><a href="../../../lexical/IfcCoolingTowerType.html">IfcCoolingTowerType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcCourse.html">IfcCourse</a>                           </td><td><a href="../../../lexical/IfcCourseType.html">IfcCourseType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcCovering.html">IfcCovering</a>                         </td><td><a href="../../../lexical/IfcCoveringType.html">IfcCoveringType</a>                                   </td></tr>
+<tr><td><a href="../../../lexical/IfcCrewResource.html">IfcCrewResource</a>                     </td><td><a href="../../../lexical/IfcCrewResourceType.html">IfcCrewResourceType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcCurtainWall.html">IfcCurtainWall</a>                      </td><td><a href="../../../lexical/IfcCurtainWallType.html">IfcCurtainWallType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcDamper.html">IfcDamper</a>                           </td><td><a href="../../../lexical/IfcDamperType.html">IfcDamperType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcDeepFoundation.html">IfcDeepFoundation</a>                   </td><td><a href="../../../lexical/IfcDeepFoundationType.html">IfcDeepFoundationType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcDiscreteAccessory.html">IfcDiscreteAccessory</a>                </td><td><a href="../../../lexical/IfcDiscreteAccessoryType.html">IfcDiscreteAccessoryType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcDistributionBoard.html">IfcDistributionBoard</a>                </td><td><a href="../../../lexical/IfcDistributionBoardType.html">IfcDistributionBoardType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcDistributionChamberElement.html">IfcDistributionChamberElement</a>       </td><td><a href="../../../lexical/IfcDistributionChamberElementType.html">IfcDistributionChamberElementType</a>                 </td></tr>
+<tr><td><a href="../../../lexical/IfcDistributionControlElement.html">IfcDistributionControlElement</a>       </td><td><a href="../../../lexical/IfcDistributionControlElementType.html">IfcDistributionControlElementType</a>                 </td></tr>
+<tr><td><a href="../../../lexical/IfcDistributionElement.html">IfcDistributionElement</a>              </td><td><a href="../../../lexical/IfcDistributionElementType.html">IfcDistributionElementType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcDistributionFlowElement.html">IfcDistributionFlowElement</a>          </td><td><a href="../../../lexical/IfcDistributionFlowElementType.html">IfcDistributionFlowElementType</a>                    </td></tr>
+<tr><td><a href="../../../lexical/IfcDoor.html">IfcDoor</a>                             </td><td><a href="../../../lexical/IfcDoorType.html">IfcDoorType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcDuctFitting.html">IfcDuctFitting</a>                      </td><td><a href="../../../lexical/IfcDuctFittingType.html">IfcDuctFittingType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcDuctSegment.html">IfcDuctSegment</a>                      </td><td><a href="../../../lexical/IfcDuctSegmentType.html">IfcDuctSegmentType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcDuctSilencer.html">IfcDuctSilencer</a>                     </td><td><a href="../../../lexical/IfcDuctSilencerType.html">IfcDuctSilencerType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcEarthingElement.html">IfcEarthingElement</a>                  </td><td><a href="../../../lexical/IfcEarthingElementType.html">IfcEarthingElementType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricAppliance.html">IfcElectricAppliance</a>                </td><td><a href="../../../lexical/IfcElectricApplianceType.html">IfcElectricApplianceType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricDistributionBoard.html">IfcElectricDistributionBoard</a>        </td><td><a href="../../../lexical/IfcElectricDistributionBoardType.html">IfcElectricDistributionBoardType</a>                  </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricFlowStorageDevice.html">IfcElectricFlowStorageDevice</a>        </td><td><a href="../../../lexical/IfcElectricFlowStorageDeviceType.html">IfcElectricFlowStorageDeviceType</a>                  </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricFlowTreatmentDevice.html">IfcElectricFlowTreatmentDevice</a>      </td><td><a href="../../../lexical/IfcElectricFlowTreatmentDeviceType.html">IfcElectricFlowTreatmentDeviceType</a>                </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricGenerator.html">IfcElectricGenerator</a>                </td><td><a href="../../../lexical/IfcElectricGeneratorType.html">IfcElectricGeneratorType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricMotor.html">IfcElectricMotor</a>                    </td><td><a href="../../../lexical/IfcElectricMotorType.html">IfcElectricMotorType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcElectricTimeControl.html">IfcElectricTimeControl</a>              </td><td><a href="../../../lexical/IfcElectricTimeControlType.html">IfcElectricTimeControlType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcElement.html">IfcElement</a>                          </td><td><a href="../../../lexical/IfcElementType.html">IfcElementType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcElementAssembly.html">IfcElementAssembly</a>                  </td><td><a href="../../../lexical/IfcElementAssemblyType.html">IfcElementAssemblyType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcElementComponent.html">IfcElementComponent</a>                 </td><td><a href="../../../lexical/IfcElementComponentType.html">IfcElementComponentType</a>                           </td></tr>
+<tr><td><a href="../../../lexical/IfcEnergyConversionDevice.html">IfcEnergyConversionDevice</a>           </td><td><a href="../../../lexical/IfcEnergyConversionDeviceType.html">IfcEnergyConversionDeviceType</a>                     </td></tr>
+<tr><td><a href="../../../lexical/IfcEngine.html">IfcEngine</a>                           </td><td><a href="../../../lexical/IfcEngineType.html">IfcEngineType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcEvaporativeCooler.html">IfcEvaporativeCooler</a>                </td><td><a href="../../../lexical/IfcEvaporativeCoolerType.html">IfcEvaporativeCoolerType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcEvaporator.html">IfcEvaporator</a>                       </td><td><a href="../../../lexical/IfcEvaporatorType.html">IfcEvaporatorType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcEvent.html">IfcEvent</a>                            </td><td><a href="../../../lexical/IfcEventType.html">IfcEventType</a>                                      </td></tr>
+<tr><td><a href="../../../lexical/IfcFan.html">IfcFan</a>                              </td><td><a href="../../../lexical/IfcFanType.html">IfcFanType</a>                                        </td></tr>
+<tr><td><a href="../../../lexical/IfcFastener.html">IfcFastener</a>                         </td><td><a href="../../../lexical/IfcFastenerType.html">IfcFastenerType</a>                                   </td></tr>
+<tr><td><a href="../../../lexical/IfcFilter.html">IfcFilter</a>                           </td><td><a href="../../../lexical/IfcFilterType.html">IfcFilterType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcFireSuppressionTerminal.html">IfcFireSuppressionTerminal</a>          </td><td><a href="../../../lexical/IfcFireSuppressionTerminalType.html">IfcFireSuppressionTerminalType</a>                    </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowController.html">IfcFlowController</a>                   </td><td><a href="../../../lexical/IfcFlowControllerType.html">IfcFlowControllerType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowFitting.html">IfcFlowFitting</a>                      </td><td><a href="../../../lexical/IfcFlowFittingType.html">IfcFlowFittingType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowInstrument.html">IfcFlowInstrument</a>                   </td><td><a href="../../../lexical/IfcFlowInstrumentType.html">IfcFlowInstrumentType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowMeter.html">IfcFlowMeter</a>                        </td><td><a href="../../../lexical/IfcFlowMeterType.html">IfcFlowMeterType</a>                                  </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowMovingDevice.html">IfcFlowMovingDevice</a>                 </td><td><a href="../../../lexical/IfcFlowMovingDeviceType.html">IfcFlowMovingDeviceType</a>                           </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowSegment.html">IfcFlowSegment</a>                      </td><td><a href="../../../lexical/IfcFlowSegmentType.html">IfcFlowSegmentType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowStorageDevice.html">IfcFlowStorageDevice</a>                </td><td><a href="../../../lexical/IfcFlowStorageDeviceType.html">IfcFlowStorageDeviceType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowTerminal.html">IfcFlowTerminal</a>                     </td><td><a href="../../../lexical/IfcFlowTerminalType.html">IfcFlowTerminalType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcFlowTreatmentDevice.html">IfcFlowTreatmentDevice</a>              </td><td><a href="../../../lexical/IfcFlowTreatmentDeviceType.html">IfcFlowTreatmentDeviceType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcFooting.html">IfcFooting</a>                          </td><td><a href="../../../lexical/IfcFootingType.html">IfcFootingType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcFurnishingElement.html">IfcFurnishingElement</a>                </td><td><a href="../../../lexical/IfcFurnishingElementType.html">IfcFurnishingElementType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcFurniture.html">IfcFurniture</a>                        </td><td><a href="../../../lexical/IfcFurnitureType.html">IfcFurnitureType</a>                                  </td></tr>
+<tr><td><a href="../../../lexical/IfcGeographicElement.html">IfcGeographicElement</a>                </td><td><a href="../../../lexical/IfcGeographicElementType.html">IfcGeographicElementType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcHeatExchanger.html">IfcHeatExchanger</a>                    </td><td><a href="../../../lexical/IfcHeatExchangerType.html">IfcHeatExchangerType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcHumidifier.html">IfcHumidifier</a>                       </td><td><a href="../../../lexical/IfcHumidifierType.html">IfcHumidifierType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcImpactProtectionDevice.html">IfcImpactProtectionDevice</a>           </td><td><a href="../../../lexical/IfcImpactProtectionDeviceType.html">IfcImpactProtectionDeviceType</a>                     </td></tr>
+<tr><td><a href="../../../lexical/IfcInterceptor.html">IfcInterceptor</a>                      </td><td><a href="../../../lexical/IfcInterceptorType.html">IfcInterceptorType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcJunctionBox.html">IfcJunctionBox</a>                      </td><td><a href="../../../lexical/IfcJunctionBoxType.html">IfcJunctionBoxType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcKerb.html">IfcKerb</a>                             </td><td><a href="../../../lexical/IfcKerbType.html">IfcKerbType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcLaborResource.html">IfcLaborResource</a>                    </td><td><a href="../../../lexical/IfcLaborResourceType.html">IfcLaborResourceType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcLamp.html">IfcLamp</a>                             </td><td><a href="../../../lexical/IfcLampType.html">IfcLampType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcLightFixture.html">IfcLightFixture</a>                     </td><td><a href="../../../lexical/IfcLightFixtureType.html">IfcLightFixtureType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcLiquidTerminal.html">IfcLiquidTerminal</a>                   </td><td><a href="../../../lexical/IfcLiquidTerminalType.html">IfcLiquidTerminalType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcMechanicalFastener.html">IfcMechanicalFastener</a>               </td><td><a href="../../../lexical/IfcMechanicalFastenerType.html">IfcMechanicalFastenerType</a>                         </td></tr>
+<tr><td><a href="../../../lexical/IfcMedicalDevice.html">IfcMedicalDevice</a>                    </td><td><a href="../../../lexical/IfcMedicalDeviceType.html">IfcMedicalDeviceType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcMember.html">IfcMember</a>                           </td><td><a href="../../../lexical/IfcMemberType.html">IfcMemberType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcMobileTelecommunicationsAppliance.html">IfcMobileTelecommunicationsAppliance</a></td><td><a href="../../../lexical/IfcMobileTelecommunicationsApplianceType.html">IfcMobileTelecommunicationsApplianceType</a>          </td></tr>
+<tr><td><a href="../../../lexical/IfcMooringDevice.html">IfcMooringDevice</a>                    </td><td><a href="../../../lexical/IfcMooringDeviceType.html">IfcMooringDeviceType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcMotorConnection.html">IfcMotorConnection</a>                  </td><td><a href="../../../lexical/IfcMotorConnectionType.html">IfcMotorConnectionType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcNavigationElement.html">IfcNavigationElement</a>                </td><td><a href="../../../lexical/IfcNavigationElementType.html">IfcNavigationElementType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcObject.html">IfcObject</a>                           </td><td><a href="../../../lexical/IfcTypeObject.html">IfcTypeObject</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcOutlet.html">IfcOutlet</a>                           </td><td><a href="../../../lexical/IfcOutletType.html">IfcOutletType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcPavement.html">IfcPavement</a>                         </td><td><a href="../../../lexical/IfcPavementType.html">IfcPavementType</a>                                   </td></tr>
+<tr><td><a href="../../../lexical/IfcPile.html">IfcPile</a>                             </td><td><a href="../../../lexical/IfcPileType.html">IfcPileType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcPipeFitting.html">IfcPipeFitting</a>                      </td><td><a href="../../../lexical/IfcPipeFittingType.html">IfcPipeFittingType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcPipeSegment.html">IfcPipeSegment</a>                      </td><td><a href="../../../lexical/IfcPipeSegmentType.html">IfcPipeSegmentType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcPlate.html">IfcPlate</a>                            </td><td><a href="../../../lexical/IfcPlateType.html">IfcPlateType</a>                                      </td></tr>
+<tr><td><a href="../../../lexical/IfcProcedure.html">IfcProcedure</a>                        </td><td><a href="../../../lexical/IfcProcedureType.html">IfcProcedureType</a>                                  </td></tr>
+<tr><td><a href="../../../lexical/IfcProcess.html">IfcProcess</a>                          </td><td><a href="../../../lexical/IfcTypeProcess.html">IfcTypeProcess</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcProduct.html">IfcProduct</a>                          </td><td><a href="../../../lexical/IfcTypeProduct.html">IfcTypeProduct</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcProtectiveDevice.html">IfcProtectiveDevice</a>                 </td><td><a href="../../../lexical/IfcProtectiveDeviceType.html">IfcProtectiveDeviceType</a>                           </td></tr>
+<tr><td><a href="../../../lexical/IfcProtectiveDeviceTrippingUnit.html">IfcProtectiveDeviceTrippingUnit</a>     </td><td><a href="../../../lexical/IfcProtectiveDeviceTrippingUnitType.html">IfcProtectiveDeviceTrippingUnitType</a>               </td></tr>
+<tr><td><a href="../../../lexical/IfcPump.html">IfcPump</a>                             </td><td><a href="../../../lexical/IfcPumpType.html">IfcPumpType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcRail.html">IfcRail</a>                             </td><td><a href="../../../lexical/IfcRailType.html">IfcRailType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcRailing.html">IfcRailing</a>                          </td><td><a href="../../../lexical/IfcRailingType.html">IfcRailingType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcRamp.html">IfcRamp</a>                             </td><td><a href="../../../lexical/IfcRampType.html">IfcRampType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcRampFlight.html">IfcRampFlight</a>                       </td><td><a href="../../../lexical/IfcRampFlightType.html">IfcRampFlightType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcReinforcingBar.html">IfcReinforcingBar</a>                   </td><td><a href="../../../lexical/IfcReinforcingBarType.html">IfcReinforcingBarType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcReinforcingElement.html">IfcReinforcingElement</a>               </td><td><a href="../../../lexical/IfcReinforcingElementType.html">IfcReinforcingElementType</a>                         </td></tr>
+<tr><td><a href="../../../lexical/IfcReinforcingMesh.html">IfcReinforcingMesh</a>                  </td><td><a href="../../../lexical/IfcReinforcingMeshType.html">IfcReinforcingMeshType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcResource.html">IfcResource</a>                         </td><td><a href="../../../lexical/IfcTypeResource.html">IfcTypeResource</a>                                   </td></tr>
+<tr><td><a href="../../../lexical/IfcRoof.html">IfcRoof</a>                             </td><td><a href="../../../lexical/IfcRoofType.html">IfcRoofType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcSanitaryTerminal.html">IfcSanitaryTerminal</a>                 </td><td><a href="../../../lexical/IfcSanitaryTerminalType.html">IfcSanitaryTerminalType</a>                           </td></tr>
+<tr><td><a href="../../../lexical/IfcSensor.html">IfcSensor</a>                           </td><td><a href="../../../lexical/IfcSensorType.html">IfcSensorType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcShadingDevice.html">IfcShadingDevice</a>                    </td><td><a href="../../../lexical/IfcShadingDeviceType.html">IfcShadingDeviceType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcSign.html">IfcSign</a>                             </td><td><a href="../../../lexical/IfcSignType.html">IfcSignType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcSignal.html">IfcSignal</a>                           </td><td><a href="../../../lexical/IfcSignalType.html">IfcSignalType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcSlab.html">IfcSlab</a>                             </td><td><a href="../../../lexical/IfcSlabType.html">IfcSlabType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcSolarDevice.html">IfcSolarDevice</a>                      </td><td><a href="../../../lexical/IfcSolarDeviceType.html">IfcSolarDeviceType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcSpace.html">IfcSpace</a>                            </td><td><a href="../../../lexical/IfcSpaceType.html">IfcSpaceType</a>                                      </td></tr>
+<tr><td><a href="../../../lexical/IfcSpaceHeater.html">IfcSpaceHeater</a>                      </td><td><a href="../../../lexical/IfcSpaceHeaterType.html">IfcSpaceHeaterType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcSpatialElement.html">IfcSpatialElement</a>                   </td><td><a href="../../../lexical/IfcSpatialElementType.html">IfcSpatialElementType</a>                             </td></tr>
+<tr><td><a href="../../../lexical/IfcSpatialStructureElement.html">IfcSpatialStructureElement</a>          </td><td><a href="../../../lexical/IfcSpatialStructureElementType.html">IfcSpatialStructureElementType</a>                    </td></tr>
+<tr><td><a href="../../../lexical/IfcSpatialZone.html">IfcSpatialZone</a>                      </td><td><a href="../../../lexical/IfcSpatialZoneType.html">IfcSpatialZoneType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcStackTerminal.html">IfcStackTerminal</a>                    </td><td><a href="../../../lexical/IfcStackTerminalType.html">IfcStackTerminalType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcStair.html">IfcStair</a>                            </td><td><a href="../../../lexical/IfcStairType.html">IfcStairType</a>                                      </td></tr>
+<tr><td><a href="../../../lexical/IfcStairFlight.html">IfcStairFlight</a>                      </td><td><a href="../../../lexical/IfcStairFlightType.html">IfcStairFlightType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcSubContractResource.html">IfcSubContractResource</a>              </td><td><a href="../../../lexical/IfcSubContractResourceType.html">IfcSubContractResourceType</a>                        </td></tr>
+<tr><td><a href="../../../lexical/IfcSwitchingDevice.html">IfcSwitchingDevice</a>                  </td><td><a href="../../../lexical/IfcSwitchingDeviceType.html">IfcSwitchingDeviceType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcSystemFurnitureElement.html">IfcSystemFurnitureElement</a>           </td><td><a href="../../../lexical/IfcSystemFurnitureElementType.html">IfcSystemFurnitureElementType</a>                     </td></tr>
+<tr><td><a href="../../../lexical/IfcTank.html">IfcTank</a>                             </td><td><a href="../../../lexical/IfcTankType.html">IfcTankType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcTask.html">IfcTask</a>                             </td><td><a href="../../../lexical/IfcTaskType.html">IfcTaskType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcTendon.html">IfcTendon</a>                           </td><td><a href="../../../lexical/IfcTendonType.html">IfcTendonType</a>                                     </td></tr>
+<tr><td><a href="../../../lexical/IfcTendonAnchor.html">IfcTendonAnchor</a>                     </td><td><a href="../../../lexical/IfcTendonAnchorType.html">IfcTendonAnchorType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcTendonConduit.html">IfcTendonConduit</a>                    </td><td><a href="../../../lexical/IfcTendonConduitType.html">IfcTendonConduitType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcTrackElement.html">IfcTrackElement</a>                     </td><td><a href="../../../lexical/IfcTrackElementType.html">IfcTrackElementType</a>                               </td></tr>
+<tr><td><a href="../../../lexical/IfcTransformer.html">IfcTransformer</a>                      </td><td><a href="../../../lexical/IfcTransformerType.html">IfcTransformerType</a>                                </td></tr>
+<tr><td><a href="../../../lexical/IfcTransportElement.html">IfcTransportElement</a>                 </td><td><a href="../../../lexical/IfcTransportElementType.html">IfcTransportElementType</a>                           </td></tr>
+<tr><td><a href="../../../lexical/IfcTransportationDevice.html">IfcTransportationDevice</a>             </td><td><a href="../../../lexical/IfcTransportationDeviceType.html">IfcTransportationDeviceType</a>                       </td></tr>
+<tr><td><a href="../../../lexical/IfcTubeBundle.html">IfcTubeBundle</a>                       </td><td><a href="../../../lexical/IfcTubeBundleType.html">IfcTubeBundleType</a>                                 </td></tr>
+<tr><td><a href="../../../lexical/IfcUnitaryControlElement.html">IfcUnitaryControlElement</a>            </td><td><a href="../../../lexical/IfcUnitaryControlElementType.html">IfcUnitaryControlElementType</a>                      </td></tr>
+<tr><td><a href="../../../lexical/IfcUnitaryEquipment.html">IfcUnitaryEquipment</a>                 </td><td><a href="../../../lexical/IfcUnitaryEquipmentType.html">IfcUnitaryEquipmentType</a>                           </td></tr>
+<tr><td><a href="../../../lexical/IfcValve.html">IfcValve</a>                            </td><td><a href="../../../lexical/IfcValveType.html">IfcValveType</a>                                      </td></tr>
+<tr><td><a href="../../../lexical/IfcVehicle.html">IfcVehicle</a>                          </td><td><a href="../../../lexical/IfcVehicleType.html">IfcVehicleType</a>                                    </td></tr>
+<tr><td><a href="../../../lexical/IfcVibrationDamper.html">IfcVibrationDamper</a>                  </td><td><a href="../../../lexical/IfcVibrationDamperType.html">IfcVibrationDamperType</a>                            </td></tr>
+<tr><td><a href="../../../lexical/IfcVibrationIsolator.html">IfcVibrationIsolator</a>                </td><td><a href="../../../lexical/IfcVibrationIsolatorType.html">IfcVibrationIsolatorType</a>                          </td></tr>
+<tr><td><a href="../../../lexical/IfcWall.html">IfcWall</a>                             </td><td><a href="../../../lexical/IfcWallType.html">IfcWallType</a>                                       </td></tr>
+<tr><td><a href="../../../lexical/IfcWasteTerminal.html">IfcWasteTerminal</a>                    </td><td><a href="../../../lexical/IfcWasteTerminalType.html">IfcWasteTerminalType</a>                              </td></tr>
+<tr><td><a href="../../../lexical/IfcWindow.html">IfcWindow</a>                           </td><td><a href="../../../lexical/IfcWindowType.html">IfcWindowType</a>                                     </td></tr>
+</tbody>
+</table><figcaption>Table A<a class="link" href="#Table-A"><i data-feather="link"></i></a></figcaption></figure>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/templates/Object Definition/Object Typing/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">4 contributor(s):
+<img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="stefkeB" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+U1Q8L3RleHQ+Cjwvc3ZnPg==" title="stefkeB"/><img alt="luz paz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luz paz"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/> </span><br/>
+<span id="last-change">Last change: <em>Part of review for ISO and CEN/TC 442</em> by stefkeB on 2023-05-01T15:16:29+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../../../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/templates/Object Definition/Object Typing/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../../../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../../../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../../../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

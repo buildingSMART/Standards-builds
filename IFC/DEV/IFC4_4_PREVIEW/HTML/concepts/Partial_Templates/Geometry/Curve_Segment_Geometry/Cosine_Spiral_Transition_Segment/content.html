@@ -1,0 +1,453 @@
+<html lang="en">
+<head>
+<link href="../../../../../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../../../../../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>4.2.2.1.4 Cosine Spiral Transition Segment - IFC 4.4.0.0 Documentation</title>
+<link href="../../../../../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../../../../.." id="site-root"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../../../../../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="../../../../..">
+                             Cover
+                        </a>
+<a href="../../../../../toc.html">
+                             Contents
+                        </a>
+<a href="../../../../../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../../../../../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../../../../../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../../../../../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../../../../../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a class="current" href="../../../../content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../../../../../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a href="../../../../../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a href="../../../../../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="../../../../../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../../../../../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../../../../../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../../../../../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../../../../../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../../../../../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../../../../../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../../../../../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../../../../../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>4.2.2.1.4 Cosine Spiral Transition Segment</h1>
+<p>The cosine spiral transition segment is a special case of a spiral where the curvature rate of change is a cosine function and the terms are dependent on the length L measured from the inflection point. The parameter value is defined as the deflection i.e. bearing angle &amp;Theta.</p>
+<p>The values of its individual terms dependent on segment length L:
+CosineTerm = L
+ConstantTerm = 1</p>
+<p class="search-skip">
+    The following diagram shows the generic classes and relationships used when applying this concept.
+</p>
+<div class="concept-diagram-canvas" data-diagram="concept">
+<figure><a class="anchor" id="Figure-4.2.2.1.4.A"></a><svg height="312px" viewbox="0.00 0.00 990.00 417.50" width="741px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 413.5)">
+<title>G</title>
+<polygon fill="transparent" points="-4,4 -4,-413.5 986,-413.5 986,4 -4,4" stroke="transparent"></polygon>
+<!-- IfcCurveSegment -->
+<g class="node" id="node1">
+<title>IfcCurveSegment</title>
+<polygon fill="#1976d2" points="8,-378 8,-405 258,-405 258,-378 8,-378" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-378 258,-378 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="14" y="-388.8">IfcCurveSegment</text>
+<polygon fill="#1976d2" points="258,-378 258,-405 304,-405 304,-378 258,-378" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-378 304,-378 " stroke="black"></polyline>
+<polygon fill="white" points="8,-351 8,-378 258,-378 258,-351 8,-351" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-351 258,-351 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-360.8">      LayerAssignment</text>
+<polygon fill="white" points="258,-351 258,-378 304,-378 304,-351 258,-351" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-351 304,-351 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-360.8">[0:1]</text>
+<polygon fill="white" points="8,-324 8,-351 258,-351 258,-324 8,-324" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-324 258,-324 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-333.8">      StyledByItem</text>
+<polygon fill="white" points="258,-324 258,-351 304,-351 304,-324 258,-324" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-324 304,-324 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-333.8">[0:1]</text>
+<polygon fill="white" points="8,-297 8,-324 258,-324 258,-297 8,-297" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-297 258,-297 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-306.8">1. Transition</text>
+<polygon fill="white" points="258,-297 258,-324 304,-324 304,-297 258,-297" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-297 304,-297 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-306.8">[1:1]</text>
+<polygon fill="white" points="8,-270 8,-297 258,-297 258,-270 8,-270" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-270 258,-270 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-279.8">      UsingCurves</text>
+<polygon fill="white" points="258,-270 258,-297 304,-297 304,-270 258,-270" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-270 304,-270 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="266" y="-279.8">[1:?]</text>
+<polygon fill="white" points="8,-243 8,-270 258,-270 258,-243 8,-243" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-243 258,-243 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-252.8">2. Placement</text>
+<polygon fill="white" points="258,-243 258,-270 304,-270 304,-243 258,-243" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-243 304,-243 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-252.8">[1:1]</text>
+<polygon fill="#dddddd" points="8,-216 8,-243 258,-243 258,-216 8,-216" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-216 258,-216 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-225.8">3. SegmentStart</text>
+<polygon fill="#dddddd" points="258,-216 258,-243 304,-243 304,-216 258,-216" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-216 304,-216 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-225.8">[1:1]</text>
+<polygon fill="#dddddd" points="8,-189 8,-216 258,-216 258,-189 8,-189" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-189 258,-189 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-198.8">4. SegmentLength</text>
+<polygon fill="#dddddd" points="258,-189 258,-216 304,-216 304,-189 258,-189" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-189 304,-189 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-198.8">[1:1]</text>
+<polygon fill="#dddddd" points="8,-162 8,-189 258,-189 258,-162 8,-162" stroke="transparent"></polygon>
+<polyline fill="none" points="8,-162 258,-162 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="14" y="-171.8">5. ParentCurve</text>
+<polygon fill="#dddddd" points="258,-162 258,-189 304,-189 304,-162 258,-162" stroke="transparent"></polygon>
+<polyline fill="none" points="258,-162 304,-162 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="264" y="-171.8">[1:1]</text>
+</g>
+<!-- IfcCosineSpiral -->
+<g class="node" id="node2">
+<title>IfcCosineSpiral</title>
+<polygon fill="#1976d2" points="356,-147 356,-174 606,-174 606,-147 356,-147" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-147 606,-147 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="362" y="-157.8">IfcCosineSpiral</text>
+<polygon fill="#1976d2" points="606,-147 606,-174 652,-174 652,-147 606,-147" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-147 652,-147 " stroke="black"></polyline>
+<polygon fill="white" points="356,-120 356,-147 606,-147 606,-120 356,-120" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-120 606,-120 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-129.8">      LayerAssignment</text>
+<polygon fill="white" points="606,-120 606,-147 652,-147 652,-120 606,-120" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-120 652,-120 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-129.8">[0:1]</text>
+<polygon fill="white" points="356,-93 356,-120 606,-120 606,-93 356,-93" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-93 606,-93 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-102.8">      StyledByItem</text>
+<polygon fill="white" points="606,-93 606,-120 652,-120 652,-93 606,-93" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-93 652,-93 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-102.8">[0:1]</text>
+<polygon fill="white" points="356,-66 356,-93 606,-93 606,-66 356,-66" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-66 606,-66 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-75.8">1. Position</text>
+<polygon fill="white" points="606,-66 606,-93 652,-93 652,-66 606,-66" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-66 652,-66 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-75.8">[1:1]</text>
+<polygon fill="#dddddd" points="356,-39 356,-66 606,-66 606,-39 356,-39" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-39 606,-39 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-48.8">2. CosineTerm</text>
+<polygon fill="#dddddd" points="606,-39 606,-66 652,-66 652,-39 606,-39" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-39 652,-39 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-48.8">[1:1]</text>
+<polygon fill="#dddddd" points="356,-12 356,-39 606,-39 606,-12 356,-12" stroke="transparent"></polygon>
+<polyline fill="none" points="356,-12 606,-12 " stroke="black"></polyline>
+<text fill="#333333" font-family="Times,serif" font-size="14.00" text-anchor="start" x="362" y="-21.8">3. ConstantTerm</text>
+<polygon fill="#dddddd" points="606,-12 606,-39 652,-39 652,-12 606,-12" stroke="transparent"></polygon>
+<polyline fill="none" points="606,-12 652,-12 " stroke="black"></polyline>
+<text font-family="Times,serif" font-size="14.00" text-anchor="start" x="612" y="-21.8">[0:1]</text>
+</g>
+<!-- IfcCurveSegment&#45;&gt;IfcCosineSpiral -->
+<g class="edge" id="edge1">
+<title>IfcCurveSegment:ParentCurve1-&gt;IfcCosineSpiral:IfcCosineSpiral0</title>
+<path d="M305,-175C305,-175 330.83,-167.77 345.36,-163.7" fill="none" stroke="black"></path>
+<polygon fill="black" points="346.31,-167.07 355,-161 344.43,-160.33 346.31,-167.07" stroke="black"></polygon>
+</g>
+<!-- IfcLengthMeasure_0 -->
+<g class="node" id="node3">
+<title>IfcLengthMeasure_0</title>
+<polygon fill="#1976d2" points="369,-232 369,-259 619,-259 619,-232 369,-232" stroke="transparent"></polygon>
+<polyline fill="none" points="369,-232 619,-232 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="375" y="-242.8">IfcLengthMeasure</text>
+<polygon fill="#1976d2" points="619,-232 619,-259 639,-259 639,-232 619,-232" stroke="transparent"></polygon>
+<polyline fill="none" points="619,-232 639,-232 " stroke="black"></polyline>
+</g>
+<!-- IfcCurveSegment&#45;&gt;IfcLengthMeasure_0 -->
+<g class="edge" id="edge2">
+<title>IfcCurveSegment:SegmentStart1-&gt;IfcLengthMeasure_0:IfcLengthMeasure0</title>
+<path d="M305,-229C305,-229 340.44,-238 358.16,-242.5" fill="none" stroke="black"></path>
+<polygon fill="black" points="357.45,-245.93 368,-245 359.17,-239.15 357.45,-245.93" stroke="black"></polygon>
+</g>
+<!-- IfcLengthMeasure_1 -->
+<g class="node" id="node4">
+<title>IfcLengthMeasure_1</title>
+<polygon fill="#1976d2" points="369,-189 369,-216 619,-216 619,-189 369,-189" stroke="transparent"></polygon>
+<polyline fill="none" points="369,-189 619,-189 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="375" y="-199.8">IfcLengthMeasure</text>
+<polygon fill="#1976d2" points="619,-189 619,-216 639,-216 639,-189 619,-189" stroke="transparent"></polygon>
+<polyline fill="none" points="619,-189 639,-189 " stroke="black"></polyline>
+</g>
+<!-- IfcCurveSegment&#45;&gt;IfcLengthMeasure_1 -->
+<g class="edge" id="edge3">
+<title>IfcCurveSegment:SegmentLength1-&gt;IfcLengthMeasure_1:IfcLengthMeasure0</title>
+<path d="M305,-202C305,-202 340.07,-202 357.88,-202" fill="none" stroke="black"></path>
+<polygon fill="black" points="358,-205.5 368,-202 358,-198.5 358,-205.5" stroke="black"></polygon>
+</g>
+<!-- IfcLengthMeasure -->
+<g class="node" id="node5">
+<title>IfcLengthMeasure</title>
+<polygon fill="#1976d2" points="704,-47 704,-74 954,-74 954,-47 704,-47" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-47 954,-47 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="710" y="-57.8">IfcLengthMeasure</text>
+<polygon fill="#1976d2" points="954,-47 954,-74 974,-74 974,-47 954,-47" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-47 974,-47 " stroke="black"></polyline>
+</g>
+<!-- IfcCosineSpiral&#45;&gt;IfcLengthMeasure -->
+<g class="edge" id="edge4">
+<title>IfcCosineSpiral:CosineTerm1-&gt;IfcLengthMeasure:IfcLengthMeasure0</title>
+<path d="M653,-52C653,-52 678.27,-56.04 692.88,-58.38" fill="none" stroke="black"></path>
+<polygon fill="black" points="692.57,-61.88 703,-60 693.68,-54.96 692.57,-61.88" stroke="black"></polygon>
+</g>
+<!-- IfcReal -->
+<g class="node" id="node6">
+<title>IfcReal</title>
+<polygon fill="#1976d2" points="704,-4 704,-31 954,-31 954,-4 704,-4" stroke="transparent"></polygon>
+<polyline fill="none" points="704,-4 954,-4 " stroke="black"></polyline>
+<text fill="white" font-family="Times,serif" font-size="14.00" font-weight="bold" text-anchor="start" x="710" y="-14.8">IfcReal</text>
+<polygon fill="#1976d2" points="954,-4 954,-31 974,-31 974,-4 954,-4" stroke="transparent"></polygon>
+<polyline fill="none" points="954,-4 974,-4 " stroke="black"></polyline>
+</g>
+<!-- IfcCosineSpiral&#45;&gt;IfcReal -->
+<g class="edge" id="edge5">
+<title>IfcCosineSpiral:ConstantTerm1-&gt;IfcReal:IfcReal0</title>
+<path d="M653,-25C653,-25 678.27,-20.96 692.88,-18.62" fill="none" stroke="black"></path>
+<polygon fill="black" points="693.68,-22.04 703,-17 692.57,-15.12 693.68,-22.04" stroke="black"></polygon>
+</g>
+</g>
+</svg><figcaption>Figure 4.2.2.1.4.A<a class="link" href="#Figure-4.2.2.1.4.A"><i data-feather="link"></i></a></figcaption></figure>
+</div>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/templates/Partial Templates/Geometry/Curve Segment Geometry/Cosine Spiral Transition Segment/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">2 contributor(s):
+<img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="stefkeB" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+U1Q8L3RleHQ+Cjwvc3ZnPg==" title="stefkeB"/> </span><br/>
+<span id="last-change">Last change: <em>Update Curve_Segment_Geometry templates in accordance with <a href="../../../../../lexical/IfcCurveSegment.html">IfcCurveSegment</a> proposition</em> by Thomas Krijnen on 2023-10-01T10:19:22+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../../../../../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/templates/Partial Templates/Geometry/Curve Segment Geometry/Cosine Spiral Transition Segment/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../../../../../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../../../../../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../../../../../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

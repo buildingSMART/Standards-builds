@@ -1,0 +1,928 @@
+<html lang="en">
+<head>
+<link href="../assets/css/mini-default.css" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>6.6 IfcSharedInfrastructureElements - IFC 4.4.0.0 Documentation</title>
+<link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
+<script>window.is_iso = false;</script>
+</head>
+<body class="">
+<div class="container">
+<div class="row">
+<header>
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+                            <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
+</p>
+<ul>
+<li>
+<select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
+<option selected="" value="english-default">
+                                🌐 English (default)
+                        </option>
+<option value="arabic">
+                        🇸🇦 Arabic
+                        </option>
+<option value="chinese-simplified">
+                        🇨🇳 Chinese Simplified
+                        </option>
+<option value="croatian">
+                        🇭🇷 Croatian
+                        </option>
+<option value="czech">
+                        🇨🇿 Czech
+                        </option>
+<option value="danish">
+                        🇩🇰 Danish
+                        </option>
+<option value="dutch">
+                        🇳🇱 Dutch
+                        </option>
+<option value="finnish">
+                        🇫🇮 Finnish
+                        </option>
+<option value="french">
+                        🇫🇷 French
+                        </option>
+<option value="german">
+                        🇩🇪 German
+                        </option>
+<option value="greek">
+                        🇬🇷 Greek
+                        </option>
+<option value="hindi">
+                        🇮🇳 Hindi
+                        </option>
+<option value="icelandic">
+                        🇮🇸 Icelandic
+                        </option>
+<option value="italian">
+                        🇮🇹 Italian
+                        </option>
+<option value="japanese">
+                        🇯🇵 Japanese
+                        </option>
+<option value="korean">
+                        🇰🇷 Korean
+                        </option>
+<option value="lithuanian">
+                        🇱🇹 Lithuanian
+                        </option>
+<option value="norwegian">
+                        🇳🇴 Norwegian
+                        </option>
+<option value="polish">
+                        🇵🇱 Polish
+                        </option>
+<option value="portuguese">
+                        🇵🇹 Portuguese
+                        </option>
+<option value="portuguese-brazilian">
+                        🇧🇷 Portuguese, Brazilian
+                        </option>
+<option value="romanian">
+                        🇷🇴 Romanian
+                        </option>
+<option value="serbian">
+                        🇷🇸 Serbian
+                        </option>
+<option value="slovenian">
+                        🇸🇮 Slovenian
+                        </option>
+<option value="spanish">
+                        🇪🇸 Spanish
+                        </option>
+<option value="swedish">
+                        🇸🇪 Swedish
+                        </option>
+<option value="turkish">
+                        🇹🇷 Turkish
+                        </option>
+</select>
+</li>
+<li>
+<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+</li>
+<li>
+<a href="https://forums.buildingsmart.org/">
+<i data-feather="help-circle"></i>
+                            Get user or developer support
+                        </a>
+</li>
+<!--
+                    <li>
+                        <a href="#todo">
+                            <i data-feather="code"></i>
+                            Get started with software development
+                        </a>
+                    </li>
+                    -->
+</ul>
+</header>
+</div>
+<div class="row">
+<div class="col-md-2">
+<form action="../search.html" class="search" method="get" style="padding:0px;">
+<div class="row">
+<div class="col-md-8">
+<input class="search-input" name="query" placeholder="Search" type="text" value=""/>
+</div>
+<div class="col-md-4">
+<button class="primary" type="submit" value="Search">
+<span class="icon-search inverse"></span>
+</button>
+</div>
+</div>
+</form>
+<nav>
+<div>
+<a href="..">
+                             Cover
+                        </a>
+<a href="../toc.html">
+                             Contents
+                        </a>
+<a href="../content/foreword.html">
+                             Foreword
+                        </a>
+<a href="../content/introduction.html">
+                             Introduction
+                        </a>
+</div>
+<div>
+<a href="../content/scope.html">
+                            1 Scope
+                        </a>
+<a href="../content/normative_references.html">
+                            2 Normative references
+                        </a>
+<a href="../content/terms_and_definitions.html">
+                            3 Terms, definitions, and abbreviated terms
+                        </a>
+<a href="../concepts/content.html">
+                            4 Fundamental concepts and assumptions
+                        </a>
+<a href="../chapter-5.html">
+                            5 Core data schemas
+                        </a>
+<a class="current" href="../chapter-6.html">
+                            6 Shared element data schemas
+                        </a>
+<a class="sublink-1" href="../ifcsharedbldgelements/content.html">
+                            6.1 IfcSharedBldgElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedbldgserviceelements/content.html">
+                            6.2 IfcSharedBldgServiceElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedcomponentelements/content.html">
+                            6.3 IfcSharedComponentElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedfacilitieselements/content.html">
+                            6.4 IfcSharedFacilitiesElements
+                        </a>
+<a class="sublink-1" href="../ifcsharedmgmtelements/content.html">
+                            6.5 IfcSharedMgmtElements
+                        </a>
+<a class="sublink-1 current" href="content.html">
+                            6.6 IfcSharedInfrastructureElements
+                        </a>
+<a href="../chapter-7.html">
+                            7 Domain specific data schemas
+                        </a>
+<a href="../chapter-8.html">
+                            8 Resource definition data schemas
+                        </a>
+</div>
+<div>
+<a href="../annex-a.html">
+                            A Computer interpretable listings
+                        </a>
+<a href="../annex-b.html">
+                            B Alphabetical listings
+                        </a>
+<a href="../annex-c.html">
+                            C Inheritance listings
+                        </a>
+<a href="../annex-d.html">
+                            D Diagrams
+                        </a>
+<a href="../annex-e.html">
+                            E Examples
+                        </a>
+<a href="../annex-f.html">
+                            F Change logs
+                        </a>
+</div>
+<div>
+<a href="../content/bibliography.html">
+                             Bibliography
+                        </a>
+<a href="../indices.html">
+                             Index
+                        </a>
+</div>
+</nav>
+</div>
+<div class="col-md-8" id="main-content">
+<h1>6.6 IfcSharedInfrastructureElements</h1>
+<h2><a class="anchor" id="6.6.1-Schema-definition"></a>
+    6.6.1 Schema definition
+<a class="link" href="#6.6.1-Schema-definition"><i data-feather="link"></i></a></h2>
+<p>The <em>IfcSharedInfrastructureElements</em> schema defines the shared or common elements (subtypes of <em><a href="../lexical/IfcElement.html">IfcElement</a></em>) that are applicable to the infrastructure sector.</p>
+<p>The scope of this includes concepts to cover the definition of:</p>
+<ul>
+<li>Geotechnical &amp; terrain<ul>
+<li>Boreholes</li>
+<li>Geo models</li>
+<li>Geo slices</li>
+<li>Stratums</li>
+</ul>
+</li>
+<li>Aggregate Courses</li>
+<li>Earthworks Structures<ul>
+<li>Cuts</li>
+<li>Fills</li>
+<li>Soil reinforcement</li>
+</ul>
+</li>
+<li>Pavements</li>
+<li>Signs</li>
+<li>Signals</li>
+</ul>
+<aside class="aside-history"><mark>HISTORY</mark>  New schema in IFC4x3.</aside>
+<h2><a class="anchor" id="6.6.2-Types"></a>
+    6.6.2 Types
+<a class="link" href="#6.6.2-Types"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.6.2.1">
+<a href="../lexical/IfcBoreholeTypeEnum.html">
+            IfcBoreholeTypeEnum
+        </a>
+</li><li number="6.6.2.2">
+<a href="../lexical/IfcCourseTypeEnum.html">
+            IfcCourseTypeEnum
+        </a>
+</li><li number="6.6.2.3">
+<a href="../lexical/IfcEarthworksCutTypeEnum.html">
+            IfcEarthworksCutTypeEnum
+        </a>
+</li><li number="6.6.2.4">
+<a href="../lexical/IfcEarthworksFillTypeEnum.html">
+            IfcEarthworksFillTypeEnum
+        </a>
+</li><li number="6.6.2.5">
+<a href="../lexical/IfcFaceExcavationTypeEnum.html">
+            IfcFaceExcavationTypeEnum
+        </a>
+</li><li number="6.6.2.6">
+<a href="../lexical/IfcGeoScienceFeatureTypeEnum.html">
+            IfcGeoScienceFeatureTypeEnum
+        </a>
+</li><li number="6.6.2.7">
+<a href="../lexical/IfcGeoScienceModelTypeEnum.html">
+            IfcGeoScienceModelTypeEnum
+        </a>
+</li><li number="6.6.2.8">
+<a href="../lexical/IfcGeoScienceObservationTypeEnum.html">
+            IfcGeoScienceObservationTypeEnum
+        </a>
+</li><li number="6.6.2.9">
+<a href="../lexical/IfcGeotechnicalStratumTypeEnum.html">
+            IfcGeotechnicalStratumTypeEnum
+        </a>
+</li><li number="6.6.2.10">
+<a href="../lexical/IfcGroundReinforcementElementTypeEnum.html">
+            IfcGroundReinforcementElementTypeEnum
+        </a>
+</li><li number="6.6.2.11">
+<a href="../lexical/IfcImpactProtectionDeviceTypeEnum.html">
+            IfcImpactProtectionDeviceTypeEnum
+        </a>
+</li><li number="6.6.2.12">
+<a href="../lexical/IfcImprovedGroundTypeEnum.html">
+            IfcImprovedGroundTypeEnum
+        </a>
+</li><li number="6.6.2.13">
+<a href="../lexical/IfcPavementTypeEnum.html">
+            IfcPavementTypeEnum
+        </a>
+</li><li number="6.6.2.14">
+<a href="../lexical/IfcRadialExcavationTypeEnum.html">
+            IfcRadialExcavationTypeEnum
+        </a>
+</li><li number="6.6.2.15">
+<a href="../lexical/IfcReinforcedSoilTypeEnum.html">
+            IfcReinforcedSoilTypeEnum
+        </a>
+</li><li number="6.6.2.16">
+<a href="../lexical/IfcSignTypeEnum.html">
+            IfcSignTypeEnum
+        </a>
+</li><li number="6.6.2.17">
+<a href="../lexical/IfcSignalTypeEnum.html">
+            IfcSignalTypeEnum
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.6.3-Entities"></a>
+    6.6.3 Entities
+<a class="link" href="#6.6.3-Entities"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.6.3.1">
+<a href="../lexical/IfcBorehole.html">
+            IfcBorehole
+        </a>
+</li><li number="6.6.3.2">
+<a href="../lexical/IfcBoreholeType.html">
+            IfcBoreholeType
+        </a>
+</li><li number="6.6.3.3">
+<a href="../lexical/IfcCourse.html">
+            IfcCourse
+        </a>
+</li><li number="6.6.3.4">
+<a href="../lexical/IfcCourseType.html">
+            IfcCourseType
+        </a>
+</li><li number="6.6.3.5">
+<a href="../lexical/IfcEarthworksCut.html">
+            IfcEarthworksCut
+        </a>
+</li><li number="6.6.3.6">
+<a href="../lexical/IfcEarthworksElement.html">
+            IfcEarthworksElement
+        </a>
+</li><li number="6.6.3.7">
+<a href="../lexical/IfcEarthworksFill.html">
+            IfcEarthworksFill
+        </a>
+</li><li number="6.6.3.8">
+<a href="../lexical/IfcExcavation.html">
+            IfcExcavation
+        </a>
+</li><li number="6.6.3.9">
+<a href="../lexical/IfcFaceExcavation.html">
+            IfcFaceExcavation
+        </a>
+</li><li number="6.6.3.10">
+<a href="../lexical/IfcGeoScienceElement.html">
+            IfcGeoScienceElement
+        </a>
+</li><li number="6.6.3.11">
+<a href="../lexical/IfcGeoScienceElementType.html">
+            IfcGeoScienceElementType
+        </a>
+</li><li number="6.6.3.12">
+<a href="../lexical/IfcGeoScienceFeature.html">
+            IfcGeoScienceFeature
+        </a>
+</li><li number="6.6.3.13">
+<a href="../lexical/IfcGeoScienceFeatureType.html">
+            IfcGeoScienceFeatureType
+        </a>
+</li><li number="6.6.3.14">
+<a href="../lexical/IfcGeoScienceModel.html">
+            IfcGeoScienceModel
+        </a>
+</li><li number="6.6.3.15">
+<a href="../lexical/IfcGeoScienceModelType.html">
+            IfcGeoScienceModelType
+        </a>
+</li><li number="6.6.3.16">
+<a href="../lexical/IfcGeoScienceObservation.html">
+            IfcGeoScienceObservation
+        </a>
+</li><li number="6.6.3.17">
+<a href="../lexical/IfcGeomodel.html">
+            IfcGeomodel
+        </a>
+</li><li number="6.6.3.18">
+<a href="../lexical/IfcGeoslice.html">
+            IfcGeoslice
+        </a>
+</li><li number="6.6.3.19">
+<a href="../lexical/IfcGeotechnicalAssembly.html">
+            IfcGeotechnicalAssembly
+        </a>
+</li><li number="6.6.3.20">
+<a href="../lexical/IfcGeotechnicalElement.html">
+            IfcGeotechnicalElement
+        </a>
+</li><li number="6.6.3.21">
+<a href="../lexical/IfcGeotechnicalStratum.html">
+            IfcGeotechnicalStratum
+        </a>
+</li><li number="6.6.3.22">
+<a href="../lexical/IfcGroundReinforcementElement.html">
+            IfcGroundReinforcementElement
+        </a>
+</li><li number="6.6.3.23">
+<a href="../lexical/IfcGroundReinforcementElementType.html">
+            IfcGroundReinforcementElementType
+        </a>
+</li><li number="6.6.3.24">
+<a href="../lexical/IfcImprovedGround.html">
+            IfcImprovedGround
+        </a>
+</li><li number="6.6.3.25">
+<a href="../lexical/IfcPavement.html">
+            IfcPavement
+        </a>
+</li><li number="6.6.3.26">
+<a href="../lexical/IfcPavementType.html">
+            IfcPavementType
+        </a>
+</li><li number="6.6.3.27">
+<a href="../lexical/IfcRadialExcavation.html">
+            IfcRadialExcavation
+        </a>
+</li><li number="6.6.3.28">
+<a href="../lexical/IfcReinforcedSoil.html">
+            IfcReinforcedSoil
+        </a>
+</li><li number="6.6.3.29">
+<a href="../lexical/IfcSign.html">
+            IfcSign
+        </a>
+</li><li number="6.6.3.30">
+<a href="../lexical/IfcSignType.html">
+            IfcSignType
+        </a>
+</li><li number="6.6.3.31">
+<a href="../lexical/IfcSignal.html">
+            IfcSignal
+        </a>
+</li><li number="6.6.3.32">
+<a href="../lexical/IfcSignalType.html">
+            IfcSignalType
+        </a>
+</li><li number="6.6.3.33">
+<a href="../lexical/IfcUndergroundExcavation.html">
+            IfcUndergroundExcavation
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.6.4-Property-Sets"></a>
+    6.6.4 Property Sets
+<a class="link" href="#6.6.4-Property-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.6.4.1">
+<a href="../lexical/Pset_BoreholeCommon.html">
+            Pset_BoreholeCommon
+        </a>
+</li><li number="6.6.4.2">
+<a href="../lexical/Pset_BoreholeTestPressuremeter.html">
+            Pset_BoreholeTestPressuremeter
+        </a>
+</li><li number="6.6.4.3">
+<a href="../lexical/Pset_BoreholeTestSPT.html">
+            Pset_BoreholeTestSPT
+        </a>
+</li><li number="6.6.4.4">
+<a href="../lexical/Pset_EarthworksCutCommon.html">
+            Pset_EarthworksCutCommon
+        </a>
+</li><li number="6.6.4.5">
+<a href="../lexical/Pset_EarthworksCutTypeTrench.html">
+            Pset_EarthworksCutTypeTrench
+        </a>
+</li><li number="6.6.4.6">
+<a href="../lexical/Pset_ElementKinematics.html">
+            Pset_ElementKinematics
+        </a>
+</li><li number="6.6.4.7">
+<a href="../lexical/Pset_ExcavationCommon.html">
+            Pset_ExcavationCommon
+        </a>
+</li><li number="6.6.4.8">
+<a href="../lexical/Pset_FaceExcavationCommon.html">
+            Pset_FaceExcavationCommon
+        </a>
+</li><li number="6.6.4.9">
+<a href="../lexical/Pset_GeoAspects.html">
+            Pset_GeoAspects
+        </a>
+</li><li number="6.6.4.10">
+<a href="../lexical/Pset_GeoObsBoreholeCommon.html">
+            Pset_GeoObsBoreholeCommon
+        </a>
+</li><li number="6.6.4.11">
+<a href="../lexical/Pset_GeoObsBoreholeGeoLogInterval.html">
+            Pset_GeoObsBoreholeGeoLogInterval
+        </a>
+</li><li number="6.6.4.12">
+<a href="../lexical/Pset_GeoObsBoreholeGeophysicalInterval.html">
+            Pset_GeoObsBoreholeGeophysicalInterval
+        </a>
+</li><li number="6.6.4.13">
+<a href="../lexical/Pset_GeoObsBoreholeMWDInterval.html">
+            Pset_GeoObsBoreholeMWDInterval
+        </a>
+</li><li number="6.6.4.14">
+<a href="../lexical/Pset_GeoObsBoreholeWaterLevel.html">
+            Pset_GeoObsBoreholeWaterLevel
+        </a>
+</li><li number="6.6.4.15">
+<a href="../lexical/Pset_GeoObsCommon.html">
+            Pset_GeoObsCommon
+        </a>
+</li><li number="6.6.4.16">
+<a href="../lexical/Pset_GeoObsDiscontinuityCommon.html">
+            Pset_GeoObsDiscontinuityCommon
+        </a>
+</li><li number="6.6.4.17">
+<a href="../lexical/Pset_GeoObsDiscontinuityFault.html">
+            Pset_GeoObsDiscontinuityFault
+        </a>
+</li><li number="6.6.4.18">
+<a href="../lexical/Pset_GeoObsFoldAxis.html">
+            Pset_GeoObsFoldAxis
+        </a>
+</li><li number="6.6.4.19">
+<a href="../lexical/Pset_GeoObsHydroGeologyWaterInflow.html">
+            Pset_GeoObsHydroGeologyWaterInflow
+        </a>
+</li><li number="6.6.4.20">
+<a href="../lexical/Pset_GeoObsLineation.html">
+            Pset_GeoObsLineation
+        </a>
+</li><li number="6.6.4.21">
+<a href="../lexical/Pset_GeoObsMappedUnit.html">
+            Pset_GeoObsMappedUnit
+        </a>
+</li><li number="6.6.4.22">
+<a href="../lexical/Pset_GeoObsPtObservationCommon.html">
+            Pset_GeoObsPtObservationCommon
+        </a>
+</li><li number="6.6.4.23">
+<a href="../lexical/Pset_GeoScienceObservationBoreholeConstruction.html">
+            Pset_GeoScienceObservationBoreholeConstruction
+        </a>
+</li><li number="6.6.4.24">
+<a href="../lexical/Pset_GeophysicalSurveyBorehole.html">
+            Pset_GeophysicalSurveyBorehole
+        </a>
+</li><li number="6.6.4.25">
+<a href="../lexical/Pset_GeophysicalSurveyCommon.html">
+            Pset_GeophysicalSurveyCommon
+        </a>
+</li><li number="6.6.4.26">
+<a href="../lexical/Pset_GeotechnicalAssemblyCommon.html">
+            Pset_GeotechnicalAssemblyCommon
+        </a>
+</li><li number="6.6.4.27">
+<a href="../lexical/Pset_GeotechnicalStratumCommon.html">
+            Pset_GeotechnicalStratumCommon
+        </a>
+</li><li number="6.6.4.28">
+<a href="../lexical/Pset_GroundReinforcementElementTypeBar.html">
+            Pset_GroundReinforcementElementTypeBar
+        </a>
+</li><li number="6.6.4.29">
+<a href="../lexical/Pset_GroundReinforcementElementTypeBolt.html">
+            Pset_GroundReinforcementElementTypeBolt
+        </a>
+</li><li number="6.6.4.30">
+<a href="../lexical/Pset_GroundReinforcementElementTypePile.html">
+            Pset_GroundReinforcementElementTypePile
+        </a>
+</li><li number="6.6.4.31">
+<a href="../lexical/Pset_GroundReinforcementElementTypePlate.html">
+            Pset_GroundReinforcementElementTypePlate
+        </a>
+</li><li number="6.6.4.32">
+<a href="../lexical/Pset_GroundReinforcementElementTypeTendon.html">
+            Pset_GroundReinforcementElementTypeTendon
+        </a>
+</li><li number="6.6.4.33">
+<a href="../lexical/Pset_GroundReinforcementElementTypeTube.html">
+            Pset_GroundReinforcementElementTypeTube
+        </a>
+</li><li number="6.6.4.34">
+<a href="../lexical/Pset_ImprovedGroundCommon.html">
+            Pset_ImprovedGroundCommon
+        </a>
+</li><li number="6.6.4.35">
+<a href="../lexical/Pset_ImprovedGroundTypeDewatered.html">
+            Pset_ImprovedGroundTypeDewatered
+        </a>
+</li><li number="6.6.4.36">
+<a href="../lexical/Pset_ImprovedGroundTypeInjectionGrouted.html">
+            Pset_ImprovedGroundTypeInjectionGrouted
+        </a>
+</li><li number="6.6.4.37">
+<a href="../lexical/Pset_ImprovedGroundTypeJetGrouted.html">
+            Pset_ImprovedGroundTypeJetGrouted
+        </a>
+</li><li number="6.6.4.38">
+<a href="../lexical/Pset_InSituTestCPT.html">
+            Pset_InSituTestCPT
+        </a>
+</li><li number="6.6.4.39">
+<a href="../lexical/Pset_InSituTestCommon.html">
+            Pset_InSituTestCommon
+        </a>
+</li><li number="6.6.4.40">
+<a href="../lexical/Pset_InSituTestHydro.html">
+            Pset_InSituTestHydro
+        </a>
+</li><li number="6.6.4.41">
+<a href="../lexical/Pset_LabTestCommon.html">
+            Pset_LabTestCommon
+        </a>
+</li><li number="6.6.4.42">
+<a href="../lexical/Pset_LabTestResult.html">
+            Pset_LabTestResult
+        </a>
+</li><li number="6.6.4.43">
+<a href="../lexical/Pset_LateralExcavationCommon.html">
+            Pset_LateralExcavationCommon
+        </a>
+</li><li number="6.6.4.44">
+<a href="../lexical/Pset_LinearReferencingMethod.html">
+            Pset_LinearReferencingMethod
+        </a>
+</li><li number="6.6.4.45">
+<a href="../lexical/Pset_ReferentCommon.html">
+            Pset_ReferentCommon
+        </a>
+</li><li number="6.6.4.46">
+<a href="../lexical/Pset_SignCommon.html">
+            Pset_SignCommon
+        </a>
+</li><li number="6.6.4.47">
+<a href="../lexical/Pset_SolidStratumCapacity.html">
+            Pset_SolidStratumCapacity
+        </a>
+</li><li number="6.6.4.48">
+<a href="../lexical/Pset_SolidStratumComposition.html">
+            Pset_SolidStratumComposition
+        </a>
+</li><li number="6.6.4.49">
+<a href="../lexical/Pset_SpatialGeoObsSample.html">
+            Pset_SpatialGeoObsSample
+        </a>
+</li><li number="6.6.4.50">
+<a href="../lexical/Pset_SpatialGeoScienceObservationBorehole.html">
+            Pset_SpatialGeoScienceObservationBorehole
+        </a>
+</li><li number="6.6.4.51">
+<a href="../lexical/Pset_Stationing.html">
+            Pset_Stationing
+        </a>
+</li><li number="6.6.4.52">
+<a href="../lexical/Pset_UndergroundExcavationCommon.html">
+            Pset_UndergroundExcavationCommon
+        </a>
+</li><li number="6.6.4.53">
+<a href="../lexical/Pset_WaterStratumCommon.html">
+            Pset_WaterStratumCommon
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.6.5-Quantity-Sets"></a>
+    6.6.5 Quantity Sets
+<a class="link" href="#6.6.5-Quantity-Sets"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.6.5.1">
+<a href="../lexical/Qto_ArealStratumBaseQuantities.html">
+            Qto_ArealStratumBaseQuantities
+        </a>
+</li><li number="6.6.5.2">
+<a href="../lexical/Qto_CourseBaseQuantities.html">
+            Qto_CourseBaseQuantities
+        </a>
+</li><li number="6.6.5.3">
+<a href="../lexical/Qto_EarthworksCutBaseQuantities.html">
+            Qto_EarthworksCutBaseQuantities
+        </a>
+</li><li number="6.6.5.4">
+<a href="../lexical/Qto_EarthworksFillBaseQuantities.html">
+            Qto_EarthworksFillBaseQuantities
+        </a>
+</li><li number="6.6.5.5">
+<a href="../lexical/Qto_ExcavationBaseQuantities.html">
+            Qto_ExcavationBaseQuantities
+        </a>
+</li><li number="6.6.5.6">
+<a href="../lexical/Qto_ImpactProtectionDeviceBaseQuantities.html">
+            Qto_ImpactProtectionDeviceBaseQuantities
+        </a>
+</li><li number="6.6.5.7">
+<a href="../lexical/Qto_ImprovedGroundBaseQuantities.html">
+            Qto_ImprovedGroundBaseQuantities
+        </a>
+</li><li number="6.6.5.8">
+<a href="../lexical/Qto_ImprovedGroundInjectionGroutedQuantities.html">
+            Qto_ImprovedGroundInjectionGroutedQuantities
+        </a>
+</li><li number="6.6.5.9">
+<a href="../lexical/Qto_ImprovedGroundJetGroutedQuantities.html">
+            Qto_ImprovedGroundJetGroutedQuantities
+        </a>
+</li><li number="6.6.5.10">
+<a href="../lexical/Qto_KerbBaseQuantities.html">
+            Qto_KerbBaseQuantities
+        </a>
+</li><li number="6.6.5.11">
+<a href="../lexical/Qto_LinearStratumBaseQuantities.html">
+            Qto_LinearStratumBaseQuantities
+        </a>
+</li><li number="6.6.5.12">
+<a href="../lexical/Qto_PavementBaseQuantities.html">
+            Qto_PavementBaseQuantities
+        </a>
+</li><li number="6.6.5.13">
+<a href="../lexical/Qto_PictorialSignQuantities.html">
+            Qto_PictorialSignQuantities
+        </a>
+</li><li number="6.6.5.14">
+<a href="../lexical/Qto_ReinforcedSoilBaseQuantities.html">
+            Qto_ReinforcedSoilBaseQuantities
+        </a>
+</li><li number="6.6.5.15">
+<a href="../lexical/Qto_SignBaseQuantities.html">
+            Qto_SignBaseQuantities
+        </a>
+</li><li number="6.6.5.16">
+<a href="../lexical/Qto_SignalBaseQuantities.html">
+            Qto_SignalBaseQuantities
+        </a>
+</li><li number="6.6.5.17">
+<a href="../lexical/Qto_SurfaceFeatureBaseQuantities.html">
+            Qto_SurfaceFeatureBaseQuantities
+        </a>
+</li><li number="6.6.5.18">
+<a href="../lexical/Qto_VolumetricStratumBaseQuantities.html">
+            Qto_VolumetricStratumBaseQuantities
+        </a>
+</li></ol>
+<h2><a class="anchor" id="6.6.6-Functions"></a>
+    6.6.6 Functions
+<a class="link" href="#6.6.6-Functions"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="6.6.7-Rules"></a>
+    6.6.7 Rules
+<a class="link" href="#6.6.7-Rules"><i data-feather="link"></i></a></h2>
+<p class="search-skip">
+    No resources are available in this category.
+</p>
+<h2><a class="anchor" id="6.6.8-PropertyEnumerations"></a>
+    6.6.8 PropertyEnumerations
+<a class="link" href="#6.6.8-PropertyEnumerations"><i data-feather="link"></i></a></h2>
+<ol class="referenced-list">
+<li number="6.6.8.1">
+<a href="../lexical/PEnum_BarSectionType.html">
+            PEnum_BarSectionType
+        </a>
+</li><li number="6.6.8.2">
+<a href="../lexical/PEnum_BoltCrossSection.html">
+            PEnum_BoltCrossSection
+        </a>
+</li><li number="6.6.8.3">
+<a href="../lexical/PEnum_BoreholeState.html">
+            PEnum_BoreholeState
+        </a>
+</li><li number="6.6.8.4">
+<a href="../lexical/PEnum_DewateringMethod.html">
+            PEnum_DewateringMethod
+        </a>
+</li><li number="6.6.8.5">
+<a href="../lexical/PEnum_DiscontinuitySpacing.html">
+            PEnum_DiscontinuitySpacing
+        </a>
+</li><li number="6.6.8.6">
+<a href="../lexical/PEnum_DriveInclination.html">
+            PEnum_DriveInclination
+        </a>
+</li><li number="6.6.8.7">
+<a href="../lexical/PEnum_EarthworksCutExcavationMethod.html">
+            PEnum_EarthworksCutExcavationMethod
+        </a>
+</li><li number="6.6.8.8">
+<a href="../lexical/PEnum_ExcavationFaceInclination.html">
+            PEnum_ExcavationFaceInclination
+        </a>
+</li><li number="6.6.8.9">
+<a href="../lexical/PEnum_FaceExcavationType.html">
+            PEnum_FaceExcavationType
+        </a>
+</li><li number="6.6.8.10">
+<a href="../lexical/PEnum_GeophysicalSurveyMethod.html">
+            PEnum_GeophysicalSurveyMethod
+        </a>
+</li><li number="6.6.8.11">
+<a href="../lexical/PEnum_InjectionDistributionEquipment.html">
+            PEnum_InjectionDistributionEquipment
+        </a>
+</li><li number="6.6.8.12">
+<a href="../lexical/PEnum_InjectionPackerType.html">
+            PEnum_InjectionPackerType
+        </a>
+</li><li number="6.6.8.13">
+<a href="../lexical/PEnum_InjectionPhase.html">
+            PEnum_InjectionPhase
+        </a>
+</li><li number="6.6.8.14">
+<a href="../lexical/PEnum_JetGroutingMethod.html">
+            PEnum_JetGroutingMethod
+        </a>
+</li><li number="6.6.8.15">
+<a href="../lexical/PEnum_LRMType.html">
+            PEnum_LRMType
+        </a>
+</li><li number="6.6.8.16">
+<a href="../lexical/PEnum_RadialExcavationDirection.html">
+            PEnum_RadialExcavationDirection
+        </a>
+</li><li number="6.6.8.17">
+<a href="../lexical/PEnum_RadialExcavationType.html">
+            PEnum_RadialExcavationType
+        </a>
+</li><li number="6.6.8.18">
+<a href="../lexical/PEnum_SoilCompositeFractions.html">
+            PEnum_SoilCompositeFractions
+        </a>
+</li><li number="6.6.8.19">
+<a href="../lexical/PEnum_StrataAssemblyPurpose.html">
+            PEnum_StrataAssemblyPurpose
+        </a>
+</li><li number="6.6.8.20">
+<a href="../lexical/PEnum_TunnelInclination.html">
+            PEnum_TunnelInclination
+        </a>
+</li><li number="6.6.8.21">
+<a href="../lexical/PEnum_UndergroundExcavationMethod.html">
+            PEnum_UndergroundExcavationMethod
+        </a>
+</li><li number="6.6.8.22">
+<a href="../lexical/PEnum_Weathering.html">
+            PEnum_Weathering
+        </a>
+</li></ol>
+</div>
+<div class="col-md-2 rightpanel">
+<div class="card fluid shadowed">
+<p>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/shared/IfcSharedInfrastructureElements/README.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+</p>
+<p>
+<small>
+<span id="contributors">3 contributor(s):
+<img alt="Stefan Jaud" class="contributor-icon" src="https://github.com/pjanck.png?size=32" title="Stefan Jaud"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
+<span id="last-change">Last change: <em>Update README.md (#807)</em> by Stefan Jaud on 2024-05-16T09:27:17+02:00</span>
+</small>
+</p>
+<p>
+<small>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+</small>
+</p>
+</div>
+<div class="card fluid shadowed hidden" id="section-navigation">
+<p>
+</p><center><small>Jump to section</small></center>
+<ol class="referenced-list small"></ol>
+</div>
+</div>
+</div>
+<div class="row">
+<footer>
+<p>
+<a href="http://creativecommons.org/licenses/by-nd/4.0/" rel="license"><img alt="Creative Commons License" src="../assets/lib/img/cc-by-nd-4.0-88x31.png" style="border-width:0"/></a>
+<small>
+                        Copyright © 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
+</small>
+</p>
+<a class="button" id="back-to-top"><i data-feather="arrow-up-circle"></i></a>
+</footer>
+</div>
+</div>
+<script>
+        window.appconfig = {
+            'path': 'docs/schemas/shared/IfcSharedInfrastructureElements/README.md',
+            'base': '',
+            'repo': 'buildingSMART/IFC4.3.x-development',
+            'resourceApi': null,
+        };
+    </script>
+<script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+<script src="../assets/lib/feather-icons/feather.min.js"></script>
+<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>
