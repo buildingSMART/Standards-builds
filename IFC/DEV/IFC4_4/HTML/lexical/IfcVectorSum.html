@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.9.6.27 IfcVectorSum - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -13,7 +14,7 @@
 <div class="row">
 <header>
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+<p class="header-title">IFC 4.4.0.0 build 20260909 (IFC4X4)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -298,14 +299,14 @@ This function returns the sum of the input arguments as (Arg1 - Arg2). The funct
 <span class="tok-k">RETURN</span> <span class="tok-p">(</span><span class="tok-err">?</span><span class="tok-p">)</span> <span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-kd">BEGIN</span>
-<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X3_ADD2.IFCVECTOR'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Arg1</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X4.IFCVECTOR'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Arg1</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Mag1</span> <span class="tok-o">:=</span> <span class="tok-n">Arg1</span><span class="tok-o">\</span><a href="IfcVector.html"><span class="tok-nc">IfcVector</span></a><span class="tok-p">.</span><span class="tok-n">Magnitude</span><span class="tok-p">;</span>
 <span class="tok-n">Vec1</span> <span class="tok-o">:=</span> <span class="tok-n">Arg1</span><span class="tok-o">\</span><a href="IfcVector.html"><span class="tok-nc">IfcVector</span></a><span class="tok-p">.</span><span class="tok-n">Orientation</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-n">Mag1</span> <span class="tok-o">:=</span> <span class="tok-m">1.0</span><span class="tok-p">;</span>
 <span class="tok-n">Vec1</span> <span class="tok-o">:=</span> <span class="tok-n">Arg1</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X3_ADD2.IFCVECTOR'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Arg2</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X4.IFCVECTOR'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Arg2</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Mag2</span> <span class="tok-o">:=</span> <span class="tok-n">Arg2</span><span class="tok-o">\</span><a href="IfcVector.html"><span class="tok-nc">IfcVector</span></a><span class="tok-p">.</span><span class="tok-n">Magnitude</span><span class="tok-p">;</span>
 <span class="tok-n">Vec2</span> <span class="tok-o">:=</span> <span class="tok-n">Arg2</span><span class="tok-o">\</span><a href="IfcVector.html"><span class="tok-nc">IfcVector</span></a><span class="tok-p">.</span><span class="tok-n">Orientation</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
@@ -340,9 +341,7 @@ This function returns the sum of the input arguments as (Arg1 - Arg2). The funct
 <small>
 <span id="contributors">1 contributor(s):
 <img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/> </span><br/>
-<span id="last-change">Last change: <em>Merge pull request #1170 from buildingSMART/tfk-various
-
-Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:21+02:00</span>
+<span id="last-change">Last change: <em>Merge pull request #1175 from buildingSMART/fix/schema-name-and-search</em> by Evandro Alfieri on 2026-09-09T23:01:49+02:00</span>
 </small>
 </p>
 <p>
@@ -376,7 +375,6 @@ Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:2
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.9.6.8 IfcCurveDim - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -13,7 +14,7 @@
 <div class="row">
 <header>
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+<p class="header-title">IFC 4.4.0.0 build 20260909 (IFC4X4)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -288,55 +289,55 @@ This function checks the dimensionality of various subtypes of curve. It returns
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">FUNCTION</span> <a href="IfcCurveDim.html"><span class="tok-nc">IfcCurveDim</span></a>
 <span class="tok-p">(</span><span class="tok-n">Curve</span> <span class="tok-o">:</span> <a href="IfcCurve.html"><span class="tok-nc">IfcCurve</span></a><span class="tok-p">)</span>
 <span class="tok-o">:</span> <a href="IfcDimensionCount.html"><span class="tok-nc">IfcDimensionCount</span></a><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCLINE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCLINE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcLine.html"><span class="tok-nc">IfcLine</span></a><span class="tok-p">.</span><span class="tok-n">Pnt</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCONIC'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCONIC'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcConic.html"><span class="tok-nc">IfcConic</span></a><span class="tok-p">.</span><span class="tok-n">Position</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCPOLYLINE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPOLYLINE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcPolyline.html"><span class="tok-nc">IfcPolyline</span></a><span class="tok-p">.</span><span class="tok-n">Points</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCTRIMMEDCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCTRIMMEDCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><a href="IfcCurveDim.html"><span class="tok-nc">IfcCurveDim</span></a><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcTrimmedCurve.html"><span class="tok-nc">IfcTrimmedCurve</span></a><span class="tok-p">.</span><span class="tok-n">BasisCurve</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCGRADIENTCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCGRADIENTCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCSEGMENTEDREFERENCECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCSEGMENTEDREFERENCECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCOMPOSITECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCOMPOSITECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCBSPLINECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCBSPLINECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcBSplineCurve.html"><span class="tok-nc">IfcBSplineCurve</span></a><span class="tok-p">.</span><span class="tok-n">ControlPointsList</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCOFFSETCURVE2D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCOFFSETCURVE2D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">2</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCOFFSETCURVE3D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCOFFSETCURVE3D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCOFFSETCURVEBYDISTANCES'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCOFFSETCURVEBYDISTANCES'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCURVESEGMENT2D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCURVESEGMENT2D'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">2</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCPOLYNOMIALCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPOLYNOMIALCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-kd">IF</span> <span class="tok-p">(</span> <span class="tok-nb">NOT</span> <span class="tok-nb">EXISTS</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcPolynomialCurve.html"><span class="tok-nc">IfcPolynomialCurve</span></a><span class="tok-p">.</span><span class="tok-n">CoefficientsZ</span><span class="tok-p">)</span> <span class="tok-nb">AND</span> <span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcPolynomialCurve.html"><span class="tok-nc">IfcPolynomialCurve</span></a><span class="tok-p">.</span><span class="tok-n">Position</span><span class="tok-p">.</span><span class="tok-n">Dim</span> <span class="tok-o">=</span> <span class="tok-m">2</span> <span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">2</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCPCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCINDEXEDPOLYCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCINDEXEDPOLYCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcIndexedPolyCurve.html"><span class="tok-nc">IfcIndexedPolyCurve</span></a><span class="tok-p">.</span><span class="tok-n">Points</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCSPIRAL'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCSPIRAL'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Curve</span><span class="tok-o">\</span><a href="IfcSpiral.html"><span class="tok-nc">IfcSpiral</span></a><span class="tok-p">.</span><span class="tok-n">Position</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-k">RETURN</span> <span class="tok-p">(</span><span class="tok-err">?</span><span class="tok-p">)</span><span class="tok-p">;</span>
@@ -357,9 +358,7 @@ This function checks the dimensionality of various subtypes of curve. It returns
 <small>
 <span id="contributors">1 contributor(s):
 <img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/> </span><br/>
-<span id="last-change">Last change: <em>Merge pull request #1170 from buildingSMART/tfk-various
-
-Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:21+02:00</span>
+<span id="last-change">Last change: <em>Merge pull request #1175 from buildingSMART/fix/schema-name-and-search</em> by Evandro Alfieri on 2026-09-09T23:01:49+02:00</span>
 </small>
 </p>
 <p>
@@ -393,7 +392,6 @@ Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:2
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>
