@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.9.3.55 IfcRectangularTrimmedSurface - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -13,7 +14,7 @@
 <div class="row">
 <header>
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+<p class="header-title">IFC 4.4.0.0 build 20260909 (IFC4X4)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -781,9 +782,9 @@ The trimmed surface is a simple bounded surface in which the boundaries are the 
 </tr>
 <tr>
 <td colspan="2">
-<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCELEMENTARYSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">AND</span>
-<span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCPLANE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
-<span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCSURFACEOFREVOLUTION'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCELEMENTARYSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">AND</span>
+<span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPLANE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCSURFACEOFREVOLUTION'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
 <span class="tok-p">(</span><span class="tok-n">Usense</span> <span class="tok-o">=</span> <span class="tok-p">(</span><span class="tok-n">U2</span> <span class="tok-o">&gt;</span> <span class="tok-n">U1</span><span class="tok-p">)</span><span class="tok-p">)</span></code></pre>
 </td>
 </tr>
@@ -825,9 +826,9 @@ The trimmed surface is a simple bounded surface in which the boundaries are the 
 <span class="tok-n">Vsense</span> <span class="tok-o">:</span> <a href="IfcBoolean.html"><span class="tok-nc">IfcBoolean</span></a><span class="tok-p">;</span>
 <span class="tok-k">WHERE</span>
 <span class="tok-n">U1AndU2Different</span> <span class="tok-o">:</span> <span class="tok-n">U1</span> <span class="tok-o">&lt;&gt;</span> <span class="tok-n">U2</span><span class="tok-p">;</span>
-<span class="tok-n">UsenseCompatible</span> <span class="tok-o">:</span> <span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCELEMENTARYSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">AND</span>
-<span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCPLANE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
-<span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCSURFACEOFREVOLUTION'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-n">UsenseCompatible</span> <span class="tok-o">:</span> <span class="tok-p">(</span><span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCELEMENTARYSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">AND</span>
+<span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPLANE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
+<span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCSURFACEOFREVOLUTION'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">BasisSurface</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span>
 <span class="tok-p">(</span><span class="tok-n">Usense</span> <span class="tok-o">=</span> <span class="tok-p">(</span><span class="tok-n">U2</span> <span class="tok-o">&gt;</span> <span class="tok-n">U1</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">V1AndV2Different</span> <span class="tok-o">:</span> <span class="tok-n">V1</span> <span class="tok-o">&lt;&gt;</span> <span class="tok-n">V2</span><span class="tok-p">;</span>
 <span class="tok-n">VsenseCompatible</span> <span class="tok-o">:</span> <span class="tok-n">Vsense</span> <span class="tok-o">=</span> <span class="tok-p">(</span><span class="tok-n">V2</span> <span class="tok-o">&gt;</span> <span class="tok-n">V1</span><span class="tok-p">)</span><span class="tok-p">;</span>
@@ -848,9 +849,7 @@ The trimmed surface is a simple bounded surface in which the boundaries are the 
 <small>
 <span id="contributors">1 contributor(s):
 <img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/> </span><br/>
-<span id="last-change">Last change: <em>Merge pull request #1170 from buildingSMART/tfk-various
-
-Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:21+02:00</span>
+<span id="last-change">Last change: <em>Merge pull request #1175 from buildingSMART/fix/schema-name-and-search</em> by Evandro Alfieri on 2026-09-09T23:01:49+02:00</span>
 </small>
 </p>
 <p>
@@ -884,7 +883,6 @@ Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:2
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>

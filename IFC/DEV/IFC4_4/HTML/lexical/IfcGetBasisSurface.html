@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <title>8.9.6.12 IfcGetBasisSurface - IFC 4.4.0.0 Documentation</title>
 <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href=".." id="site-root"/>
 <script>window.is_iso = false;</script>
 </head>
 <body class="">
@@ -13,7 +14,7 @@
 <div class="row">
 <header>
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+<p class="header-title">IFC 4.4.0.0 build 20260909 (IFC4X4)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -292,31 +293,31 @@ This function returns the basis surface for a curve as a a set of surfaces. For 
 <span class="tok-n">N</span> <span class="tok-o">:</span> <span class="tok-nb">INTEGER</span><span class="tok-p">;</span>
 <span class="tok-kd">END_LOCAL</span><span class="tok-p">;</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <span class="tok-p">[</span><span class="tok-p">]</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X3_ADD2.IFCPCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span> <span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X4.IFCPCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span> <span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <span class="tok-p">[</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcPcurve.html"><span class="tok-nc">IfcPCurve</span></a><span class="tok-p">.</span><span class="tok-n">BasisSurface</span><span class="tok-p">]</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
-<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X3_ADD2.IFCSURFACECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span> <span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X4.IFCSURFACECURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span> <span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">N</span> <span class="tok-o">:=</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcSurfaceCurve.html"><span class="tok-nc">IfcSurfaceCurve</span></a><span class="tok-p">.</span><span class="tok-n">AssociatedGeometry</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">REPEAT</span> <span class="tok-n">i</span> <span class="tok-o">:=</span> <span class="tok-m">1</span> <span class="tok-k">TO</span> <span class="tok-n">N</span><span class="tok-p">;</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <span class="tok-n">Surfs</span> <span class="tok-o">+</span> <a href="IfcAssociatedSurface.html"><span class="tok-nc">IfcAssociatedSurface</span></a><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcSurfaceCurve.html"><span class="tok-nc">IfcSurfaceCurve</span></a><span class="tok-p">.</span><span class="tok-n">AssociatedGeometry</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_REPEAT</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X3_ADD2.IFCCOMPOSITECURVEONSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span> <span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-s1">'IFC4X4.IFCCOMPOSITECURVEONSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span> <span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-cm">(* For an IfcCompositeCurveOnSurface the BasisSurface is the intersection of the BasisSurface of all the segments. *)</span>
 <span class="tok-n">N</span> <span class="tok-o">:=</span> <span class="tok-nb">SIZEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">)</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <a href="IfcGetBasisSurface.html"><span class="tok-nc">IfcGetBasisSurface</span></a><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-o">\</span><a href="IfcCurveSegment.html"><span class="tok-nc">IfcCurveSegment</span></a><span class="tok-p">.</span><span class="tok-n">ParentCurve</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCOMPOSITECURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCOMPOSITECURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <a href="IfcGetBasisSurface.html"><span class="tok-nc">IfcGetBasisSurface</span></a><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-m">1</span><span class="tok-p">]</span><span class="tok-o">\</span><a href="IfcCompositeCurveSegment.html"><span class="tok-nc">IfcCompositeCurveSegment</span></a><span class="tok-p">.</span><span class="tok-n">ParentCurve</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">IF</span> <span class="tok-n">N</span> <span class="tok-o">&gt;</span> <span class="tok-m">1</span> <span class="tok-kd">THEN</span>
 <span class="tok-kd">REPEAT</span> <span class="tok-n">i</span> <span class="tok-o">:=</span> <span class="tok-m">2</span> <span class="tok-k">TO</span> <span class="tok-n">N</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <span class="tok-n">Surfs</span> <span class="tok-o">*</span> <a href="IfcGetBasisSurface.html"><span class="tok-nc">IfcGetBasisSurface</span></a><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-o">\</span><a href="IfcCurveSegment.html"><span class="tok-nc">IfcCurveSegment</span></a><span class="tok-p">.</span><span class="tok-n">ParentCurve</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCCOMPOSITECURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCCOMPOSITECURVESEGMENT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Surfs</span> <span class="tok-o">:=</span> <span class="tok-n">Surfs</span> <span class="tok-o">*</span> <a href="IfcGetBasisSurface.html"><span class="tok-nc">IfcGetBasisSurface</span></a><span class="tok-p">(</span><span class="tok-n">C</span><span class="tok-o">\</span><a href="IfcCompositeCurve.html"><span class="tok-nc">IfcCompositeCurve</span></a><span class="tok-p">.</span><span class="tok-n">Segments</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span><span class="tok-o">\</span><a href="IfcCompositeCurveSegment.html"><span class="tok-nc">IfcCompositeCurveSegment</span></a><span class="tok-p">.</span><span class="tok-n">ParentCurve</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">END_REPEAT</span><span class="tok-p">;</span>
@@ -341,9 +342,7 @@ This function returns the basis surface for a curve as a a set of surfaces. For 
 <small>
 <span id="contributors">1 contributor(s):
 <img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/> </span><br/>
-<span id="last-change">Last change: <em>Merge pull request #1170 from buildingSMART/tfk-various
-
-Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:21+02:00</span>
+<span id="last-change">Last change: <em>Merge pull request #1175 from buildingSMART/fix/schema-name-and-search</em> by Evandro Alfieri on 2026-09-09T23:01:49+02:00</span>
 </small>
 </p>
 <p>
@@ -377,7 +376,6 @@ Various changes to HTML generation</em> by Evandro Alfieri on 2026-09-08T13:02:2
             'base': '',
             'repo': 'buildingSMART/IFC4.3.x-development',
             'resourceApi': null,
-            'searchIndex': '/assets/search/search-index.json',
         };
     </script>
 <script>
