@@ -20,7 +20,7 @@
     .standards-side { display: grid; gap: 20px; }
     .panel { padding: 22px 24px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: 0 8px 30px rgba(22,50,79,.06); }
     h2 { margin: 0 0 8px; color: var(--navy); font-size: 1.25rem; line-height: 1.2; }
-    .release { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }
+    .release { display: grid; grid-template-columns: 76px minmax(0,1fr); gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }
     h3, h4 { margin: 0; color: var(--navy); font-size: 1rem; line-height: 1.6; }
     ul { margin: 0; padding: 0; list-style: none; }
     .release li { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; }
@@ -37,7 +37,7 @@
     .release-name { font-weight: 700; }
     .release-muted { color: #a3adb5; }
     .release-muted h4 { color: #a3adb5; }
-    .formats { display: flex; flex-wrap: wrap; gap: 2px 12px; flex-basis: 100%; font-size: .875rem; }
+    .formats { display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: .875rem; }
     .formats a { white-space: nowrap; }
     .release .formats a::after { content: none; }
     .release li + li { margin-top: 8px; }
@@ -60,6 +60,8 @@
       .release a { padding: 6px 0; }
     }
 
+    .api-category + .api-category { margin-top: 16px; }
+    .api-category > h4 { margin-bottom: 8px; }
     .api-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); }
     .api-row a, .service-links { font-size: .875rem; }
     .version { color: var(--muted); font-weight: 400; }
@@ -77,7 +79,7 @@
     .service-grid h3 { margin: 0 0 16px; font-size: 1.125rem; }
     .service-links a { padding: 4px 0; }
     @media (max-width: 720px) { .services { margin-top: 32px; } .service-grid > section { padding: 20px; } }
-    .mvd-release { grid-template-columns: minmax(100px, 150px) minmax(0, 1fr); }
+    .mvd-release { grid-template-columns: 110px minmax(0, 1fr); }
     .mvd-release .formats { flex-basis: auto; }
     .mvd-release li { gap: 6px 16px; }
     .note { color: var(--muted); font-size: .8125rem; font-style: italic; }
@@ -88,6 +90,18 @@
     .release-filter { display: flex; align-items: center; gap: 10px; margin: 20px 0 8px; color: var(--navy); font-size: .875rem; cursor: pointer; width: fit-content; }
     .release-filter input { width: 18px; height: 18px; margin: 0; accent-color: var(--blue); cursor: pointer; }
     .release-filter input:focus-visible { outline: 3px solid rgba(0,91,159,.4); outline-offset: 3px; }
+    .release-row { grid-template-columns: minmax(0, 155px) 108px minmax(0, 1fr); align-items: start; gap: 8px 12px; }
+    .release-row > h4 { overflow-wrap: anywhere; }
+    .release-row > .status { grid-column: 2; justify-self: start; margin-top: 3px; }
+    .release-row > .formats { grid-column: 3; min-width: 0; }
+    .release-row > .note { grid-column: 1 / -1; margin: 0; }
+    .standards-side .release-row, [aria-labelledby="mvdxml-heading"] .release-row { grid-template-columns: minmax(0, 56px) 86px minmax(0, 1fr); gap: 8px; }
+    .release-row:not(:has(> .status)) { grid-template-columns: 56px minmax(0, 1fr); }
+    .release-row:not(:has(> .status)) > .formats { grid-column: 2; }
+    @media (max-width: 480px) {
+      .release-row { grid-template-columns: minmax(0, 100px) 86px minmax(0, 1fr); gap: 8px; }
+      .release-row > .status { white-space: normal; }
+    }
     [hidden] { display: none !important; }
   </style>
 </head>
@@ -104,18 +118,13 @@
     <nav class="standards" aria-labelledby="standards-heading">
       <section class="panel" aria-labelledby="ifc-heading">
         <h3 class="panel-heading" id="ifc-heading"><span>IFC</span><span class="heading-description">Industry Foundation Classes</span></h3>
-        <div class="release release-muted"><h4>4.4</h4><ul><li><span class="release-name">4.4.0.0 (draft title)</span> <span class="status status-development">In development</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/">HTML</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/IFC4X3_DEV_dd97e9c.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/IFC4X3_DEV_dd97e9c.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/annex-a-psd.zip">PSD ZIP</a></span></li></ul></div>
-        <div class="release"><h4>4.3</h4><ul>
-          <li><span class="release-name">4.3.2.0 (ADD2)</span> <span class="status status-final">Final</span>
-		  <span class="formats"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/IFC4X3_ADD2.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/IFC4X3_ADD2.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML/annex-a-psd.zip">PSD ZIP</a></span></li>
-		  <li class="note"> NOTE: The HTML and PSD publication differs from the version submitted to ISO, as it contains grammatical corrections and description clarifications (without altering the structure or schema of the official publication). The website also includes MVD information and search, feedback, and translation features. You can download the official ISO release here: <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/IFC4.3.2.0.zip">IFC4.3.2.0.zip</a></li>
-        </ul></div>
-        <div class="release release-muted"><h4>4.1</h4><ul><li><span class="release-name">4.1.0.0</span> <span class="status status-withdrawn">Withdrawn</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/EXPRESS/IFC4x1.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/XML/IFC4x1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/IFC4_1-Final-HTML.zip">Full ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/XML/IFC4x1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/ifc4x1-final_shortform.zip">Shortform ZIP</a></span></li></ul></div>
-        <div class="release"><h4>4</h4><ul><li><span class="release-name">4.0.2.1 (ADD2 TC1)</span> <span class="status status-final">Final</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/EXPRESS/IFC4.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/XML/ifcXML4.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_IFC4_HTML_distribution.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_IFC4_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_ifcXML4_XSD_longform.zip">XSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/PSD_IFC4_20131201.zip">PSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/PSD_IFC4_html_20131201.zip">PSD HTML ZIP</a></span></li></ul></div>
-        <div class="release"><h4>2x3</h4><ul>
-          <li><span class="release-name">2.3.0.1 (TC1)</span> <span class="status status-final">Final</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/EXPRESS/IFC2X3_TC1.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/XML/IFC2X3.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/IFC2x3_TC1_HTML_distribution-pset_errata.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/IFC2X3_TC1_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/ifcXML2x3_final.zip">XML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/psd_IFC2x3_TC1_20071227.zip">PSD ZIP</a></span></li>
-          <li><span class="release-name release-muted">2.3.0.0</span> <span class="status status-retired">Retired</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/EXPRESS/IFC2X3_Final.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/IFC2x3_Final_HTML_distribution.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/IFC2x3_Final_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/PSD_for_IFC2x3_20080717.zip">PSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/psd_xsd_2x3_20080717.zip">PSD XSD ZIP</a></span></li>
-        </ul></div>
+        <div class="release release-row release-muted"><h4>4.4.0.0 (draft title)</h4><span class="status status-development">In development</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/">HTML</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/IFC4X3_DEV_dd97e9c.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/IFC4X3_DEV_dd97e9c.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_4/HTML/annex-a-psd.zip">PSD ZIP</a></span></div>
+        <div class="release release-row"><h4>4.3 ADD2 (4.3.2.0)</h4><span class="status status-final">Final</span>
+		  <span class="formats"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/IFC4X3_ADD2.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/IFC4X3_ADD2.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4_3/HTML/annex-a-psd.zip">PSD ZIP</a></span><p class="note"> NOTE: The HTML and PSD publication differs from the version submitted to ISO, as it contains grammatical corrections and description clarifications (without altering the structure or schema of the official publication). The website also includes MVD information and search, feedback, and translation features. You can download the official ISO release here: <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/IFC4.3.2.0.zip">IFC4.3.2.0.zip</a></p></div>
+        <div class="release release-row release-muted"><h4>4.1.0.0</h4><span class="status status-withdrawn">Withdrawn</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/EXPRESS/IFC4x1.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/XML/IFC4x1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/IFC4_1-Final-HTML.zip">Full ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/XML/IFC4x1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4_1/FINAL/ifc4x1-final_shortform.zip">Shortform ZIP</a></span></div>
+        <div class="release release-row"><h4>4.0 ADD2 TC1 (4.0.2.1)</h4><span class="status status-final">Final</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/EXPRESS/IFC4.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/XML/ifcXML4.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_IFC4_HTML_distribution.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_IFC4_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/20130305_ifcXML4_XSD_longform.zip">XSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/PSD_IFC4_20131201.zip">PSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/PSD_IFC4_html_20131201.zip">PSD HTML ZIP</a></span></div>
+        <div class="release release-row"><h4>2x3 TC1 (2.3.0.1)</h4><span class="status status-final">Final</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/EXPRESS/IFC2X3_TC1.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/XML/IFC2X3.xsd">XSD</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/IFC2x3_TC1_HTML_distribution-pset_errata.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/IFC2X3_TC1_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/ifcXML2x3_final.zip">XML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/psd_IFC2x3_TC1_20071227.zip">PSD ZIP</a></span></div>
+        <div class="release release-row release-muted"><h4>2x3 (2.3.0.0)</h4><span class="status status-retired">Retired</span><span class="formats"><a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/HTML">HTML</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/EXPRESS/IFC2X3_Final.exp">EXPRESS</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/IFC2x3_Final_HTML_distribution.zip">HTML ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/IFC2x3_Final_EXPRESS_longform.zip">EXPRESS ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/PSD_for_IFC2x3_20080717.zip">PSD ZIP</a> <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/FINAL/psd_xsd_2x3_20080717.zip">PSD XSD ZIP</a></span></div>
         <div class="auxiliary-publications">
           <h4>Auxiliary publications</h4>
           <ul>
@@ -128,17 +137,27 @@
       <div class="standards-side">
       <section class="panel" aria-labelledby="ids-heading">
         <h3 class="panel-heading" id="ids-heading"><span>IDS</span><span class="heading-description">Information Delivery Specification</span></h3>
-        <div class="release"><h4>1.0</h4><ul><li><span class="release-name">Release</span> <span class="status status-final">Final</span><span class="formats"><a href="https://standards.buildingsmart.org/IDS/1.0/ids.xsd">XSD</a></span></li></ul></div>
-        <div class="release release-muted"><h4>0.9.7</h4><ul><li><span class="release-name">Pre-release draft</span> <span class="status status-withdrawn">Withdrawn</span><span class="formats"><a href="https://standards.buildingsmart.org/IDS/0.9.7/ids.xsd">XSD</a></span></li></ul></div>
+        <div class="release release-row"><h4>1.0</h4><span class="status status-final">Final</span><span class="formats"><a href="https://standards.buildingsmart.org/IDS/1.0/ids.xsd">XSD</a></span></div>
+        <div class="release release-row release-muted"><h4>0.9.7</h4><span class="status status-withdrawn">Withdrawn</span><span class="formats"><a href="https://standards.buildingsmart.org/IDS/0.9.7/ids.xsd">XSD</a></span><span class="note">NOTE: Pre-release draft.</span></div>
       </section>
       <section class="panel" aria-labelledby="bcf-heading">
         <h3 class="panel-heading" id="bcf-heading"><span>BCF</span><span class="heading-description">BIM Collaboration Format</span></h3>
-        <div class="release"><h4>3.0</h4><ul><li><span class="formats"><a href="https://github.com/buildingSMART/BCF-XML">XML (GitHub)</a> <a href="https://github.com/BuildingSMART/BCF-API">API (GitHub)</a></span></li></ul></div>
+        <div class="release release-row"><h4>3.0</h4><span class="status status-final">Final</span><span class="formats"><a href="https://github.com/buildingSMART/BCF-XML/releases/tag/v3.0">XML (GitHub)</a> <a href="https://github.com/buildingSMART/BCF-API/releases/tag/v3.0">API (GitHub)</a></span></div>
+        <div class="release release-row"><h4>2.1</h4><span class="status status-final">Final</span><span class="formats"><a href="https://github.com/buildingSMART/BCF-XML/releases/tag/v2.1">XML (GitHub)</a> <a href="https://github.com/buildingSMART/BCF-API/releases/tag/v2.1">API (GitHub)</a></span></div>
+        <div class="release release-row"><h4>2.0</h4><span class="status status-final">Final</span><span class="formats"><a href="https://github.com/buildingSMART/BCF-XML/releases/tag/v2.0">XML (GitHub)</a></span></div>
+        <div class="release release-row"><h4>1.0</h4><span class="status status-final">Final</span><span class="formats"><a href="https://github.com/buildingSMART/BCF-API/releases/tag/v1.0">API (GitHub)</a></span></div>
       </section>
       <section class="panel" aria-labelledby="opencde-heading">
         <h3 class="panel-heading" id="opencde-heading"><span>openCDE APIs</span><span class="heading-description">the APIs for data exchange</span></h3>
-        <div class="api-row"><h4>Foundation API <span class="version">1.1</span></h4><a href="https://github.com/buildingSMART/foundation-api">GitHub</a></div>
-        <div class="api-row"><h4>Documents API <span class="version">1.0</span></h4><a href="https://github.com/buildingSMART/documents-API/">GitHub</a></div>
+        <div class="api-category">
+          <h4>Foundation API</h4>
+          <div class="release release-row"><h4>1.1</h4><span class="formats"><a href="https://github.com/buildingSMART/foundation-API/releases/tag/v1.1">GitHub</a></span></div>
+          <div class="release release-row"><h4>1.0</h4><span class="formats"><a href="https://github.com/buildingSMART/foundation-API/releases/tag/v1.0">GitHub</a></span></div>
+        </div>
+        <div class="api-category">
+          <h4>Documents API</h4>
+          <div class="release release-row"><h4>1.0</h4><span class="formats"><a href="https://github.com/buildingSMART/documents-API/releases/tag/v1.0">GitHub</a></span></div>
+        </div>
       </section>
       </div>
       <section class="panel" aria-labelledby="mvd-heading">
@@ -156,8 +175,8 @@
         </section>
       <section class="panel" aria-labelledby="mvdxml-heading">
         <h3 class="panel-heading" id="mvdxml-heading"><span>mvdXML</span><span class="heading-description">The format of MVD</span></h3>
-        <div class="release"><h4>1.1</h4><ul><li><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1.1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1.1_add1.xsd">Addendum 1 XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1-1-Final.pdf">PDF</a></span></li></ul></div>
-        <div class="release"><h4>1.0</h4><ul><li><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-0/mvdXML_V1-0.xsd">XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-0/mvdXML_V1-0.pdf">PDF</a></span></li></ul></div>
+        <div class="release release-row"><h4>1.1</h4><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1.1.xsd">XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1.1_add1.xsd">Addendum 1 XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-1/mvdXML_V1-1-Final.pdf">PDF</a></span></div>
+        <div class="release release-row"><h4>1.0</h4><span class="formats"><a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-0/mvdXML_V1-0.xsd">XSD</a> <a href="https://standards.buildingsmart.org/MVD/RELEASE/mvdXML/v1-0/mvdXML_V1-0.pdf">PDF</a></span></div>
       </section>
     </nav>
     <nav class="services" aria-labelledby="services-heading">
@@ -182,6 +201,10 @@
     const finalOnly = document.getElementById('final-only');
     function filterReleases() {
       document.querySelectorAll('.standards .release').forEach(release => {
+        if (release.classList.contains('release-row')) {
+          release.hidden = finalOnly.checked && Boolean(release.querySelector('.status-retired, .status-withdrawn, .status-development'));
+          return;
+        }
         const rows = Array.from(release.querySelectorAll('li'));
         rows.forEach(row => {
           const excluded = row.querySelector('.status-retired, .status-withdrawn, .status-development');
