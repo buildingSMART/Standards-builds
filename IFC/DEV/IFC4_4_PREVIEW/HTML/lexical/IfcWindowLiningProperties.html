@@ -13,8 +13,8 @@
 <div class="container">
 <div class="row">
 <header>
-<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+<img src="../assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20260924 (IFC4X4)
                             <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
 </p>
 <ul>
@@ -1054,6 +1054,108 @@ Because bringing back headers required to go back in time to previous version, I
 <p>
 </p><center><small>Jump to section</small></center>
 <ol class="referenced-list small"></ol>
+</div>
+<div class="changelog">
+<h3><a class="anchor" id="7.1.3.4.8-Changelog"></a>
+                        7.1.3.4.8 Changelog
+                    <a class="link" href="#7.1.3.4.8-Changelog"><i data-feather="link"></i></a></h3>
+<h4><a class="anchor" id="7.1.3.4.8.1-IFC4"></a>
+                        7.1.3.4.8.1 IFC4
+                    <a class="link" href="#7.1.3.4.8.1-IFC4"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="plus-square"></i>                                attribute,
+                                LiningOffset
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                attribute,
+                                LiningToPanelOffsetX
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                attribute,
+                                LiningToPanelOffsetY
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                attribute LiningThickness type,
+                                Changed from
+"<a href="IfcPositiveLengthMeasure.html">IfcPositiveLengthMeasure</a>"
+to
+"<a href="IfcNonNegativeLengthMeasure.html">IfcNonNegativeLengthMeasure</a>"
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                attribute MullionThickness type,
+                                Changed from
+"<a href="IfcPositiveLengthMeasure.html">IfcPositiveLengthMeasure</a>"
+to
+"<a href="IfcNonNegativeLengthMeasure.html">IfcNonNegativeLengthMeasure</a>"
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                attribute TransomThickness type,
+                                Changed from
+"<a href="IfcPositiveLengthMeasure.html">IfcPositiveLengthMeasure</a>"
+to
+"<a href="IfcNonNegativeLengthMeasure.html">IfcNonNegativeLengthMeasure</a>"
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                supertype,
+                                Changed from
+"<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>"
+to
+"<a href="IfcPreDefinedPropertySet.html">IfcPreDefinedPropertySet</a>"
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                where rule WR31 definition,
+                                Changed from
+"not(not(exists(LiningDepth)) and exists(LiningThickness))"
+to
+"not(exists(LiningDepth) and not(exists(LiningThickness)))"
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                where rule WR34 definition,
+                                Changed from
+"exists(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1]) and (ifcwindowstyle in typeof(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1]))"
+to
+"(exists(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])) and ((<a href="IfcWindowType.html">ifcwindowtype</a> in typeof(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])) or (ifcwindowstyle in typeof(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])))"
+                            </small>
+</li>
+</ul>
+<h4><a class="anchor" id="7.1.3.4.8.2-IFC4.3-ADD2"></a>
+                        7.1.3.4.8.2 IFC4.3_ADD2
+                    <a class="link" href="#7.1.3.4.8.2-IFC4.3-ADD2"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="edit"></i>                                deprecated,
+                                Is now deprecated
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                where rule WR34 definition,
+                                Changed from
+"(exists(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])) and ((<a href="IfcWindowType.html">ifcwindowtype</a> in typeof(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])) or (ifcwindowstyle in typeof(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])))"
+to
+"(exists(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1])) and (<a href="IfcWindowType.html">ifcwindowtype</a> in typeof(self\<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.DefinesType[1]))"
+                            </small>
+</li>
+</ul>
 </div>
 </div>
 </div>
