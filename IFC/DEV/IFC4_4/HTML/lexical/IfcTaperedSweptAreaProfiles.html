@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <div><img src="../assets/img/buildingSMART_RGB_IFC4_4_v4_transparent.png"/></div>
-<p class="header-title">IFC 4.4.0.0 build 20260929 (IFC4X4)
+<p class="header-title">IFC 4.4.0.0 build 20261001 (IFC4X4_DEV_20260525)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -104,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -300,14 +300,14 @@ IFC2x Edition 4.</font></small></aside>
 <span class="tok-kd">LOCAL</span>
 <span class="tok-n">Result</span> <span class="tok-o">:</span> <span class="tok-nb">LOGICAL</span> <span class="tok-o">:=</span> <span class="tok-n">FALSE</span><span class="tok-p">;</span>
 <span class="tok-kd">END_LOCAL</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCPARAMETERIZEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">StartArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_DEV_20260525.IFCPARAMETERIZEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">StartArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_DEV_20260525.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-p">(</span><span class="tok-n">StartArea</span> <span class="tok-o">:=:</span> <span class="tok-n">EndArea</span><span class="tok-o">\</span><a href="IfcDerivedProfileDef.html"><span class="tok-nc">IfcDerivedProfileDef</span></a><span class="tok-p">.</span><span class="tok-n">ParentProfile</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-p">(</span><span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">StartArea</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_DEV_20260525.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-p">(</span><span class="tok-n">StartArea</span> <span class="tok-o">:=:</span> <span class="tok-n">EndArea</span><span class="tok-o">\</span><a href="IfcDerivedProfileDef.html"><span class="tok-nc">IfcDerivedProfileDef</span></a><span class="tok-p">.</span><span class="tok-n">ParentProfile</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-n">FALSE</span><span class="tok-p">;</span>
@@ -326,7 +326,7 @@ IFC2x Edition 4.</font></small></aside>
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/resource/IfcGeometricModelResource/Functions/IfcTaperedSweptAreaProfiles.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.x-development/blob/ifc4.4-main/docs/schemas/resource/IfcGeometricModelResource/Functions/IfcTaperedSweptAreaProfiles.md"><span class="icon-edit inverse"></span> Edit on Github</a>
 </p>
 <p>
 <small>
@@ -338,7 +338,7 @@ Found via `codespell -q 3 -S "./schemas,./reference_schemas" -L cant,co-ordinate
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.x-development/issues/371">Let us know!</a>
 </small>
 </p>
 </div>
@@ -380,7 +380,7 @@ Found via `codespell -q 3 -S "./schemas,./reference_schemas" -L cant,co-ordinate
         window.appconfig = {
             'path': 'docs/schemas/resource/IfcGeometricModelResource/Functions/IfcTaperedSweptAreaProfiles.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>
