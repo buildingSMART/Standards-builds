@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
-<p class="header-title">IFC 4.3.2.0 build 20261001 (IFC4X3_ADD2)
+<p class="header-title">IFC 4.3.2.0 build 20261001 (IFC4X3_ADD2_DEV_20260526)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -300,14 +300,14 @@ IFC2x Edition 4.</font></small></aside>
 <span class="tok-kd">LOCAL</span>
 <span class="tok-n">Result</span> <span class="tok-o">:</span> <span class="tok-nb">LOGICAL</span> <span class="tok-o">:=</span> <span class="tok-n">FALSE</span><span class="tok-p">;</span>
 <span class="tok-kd">END_LOCAL</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCPARAMETERIZEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">StartArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2_DEV_20260526.IFCPARAMETERIZEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">StartArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2_DEV_20260526.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-p">(</span><span class="tok-n">StartArea</span> <span class="tok-o">:=:</span> <span class="tok-n">EndArea</span><span class="tok-o">\</span><a href="IfcDerivedProfileDef.html"><span class="tok-nc">IfcDerivedProfileDef</span></a><span class="tok-p">.</span><span class="tok-n">ParentProfile</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-p">(</span><span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">StartArea</span><span class="tok-p">)</span> <span class="tok-o">=</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X3_ADD2_DEV_20260526.IFCDERIVEDPROFILEDEF'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">EndArea</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-kd">THEN</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-p">(</span><span class="tok-n">StartArea</span> <span class="tok-o">:=:</span> <span class="tok-n">EndArea</span><span class="tok-o">\</span><a href="IfcDerivedProfileDef.html"><span class="tok-nc">IfcDerivedProfileDef</span></a><span class="tok-p">.</span><span class="tok-n">ParentProfile</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">ELSE</span>
 <span class="tok-n">Result</span> <span class="tok-o">:=</span> <span class="tok-n">FALSE</span><span class="tok-p">;</span>
