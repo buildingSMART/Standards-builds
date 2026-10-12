@@ -478,9 +478,7 @@
 <p>Decompositions may be constrained by requiring both the whole and its parts, to be of the same type - thus establishing a nesting relationship. Or they may require some form of physical containment, thus establishing special types of aggregation relationships.</p>
 <aside class="aside-note"><mark>NOTE</mark> There are two special names for decomposition, which are linguistically distinguished, nesting and aggregation. The subtypes of <em><a href="IfcRelDecomposes.html">IfcRelDecomposes</a></em> will introduce either the nesting or aggregation convention (see <em><a href="IfcRelNests.html">IfcRelNests</a></em> and <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em>).</aside><aside class="aside-example"><mark>EXAMPLE</mark> A cost element is a nest of other cost elements, or a structural frame is an aggregation of beams and columns. Both are applications of the decomposition relationship.</aside>
 <p>Decompositions imply a dependency, i.e. the definition of the whole depends on the definition of the parts and the parts depend on the existence of the whole. The decomposition relationship can be applied in a recursive manner, i.e. a decomposed element can be part in another decomposition. Cyclic references must be prevented at application level.</p>
-<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC1.5, it is a generalisation of the IFC2.0 entity <em><a href="IfcRelNests.html">IfcRelNests</a></em>.</aside>
-<p>{ .change-ifc2x4}</p>
-<aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> The differentiation between the aggregation and nesting is determined to be a non-ordered or an ordered collection of parts. The attributes <em>RelatingObject</em> and <em>RelatedObjects</em> have been demoted to the subtypes.</aside>
+<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC1.5, it is a generalisation of the IFC2.0 entity <em><a href="IfcRelNests.html">IfcRelNests</a></em>.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> The differentiation between the aggregation and nesting is determined to be a non-ordered or an ordered collection of parts. The attributes <em>RelatingObject</em> and <em>RelatedObjects</em> have been demoted to the subtypes.</aside>
 <h2><a class="anchor" id="5.1.3.35.2-Entity-inheritance"></a>
     5.1.3.35.2 Entity inheritance
 <a class="link" href="#5.1.3.35.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
@@ -675,38 +673,9 @@
 </p>
 <p>
 <small>
-<span id="contributors">4 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Geert Hesselink" class="contributor-icon" src="https://github.com/Ghesselink.png?size=32" title="Geert Hesselink"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
-<span id="last-change">Last change: <em>Typos and small patches in content and entities (#986)
-
-* Typos and small patches in content and entities
-
-* revert redundant changes
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcObjectDefinition.html">IfcObjectDefinition</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcPropertyTemplateDefinition.html">IfcPropertyTemplateDefinition</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcRelDeclares.html">IfcRelDeclares</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcRelationship.html">IfcRelationship</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
----------
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-Co-authored-by: ArturTomczak &lt;artomczak@gmail.com&gt;</em> by Geert Hesselink on 2025-09-18T09:21:05+01:00</span>
+<span id="contributors">5 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Geert Hesselink" class="contributor-icon" src="https://github.com/Ghesselink.png?size=32" title="Geert Hesselink"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
+<span id="last-change">Last change: <em>Remove curly brace tags</em> by Thomas Krijnen on 2026-09-24T10:05:46+02:00</span>
 </small>
 </p>
 <p>

@@ -470,16 +470,13 @@
 <a class="link" href="#6.1.3.31.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p>A roof is the covering of the top part of a building, it protects the building against the effects of weather.</p>
 <!-- end of short definition -->
-<p>{ .extDef}</p>
 <aside class="aside-note"><mark>NOTE</mark> Definition according to ISO 6707-1: construction enclosing the building from above.</aside>
 <p>The <em><a href="IfcRoof.html">IfcRoof</a></em> shall either be represented:</p>
 <ul>
 <li>as a roof assembly that aggregates all parts (slabs, rafters and purlins, or other included roofs, such as dormers) with own shape representation, or</li>
 <li>as a single roof without decomposition including all shape representations directly at the roof entity.</li>
 </ul>
-<aside class="aside-note"><mark>NOTE</mark> In case of an <em><a href="IfcRoof.html">IfcRoof</a></em> being the assembly of all parts of the roof the aggregation is handled by the <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> relationship, relating an <em><a href="IfcRoof.html">IfcRoof</a></em> with the related roof elements, like slabs (represented by <em><a href="IfcSlab.html">IfcSlab</a></em>), rafters and purlins (represented by <em><a href="IfcBeam.html">IfcBeam</a></em>), or other included roofs, such as dormers (represented by <em><a href="IfcRoof.html">IfcRoof</a></em>).</aside><aside class="aside-note"><mark>NOTE</mark> Model View Definitions and implementer agreements may restrict the <em><a href="IfcRoof.html">IfcRoof</a></em> being an assembly to not have an independent shape representation, but to always require that the decomposed parts have a shape representation. In this case, at least the 'Body' geometric representations shall not be provided directly at <em><a href="IfcRoof.html">IfcRoof</a></em> if it is an assembly. The 'Body' geometric representation of the <em><a href="IfcRoof.html">IfcRoof</a></em> is then the sum of the 'Body' shape representation of the parts within the decomposition structure.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2.0.</aside>
-<p>{ .change-ifc2x4}</p>
-<aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> Attribute <em>ShapeType</em> renamed to <em>PredefinedType</em>.</aside>
+<aside class="aside-note"><mark>NOTE</mark> In case of an <em><a href="IfcRoof.html">IfcRoof</a></em> being the assembly of all parts of the roof the aggregation is handled by the <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> relationship, relating an <em><a href="IfcRoof.html">IfcRoof</a></em> with the related roof elements, like slabs (represented by <em><a href="IfcSlab.html">IfcSlab</a></em>), rafters and purlins (represented by <em><a href="IfcBeam.html">IfcBeam</a></em>), or other included roofs, such as dormers (represented by <em><a href="IfcRoof.html">IfcRoof</a></em>).</aside><aside class="aside-note"><mark>NOTE</mark> Model View Definitions and implementer agreements may restrict the <em><a href="IfcRoof.html">IfcRoof</a></em> being an assembly to not have an independent shape representation, but to always require that the decomposed parts have a shape representation. In this case, at least the 'Body' geometric representations shall not be provided directly at <em><a href="IfcRoof.html">IfcRoof</a></em> if it is an assembly. The 'Body' geometric representation of the <em><a href="IfcRoof.html">IfcRoof</a></em> is then the sum of the 'Body' shape representation of the parts within the decomposition structure.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2.0.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> Attribute <em>ShapeType</em> renamed to <em>PredefinedType</em>.</aside>
 <h2><a class="anchor" id="6.1.3.31.2-Entity-inheritance"></a>
     6.1.3.31.2 Entity inheritance
 <a class="link" href="#6.1.3.31.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
@@ -2760,23 +2757,7 @@ Figure G — Roof placement<a class="link" href="#Figure-G-Roof-placement"><i da
 <small>
 <span id="contributors">6 contributor(s):
 <img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="stefkeB" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+U1Q8L3RleHQ+Cjwvc3ZnPg==" title="stefkeB"/><img alt="luz paz" class="contributor-icon" src="https://github.com/luzpaz.png?size=32" title="luz paz"/> </span><br/>
-<span id="last-change">Last change: <em>Improve definition split (#876)
-
-* bring back headers
-
-headers were previously removed by mistake, now bringing them back
-
-* add new lines and rename the tag
-
-add the word 'short' in it
-
-* unify newlines
-
-make exactly one newline before and two after the tag
-
-* resolving typos
-
-Because bringing back headers required to go back in time to previous version, I'm now re-resolving the issues: #861, #860, #856</em> by ArturTomczak on 2024-07-16T16:07:28+02:00</span>
+<span id="last-change">Last change: <em>Remove curly brace tags</em> by Thomas Krijnen on 2026-09-24T10:05:46+02:00</span>
 </small>
 </p>
 <p>

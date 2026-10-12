@@ -529,9 +529,7 @@
 <p><em><a href="IfcConstraint.html">IfcConstraint</a></em> may be associated with any subtype of <em><a href="IfcObjectDefinition.html">IfcObjectDefinition</a></em> or <em><a href="IfcPropertyDefinition.html">IfcPropertyDefinition</a></em> through the <em><a href="IfcRelAssociatesConstraint.html">IfcRelAssociatesConstraint</a></em> relationship to indicate a system-defined constraint, or may be associated with <em><a href="IfcResourceObjectSelect.html">IfcResourceObjectSelect</a></em> (such as <em><a href="IfcPropertySingleValue.html">IfcPropertySingleValue</a></em>) by <em><a href="IfcResourceConstraintRelationship.html">IfcResourceConstraintRelationship</a></em> to indicate a user-defined constraint.</p>
 <p>A constraint must have a name applied through the <em><a href="IfcConstraint.html">IfcConstraint</a>.Name</em> attribute and optionally, a description through <em><a href="IfcConstraint.html">IfcConstraint</a>.Description</em>. The grade of the constraint (hard, soft, advisory) must be specified through <em><a href="IfcConstraint.html">IfcConstraint</a>.ConstraintGrade</em> or <em><a href="IfcConstraint.html">IfcConstraint</a>.UserDefinedGrade</em> whilst the source, creating actor and time at which the constraint is created may be optionally asserted through <em><a href="IfcConstraint.html">IfcConstraint</a>.ConstraintSource</em>, <em><a href="IfcConstraint.html">IfcConstraint</a>.CreatingActor</em> and <em><a href="IfcConstraint.html">IfcConstraint</a>.CreationTime</em>.</p>
 <p>A constraint may also have additional external information (such as classification or document information) associated to it by <em><a href="IfcExternalReferenceRelationship.html">IfcExternalReferenceRelationship</a></em>, accessible through inverse attribute <em><a href="IfcConstraint.html">IfcConstraint</a>.HasExternalReferences</em></p>
-<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2.0</aside>
-<p>{ .change-ifc2x4}</p>
-<aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> CreationTime changed to <a href="IfcDateTime.html">IfcDateTime</a> for ISO 8601 representation, HasExternalReferences new inverse attribute.</aside>
+<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2.0</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> CreationTime changed to <a href="IfcDateTime.html">IfcDateTime</a> for ISO 8601 representation, HasExternalReferences new inverse attribute.</aside>
 <h2><a class="anchor" id="8.3.3.1.2-Entity-inheritance"></a>
     8.3.3.1.2 Entity inheritance
 <a class="link" href="#8.3.3.1.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
@@ -735,37 +733,8 @@ When a value is provided for attribute UserDefinedGrade in parallel the attribut
 <p>
 <small>
 <span id="contributors">5 contributor(s):
-<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Geert Hesselink" class="contributor-icon" src="https://github.com/Ghesselink.png?size=32" title="Geert Hesselink"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/> </span><br/>
-<span id="last-change">Last change: <em>Typos and small patches in content and entities (#986)
-
-* Typos and small patches in content and entities
-
-* revert redundant changes
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcObjectDefinition.html">IfcObjectDefinition</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcPropertySetDefinition.html">IfcPropertySetDefinition</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcPropertyTemplateDefinition.html">IfcPropertyTemplateDefinition</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcRelDeclares.html">IfcRelDeclares</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
-* Update docs/schemas/core/IfcKernel/Entities/<a href="IfcRelationship.html">IfcRelationship</a>.md
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-
----------
-
-Co-authored-by: Thomas Krijnen &lt;t.krijnen@gmail.com&gt;
-Co-authored-by: ArturTomczak &lt;artomczak@gmail.com&gt;</em> by Geert Hesselink on 2025-09-18T09:21:05+01:00</span>
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Geert Hesselink" class="contributor-icon" src="https://github.com/Ghesselink.png?size=32" title="Geert Hesselink"/> </span><br/>
+<span id="last-change">Last change: <em>Remove curly brace tags</em> by Thomas Krijnen on 2026-09-24T10:05:46+02:00</span>
 </small>
 </p>
 <p>
