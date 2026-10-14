@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <img src="../assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20261012 (IFC4X4_PREVIEW_20260618)
+<p class="header-title">IFC 4.4.0.0 build 20261014 (IFC4X4_PREVIEW_20260618)
                             <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
 </p>
 <ul>
@@ -485,14 +485,14 @@
 </div>
 </div>
 </aside>
-<div class="mvd search-skip" title="Included in Group Assignment, IfcStructuralLoadCase">RV ⓘ</div>
-<div class="mvd search-skip" title="Included in Group Assignment, IfcStructuralLoadCase">AbV ⓘ</div>
+<div class="mvd search-skip" title="Included in Group Assignment, IfcStructuralAnalysisModel.LoadedBy, IfcStructuralLoadCase">RV ⓘ</div>
+<div class="mvd search-skip" title="Included in Group Assignment, IfcStructuralAnalysisModel.LoadedBy, IfcStructuralLoadCase">AbV ⓘ</div>
 <h2><a class="anchor" id="7.11.3.16.1-Semantic-definition"></a>
     7.11.3.16.1 Semantic definition
 <a class="link" href="#7.11.3.16.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p>The entity <em><a href="IfcStructuralLoadGroup.html">IfcStructuralLoadGroup</a></em> is used to structure the physical impacts. By using the grouping features inherited from <em><a href="IfcGroup.html">IfcGroup</a></em>, instances of <em><a href="IfcStructuralAction.html">IfcStructuralAction</a></em> (or its subclasses) and of <em><a href="IfcStructuralLoadGroup.html">IfcStructuralLoadGroup</a></em> can be used to define load groups, load cases and load combinations. (See also <em><a href="IfcLoadGroupTypeEnum.html">IfcLoadGroupTypeEnum</a></em>.)</p>
 <!-- end of short definition -->
-<aside class="aside-note"><mark>NOTE</mark> Important functionality for the description of a load-bearing system is derived from the existing IFC entity <em><a href="IfcGroup.html">IfcGroup</a></em>. This class provides, via the relationship class <em><a href="IfcRelAssignsToGroup.html">IfcRelAssignsToGroup</a></em>, the needed grouping mechanism. In this way, instances of <em><a href="IfcStructuralAction.html">IfcStructuralAction</a></em> belonging to a specific load group can be unambiguously determined.</aside><aside class="aside-note"><mark>NOTE</mark> The relationship class <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a></em> is used to group load cases into load combinations. The factor provided in this assignment relationship is to applied together with the optional <em><a href="IfcStructuralLoadGroup.html">IfcStructuralLoadGroup</a>.Coefficient</em>. Unlike this coefficient which always affects the load group, the <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a>.Factor</em> is specific for a load case—load combination pair. As many instances of <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a></em> are used within one load combination as there are different <em>Factor_s to be applied to load cases in the load combination. On the other hand, a load case may appear in more than one load combination and can have a different _Factor</em> in each assignment by <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a></em>.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2x2.</aside>
+<aside class="aside-note"><mark>NOTE</mark> Important functionality for the description of a load-bearing system is derived from the existing IFC entity <em><a href="IfcGroup.html">IfcGroup</a></em>. This class provides, via the relationship class <em><a href="IfcRelAssignsToGroup.html">IfcRelAssignsToGroup</a></em>, the needed grouping mechanism. In this way, instances of <em><a href="IfcStructuralAction.html">IfcStructuralAction</a></em> belonging to a specific load group can be unambiguously determined.</aside><aside class="aside-note"><mark>NOTE</mark> The relationship class <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a></em> is used to group load cases into load combinations. The factor provided in this assignment relationship is to applied together with the optional <em><a href="IfcStructuralLoadGroup.html">IfcStructuralLoadGroup</a>.Coefficient</em>. Unlike this coefficient which always affects the load group, the <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a>.Factor</em> is specific for a load case—load combination pair. As many instances of <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a></em> are used within one load combination as there are different _Factor_s to be applied to load cases in the load combination. On the other hand, a load case may appear in more than one load combination and can have a different <em>Factor</em> in each assignment by <em><a href="IfcRelAssignsToGroupByFactor.html">IfcRelAssignsToGroupByFactor</a></em>.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2x2.</aside>
 <p>{ .change-ifc2x4}</p>
 <aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> Subtype <em><a href="IfcStructuralLoadCase.html">IfcStructuralLoadCase</a></em> added. Informal propositions and WHERE rule added. Predefined type LOAD_COMBINATION_GROUP made obsolete and removed.</aside>
 <p><strong>Informal Propositions</strong></p>

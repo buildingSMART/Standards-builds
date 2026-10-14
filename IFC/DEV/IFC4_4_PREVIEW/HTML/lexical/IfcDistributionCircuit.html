@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <img src="../assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20261012 (IFC4X4_PREVIEW_20260618)
+<p class="header-title">IFC 4.4.0.0 build 20261014 (IFC4X4_PREVIEW_20260618)
                             <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
 </p>
 <ul>
@@ -473,10 +473,10 @@
 <aside class="aside-history"><mark>HISTORY</mark> New entity in IFC4.</aside>
 <p>{ .change-ifc2x4}</p>
 <aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> For electrical power systems, <em>IfcElectricalCircuit</em> has been used for low-voltage (12-1000 V) power circuits and has been replaced by <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> in IFC4; <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> with PredefinedType 'ELECTRICAL' should be used for overall power systems, and <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> with PredefinedType 'ELECTRICAL' should be used for each switched circuit.</aside>
-<p><strong><em>*Composition Use Definition</em></strong>*</p>
+<p><strong><strong>Composition Use Definition</strong></strong></p>
 <p>An <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> may aggregate an <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> using the <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> relationship where <em>RelatingObject</em> refers to the <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> and <em>RelatedObjects</em> includes one or more <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> groups.</p>
 <p>An <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> may be aggregated into sub-circuits using the <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> relationship where <em>RelatingObject</em> refers to the parent <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> and <em>RelatedObjects</em> refers to one or more <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> sub-circuits.</p>
-<p><strong><em>*Assignment Use Definition</em></strong>*</p>
+<p><strong><strong>Assignment Use Definition</strong></strong></p>
 <p>An <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> should be assigned to an <em><a href="IfcDistributionPort.html">IfcDistributionPort</a></em> on an <em><a href="IfcFlowController.html">IfcFlowController</a></em> element indicating the host or origination of the system using the <em><a href="IfcRelAssignsToProduct.html">IfcRelAssignsToProduct</a></em> relationship.</p>
 <p>Each device whose operation is conditional based upon the state of the circuit is assigned to the <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> via the <em><a href="IfcRelAssignsToGroup.html">IfcRelAssignsToGroup</a></em> relationship. An <em><a href="IfcDistributionElement.html">IfcDistributionElement</a></em> may belong to multiple systems or circuits, however only one <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> or <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> of a particular <em>PredefinedType</em>.</p>
 <h2><a class="anchor" id="6.2.3.3.2-Entity-inheritance"></a>
