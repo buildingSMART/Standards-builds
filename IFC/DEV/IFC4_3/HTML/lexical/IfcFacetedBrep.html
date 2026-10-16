@@ -13,14 +13,9 @@
 <div class="container">
 <div class="row">
 <header>
-<img class="logo" src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.3-main/docs/assets/img/IFC4x3-logo1.1-wide.png" style="
-                        display: inline-flex;
-                        padding-bottom: 0px;
-                        padding-top: 0px;
-                        float: left;
-                    " width="100"/>
-<p style="display: inline-block; vertical-align: top;">IFC 4.3.2.0 build 20260909 (IFC4X3_ADD2)
-                            <small>under development</small>
+<div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
+<p class="header-title">IFC 4.3.2.0 build 20261012 (IFC4X3_ADD2_DEV_20260526)
+                            <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
 <li>
@@ -109,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -280,7 +275,7 @@
 </nav>
 </div>
 <div class="col-md-8" id="main-content">
-<h1>8.8.3.18 <a href="IfcFacetedBrep.html">IfcFacetedBrep</a></h1>
+<h1>8.8.3.18 IfcFacetedBrep</h1>
 <aside class="aside-note search-skip" id="translations-aside">
 <div class="translation lang-arabic" style="display:none">
 <div>
@@ -517,7 +512,8 @@
 </div>
 </div>
 </aside>
-<p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+<div class="mvd search-skip" title="Included in Body Brep Geometry">RV ⓘ</div>
+<div class="mvd search-skip" title="Included in Body Brep Geometry">AbV ⓘ</div>
 <h2><a class="anchor" id="8.8.3.18.1-Semantic-definition"></a>
     8.8.3.18.1 Semantic definition
 <a class="link" href="#8.8.3.18.1-Semantic-definition"><i data-feather="link"></i></a></h2>
@@ -525,12 +521,8 @@
 <!-- end of short definition -->
 <figure><a class="anchor" id="Figure-A-Diagram-showing-the-use-ofIfcFacetedBrep"></a><img alt="faceted brep instantiation" src="../figures/ifcfacetedbrep_01.png"/><figcaption>Figure A — Diagram showing the use of <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em><a class="link" href="#Figure-A-Diagram-showing-the-use-ofIfcFacetedBrep"><i data-feather="link"></i></a></figcaption></figure>
 
-<aside class="aside-note"><mark>NOTE</mark> Use of <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em> is restricted for boundary representation models with planar surfaces only. Those surfaces are implicitly represented by the bounding polygons. The diagram shows the topological and geometric representation items that are used for faceted breps. Each <em><a href="IfcCartesianPoint.html">IfcCartesianPoint</a></em>, used within the <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em> shall be referenced three times by an <em><a href="IfcPolyLoop.html">IfcPolyLoop</a></em> bounding a different <em><a href="IfcFace.html">IfcFace</a></em>.</aside>
-<p>{ .extDef}</p>
-<aside class="aside-note"><mark>NOTE</mark> Definition according to ISO/CD 10303-42:1992
-A faceted B-rep is a simple form of boundary representation model in which all faces are planar and all edges are straight lines. Unlike the B-rep model, edges and vertices are not represented explicitly in the model but are implicitly available through the poly loop entity. A faceted B-rep has to meet the same topological constraints as the manifold solid B-rep.</aside>
-<p>{ .extDef}</p>
-<aside class="aside-note"><mark>NOTE</mark> Entity adapted from <strong>manifold_solid_brep</strong> defined in ISO 10303-42.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC1.0</aside><blockquote>
+<aside class="aside-note"><mark>NOTE</mark> Use of <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em> is restricted for boundary representation models with planar surfaces only. Those surfaces are implicitly represented by the bounding polygons. The diagram shows the topological and geometric representation items that are used for faceted breps. Each <em><a href="IfcCartesianPoint.html">IfcCartesianPoint</a></em>, used within the <em><a href="IfcFacetedBrep.html">IfcFacetedBrep</a></em> shall be referenced three times by an <em><a href="IfcPolyLoop.html">IfcPolyLoop</a></em> bounding a different <em><a href="IfcFace.html">IfcFace</a></em>.</aside><aside class="aside-note"><mark>NOTE</mark> Definition according to ISO/CD 10303-42:1992
+A faceted B-rep is a simple form of boundary representation model in which all faces are planar and all edges are straight lines. Unlike the B-rep model, edges and vertices are not represented explicitly in the model but are implicitly available through the poly loop entity. A faceted B-rep has to meet the same topological constraints as the manifold solid B-rep.</aside><aside class="aside-note"><mark>NOTE</mark> Entity adapted from <strong>manifold_solid_brep</strong> defined in ISO 10303-42.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC1.0</aside><blockquote>
 <p>The faceted B-rep has been introduced in order to support the larger number of systems that allow boundary type solid representations with planar surfaces only.</p>
 </blockquote>
 <p><strong>Informal Propositions</strong></p>
@@ -728,17 +720,18 @@ A faceted B-rep is a simple form of boundary representation model in which all f
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/resource/IfcGeometricModelResource/Entities/IfcFacetedBrep.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.x-development/blob/ifc4.3-main/docs/schemas/resource/IfcGeometricModelResource/Entities/IfcFacetedBrep.md"><span class="icon-edit inverse"></span> Edit on Github</a>
 </p>
 <p>
 <small>
-<span id="contributors"></span><br/>
-<span id="last-change"></span>
+<span id="contributors">4 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/> </span><br/>
+<span id="last-change">Last change: <em>Remove curly brace tags</em> by Thomas Krijnen on 2026-09-24T10:05:46+02:00</span>
 </small>
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.x-development/issues/371">Let us know!</a>
 </small>
 </p>
 </div>
@@ -765,7 +758,7 @@ A faceted B-rep is a simple form of boundary representation model in which all f
         window.appconfig = {
             'path': 'docs/schemas/resource/IfcGeometricModelResource/Entities/IfcFacetedBrep.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>

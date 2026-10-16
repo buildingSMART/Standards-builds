@@ -13,8 +13,8 @@
 <div class="container">
 <div class="row">
 <header>
-<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260908 (IFC4X4)
+<img src="../assets/img/IFC4x4-logo1.1-wide.png"/>
+<p class="header-title">IFC 4.4.0.0 build 20261014 (IFC4X4_PREVIEW_20260618)
                             <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
 </p>
 <ul>
@@ -104,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -499,7 +499,7 @@
 <aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2x2.</aside>
 <p>{ .change-ifc2x4}</p>
 <aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> Use definitions and informal proposition added.</aside>
-<p><strong><em>*Coordinate Systems</em></strong>*:</p>
+<p><strong><strong>Coordinate Systems</strong></strong>:</p>
 <p>The following coordinate systems are distinguished:</p>
 <ul>
 <li>The so-called global coordinate system is the coordinate system shared by all items and activities which are grouped in a common <em><a href="IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a></em>. This coordinate system is established by <em>SELF\<a href="IfcProduct.html">IfcProduct</a>.ObjectPlacement</em>. (This coordinate system is not necessarily the same as the <em><a href="IfcProject.html">IfcProject</a></em>'s world coordinate system.)</li>
@@ -507,7 +507,7 @@
 </ul>
 <p>Representation items in topology representations are always given within the <em>ObjectPlacement</em>, i.e. in so-called global coordinates (global with respect to the <em><a href="IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a></em> to which this item belongs).</p>
 <p>The usage of local coordinate systems is further defined in subtypes.</p>
-<p><strong><em>*Topology Use Definitions</em></strong>*:</p>
+<p><strong><strong>Topology Use Definitions</strong></strong>:</p>
 <p>Instances of <em><a href="IfcStructuralItem.html">IfcStructuralItem</a></em> shall have a topology representation. It includes a placement and a product representation. The <em><a href="IfcProductRepresentation.html">IfcProductRepresentation</a></em> shall be given by an item in a <em>Representation</em> of type <em><a href="IfcTopologyRepresentation.html">IfcTopologyRepresentation</a></em>.</p>
 <p><strong>Local Placement</strong></p>
 <p>The local placement for <em><a href="IfcStructuralItem.html">IfcStructuralItem</a></em> is defined in its supertype <em><a href="IfcProduct.html">IfcProduct</a></em>. It is defined by the <em><a href="IfcLocalPlacement.html">IfcLocalPlacement</a></em>, which establishes a global coordinate system which shall be common to all items and activities in an <em><a href="IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a></em>.</p>
@@ -517,7 +517,7 @@
 <li>Point connections shall be represented by an <em><a href="IfcVertexPoint.html">IfcVertexPoint</a></em> with an underlying <em><a href="IfcCartesianPoint.html">IfcCartesianPoint</a></em>. The Cartesian point is the reference point of the connection in the so-called global coordinate system. The following labels are used in the <em><a href="IfcTopologyRepresentation.html">IfcTopologyRepresentation</a></em>:</li>
 <li><em>RepresentationIdentifier</em>: 'Reference'</li>
 <li><em>RepresentationType</em>: 'Vertex'</li>
-<li>Curve members and curve connections shall either be represented by an <em><a href="IfcOrientedEdge.html">IfcOrientedEdge</a></em>, <em><a href="IfcEdgeCurve.html">IfcEdgeCurve</a></em>, or <em><a href="IfcEdge.html">IfcEdge</a></em>. The curve to which the <em><a href="IfcEdgeCurve.html">IfcEdgeCurve</a></em> (or an <em><a href="IfcOrientedEdge.html">IfcOrientedEdge</a></em>'s underlying <em><a href="IfcEdgeCurve.html">IfcEdgeCurve</a></em>) refers to is the reference curve of the structural item in the global coordinate system. Start and end vertex of the edge shall be <em>IfcVertexPoint_s with underlying _IfcCartesianPoint_s. The following labels are used in the _IfcTopologyRepresentation</em>:</li>
+<li>Curve members and curve connections shall either be represented by an <em><a href="IfcOrientedEdge.html">IfcOrientedEdge</a></em>, <em><a href="IfcEdgeCurve.html">IfcEdgeCurve</a></em>, or <em><a href="IfcEdge.html">IfcEdge</a></em>. The curve to which the <em><a href="IfcEdgeCurve.html">IfcEdgeCurve</a></em> (or an <em><a href="IfcOrientedEdge.html">IfcOrientedEdge</a></em>'s underlying <em><a href="IfcEdgeCurve.html">IfcEdgeCurve</a></em>) refers to is the reference curve of the structural item in the global coordinate system. Start and end vertex of the edge shall be _IfcVertexPoint_s with underlying _IfcCartesianPoint_s. The following labels are used in the <em><a href="IfcTopologyRepresentation.html">IfcTopologyRepresentation</a></em>:</li>
 <li><em>RepresentationIdentifier</em>: 'Reference'</li>
 <li><em>RepresentationType</em>: 'Edge'<aside class="aside-note"><mark>NOTE</mark> While an <em><a href="IfcEdge.html">IfcEdge</a></em> (or <em><a href="IfcOrientedEdge.html">IfcOrientedEdge</a></em> with underlying <em><a href="IfcEdge.html">IfcEdge</a></em>) does not provide an explicit underlying curve geometry, it may be used to imply an underlying straight line as reference curve with the origin of the curve parameter at the start vertex point.</aside>
 </li>
@@ -545,7 +545,7 @@
 </ul>
 <p><strong>Informal Propositions</strong></p>
 <ol>
-<li>The <em>ObjectPlacement_s of all structural items which are grouped into the same instance of _IfcStructuralAnalysisModel</em> shall refer to the same instance of <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em>.</li>
+<li>The _ObjectPlacement_s of all structural items which are grouped into the same instance of <em><a href="IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a></em> shall refer to the same instance of <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em>.</li>
 </ol>
 <aside class="aside-note"><mark>NOTE</mark> This rule is necessary to achieve consistent topology representations. The topology representations of structural items in an analysis model are meant to share vertices and edges und must therefore have the same object placement.</aside><aside class="aside-note"><mark>NOTE</mark> A structural item may be grouped into more than one analysis model. In this case, all these models must use the same instance of <em><a href="IfcObjectPlacement.html">IfcObjectPlacement</a></em>.</aside>
 <h2><a class="anchor" id="7.11.3.13.2-Entity-inheritance"></a>
@@ -1501,7 +1501,7 @@
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/domain/IfcStructuralAnalysisDomain/Entities/IfcStructuralItem.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<button class="button primary" data-tf-iframe-props="title=Feedback on IFC 4.4" data-tf-opacity="100" data-tf-popup="PZ1VdVG9" data-tf-size="70">Provide feedback on IFC 4.4</button>
 </p>
 <p>
 <small>
@@ -1528,8 +1528,8 @@ Because bringing back headers required to go back in time to previous version, I
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
-</small>
+                            This is a preview version of the IFC specification where open 'Pull Requests' are being integrated into a temporary version. Therefore, the direct edit button that you might have seen on other editions is not available, but we invite you to provide feedback using the button above.
+                        </small>
 </p>
 </div>
 <div class="card fluid shadowed hidden" id="section-navigation">
@@ -1555,7 +1555,7 @@ Because bringing back headers required to go back in time to previous version, I
         window.appconfig = {
             'path': 'docs/schemas/domain/IfcStructuralAnalysisDomain/Entities/IfcStructuralItem.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>
@@ -1570,7 +1570,7 @@ Because bringing back headers required to go back in time to previous version, I
         };
     </script>
 <script src="../assets/lib/feather-icons/feather.min.js"></script>
-<script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
+<script src="//embed.typeform.com/next/embed.js"></script> <script async="" id="MathJax-script" src="../assets/lib/mathjax/tex-mml-svg.js"></script>
 <script src="../assets/js/app.js" type="text/javascript"></script>
 </body>
 </html>

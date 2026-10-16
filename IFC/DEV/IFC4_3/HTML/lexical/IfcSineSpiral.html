@@ -13,14 +13,9 @@
 <div class="container">
 <div class="row">
 <header>
-<img class="logo" src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.3-main/docs/assets/img/IFC4x3-logo1.1-wide.png" style="
-                        display: inline-flex;
-                        padding-bottom: 0px;
-                        padding-top: 0px;
-                        float: left;
-                    " width="100"/>
-<p style="display: inline-block; vertical-align: top;">IFC 4.3.2.0 build 20260909 (IFC4X3_ADD2)
-                            <small>under development</small>
+<div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
+<p class="header-title">IFC 4.3.2.0 build 20261012 (IFC4X3_ADD2_DEV_20260526)
+                            <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
 <li>
@@ -109,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -280,7 +275,7 @@
 </nav>
 </div>
 <div class="col-md-8" id="main-content">
-<h1>8.9.3.64 <a href="IfcSineSpiral.html">IfcSineSpiral</a></h1>
+<h1>8.9.3.64 IfcSineSpiral</h1>
 <aside class="aside-note search-skip" id="translations-aside">
 <div class="translation lang-arabic" style="display:none">
 <div>
@@ -517,7 +512,7 @@
 </div>
 </div>
 </aside>
-<p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+<div class="mvd search-skip" title="Included in Alignment Geometry - Horizontal, Alignment Geometry - Horizontal and Vertical, Alignment Geometry - Horizontal, Vertical and Cant">AbV ⓘ</div>
 <h2><a class="anchor" id="8.9.3.64.1-Semantic-definition"></a>
     8.9.3.64.1 Semantic definition
 <a class="link" href="#8.9.3.64.1-Semantic-definition"><i data-feather="link"></i></a></h2>
@@ -526,10 +521,10 @@
 <p>The sine spiral curve is parameterized by its curve length and for a given parameter \(s\), the heading angle \(\theta(s)\) and the curvature \(\kappa(s)\) are defined as follows. Here, \(A_0\) corresponds to the <em>ConstantTerm</em>, \(A_1\) to the <em>LinearTerm</em>, and \(A_2\) to the <em>SineTerm</em>.</p>
 <p><strong>Heading Angle:</strong></p>
 <p>The <em>Heading Angle</em> \(\theta(s)\) represents the orientation of the tangent to the curve at a given arc length. It indicates the direction in which the curve is "pointing" at that point. By following changes in \(\theta(s)\) along the curve, one can understand how the curve rotates and changes direction as it progresses.</p>
-<p>$$\theta(s) = \frac{1}{A_0} s \;+\; \frac{1}{2}\left(\frac{A_1}{|A_1|}\right)\left(\frac{s}{|A_1|}\right)^2\;-\; \frac{L}{2\pi A_2}\biggl(\cos\bigl(\frac{2\pi}{L}s\bigr)-1\biggr)$$</p>
+<p>$$\theta(s) = \frac{1}{A_0} s + \frac{1}{2}\left(\frac{A_1}{|A_1|}\right)\left(\frac{s}{A_1}\right)^2 - \frac{L}{2\pi A_2}\biggl(\cos\bigl(\frac{2\pi}{L}s\bigr)-1\biggr)$$</p>
 <p><strong>Curvature:</strong></p>
 <p>The <em>Curvature</em> \(\kappa(s)\) describes how quickly the heading angle changes with respect to the arc length. In other words, curvature indicates how "tight" a curve is turning at any point. A larger curvature corresponds to a sharper bend, while a smaller curvature corresponds to a straighter segment of the curve.</p>
-<p>$$  \kappa(s) = \frac{L}{A_0} \;+\; \frac{A_1}{|A_1|}\left(\frac{L}{|A_1|}\right)^2  \frac{s}{L} \;+\; \frac{L}{A_2}\sin\left(\frac{2\pi}{L}s\right) $$</p>
+<p>$$  \kappa(s) = \frac{1}{A_0} + \frac{A_1}{|A_1|}\left(\frac{L}{A_1}\right)^2  s + \frac{L}{A_2}\sin\left(\frac{2\pi}{L}s\right) $$</p>
 <h2><a class="anchor" id="8.9.3.64.2-Entity-inheritance"></a>
     8.9.3.64.2 Entity inheritance
 <a class="link" href="#8.9.3.64.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
@@ -765,17 +760,18 @@
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/resource/IfcGeometryResource/Entities/IfcSineSpiral.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.x-development/blob/ifc4.3-main/docs/schemas/resource/IfcGeometryResource/Entities/IfcSineSpiral.md"><span class="icon-edit inverse"></span> Edit on Github</a>
 </p>
 <p>
 <small>
-<span id="contributors"></span><br/>
-<span id="last-change"></span>
+<span id="contributors">6 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Ibrahim" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+SUI8L3RleHQ+Cjwvc3ZnPg==" title="Ibrahim"/><img alt="Ibrahim Saad" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+SVM8L3RleHQ+Cjwvc3ZnPg==" title="Ibrahim Saad"/><img alt="Ghesselink" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+R0g8L3RleHQ+Cjwvc3ZnPg==" title="Ghesselink"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
+<span id="last-change">Last change: <em>Port doc fixes from master to ifc4.3-main</em> by Ghesselink on 2026-10-08T16:23:15Z</span>
 </small>
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.x-development/issues/371">Let us know!</a>
 </small>
 </p>
 </div>
@@ -783,6 +779,21 @@
 <p>
 </p><center><small>Jump to section</small></center>
 <ol class="referenced-list small"></ol>
+</div>
+<div class="changelog">
+<h3><a class="anchor" id="8.9.3.64.6-Changelog"></a>
+                        8.9.3.64.6 Changelog
+                    <a class="link" href="#8.9.3.64.6-Changelog"><i data-feather="link"></i></a></h3>
+<h4><a class="anchor" id="8.9.3.64.6.1-IFC4.3-ADD2"></a>
+                        8.9.3.64.6.1 IFC4.3_ADD2
+                    <a class="link" href="#8.9.3.64.6.1-IFC4.3-ADD2"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="plus-square"></i>                                New resource
+                            </small>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -802,7 +813,7 @@
         window.appconfig = {
             'path': 'docs/schemas/resource/IfcGeometryResource/Entities/IfcSineSpiral.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>

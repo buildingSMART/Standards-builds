@@ -13,14 +13,9 @@
 <div class="container">
 <div class="row">
 <header>
-<img class="logo" src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.3-main/docs/assets/img/IFC4x3-logo1.1-wide.png" style="
-                        display: inline-flex;
-                        padding-bottom: 0px;
-                        padding-top: 0px;
-                        float: left;
-                    " width="100"/>
-<p style="display: inline-block; vertical-align: top;">IFC 4.3.2.0 build 20260909 (IFC4X3_ADD2)
-                            <small>under development</small>
+<div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
+<p class="header-title">IFC 4.3.2.0 build 20261012 (IFC4X3_ADD2_DEV_20260526)
+                            <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
 <li>
@@ -109,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -250,7 +245,7 @@
 </nav>
 </div>
 <div class="col-md-8" id="main-content">
-<h1>7.3.3.11 <a href="IfcLaborResource.html">IfcLaborResource</a></h1>
+<h1>7.3.3.11 IfcLaborResource</h1>
 <aside class="aside-note search-skip" id="translations-aside">
 <div class="translation lang-arabic" style="display:none">
 <div>
@@ -487,15 +482,14 @@
 </div>
 </div>
 </aside>
-<p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+<div class="mvd search-skip" title="Included in Object Typing, Quantity Sets">RV ⓘ</div>
+<div class="mvd search-skip" title="Included in Object Typing, Quantity Sets">AbV ⓘ</div>
 <h2><a class="anchor" id="7.3.3.11.1-Semantic-definition"></a>
     7.3.3.11.1 Semantic definition
 <a class="link" href="#7.3.3.11.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p>An <em><a href="IfcLaborResource.html">IfcLaborResource</a></em> is used in construction with particular skills or crafts required to perform certain types of construction or management related work.</p>
 <!-- end of short definition -->
-<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2.0.</aside>
-<p>{ .change-ifc2x4}</p>
-<aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> The attribute <em>Skillset</em> has been deleted; use LongDescription to describe the skillset.</aside>
+<aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2.0.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> The attribute <em>Skillset</em> has been deleted; use LongDescription to describe the skillset.</aside>
 <p>The purpose of an <em><a href="IfcLaborResource.html">IfcLaborResource</a></em> is to identify a skillset that may be required or used. The skillset identified may be (for instance) charge-hand, foreman, labourer, plumbers mate etc. and provides a designation of a particular level of skill. It can be used to identify the generic type of labour resource that is required for a purpose without having to be specific about the actor (person or organization) providing the resource occurrence. It may be particularly useful when creating an overall plan for a process or processes. For instance, within maintenance or work planning there may be a known task that needs to be done which is planned to require a 'chargehand pipe fitter'. There may be several such labour resources available and so the need to identify which will be used is not necessary at the planning stage.</p>
 <p>At a later stage, individual actors can be determined for the labour resources. This is achieved through specifying the actor through <em><a href="IfcActor.html">IfcActor</a></em>. The actor is then identified as the labour resource occurrence through the <em><a href="IfcRelAssignsToResource.html">IfcRelAssignsToResource</a>.RelatedResource</em> attribute. The <em><a href="IfcLaborResource.html">IfcLaborResource</a></em> provides the <em><a href="IfcRelAssignsToResource.html">IfcRelAssignsToResource</a></em>.<em>RelatingResource</em> attribute.</p>
 <h2><a class="anchor" id="7.3.3.11.2-Entity-inheritance"></a>
@@ -1677,17 +1671,18 @@
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/domain/IfcConstructionMgmtDomain/Entities/IfcLaborResource.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.x-development/blob/ifc4.3-main/docs/schemas/domain/IfcConstructionMgmtDomain/Entities/IfcLaborResource.md"><span class="icon-edit inverse"></span> Edit on Github</a>
 </p>
 <p>
 <small>
-<span id="contributors"></span><br/>
-<span id="last-change"></span>
+<span id="contributors">4 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/> </span><br/>
+<span id="last-change">Last change: <em>Remove curly brace tags</em> by Thomas Krijnen on 2026-09-24T10:05:46+02:00</span>
 </small>
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.x-development/issues/371">Let us know!</a>
 </small>
 </p>
 </div>
@@ -1695,6 +1690,40 @@
 <p>
 </p><center><small>Jump to section</small></center>
 <ol class="referenced-list small"></ol>
+</div>
+<div class="changelog">
+<h3><a class="anchor" id="7.3.3.11.9-Changelog"></a>
+                        7.3.3.11.9 Changelog
+                    <a class="link" href="#7.3.3.11.9-Changelog"><i data-feather="link"></i></a></h3>
+<h4><a class="anchor" id="7.3.3.11.9.1-IFC4"></a>
+                        7.3.3.11.9.1 IFC4
+                    <a class="link" href="#7.3.3.11.9.1-IFC4"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                CorrectPredefinedType
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                attribute SkillSet name,
+                                Changed from
+"SkillSet"
+to
+"PredefinedType"
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="edit"></i>                                attribute SkillSet type,
+                                Changed from
+"<a href="IfcText.html">IfcText</a>"
+to
+"<a href="IfcLaborResourceTypeEnum.html">IfcLaborResourceTypeEnum</a>"
+                            </small>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1714,7 +1743,7 @@
         window.appconfig = {
             'path': 'docs/schemas/domain/IfcConstructionMgmtDomain/Entities/IfcLaborResource.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>

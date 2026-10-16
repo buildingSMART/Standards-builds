@@ -13,14 +13,9 @@
 <div class="container">
 <div class="row">
 <header>
-<img class="logo" src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.3-main/docs/assets/img/IFC4x3-logo1.1-wide.png" style="
-                        display: inline-flex;
-                        padding-bottom: 0px;
-                        padding-top: 0px;
-                        float: left;
-                    " width="100"/>
-<p style="display: inline-block; vertical-align: top;">IFC 4.3.2.0 build 20260909 (IFC4X3_ADD2)
-                            <small>under development</small>
+<div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
+<p class="header-title">IFC 4.3.2.0 build 20261012 (IFC4X3_ADD2_DEV_20260526)
+                            <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
 <li>
@@ -109,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -280,7 +275,7 @@
 </nav>
 </div>
 <div class="col-md-8" id="main-content">
-<h1>8.9.3.58 <a href="IfcRepresentationMap.html">IfcRepresentationMap</a></h1>
+<h1>8.9.3.58 IfcRepresentationMap</h1>
 <aside class="aside-note search-skip" id="translations-aside">
 <div class="translation lang-arabic" style="display:none">
 <div>
@@ -517,13 +512,13 @@
 </div>
 </div>
 </aside>
-<p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+<div class="mvd search-skip" title="Included in IfcMappedItem.MappingSource, Mapped Geometry">RV ⓘ</div>
+<div class="mvd search-skip" title="Included in IfcMappedItem.MappingSource, Mapped Geometry">AbV ⓘ</div>
 <h2><a class="anchor" id="8.9.3.58.1-Semantic-definition"></a>
     8.9.3.58.1 Semantic definition
 <a class="link" href="#8.9.3.58.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p>An <em><a href="IfcRepresentationMap.html">IfcRepresentationMap</a></em> defines the base definition (also referred to as block, cell or macro) called <em>MappedRepresentation</em> within the <em>MappingOrigin</em>. The <em>MappingOrigin</em> defines the coordinate system in which the <em>MappedRepresentation</em> is defined.</p>
 <!-- end of short definition -->
-<p>{ .extDef}</p>
 <aside class="aside-note"><mark>NOTE</mark> Definition according to ISO/CD 10303-43:1992
 A representation map is the identification of a representation and a representation item in that representation for the purpose of mapping. The representation item defines the origin of the mapping. The representation map is used as the source of a mapping by a mapped item.</aside>
 <p>The <em>RepresentationMap</em> is used through an <em><a href="IfcMappedItem.html">IfcMappedItem</a></em> in one or several <em><a href="IfcShapeRepresentation.html">IfcShapeRepresentation</a></em>'s. An Cartesian transformation operator can be applied to transform the <em>MappedRepresentation</em> into the placement coordinate system of the shape representation. The transformation of the representation map is restricted to be a Cartesian transformation mapping (translation, rotation, mirroring and scaling).</p>
@@ -630,7 +625,7 @@ representation is mapped.</p>
 </tr>
 <tr>
 <td colspan="2">
-<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-s1">'IFC4X3_ADD2.IFCSHAPEMODEL'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">MappedRepresentation</span><span class="tok-p">)</span></code></pre>
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-s1">'IFC4X3_ADD2_DEV_20260526.IFCSHAPEMODEL'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">MappedRepresentation</span><span class="tok-p">)</span></code></pre>
 </td>
 </tr>
 </tbody>
@@ -645,7 +640,7 @@ representation is mapped.</p>
 <span class="tok-n">HasShapeAspects</span> <span class="tok-o">:</span> <span class="tok-nb">SET</span> <span class="tok-p">[</span><span class="tok-m">0</span><span class="tok-o">:</span><span class="tok-err">?</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcShapeAspect.html"><span class="tok-nc">IfcShapeAspect</span></a> <span class="tok-k">FOR</span> <span class="tok-n">PartOfProductDefinitionShape</span><span class="tok-p">;</span>
 <span class="tok-n">MapUsage</span> <span class="tok-o">:</span> <span class="tok-nb">SET</span> <span class="tok-p">[</span><span class="tok-m">0</span><span class="tok-o">:</span><span class="tok-err">?</span><span class="tok-p">]</span> <span class="tok-k">OF</span> <a href="IfcMappedItem.html"><span class="tok-nc">IfcMappedItem</span></a> <span class="tok-k">FOR</span> <span class="tok-n">MappingSource</span><span class="tok-p">;</span>
 <span class="tok-k">WHERE</span>
-<span class="tok-n">ApplicableMappedRepr</span> <span class="tok-o">:</span> <span class="tok-s1">'IFC4X3_ADD2.IFCSHAPEMODEL'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">MappedRepresentation</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">ApplicableMappedRepr</span> <span class="tok-o">:</span> <span class="tok-s1">'IFC4X3_ADD2_DEV_20260526.IFCSHAPEMODEL'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">MappedRepresentation</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
 <h2><a class="anchor" id="8.9.3.58.6-References"></a>
     8.9.3.58.6 References
@@ -660,17 +655,18 @@ representation is mapped.</p>
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/resource/IfcGeometryResource/Entities/IfcRepresentationMap.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.x-development/blob/ifc4.3-main/docs/schemas/resource/IfcGeometryResource/Entities/IfcRepresentationMap.md"><span class="icon-edit inverse"></span> Edit on Github</a>
 </p>
 <p>
 <small>
-<span id="contributors"></span><br/>
-<span id="last-change"></span>
+<span id="contributors">4 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="Thomas Krijnen" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+VEs8L3RleHQ+Cjwvc3ZnPg==" title="Thomas Krijnen"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/> </span><br/>
+<span id="last-change">Last change: <em>Remove curly brace tags</em> by Thomas Krijnen on 2026-09-24T10:05:46+02:00</span>
 </small>
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.x-development/issues/371">Let us know!</a>
 </small>
 </p>
 </div>
@@ -678,6 +674,28 @@ representation is mapped.</p>
 <p>
 </p><center><small>Jump to section</small></center>
 <ol class="referenced-list small"></ol>
+</div>
+<div class="changelog">
+<h3><a class="anchor" id="8.9.3.58.7-Changelog"></a>
+                        8.9.3.58.7 Changelog
+                    <a class="link" href="#8.9.3.58.7-Changelog"><i data-feather="link"></i></a></h3>
+<h4><a class="anchor" id="8.9.3.58.7.1-IFC4"></a>
+                        8.9.3.58.7.1 IFC4
+                    <a class="link" href="#8.9.3.58.7.1-IFC4"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="plus-square"></i>                                inverse attribute,
+                                HasShapeAspects
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                ApplicableMappedRepr
+                            </small>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -697,7 +715,7 @@ representation is mapped.</p>
         window.appconfig = {
             'path': 'docs/schemas/resource/IfcGeometryResource/Entities/IfcRepresentationMap.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>

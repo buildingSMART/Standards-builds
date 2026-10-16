@@ -13,8 +13,8 @@
 <div class="container">
 <div class="row">
 <header>
-<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.x-development/ifc4.4-main/docs/assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20260909 (IFC4X4)
+<div><img src="../assets/img/buildingSMART_RGB_IFC4_4_v4_transparent.png"/></div>
+<p class="header-title">IFC 4.4.0.0 build 20261001 (IFC4X4_DEV_20260525)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -104,7 +104,7 @@
 </select>
 </li>
 <li>
-<a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+<a href="https://github.com/buildingSMART/IFC4.x-development/issues/">
 <i data-feather="message-circle"></i>
                                 Help suggest improvements
                             </a>
@@ -512,14 +512,16 @@
 </div>
 </div>
 </aside>
-<p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+<div class="mvd search-skip" title="Included in Body SweptSolid PolyCurve Geometry, IfcStructuralAnalysisModel.OrientationOf2DPlane, Mapped Geometry, Port Nesting, Product Local Placement, Project Representation Context, Project Representation Context 2D, Project Representation Context 3D, Reference SweptSolid PolyCurve Geometry">RV ⓘ</div>
+<div class="mvd search-skip" title="Included in Body SweptSolid PolyCurve Geometry, IfcStructuralAnalysisModel.OrientationOf2DPlane, Mapped Geometry, Port Nesting, Product Local Placement, Project Representation Context, Project Representation Context 2D, Project Representation Context 3D, Reference SweptSolid PolyCurve Geometry">AbV ⓘ</div>
 <h2><a class="anchor" id="8.9.3.3.1-Semantic-definition"></a>
     8.9.3.3.1 Semantic definition
 <a class="link" href="#8.9.3.3.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p>The <em><a href="IfcAxis2Placement3D.html">IfcAxis2Placement3D</a></em> provides location and orientations to place items in a three-dimensional space. The attribute <em>Axis</em> defines the Z direction, <em>RefDirection</em> the X direction. The Y direction is derived.</p>
 <!-- end of short definition -->
 <aside class="aside-note"><mark>NOTE</mark> The <em>RefDirection</em> does not have to be orthogonal to <em>Axis</em>.</aside>
-<p>If the attribute values for <em>Axis</em> and <em>RefDirection</em> are not given, the placement defaults to P[1] (x-axis) as [1.,0.,0.], P[2] (y-axis) as [0.,1.,0.] and P[3] (z-axis) as [0.,0.,1.].</p>
+<p>If both the attribute values for <em>Axis</em> and <em>RefDirection</em> are not given, the placement defaults to P[1] (x-axis) as [1.,0.,0.], P[2] (y-axis) as [0.,1.,0.] and P[3] (z-axis) as [0.,0.,1.]. See also the function <em><a href="IfcBuildAxes.html">IfcBuildAxes</a></em> that computes the derived attribute <em>P</em>, based on <em>Axis</em> and <em>RefDirection</em>.</p>
+<aside class="aside-note"><mark>NOTE</mark> If one of the two values (<em>Axis</em> or <em>RefDirection</em>) in not given, the <em>AxisAndRefDirProvision</em> formal proposition is violated.</aside>
 <figure><a class="anchor" id="Figure-A-Axis2-placement-3D"></a><img alt="axis2 placement 2D" src="../figures/ifcaxis2placement3d-layout1.gif"/><figcaption>Figure A — Axis2 placement 3D<a class="link" href="#Figure-A-Axis2-placement-3D"><i data-feather="link"></i></a></figcaption></figure>
 
 <p>Figure A illustrates the definition of the <em><a href="IfcAxis2Placement3D.html">IfcAxis2Placement3D</a></em> within the three-dimensional coordinate system.</p>
@@ -698,7 +700,7 @@ The location and orientation in three dimensional space of three mutually perpen
             </td>
 <td data-label="Type">OPTIONAL <a href="IfcDirection.html">IfcDirection</a></td>
 <td data-label="Description">
-<p>The direction used to determine the direction of the local X Axis. If necessary an adjustment is made to maintain orthogonality to the Axis direction. If Axis and/or RefDirection is omitted, these directions are taken from the geometric coordinate system.</p>
+<p>The direction used to determine the direction of the local X Axis. If necessary an adjustment is made to maintain orthogonality to the Axis direction.</p>
 </td>
 </tr>
 <tr>
@@ -782,7 +784,7 @@ The location and orientation in three dimensional space of three mutually perpen
 </tr>
 <tr>
 <td colspan="2">
-<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-s1">'IFC4X4.IFCCARTESIANPOINT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcPlacement.html"><span class="tok-nc">IfcPlacement</span></a><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">)</span></code></pre>
+<pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-s1">'IFC4X4_DEV_20260525.IFCCARTESIANPOINT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcPlacement.html"><span class="tok-nc">IfcPlacement</span></a><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">)</span></code></pre>
 </td>
 </tr>
 <tr>
@@ -812,25 +814,25 @@ The location and orientation in three dimensional space of three mutually perpen
 <span class="tok-n">AxisIs3D</span> <span class="tok-o">:</span> <span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-nb">EXISTS</span> <span class="tok-p">(</span><span class="tok-n">Axis</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span> <span class="tok-p">(</span><span class="tok-n">Axis</span><span class="tok-p">.</span><span class="tok-n">Dim</span> <span class="tok-o">=</span> <span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">AxisToRefDirPosition</span> <span class="tok-o">:</span> <span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-nb">EXISTS</span> <span class="tok-p">(</span><span class="tok-n">Axis</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span> <span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-nb">EXISTS</span> <span class="tok-p">(</span><span class="tok-n">RefDirection</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span> <span class="tok-p">(</span><a href="IfcCrossProduct.html"><span class="tok-nc">IfcCrossProduct</span></a><span class="tok-p">(</span><span class="tok-n">Axis</span><span class="tok-p">,</span><span class="tok-n">RefDirection</span><span class="tok-p">)</span><span class="tok-p">.</span><span class="tok-n">Magnitude</span> <span class="tok-o">&gt;</span> <span class="tok-m">0.0</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">LocationIs3D</span> <span class="tok-o">:</span> <span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcPlacement.html"><span class="tok-nc">IfcPlacement</span></a><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">.</span><span class="tok-n">Dim</span> <span class="tok-o">=</span> <span class="tok-m">3</span><span class="tok-p">;</span>
-<span class="tok-n">LocationIsCP</span> <span class="tok-o">:</span> <span class="tok-s1">'IFC4X4.IFCCARTESIANPOINT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcPlacement.html"><span class="tok-nc">IfcPlacement</span></a><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">)</span><span class="tok-p">;</span>
+<span class="tok-n">LocationIsCP</span> <span class="tok-o">:</span> <span class="tok-s1">'IFC4X4_DEV_20260525.IFCCARTESIANPOINT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-nb">SELF</span><span class="tok-o">\</span><a href="IfcPlacement.html"><span class="tok-nc">IfcPlacement</span></a><span class="tok-p">.</span><span class="tok-n">Location</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-n">RefDirIs3D</span> <span class="tok-o">:</span> <span class="tok-p">(</span><span class="tok-nb">NOT</span> <span class="tok-p">(</span><span class="tok-nb">EXISTS</span> <span class="tok-p">(</span><span class="tok-n">RefDirection</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">)</span> <span class="tok-nb">OR</span> <span class="tok-p">(</span><span class="tok-n">RefDirection</span><span class="tok-p">.</span><span class="tok-n">Dim</span> <span class="tok-o">=</span> <span class="tok-m">3</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_ENTITY</span><span class="tok-p">;</span></code></pre>
 </div>
 <div class="col-md-2 rightpanel">
 <div class="card fluid shadowed">
 <p>
-<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.3.x-development/blob/xmi-refresh/docs/schemas/resource/IfcGeometryResource/Entities/IfcAxis2Placement3D.md"><span class="icon-edit inverse"></span> Edit on Github</a>
+<a class="button primary edit-github" href="https://github.com/buildingSMART/IFC4.x-development/blob/ifc4.4-main/docs/schemas/resource/IfcGeometryResource/Entities/IfcAxis2Placement3D.md"><span class="icon-edit inverse"></span> Edit on Github</a>
 </p>
 <p>
 <small>
-<span id="contributors">1 contributor(s):
-<img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/> </span><br/>
-<span id="last-change">Last change: <em>Merge pull request #1175 from buildingSMART/fix/schema-name-and-search</em> by Evandro Alfieri on 2026-09-09T23:01:49+02:00</span>
+<span id="contributors">4 contributor(s):
+<img alt="ArturTomczak" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QVI8L3RleHQ+Cjwvc3ZnPg==" title="ArturTomczak"/><img alt="bSI-Bot" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+QkI8L3RleHQ+Cjwvc3ZnPg==" title="bSI-Bot"/><img alt="Evandro Alfieri" class="contributor-icon" src="https://github.com/evandroAlfieri.png?size=32" title="Evandro Alfieri"/><img alt="Dion Moult" class="contributor-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzljYTNhZiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxNiIKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgICAgIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTEiCiAgICAgICAgZm9udC13ZWlnaHQ9IjYwMCIKICAgICAgICBmaWxsPSJ3aGl0ZSI+RE08L3RleHQ+Cjwvc3ZnPg==" title="Dion Moult"/> </span><br/>
+<span id="last-change">Last change: <em>Fix typo</em> by Evandro Alfieri on 2026-06-19T13:48:53+02:00</span>
 </small>
 </p>
 <p>
 <small>
-                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/371">Let us know!</a>
+                            Is this page difficult to understand? <a href="https://github.com/buildingSMART/IFC4.x-development/issues/371">Let us know!</a>
 </small>
 </p>
 </div>
@@ -838,6 +840,87 @@ The location and orientation in three dimensional space of three mutually perpen
 <p>
 </p><center><small>Jump to section</small></center>
 <ol class="referenced-list small"></ol>
+</div>
+<div class="changelog">
+<h3><a class="anchor" id="8.9.3.3.6-Changelog"></a>
+                        8.9.3.3.6 Changelog
+                    <a class="link" href="#8.9.3.3.6-Changelog"><i data-feather="link"></i></a></h3>
+<h4><a class="anchor" id="8.9.3.3.6.1-IFC4"></a>
+                        8.9.3.3.6.1 IFC4
+                    <a class="link" href="#8.9.3.3.6.1-IFC4"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                AxisAndRefDirProvision
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                AxisIs3D
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                AxisToRefDirPosition
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                LocationIs3D
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                RefDirIs3D
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="x-square"></i>                                where rule,
+                                WR1
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="x-square"></i>                                where rule,
+                                WR2
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="x-square"></i>                                where rule,
+                                WR3
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="x-square"></i>                                where rule,
+                                WR4
+                            </small>
+</li>
+<li>
+<small>
+<i data-feather="x-square"></i>                                where rule,
+                                WR5
+                            </small>
+</li>
+</ul>
+<h4><a class="anchor" id="8.9.3.3.6.2-IFC4.3-ADD2"></a>
+                        8.9.3.3.6.2 IFC4.3_ADD2
+                    <a class="link" href="#8.9.3.3.6.2-IFC4.3-ADD2"><i data-feather="link"></i></a></h4>
+<ul class="changelog">
+<li>
+<small>
+<i data-feather="plus-square"></i>                                where rule,
+                                LocationIsCP
+                            </small>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -857,7 +940,7 @@ The location and orientation in three dimensional space of three mutually perpen
         window.appconfig = {
             'path': 'docs/schemas/resource/IfcGeometryResource/Entities/IfcAxis2Placement3D.md',
             'base': '',
-            'repo': 'buildingSMART/IFC4.3.x-development',
+            'repo': 'buildingSMART/IFC4.x-development',
             'resourceApi': null,
         };
     </script>
