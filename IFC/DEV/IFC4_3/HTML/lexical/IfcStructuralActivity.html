@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
-<p class="header-title">IFC 4.3.2.0 build 20261012 (IFC4X3_ADD2_DEV_20260526)
+<p class="header-title">IFC 4.3.2.0 build 20261022 (IFC4X3_ADD2_DEV_20260526)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -494,7 +494,7 @@
 <!-- end of short definition -->
 <p>The differentiation between actions and reactions is realized by instantiating objects either from subclasses of <em><a href="IfcStructuralAction.html">IfcStructuralAction</a></em> or <em><a href="IfcStructuralReaction.html">IfcStructuralReaction</a></em> respectively. They inherit commonly needed attributes from the abstract superclass <em><a href="IfcStructuralActivity.html">IfcStructuralActivity</a></em>, notably the relationship which connects actions or reactions with connections, analysis members, or elements (subtypes of <em><a href="IfcStructuralItem.html">IfcStructuralItem</a></em> or <em><a href="IfcElement.html">IfcElement</a></em>).</p>
 <aside class="aside-note"><mark>NOTE</mark> Instances of <em><a href="IfcStructuralActivity.html">IfcStructuralActivity</a></em> which are connected with an <em><a href="IfcElement.html">IfcElement</a></em> are subject to agreements outside the scope of this specification.</aside><aside class="aside-note"><mark>NOTE</mark> The semantics of <em><a href="IfcStructuralActivity.html">IfcStructuralActivity</a></em> are only fully defined if an activity instance is connected with exactly one structural item. The inverse attribute <em>AssignedToStructuralItem</em> can only be empty in incomplete models or in conceptual models which are not yet ready for analysis.</aside><aside class="aside-history"><mark>HISTORY</mark> New entity in IFC2x2.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> Cardinality of attribute <em>AssignedToStructuralItem</em> relaxed from 1 to 0..1 in order to allow for schema-compliant incomplete models as well as conceptual models without load—item relationships.</aside>
-<p><strong><em>*Coordinate Systems</em></strong>*:</p>
+<p><strong><strong>Coordinate Systems</strong></strong>:</p>
 <p>The following coordinate systems are distinguished:</p>
 <ul>
 <li>The so-called global coordinate system is the coordinate system shared by all items and activities which are grouped in a common <em><a href="IfcStructuralAnalysisModel.html">IfcStructuralAnalysisModel</a></em>. This coordinate system is established by an <em>ObjectPlacement</em>. (This coordinate system is not necessarily the same as the <em><a href="IfcProject.html">IfcProject</a></em>'s world coordinate system.)</li>
@@ -504,7 +504,7 @@
 <p>Locations of the load objects in the <em>AppliedLoad</em> attribute (if of type <em><a href="IfcStructuralLoadConfiguration.html">IfcStructuralLoadConfiguration</a></em>) are always given in local coordinates.</p>
 <p>Directions of the load objects in the <em>AppliedLoad</em> attribute refer to global or local coordinates according to the <em>GlobalOrLocal</em> attribute.</p>
 <p>The <em>ObjectPlacement</em> and <em>Representation</em> are sometimes not explicitly instantiated; instead they may be implied as described below. Global and local coordinate systems are then determined in the same way as with explicit placement and representation.</p>
-<p><strong><em>*Topology Use Definitions</em></strong>*:</p>
+<p><strong><strong>Topology Use Definitions</strong></strong>:</p>
 <p>Instances of <em><a href="IfcStructuralActivity.html">IfcStructuralActivity</a></em> which are connected with a structural item of same dimensionality, i.e.</p>
 <ul>
 <li>a point action or reaction connected with a point item (<em><a href="IfcStructuralPointConnection.html">IfcStructuralPointConnection</a></em>),</li>
@@ -1421,13 +1421,13 @@ an explicit or implied representation and its parameter space).</p>
 <p class="search-skip">This concept can be applied to the following resources:</p>
 <ul>
 <li>
-                        <a href="Pset_Uncertainty.html">Pset_Uncertainty</a>
-                    </li>
-<li>
                         <a href="Pset_Risk.html">Pset_Risk</a>
                     </li>
 <li>
                         <a href="Pset_Tolerance.html">Pset_Tolerance</a>
+                    </li>
+<li>
+                        <a href="Pset_Uncertainty.html">Pset_Uncertainty</a>
                     </li>
 </ul>
 </td>

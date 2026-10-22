@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <div><img src="../assets/img/buildingSMART_RGB_IFC4_3_v4_transparent.png"/></div>
-<p class="header-title">IFC 4.3.2.0 build 20261012 (IFC4X3_ADD2_DEV_20260526)
+<p class="header-title">IFC 4.3.2.0 build 20261022 (IFC4X3_ADD2_DEV_20260526)
                             <small style="background-color: #b3cde3;">⚠ buildingSMART Working Draft. All content is under development.</small>
 </p>
 <ul>
@@ -471,10 +471,10 @@
 <p>A distribution circuit is a partition of a distribution system that is conditionally switched such as an electrical circuit.</p>
 <!-- end of short definition -->
 <aside class="aside-history"><mark>HISTORY</mark> New entity in IFC4.</aside><aside class="aside-ifc4"><mark>IFC4-CHANGE</mark> For electrical power systems, <em>IfcElectricalCircuit</em> has been used for low-voltage (12-1000 V) power circuits and has been replaced by <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> in IFC4; <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> with PredefinedType 'ELECTRICAL' should be used for overall power systems, and <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> with PredefinedType 'ELECTRICAL' should be used for each switched circuit.</aside>
-<p><strong><em>*Composition Use Definition</em></strong>*</p>
+<p><strong><strong>Composition Use Definition</strong></strong></p>
 <p>An <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> may aggregate an <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> using the <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> relationship where <em>RelatingObject</em> refers to the <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> and <em>RelatedObjects</em> includes one or more <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> groups.</p>
 <p>An <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> may be aggregated into sub-circuits using the <em><a href="IfcRelAggregates.html">IfcRelAggregates</a></em> relationship where <em>RelatingObject</em> refers to the parent <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> and <em>RelatedObjects</em> refers to one or more <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> sub-circuits.</p>
-<p><strong><em>*Assignment Use Definition</em></strong>*</p>
+<p><strong><strong>Assignment Use Definition</strong></strong></p>
 <p>An <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> should be assigned to an <em><a href="IfcDistributionPort.html">IfcDistributionPort</a></em> on an <em><a href="IfcFlowController.html">IfcFlowController</a></em> element indicating the host or origination of the system using the <em><a href="IfcRelAssignsToProduct.html">IfcRelAssignsToProduct</a></em> relationship.</p>
 <p>Each device whose operation is conditional based upon the state of the circuit is assigned to the <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> via the <em><a href="IfcRelAssignsToGroup.html">IfcRelAssignsToGroup</a></em> relationship. An <em><a href="IfcDistributionElement.html">IfcDistributionElement</a></em> may belong to multiple systems or circuits, however only one <em><a href="IfcDistributionSystem.html">IfcDistributionSystem</a></em> or <em><a href="IfcDistributionCircuit.html">IfcDistributionCircuit</a></em> of a particular <em>PredefinedType</em>.</p>
 <h2><a class="anchor" id="6.2.3.3.2-Entity-inheritance"></a>
@@ -1309,19 +1309,10 @@
 <p class="search-skip">This concept can be applied to the following resources:</p>
 <ul>
 <li>
-                        <a href="Pset_InstallationOccurrence.html">Pset_InstallationOccurrence</a>
-                    </li>
-<li>
-                        <a href="Pset_MaintenanceTriggerPerformance.html">Pset_MaintenanceTriggerPerformance</a>
-                    </li>
-<li>
                         <a href="Pset_ServiceLifeFactors.html">Pset_ServiceLifeFactors</a>
                     </li>
 <li>
-                        <a href="Pset_MaintenanceTriggerCondition.html">Pset_MaintenanceTriggerCondition</a>
-                    </li>
-<li>
-                        <a href="Pset_MaintenanceStrategy.html">Pset_MaintenanceStrategy</a>
+                        <a href="Pset_MaintenanceTriggerDuration.html">Pset_MaintenanceTriggerDuration</a>
                     </li>
 <li>
                         <a href="Pset_RepairOccurrence.html">Pset_RepairOccurrence</a>
@@ -1330,7 +1321,16 @@
                         <a href="Pset_Condition.html">Pset_Condition</a>
                     </li>
 <li>
-                        <a href="Pset_MaintenanceTriggerDuration.html">Pset_MaintenanceTriggerDuration</a>
+                        <a href="Pset_MaintenanceTriggerCondition.html">Pset_MaintenanceTriggerCondition</a>
+                    </li>
+<li>
+                        <a href="Pset_MaintenanceTriggerPerformance.html">Pset_MaintenanceTriggerPerformance</a>
+                    </li>
+<li>
+                        <a href="Pset_InstallationOccurrence.html">Pset_InstallationOccurrence</a>
+                    </li>
+<li>
+                        <a href="Pset_MaintenanceStrategy.html">Pset_MaintenanceStrategy</a>
                     </li>
 </ul>
 </td>
@@ -1379,14 +1379,16 @@ Figure C — Distribution system assignment<a class="link" href="#Figure-C-Distr
                 General
             </td>
 <td data-label="Description">
+<aside class="inherited search-skip">
+<small>
+<i data-feather="paperclip"></i>
+                        This is a further elaboration on an inherited concept.
+                    </small>
+</aside>
 <p class="search-skip">This concept can be applied to the following resources:</p>
 <ul>
 <li>
-                        <a href="Pset_DistributionSystemTypeOverheadContactlineSystem.html">Pset_DistributionSystemTypeOverheadContactlineSystem</a>
-                        (only applies to <code>OVERHEAD_CONTACTLINE_SYSTEM)
-                    </code></li>
-<li>
-                        <a href="Pset_DistributionSystemTypeElectrical.html">Pset_DistributionSystemTypeElectrical</a>
+                        <a href="Pset_PowerControlSystem.html">Pset_PowerControlSystem</a>
                         (only applies to <code>ELECTRICAL)
                     </code></li>
 <li>
@@ -1394,19 +1396,23 @@ Figure C — Distribution system assignment<a class="link" href="#Figure-C-Distr
                         (only applies to <code>ELECTRICAL)
                     </code></li>
 <li>
-                        <a href="Pset_PowerControlSystem.html">Pset_PowerControlSystem</a>
-                        (only applies to <code>ELECTRICAL)
+                        <a href="Pset_DistributionSystemTypeVentilation.html">Pset_DistributionSystemTypeVentilation</a>
+                        (only applies to <code>VENTILATION)
                     </code></li>
 <li>
                         <a href="Pset_DistributionSystemCommon.html">Pset_DistributionSystemCommon</a>
                     </li>
 <li>
-                        <a href="Pset_DistributionSystemTypeVentilation.html">Pset_DistributionSystemTypeVentilation</a>
-                        (only applies to <code>VENTILATION)
+                        <a href="Pset_DistributionSystemTypeOverheadContactlineSystem.html">Pset_DistributionSystemTypeOverheadContactlineSystem</a>
+                        (only applies to <code>OVERHEAD_CONTACTLINE_SYSTEM)
                     </code></li>
 <li>
                         <a href="Pset_ProcessCapacity.html">Pset_ProcessCapacity</a>
                     </li>
+<li>
+                        <a href="Pset_DistributionSystemTypeElectrical.html">Pset_DistributionSystemTypeElectrical</a>
+                        (only applies to <code>ELECTRICAL)
+                    </code></li>
 </ul>
 </td>
 </tr>
