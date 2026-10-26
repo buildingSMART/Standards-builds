@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Type Element Aggregation</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-4.htm#4.5.3");
+//-->
+</script>
+
+<h3 class="std">4.5.3 Type Element Aggregation</h3>
+<p>Product types may define aggregated components.</p>
+
+<p>Placement of such components may be explicitly defined using <a href="../ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> relative to the enclosing <a href="../ifcproductextension/lexical/ifcelementtype.htm">IfcElementType</a>, or implicitly defined if <a href="../ifcproductextension/lexical/ifcelement.htm">IfcElement</a>.<i>ObjectPlacement</i> is null.</p>
+
+<p>If an occurrence is instantiated of the given <a href="../ifcproductextension/lexical/ifcelementtype.htm">IfcElementType</a>, then such occurrence must include equivalent aggregated elements with names corresponding to those within the element type.</p><p class="fig-ref">Figure 60 illustrates an instance diagram.</p>
+<table><tr><td><img alt="Type Element Aggregation" src="./diagrams/type-element-aggregation.png" usemap="#f60"><map name="f60"><area shape="rect" coords="8,8,176,236" href="../ifcproductextension/lexical/ifcelementtype.htm" alt="IfcElementType" /><area shape="rect" coords="208,8,376,92" href="../ifckernel/lexical/ifcrelaggregates.htm" alt="IfcRelAggregates" /><area shape="rect" coords="408,8,576,416" href="../ifcproductextension/lexical/ifcelement.htm" alt="IfcElement" /></map></td></tr><tr><td><p class="figure">Figure 60 &mdash; Type Element Aggregation</p></td></tr></table>
+
+<hr/>
+<h4>Design Transfer View</h4>
+<table class="exchange">
+<tr><th>Entity</th></tr><tr><td><a href="../ifcproductextension/lexical/ifcelementtype.htm">IfcElementType</a></td></tr>
+</table>
+<details><summary>mvdXML Specification</summary><div class="xsd"><code class="xsd">
+&lt;?xml version=&quot;1.0&quot;?&gt;<br/>
+&lt;ConceptTemplate xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; uuid=&quot;9fcc5a66-22a7-41ac-9328-31759845d152&quot; name=&quot;Type Element Aggregation&quot; status=&quot;sample&quot; applicableSchema=&quot;IFC4&quot; applicableEntity=&quot;<a href="../ifcproductextension/lexical/ifcelementtype.htm">IfcElementType</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;Rules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule RuleID=&quot;PredefinedType&quot; AttributeName=&quot;PredefinedType&quot; /&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule AttributeName=&quot;IsDecomposedBy&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRule EntityName=&quot;<a href="../ifckernel/lexical/ifcrelaggregates.htm">IfcRelAggregates</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule RuleID=&quot;RelatedObjects&quot; AttributeName=&quot;RelatedObjects&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRule EntityName=&quot;<a href="../ifcproductextension/lexical/ifcelement.htm">IfcElement</a>&quot; /&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule AttributeName=&quot;Decomposes&quot; /&gt;<br/>
+&nbsp;&nbsp;&lt;/Rules&gt;<br/>
+&lt;/ConceptTemplate&gt;<br/>
+</code></div>
+</details>
+</p>
+<p><a href="../../link/type-element-aggregation.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

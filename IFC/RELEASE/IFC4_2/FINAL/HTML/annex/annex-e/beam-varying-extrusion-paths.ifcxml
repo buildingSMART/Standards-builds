@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifc:ifcXML xsi:schemaLocation="http://www.buildingsmart-tech.org/ifc/IFC4x2/final IFC4x2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifc="http://www.buildingsmart-tech.org/ifc/IFC4x2/final" xmlns="http://www.buildingsmart-tech.org/ifc/IFC4x2/final">
+<header>
+	<time_stamp>
+2019-03-24T14:01:44	</time_stamp>
+	<preprocessor_version>
+BuildingSmart IfcKit by Constructivity	</preprocessor_version>
+	<originating_system>
+IfcDoc 12.0.0.0	</originating_system>
+</header>
+<IfcBuilding id="i5" GlobalId="39t4Pu3nTC4ekXYRIHJB9W" Name="IfcBuilding">
+	<OwnerHistory id="i1" ChangeAction="added" LastModifiedDate="1454575675" CreationDate="1454575675">
+		<OwningUser>
+			<ThePerson Identification="Jon" FamilyName="Jon" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+			<TheOrganization Name="Geometry Gym Pty Ltd" />
+		</OwningUser>
+		<OwningApplication Version="0.0.1.0" ApplicationFullName="ggRhinoIFC - Geometry Gym Plug-in for Rhino3d" ApplicationIdentifier="ggRhinoIFC">
+			<ApplicationDeveloper Name="Geometry Gym Pty Ltd" />
+		</OwningApplication>
+	</OwnerHistory>
+	<ContainsElements>
+		<IfcRelContainedInSpatialStructure GlobalId="3Sa3dTJGn0H8TQIGiuGQd5" Name="Building" Description="Building Container for Elements">
+			<OwnerHistory xsi:nil="true" href="i1" />
+			<RelatedElements>
+				<IfcBeamStandardCase id="i6" GlobalId="0a_qfeQLDA8e5qT$Do6J_t" Name="Extrusion">
+					<OwnerHistory xsi:nil="true" href="i1" />
+					<IsTypedBy id="i3" GlobalId="3s_DqAVvb3LguudTShJHVo">
+						<OwnerHistory xsi:nil="true" href="i1" />
+						<RelatingType xsi:type="IfcBeamType" id="i8" GlobalId="32b2OtzCP30umNyY5LsCfN" Name="IPE200" PredefinedType="joist">
+							<OwnerHistory xsi:nil="true" href="i1" />
+						</RelatingType>
+					</IsTypedBy>
+					<ObjectPlacement xsi:type="IfcLocalPlacement">
+						<RelativePlacement>
+							<IfcAxis2Placement3D>
+								<Location Coordinates="0 0 0" />
+								<Axis DirectionRatios="0 1 0" />
+								<RefDirection DirectionRatios="-1 0 0" />
+							</IfcAxis2Placement3D>
+						</RelativePlacement>
+					</ObjectPlacement>
+					<Representation xsi:type="IfcProductDefinitionShape">
+						<Representations>
+							<IfcShapeRepresentation RepresentationIdentifier="Axis" RepresentationType="Curve3D">
+								<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" id="i2" ContextIdentifier="Body" ContextType="Model" CoordinateSpaceDimension="0" TargetView="model_view" />
+								<Items>
+									<IfcPolyline>
+										<Points>
+											<IfcCartesianPoint Coordinates="0 0 0" />
+											<IfcCartesianPoint Coordinates="0 0 1000" />
+										</Points>
+									</IfcPolyline>
+								</Items>
+							</IfcShapeRepresentation>
+							<IfcShapeRepresentation RepresentationIdentifier="Body" RepresentationType="SweptSolid">
+								<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" xsi:nil="true" href="i2" />
+								<Items>
+									<IfcExtrudedAreaSolid Depth="1000">
+										<SweptArea xsi:type="IfcIShapeProfileDef" id="i4" ProfileType="area" ProfileName="IPE200" OverallWidth="100" OverallDepth="200" WebThickness="5,6" FlangeThickness="8,5" FilletRadius="12" />
+										<Position>
+											<Location Coordinates="0 -100 0" />
+										</Position>
+										<ExtrudedDirection DirectionRatios="0 0 1" />
+									</IfcExtrudedAreaSolid>
+								</Items>
+							</IfcShapeRepresentation>
+						</Representations>
+					</Representation>
+				</IfcBeamStandardCase>
+				<IfcBeamStandardCase id="i7" GlobalId="1zqFh80l11VgfEm3ZWh6Xv" Name="Revolution">
+					<OwnerHistory xsi:nil="true" href="i1" />
+					<IsTypedBy xsi:nil="true" href="i3" />
+				</IsTypedBy>
+				<ObjectPlacement xsi:type="IfcLocalPlacement">
+					<RelativePlacement>
+						<IfcAxis2Placement3D>
+							<Location Coordinates="0 0 400" />
+							<Axis DirectionRatios="-0,38461538 0,92307692 0" />
+							<RefDirection DirectionRatios="-0,92307692 -0,38461538 0" />
+						</IfcAxis2Placement3D>
+					</RelativePlacement>
+				</ObjectPlacement>
+				<Representation xsi:type="IfcProductDefinitionShape">
+					<Representations>
+						<IfcShapeRepresentation RepresentationIdentifier="Axis" RepresentationType="Curve3D">
+							<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" xsi:nil="true" href="i2" />
+							<Items>
+								<IfcTrimmedCurve SenseAgreement="true" MasterRepresentation="cartesian">
+									<BasisCurve xsi:type="IfcCircle" Radius="1300">
+										<Position>
+											<IfcAxis2Placement3D>
+												<Location Coordinates="-1300 0 0" />
+												<Axis DirectionRatios="0 -1 0" />
+												<RefDirection DirectionRatios="1 0 0" />
+											</IfcAxis2Placement3D>
+										</Position>
+									</BasisCurve>
+									<Trim1>
+										<IfcParameterValue-wrapper>0</IfcParameterValue-wrapper>
+										<IfcCartesianPoint Coordinates="0 0 0" />
+									</Trim1>
+									<Trim2>
+										<IfcParameterValue-wrapper>0,789582239399523</IfcParameterValue-wrapper>
+										<IfcCartesianPoint Coordinates="-384,615384615385 0 923,076923076923" />
+									</Trim2>
+								</IfcTrimmedCurve>
+							</Items>
+						</IfcShapeRepresentation>
+						<IfcShapeRepresentation RepresentationIdentifier="Body" RepresentationType="SweptSolid">
+							<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" xsi:nil="true" href="i2" />
+							<Items>
+								<IfcRevolvedAreaSolid Angle="0,789582239399523">
+									<SweptArea xsi:type="IfcIShapeProfileDef" xsi:nil="true" href="i4" />
+									<Position>
+										<Location Coordinates="0 -100 0" />
+									</Position>
+									<Axis>
+										<Location Coordinates="-1300 100 0" />
+										<Axis DirectionRatios="0 -1 0" />
+									</Axis>
+								</IfcRevolvedAreaSolid>
+							</Items>
+						</IfcShapeRepresentation>
+					</Representations>
+				</Representation>
+			</IfcBeamStandardCase>
+		</RelatedElements>
+	</IfcRelContainedInSpatialStructure>
+</ContainsElements>
+</IfcBuilding>
+<IfcRelAggregates GlobalId="091a6ewbvCMQ2Vyiqspa7a" Name="Project Container" Description="Project Container for Buildings">
+<OwnerHistory xsi:nil="true" href="i1" />
+<RelatedObjects>
+	<IfcBuilding xsi:nil="true" href="i5" />
+</RelatedObjects>
+</IfcRelAggregates>
+<IfcRelAssociatesMaterial GlobalId="1z88xyNXv81fAC6nEJ5vvQ" Name="MatAssoc" Description="Material Associates">
+<OwnerHistory xsi:nil="true" href="i1" />
+<RelatedObjects>
+	<IfcBeamStandardCase xsi:nil="true" href="i6" />
+	<IfcBeamStandardCase xsi:nil="true" href="i7" />
+</RelatedObjects>
+<RelatingMaterial>
+	<IfcMaterialProfileSetUsage CardinalPoint="8">
+		<ForProfileSet id="i9" Name="IPE200">
+			<MaterialProfiles>
+				<IfcMaterialProfile Name="IPE200" Priority="0">
+					<Material Name="S355JR" Description="Steel" />
+					<Profile xsi:type="IfcIShapeProfileDef" xsi:nil="true" href="i4" />
+				</IfcMaterialProfile>
+			</MaterialProfiles>
+		</ForProfileSet>
+	</IfcMaterialProfileSetUsage>
+</RelatingMaterial>
+</IfcRelAssociatesMaterial>
+<IfcRelDeclares GlobalId="2tgfGrMZ15PQOp9j9EqeaR">
+<OwnerHistory xsi:nil="true" href="i1" />
+<RelatedDefinitions>
+	<IfcBeamType xsi:nil="true" href="i8" />
+</RelatedDefinitions>
+</IfcRelDeclares>
+<IfcRelAssociatesMaterial GlobalId="2LPqZalgP6XhOHEQMvGdhT" Name="MatAssoc" Description="Material Associates">
+<OwnerHistory xsi:nil="true" href="i1" />
+<RelatedObjects>
+	<IfcBeamType xsi:nil="true" href="i8" />
+</RelatedObjects>
+<RelatingMaterial>
+	<IfcMaterialProfileSet xsi:nil="true" href="i9" />
+</RelatingMaterial>
+</IfcRelAssociatesMaterial>
+</ifc:ifcXML>
+
+

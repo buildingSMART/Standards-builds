@@ -1,0 +1,170 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>IfcAlignment2DVerSegParabolicArc</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 7 index3 3 index4 5 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../../toc-8.htm#8.7.3.6");
+//-->
+</script>
+
+<h4 class="num">IfcAlignment2DVerSegParabolicArc</h4>
+<a href="../../views/general-usage/index.htm" ><img src="../../../img/view-general-usage.png" title="General Usage"/></a>
+<details open="open"><summary>Natural language names</summary><table>
+<table class="gridtable">
+<tr><td><img src="../../../img/locale-en.png" /></td><td><b>Alignment 2D Vertical Segment Parabolic Arc</b></td></tr>
+</table>
+</details>
+<details open="open"><summary>Change log</summary><table class="gridtable">
+<tr><th>Item</th><th>SPF</th><th>XML</th><th>Change</th><th>Description</th></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc4x1-release-candidate-1/index.htm">IFC4x1 Release Candidate 1</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a></td><td></td><td></td><td>ADDED</td><td></td></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc4x1-release-candidate-2/index.htm">IFC4x1 Release Candidate 2</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToVertical</td><td></td><td></td><td>ADDED</td><td></td></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc4x1-release-candidate-3/index.htm">IFC4x1 Release Candidate 3</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LayerAssignment</td><td></td><td></td><td>ADDED</td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StyledByItem</td><td></td><td></td><td>ADDED</td><td></td></tr>
+</table>
+</details>
+<section>
+<h5 class="num">Semantic definitions at the entity</h5>
+<details open="open"><summary>Entity definition</summary><p>The vertical parabolic segment is defined as a parabola using the inherited attributes from <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a> and the following additional curve parameters  <i>ParabolaConstant</i> as the minimum radius of the parabolic arc at its apex, and <i>IsConvex</i> to indicate the whether the parabolic arc defined a sag or a crest.</p>
+
+<p>The parabolic arc is described by (see figure 1):</p>
+<ul style="list-style-type: none">
+ <li>R = signed <i>ParabolaConstant</i>, if <i>IsConvex</i> = true, then -R, if <i>IsConvex</i> = false, then +R as length measure</li>
+ <li>s<sub>0</sub> = <i>StartDistAlong</i> as length measure</li>
+ <li>z<sub>0</sub> = <i>StartHeight</i> as length measure</li>
+ <li>g<sub>0</sub> = <i>StartGradient</i> as ratio measure<li>
+</ul>
+
+<p>The following equations are used for any point along the parabola:</p>
+<ul style="list-style-type: none">
+ <li>at any point s<sub>1</sub> along the <i>HorizontalLength</i>
+ <li>the gradient g<sub>1</sub> = (s<sub>1</sub>-s<sub>0</sub>) / R + g<sub>0</sub></i>
+ <li>the height z<sub>1</sub> = (s<sub>1</sub>-s<sub>0</sub>) * (g<sub>1</sub>+g<sub>0</sub>)/2 + z<sub>0</sub></i>
+</ul>
+
+<table>
+<tr><td><img src="../../../figures/ifcalignment2dversegparabolicarc_fig1.png" /></td></tr>
+<tr><td>
+Legend:<br>
+red: the parabolic curve with start point and calculated end point used as an vertical alignment</br>
+yellow: the underlying unbounded parabola definition</br>
+blue: the minimum circle defined by the parabola constant agreeing to the "is convex" fag, the constant, and the start gradient 
+</td></tr>
+<tr><td><p class="figure">Figure 316 &mdash; Alignment vertical segment parabola convex</p></td></tr>
+</table>
+<p>&nbsp;</p>
+<table>
+<tr><td><img src="../../../figures/ifcalignment2dversegparabolicarc-convex.png" /></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</I> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
+<tr><td><p class="figure">Figure 317 &mdash; Alignment vertical parabolic arc segment convex</p></td><td>&nbsp;</td></tr>
+</table>
+<p>&nbsp;</p>
+<table>
+<tr><td><img src="../../../figures/ifcalignment2dversegparabolicarc-concave.png" /></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</I> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr></tr>
+<tr><td><p class="figure">Figure 317 &mdash; Alignment vertical parabolic arc segment concave</p></td><td>&nbsp;</td></tr>
+</table></details>
+<details open="open"><summary>Attribute definitions</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th>
+<th>G</th></tr>
+<tr><td>8</td><td>ParabolaConstant</td><td><a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a></td><td></td><td>
+Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).</td><td>X</td></tr>
+<tr><td>9</td><td>IsConvex</td><td><a href="../../ifcmeasureresource/lexical/ifcboolean.htm">IfcBoolean</a></td><td></td><td>
+Orientation of the parabolic arc, convex (Boolean=”true”) means decreasing gradient along the arc at the beginning such as at the crest of a hill, concave (Boolean=”false”) means increasing gradient along the arc at the beginning such as at the base of a valley.</td><td>X</td></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Inherited definitions from supertypes</h5>
+<details open="open"><summary>Entity inheritance</summary><img src="../../../diagrams/ifcalignment2dversegparabolicarc.png" usemap="#f"/>
+<map name="f">
+<area shape="rect" coords="42,78,254,90" href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm" alt="IfcAlignment2DVerticalSegment" />
+<area shape="rect" coords="30,54,266,66" href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm" alt="IfcAlignment2DSegment" />
+<area shape="rect" coords="18,30,278,42" href="../../../schema/ifcgeometryresource/lexical/ifcgeometricrepresentationitem.htm" alt="IfcGeometricRepresentationItem" />
+<area shape="rect" coords="6,6,290,18" href="../../../schema/ifcgeometryresource/lexical/ifcrepresentationitem.htm" alt="IfcRepresentationItem" />
+</map>
+</details>
+<details><summary>Attribute inheritance</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th><th>G</th></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.htm">IfcRepresentationItem</a></i></td></tr>
+<tr><td></td><td><i>LayerAssignment</i></td><td><a href="../../ifcpresentationorganizationresource/lexical/ifcpresentationlayerassignment.htm">IfcPresentationLayerAssignment</a><br/>@AssignedItems</td><td>S[0:1]</td><td>Assignment of the representation item to a single or multiple layer(s). The <i>LayerAssignments</i> can override a <i>LayerAssignments</i> of the <a href="../../ifcrepresentationresource/lexical/ifcrepresentation.htm">IfcRepresentation</a> it is used  within the list of <i>Items</i>.
+<blockquote class="change-ifc2x3">IFC2x3 CHANGE&nbsp; The inverse attribute <i>LayerAssignments</i> has been added.</blockquote>
+ <blockquote class="change-ifc2x4">IFC4 CHANGE&nbsp; The inverse attribute <i>LayerAssignment</i> has
+been restricted to max 1. Upward compatibility for file based exchange is guaranteed. </blockquote></td><td>X</td></tr>
+<tr><td></td><td><i>StyledByItem</i></td><td><a href="../../ifcpresentationappearanceresource/lexical/ifcstyleditem.htm">IfcStyledItem</a><br/>@Item</td><td>S[0:1]</td><td>Reference to the <a href="../../ifcpresentationappearanceresource/lexical/ifcstyleditem.htm">IfcStyledItem</a> that provides presentation information to the representation, e.g. a curve style, including colour and thickness to a geometric curve.
+  <blockquote class="change-ifc2x3">IFC2x3 CHANGE&nbsp; The inverse attribute <i>StyledByItem</i> has been added.</blockquote></td><td>X</td></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometryresource/lexical/ifcgeometricrepresentationitem.htm">IfcGeometricRepresentationItem</a></i></td></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm">IfcAlignment2DSegment</a></i></td></tr>
+<tr><td>1</td><td>TangentialContinuity</td><td><a href="../../ifcmeasureresource/lexical/ifcboolean.htm">IfcBoolean</a></td><td>? </td><td>
+Connectivity between the continuous segments is not enforced per se to be tangential. Setting "TangentialContinuity" to True means that the current segment shall continue with tangential continuity to the previous one.</td><td>X</td></tr>
+<tr><td>2</td><td>StartTag</td><td><a href="../../ifcmeasureresource/lexical/ifclabel.htm">IfcLabel</a></td><td>? </td><td>
+Tag to annotate the start point of the alignment segment.</td><td>X</td></tr>
+<tr><td>3</td><td>EndTag</td><td><a href="../../ifcmeasureresource/lexical/ifclabel.htm">IfcLabel</a></td><td>? </td><td>
+	Tag to annotate the end point of the alignment segment.</td><td>X</td></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a></i></td></tr>
+<tr><td>4</td><td>StartDistAlong</td><td><a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a></td><td></td><td>
+Distance along the horizontal alignment, measured along the <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dhorizontal.htm">IfcAlignment2DHorizontal</a> given in the length unit of the global <a href="../../ifcmeasureresource/lexical/ifcunitassignment.htm">IfcUnitAssignment</a>.</td><td>X</td></tr>
+<tr><td>5</td><td>HorizontalLength</td><td><a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a></td><td></td><td>
+Length measured as distance along the horizontal alignment of the segment.</td><td>X</td></tr>
+<tr><td>6</td><td>StartHeight</td><td><a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a></td><td></td><td>
+Elevation in Z of the start point relative to the IfcAlignment coordinate system.
+<blockquote class="note">NOTE&nbsp; It is strongly advised to not offset the IfcAlignment coordinate system from the project engineering coordinate system.</blockquote></td><td>X</td></tr>
+<tr><td>7</td><td>StartGradient</td><td><a href="../../ifcmeasureresource/lexical/ifcratiomeasure.htm">IfcRatioMeasure</a></td><td></td><td>
+Gradient of the tangent of the vertical segment at the start point. It is provided as a ratio measure. The ratio is percentage/100 (0.1 is equal to 10%). It has a theoretical range of -∞ < n < ∞ using a ratio measure. The equivalent range measured in degree is -90° < n < 90°.
+<blockquote class="note">NOTE&nbsp;  For practical application of start gradient, the range of the ratio measure should be within the limits of -1 ≤ n ≤ 1 (equivalent in degree -45° ≤ n ≤ 45°). However larger limits might apply for particular usages.</blockquote>
+<p>Positive gradient means an increasing height at the start (or uphill), a negative gradient means decreasing height at the start (or downhill).</p></td><td>X</td></tr>
+<tr><td></td><td><i>ToVertical</i></td><td><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm">IfcAlignment2DVertical</a><br/>@Segments</td><td>S[1:1]</td><td></td><td>X</td></tr>
+<tr><td colspan="6"><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a></td></tr>
+<tr><td>8</td><td>ParabolaConstant</td><td><a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a></td><td></td><td>
+Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).</td><td>X</td></tr>
+<tr><td>9</td><td>IsConvex</td><td><a href="../../ifcmeasureresource/lexical/ifcboolean.htm">IfcBoolean</a></td><td></td><td>
+Orientation of the parabolic arc, convex (Boolean=”true”) means decreasing gradient along the arc at the beginning such as at the crest of a hill, concave (Boolean=”false”) means increasing gradient along the arc at the beginning such as at the base of a valley.</td><td>X</td></tr>
+</table>
+</details>
+</section>
+</section>
+<section>
+<h5 class="num">Formal representations</h5>
+<details><summary>XML Specification</summary><div class="xsd"><code class="xsd">&nbsp;&lt;xs:element name=&quot;<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a>&quot; type=&quot;ifc:<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a>&quot; substitutionGroup=&quot;ifc:<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a>&quot; nillable=&quot;true&quot;/&gt;<br/>
+&nbsp;&lt;xs:complexType name=&quot;<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;xs:complexContent&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;xs:extension base=&quot;ifc:<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;ParabolaConstant&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;IsConvex&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcboolean.htm">IfcBoolean</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/xs:extension&gt;<br/>
+&nbsp;&nbsp;&lt;/xs:complexContent&gt;<br/>
+&nbsp;&lt;/xs:complexType&gt;<br/>
+</code></div></details>
+<details><summary>EXPRESS Specification</summary><div class="express"><code class="express">
+<span class="keyword">ENTITY</span> IfcAlignment2DVerSegParabolicArc<br/>
+&nbsp;<span class="keyword">SUBTYPE OF</span> (<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a>)<b>;</b><br/>
+&nbsp;&nbsp;ParabolaConstant : <a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a>;<br/>
+&nbsp;&nbsp;IsConvex : <a href="../../ifcmeasureresource/lexical/ifcboolean.htm">IfcBoolean</a>;<br/>
+<span class="keyword">END_ENTITY;</span><br/>
+<p class="std"><a href="../../../annex/annex-d/ifcgeometricconstraintresource/diagram_0004.htm" ><img src="../../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</code></div>
+</details>
+</section>
+</p>
+<p><a href="../../../link/ifcalignment2dversegparabolicarc.htm" target="_top" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

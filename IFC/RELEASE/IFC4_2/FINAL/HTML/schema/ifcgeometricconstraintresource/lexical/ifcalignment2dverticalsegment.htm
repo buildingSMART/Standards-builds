@@ -1,0 +1,175 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>IfcAlignment2DVerticalSegment</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 7 index3 3 index4 7 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../../toc-8.htm#8.7.3.8");
+//-->
+</script>
+
+<h4 class="num">IfcAlignment2DVerticalSegment</h4>
+<a href="../../views/general-usage/index.htm" ><img src="../../../img/view-general-usage.png" title="General Usage"/></a>
+<details open="open"><summary>Natural language names</summary><table>
+<table class="gridtable">
+<tr><td><img src="../../../img/locale-en.png" /></td><td><b>Alignment 2D Vertical Segment</b></td></tr>
+</table>
+</details>
+<details open="open"><summary>Change log</summary><table class="gridtable">
+<tr><th>Item</th><th>SPF</th><th>XML</th><th>Change</th><th>Description</th></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc4x1-release-candidate-1/index.htm">IFC4x1 Release Candidate 1</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a></td><td></td><td></td><td>ADDED</td><td></td></tr>
+</table>
+</details>
+<section>
+<h5 class="num">Semantic definitions at the entity</h5>
+<details open="open"><summary>Entity definition</summary><p>Individual segment along the <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm">IfcAlignment2DVertical</a>, being defined in the distance-along/z coordinate space. </p>
+<p>The vertical alignment is defined by segments that connects end-to-start. The vertical alignment curve geometry is defined in a plane with x = distance along horizontal, the y = height (or elevation). The transition at the segment connection is not enforced to be tangential, if the “tangential continuity” flag is set to false, otherwise a tangential continuity shall be preserved.</p>
+<p>The following vertical segment types are defined:</p>
+<ul>
+<li>line segment - <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegline.htm">IfcAlignment2DVerSegLine</a></li>
+<li>circular arc segment - <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegcirculararc.htm">IfcAlignment2DVerSegCircularArc</a></li>
+<li>parabolic arc segment - <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a> which can describe symmetric and unsymmetric parabolas</li>
+</ul>
+<p>For each vertical segment, the following non-redundant information is provided:</p>
+<ul>
+<li>the start point (in distance along/ height coordinates)</li>
+<li>the start gradient (as a ratio measure with horizontal being 0, uphill positive, and downhill negative) usually between 1 < n < -1 (equal to a percentage of 100% < n < -100%, or to a degree of 45&deg; < n < -45&deg; but higher values are possible)</li>
+<li>the length (as horizontal length along the distance along (not the curve segment length))</li>
+<li>the curve parameter needed for circular and parabolic arc segments</li>
+</ul>
+<p>The following information can be calculated (and is therefore not exchanged explicitly to avoid redundancy and inconsistencies)</p>
+<ul>
+<li>the end distance along (from the distance along and segment length)</li>
+<li>the end height (from start distance along, gradient, length and curve parameter)</li>
+<li>the end direction (from start direction, segment length and curve parameter)</li>
+<li>the point of vertical intersection (from start direction and end direction)</li>
+</ul>
+<p>The following checks can be done to validate the correct exchange:</p>
+<ul>
+<li>continuity – does the calculated end distance along of the previous segment matches with the provided start distance along of this segment</li>
+<li>tangential continuity – does the calculated end gradient of the previous segment matches with the provided start gradient of this segment</li>
+</ul>
+
+<blockquote class="note">NOTE&nbsp; Specific subtypes of the <span class="self-ref">IfcAlignment2DVerticalSegment</span> add specific geometric curve parameters. Connectivity between vertical segments is not necessarily tangential, but this can be enforced as a requirement through the attribute <i>TangentialContinuity</i>.</blockquote>
+
+<table>
+<tr><td><img src="../../../figures/ifcalignment2dverticalsegment.png" /></td></tr>
+<tr><td><p class="figure">Figure 317 &mdash; Alignment vertical segment</p></td></tr>
+</table>
+
+</details>
+<details open="open"><summary>Attribute definitions</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th>
+<th>G</th></tr>
+<tr><td>4</td><td>StartDistAlong</td><td><a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a></td><td></td><td>
+Distance along the horizontal alignment, measured along the <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dhorizontal.htm">IfcAlignment2DHorizontal</a> given in the length unit of the global <a href="../../ifcmeasureresource/lexical/ifcunitassignment.htm">IfcUnitAssignment</a>.</td><td>X</td></tr>
+<tr><td>5</td><td>HorizontalLength</td><td><a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a></td><td></td><td>
+Length measured as distance along the horizontal alignment of the segment.</td><td>X</td></tr>
+<tr><td>6</td><td>StartHeight</td><td><a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a></td><td></td><td>
+Elevation in Z of the start point relative to the IfcAlignment coordinate system.
+<blockquote class="note">NOTE&nbsp; It is strongly advised to not offset the IfcAlignment coordinate system from the project engineering coordinate system.</blockquote></td><td>X</td></tr>
+<tr><td>7</td><td>StartGradient</td><td><a href="../../ifcmeasureresource/lexical/ifcratiomeasure.htm">IfcRatioMeasure</a></td><td></td><td>
+Gradient of the tangent of the vertical segment at the start point. It is provided as a ratio measure. The ratio is percentage/100 (0.1 is equal to 10%). It has a theoretical range of -∞ < n < ∞ using a ratio measure. The equivalent range measured in degree is -90° < n < 90°.
+<blockquote class="note">NOTE&nbsp;  For practical application of start gradient, the range of the ratio measure should be within the limits of -1 ≤ n ≤ 1 (equivalent in degree -45° ≤ n ≤ 45°). However larger limits might apply for particular usages.</blockquote>
+<p>Positive gradient means an increasing height at the start (or uphill), a negative gradient means decreasing height at the start (or downhill).</p></td><td>X</td></tr>
+<tr><td></td><td><i>ToVertical</i></td><td><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm">IfcAlignment2DVertical</a><br/>@Segments</td><td>S[1:1]</td><td></td><td>X</td></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Inherited definitions from supertypes</h5>
+<details open="open"><summary>Entity inheritance</summary><img src="../../../diagrams/ifcalignment2dverticalsegment.png" usemap="#f"/>
+<map name="f">
+<area shape="rect" coords="54,102,242,114" href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegcirculararc.htm" alt="IfcAlignment2DVerSegCircularArc" />
+<area shape="rect" coords="54,126,242,138" href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegline.htm" alt="IfcAlignment2DVerSegLine" />
+<area shape="rect" coords="54,150,242,162" href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm" alt="IfcAlignment2DVerSegParabolicArc" />
+<area shape="rect" coords="30,54,266,66" href="../../../schema/ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm" alt="IfcAlignment2DSegment" />
+<area shape="rect" coords="18,30,278,42" href="../../../schema/ifcgeometryresource/lexical/ifcgeometricrepresentationitem.htm" alt="IfcGeometricRepresentationItem" />
+<area shape="rect" coords="6,6,290,18" href="../../../schema/ifcgeometryresource/lexical/ifcrepresentationitem.htm" alt="IfcRepresentationItem" />
+</map>
+</details>
+<details><summary>Attribute inheritance</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th><th>G</th></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.htm">IfcRepresentationItem</a></i></td></tr>
+<tr><td></td><td><i>LayerAssignment</i></td><td><a href="../../ifcpresentationorganizationresource/lexical/ifcpresentationlayerassignment.htm">IfcPresentationLayerAssignment</a><br/>@AssignedItems</td><td>S[0:1]</td><td>Assignment of the representation item to a single or multiple layer(s). The <i>LayerAssignments</i> can override a <i>LayerAssignments</i> of the <a href="../../ifcrepresentationresource/lexical/ifcrepresentation.htm">IfcRepresentation</a> it is used  within the list of <i>Items</i>.
+<blockquote class="change-ifc2x3">IFC2x3 CHANGE&nbsp; The inverse attribute <i>LayerAssignments</i> has been added.</blockquote>
+ <blockquote class="change-ifc2x4">IFC4 CHANGE&nbsp; The inverse attribute <i>LayerAssignment</i> has
+been restricted to max 1. Upward compatibility for file based exchange is guaranteed. </blockquote></td><td>X</td></tr>
+<tr><td></td><td><i>StyledByItem</i></td><td><a href="../../ifcpresentationappearanceresource/lexical/ifcstyleditem.htm">IfcStyledItem</a><br/>@Item</td><td>S[0:1]</td><td>Reference to the <a href="../../ifcpresentationappearanceresource/lexical/ifcstyleditem.htm">IfcStyledItem</a> that provides presentation information to the representation, e.g. a curve style, including colour and thickness to a geometric curve.
+  <blockquote class="change-ifc2x3">IFC2x3 CHANGE&nbsp; The inverse attribute <i>StyledByItem</i> has been added.</blockquote></td><td>X</td></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometryresource/lexical/ifcgeometricrepresentationitem.htm">IfcGeometricRepresentationItem</a></i></td></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm">IfcAlignment2DSegment</a></i></td></tr>
+<tr><td>1</td><td>TangentialContinuity</td><td><a href="../../ifcmeasureresource/lexical/ifcboolean.htm">IfcBoolean</a></td><td>? </td><td>
+Connectivity between the continuous segments is not enforced per se to be tangential. Setting "TangentialContinuity" to True means that the current segment shall continue with tangential continuity to the previous one.</td><td>X</td></tr>
+<tr><td>2</td><td>StartTag</td><td><a href="../../ifcmeasureresource/lexical/ifclabel.htm">IfcLabel</a></td><td>? </td><td>
+Tag to annotate the start point of the alignment segment.</td><td>X</td></tr>
+<tr><td>3</td><td>EndTag</td><td><a href="../../ifcmeasureresource/lexical/ifclabel.htm">IfcLabel</a></td><td>? </td><td>
+	Tag to annotate the end point of the alignment segment.</td><td>X</td></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a></i></td></tr>
+<tr><td>4</td><td>StartDistAlong</td><td><a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a></td><td></td><td>
+Distance along the horizontal alignment, measured along the <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dhorizontal.htm">IfcAlignment2DHorizontal</a> given in the length unit of the global <a href="../../ifcmeasureresource/lexical/ifcunitassignment.htm">IfcUnitAssignment</a>.</td><td>X</td></tr>
+<tr><td>5</td><td>HorizontalLength</td><td><a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a></td><td></td><td>
+Length measured as distance along the horizontal alignment of the segment.</td><td>X</td></tr>
+<tr><td>6</td><td>StartHeight</td><td><a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a></td><td></td><td>
+Elevation in Z of the start point relative to the IfcAlignment coordinate system.
+<blockquote class="note">NOTE&nbsp; It is strongly advised to not offset the IfcAlignment coordinate system from the project engineering coordinate system.</blockquote></td><td>X</td></tr>
+<tr><td>7</td><td>StartGradient</td><td><a href="../../ifcmeasureresource/lexical/ifcratiomeasure.htm">IfcRatioMeasure</a></td><td></td><td>
+Gradient of the tangent of the vertical segment at the start point. It is provided as a ratio measure. The ratio is percentage/100 (0.1 is equal to 10%). It has a theoretical range of -∞ < n < ∞ using a ratio measure. The equivalent range measured in degree is -90° < n < 90°.
+<blockquote class="note">NOTE&nbsp;  For practical application of start gradient, the range of the ratio measure should be within the limits of -1 ≤ n ≤ 1 (equivalent in degree -45° ≤ n ≤ 45°). However larger limits might apply for particular usages.</blockquote>
+<p>Positive gradient means an increasing height at the start (or uphill), a negative gradient means decreasing height at the start (or downhill).</p></td><td>X</td></tr>
+<tr><td></td><td><i>ToVertical</i></td><td><a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm">IfcAlignment2DVertical</a><br/>@Segments</td><td>S[1:1]</td><td></td><td>X</td></tr>
+</table>
+</details>
+</section>
+</section>
+<section>
+<h5 class="num">Formal representations</h5>
+<details><summary>XML Specification</summary><div class="xsd"><code class="xsd">&nbsp;&lt;xs:element name=&quot;<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a>&quot; type=&quot;ifc:<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a>&quot; abstract=&quot;true&quot; substitutionGroup=&quot;ifc:<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm">IfcAlignment2DSegment</a>&quot; nillable=&quot;true&quot;/&gt;<br/>
+&nbsp;&lt;xs:complexType name=&quot;<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dverticalsegment.htm">IfcAlignment2DVerticalSegment</a>&quot; abstract=&quot;true&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;xs:complexContent&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;xs:extension base=&quot;ifc:<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm">IfcAlignment2DSegment</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;StartDistAlong&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;HorizontalLength&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;StartHeight&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;StartGradient&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcratiomeasure.htm">IfcRatioMeasure</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/xs:extension&gt;<br/>
+&nbsp;&nbsp;&lt;/xs:complexContent&gt;<br/>
+&nbsp;&lt;/xs:complexType&gt;<br/>
+</code></div></details>
+<details><summary>EXPRESS Specification</summary><div class="express"><code class="express">
+<span class="keyword">ENTITY</span> IfcAlignment2DVerticalSegment<br/>
+&nbsp;<span class="keyword">ABSTRACT</span> <span class="keyword">SUPERTYPE OF</span>(<span class="keyword">ONEOF</span>(<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegcirculararc.htm">IfcAlignment2DVerSegCircularArc</a>, <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegline.htm">IfcAlignment2DVerSegLine</a>, <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm">IfcAlignment2DVerSegParabolicArc</a>))<br/>
+&nbsp;<span class="keyword">SUBTYPE OF</span> (<a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm">IfcAlignment2DSegment</a>)<b>;</b><br/>
+&nbsp;&nbsp;StartDistAlong : <a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a>;<br/>
+&nbsp;&nbsp;HorizontalLength : <a href="../../ifcmeasureresource/lexical/ifcpositivelengthmeasure.htm">IfcPositiveLengthMeasure</a>;<br/>
+&nbsp;&nbsp;StartHeight : <a href="../../ifcmeasureresource/lexical/ifclengthmeasure.htm">IfcLengthMeasure</a>;<br/>
+&nbsp;&nbsp;StartGradient : <a href="../../ifcmeasureresource/lexical/ifcratiomeasure.htm">IfcRatioMeasure</a>;<br/>
+&nbsp;<span class="keyword">INVERSE</span><br/>
+&nbsp;&nbsp;ToVertical : <span class="keyword">SET</span> [1:1] OF <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm">IfcAlignment2DVertical</a> <span class="keyword">FOR</span> Segments;<br/>
+<span class="keyword">END_ENTITY;</span><br/>
+<p class="std"><a href="../../../annex/annex-d/ifcgeometricconstraintresource/diagram_0004.htm" ><img src="../../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</code></div>
+</details>
+</section>
+<p><img src="../../../img/external.png" style="border: 0px" title="References" alt="References"/>&nbsp; References: <a href="../../ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm">IfcAlignment2DVertical</a>
+</p>
+<p><a href="../../../link/ifcalignment2dverticalsegment.htm" target="_top" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

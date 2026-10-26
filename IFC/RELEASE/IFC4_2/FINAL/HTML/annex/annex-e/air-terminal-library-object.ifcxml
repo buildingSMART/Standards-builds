@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifc:ifcXML xsi:schemaLocation="http://www.buildingsmart-tech.org/ifc/IFC4x2/final IFC4x2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifc="http://www.buildingsmart-tech.org/ifc/IFC4x2/final" xmlns="http://www.buildingsmart-tech.org/ifc/IFC4x2/final">
+<header>
+	<time_stamp>
+2019-03-24T14:01:41	</time_stamp>
+	<preprocessor_version>
+BuildingSmart IfcKit by Constructivity	</preprocessor_version>
+	<originating_system>
+IfcDoc 12.0.0.0	</originating_system>
+</header>
+<IfcProject GlobalId="3EasFN11P0zQRYKyp7G85J" Name="HVAC Product Type Library Example" Description="Demonstrates an air terminal type, which may be instantiated in buildings within referencing files." ObjectType="ProductLibrary">
+	<OwnerHistory id="i1" State="readwrite" ChangeAction="notdefined" CreationDate="1321047295">
+		<OwningUser>
+			<ThePerson Identification="Tim" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+			<TheOrganization Name="Tim-PC" />
+		</OwningUser>
+		<OwningApplication Version="0.9.1" ApplicationFullName="Constructivity" ApplicationIdentifier="CONSTRUCTIVITY">
+			<ApplicationDeveloper Name="Constructivity.com LLC" />
+		</OwningApplication>
+	</OwnerHistory>
+	<RepresentationContexts>
+		<IfcGeometricRepresentationContext id="i2" ContextIdentifier="3D" ContextType="Model" CoordinateSpaceDimension="3" Precision="1E-05">
+			<WorldCoordinateSystem>
+				<IfcAxis2Placement3D>
+					<Location Coordinates="0 0 0" />
+				</IfcAxis2Placement3D>
+			</WorldCoordinateSystem>
+		</IfcGeometricRepresentationContext>
+	</RepresentationContexts>
+	<UnitsInContext>
+		<Units>
+			<IfcConversionBasedUnit UnitType="lengthunit" Name="inch">
+				<Dimensions LengthExponent="1" MassExponent="0" TimeExponent="0" ElectricCurrentExponent="0" ThermodynamicTemperatureExponent="0" AmountOfSubstanceExponent="0" LuminousIntensityExponent="0" />
+				<ConversionFactor>
+					<ValueComponent>
+						<IfcLengthMeasure-wrapper>0,0254</IfcLengthMeasure-wrapper>
+					</ValueComponent>
+					<UnitComponent>
+						<IfcSIUnit UnitType="lengthunit" Name="metre" />
+					</UnitComponent>
+				</ConversionFactor>
+			</IfcConversionBasedUnit>
+		</Units>
+	</UnitsInContext>
+	<Declares>
+		<IfcRelDeclares GlobalId="0$b_yyn8PEbAVbeTOu2ljb">
+			<OwnerHistory xsi:nil="true" href="i1" />
+			<RelatedDefinitions>
+				<IfcAirTerminalType GlobalId="1FESQ2M9vC7xYWZpI_LlCh" Name="Acme Diffuser 1234" Description="Ceiling diffuser" PredefinedType="diffuser">
+					<OwnerHistory xsi:nil="true" href="i1" />
+					<IsNestedBy>
+						<IfcRelNests GlobalId="1yPSy1NEzAsQ3rkI$pYuin">
+							<OwnerHistory xsi:nil="true" href="i1" />
+							<RelatedObjects>
+								<IfcDistributionPort GlobalId="0lCGSOGtb4mu56WSeYuzNg" Name="Inlet" FlowDirection="sink" PredefinedType="duct" SystemType="airconditioning">
+									<OwnerHistory xsi:nil="true" href="i1" />
+									<IsDefinedBy>
+										<IfcRelDefinesByProperties GlobalId="0eTnqsHaH63xaP$yFWdQxt" Name="Pset_DistributionPortCommon">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<RelatingPropertyDefinition>
+												<IfcPropertySet id="i15" GlobalId="3MdHsbDH1BrQYI$kjaLN5a" Name="Pset_DistributionPortCommon" Description="Common attributes attached to an instance of IfcDistributionPort.">
+													<OwnerHistory xsi:nil="true" href="i1" />
+													<HasProperties>
+														<IfcPropertySingleValue Name="PortNumber" Description="The port index for logically ordering the port within the containing element or element type." />
+														<IfcPropertySingleValue Name="ColorCode" Description="Name of a color for identifying the connector, if applicable." />
+													</HasProperties>
+												</IfcPropertySet>
+											</RelatingPropertyDefinition>
+										</IfcRelDefinesByProperties>
+										<IfcRelDefinesByProperties GlobalId="2Phx4Cdqz3XRbcSidvQspJ" Name="Pset_DistributionPortTypeAirConditioning">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<RelatingPropertyDefinition>
+												<IfcPropertySet id="i17" GlobalId="142LVYnPP62figC7tUlZnT" Name="Pset_DistributionPortTypeAirConditioning">
+													<OwnerHistory xsi:nil="true" href="i1" />
+													<HasProperties>
+														<IfcPropertyEnumeratedValue Name="ConnectionType">
+															<EnumerationValues>
+																<IfcLabel-wrapper>OUTSIDESLEEVE</IfcLabel-wrapper>
+															</EnumerationValues>
+															<EnumerationReference id="i4" Name="PEnum_DuctConnectionType">
+																<EnumerationValues>
+																	<IfcLabel-wrapper>BEADEDSLEEVE</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>COMPRESSION</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>CRIMP</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>DRAWBAND</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>DRIVESLIP</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>FLANGED</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>OUTSIDESLEEVE</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>SLIPON</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>SOLDERED</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>SSLIP</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>STANDINGSEAM</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>SWEDGE</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>WELDED</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>NONE</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>USERDEFINED</IfcLabel-wrapper>
+																	<IfcLabel-wrapper>NOTDEFINED</IfcLabel-wrapper>
+																</EnumerationValues>
+															</EnumerationReference>
+														</IfcPropertyEnumeratedValue>
+														<IfcPropertySingleValue Name="ConnectionSubType" />
+														<IfcPropertySingleValue Name="NominalWidth">
+															<NominalValue>
+																<IfcPositiveLengthMeasure-wrapper>12</IfcPositiveLengthMeasure-wrapper>
+															</NominalValue>
+														</IfcPropertySingleValue>
+														<IfcPropertySingleValue Name="NominalHeight">
+															<NominalValue>
+																<IfcPositiveLengthMeasure-wrapper>12</IfcPositiveLengthMeasure-wrapper>
+															</NominalValue>
+														</IfcPropertySingleValue>
+														<IfcPropertyBoundedValue Name="DryBulbTemperature" />
+														<IfcPropertyBoundedValue Name="WetBulbTemperature" />
+														<IfcPropertyBoundedValue Name="VolumetricFlowRate" />
+														<IfcPropertyBoundedValue Name="Velocity" />
+														<IfcPropertyBoundedValue Name="Pressure" />
+													</HasProperties>
+												</IfcPropertySet>
+											</RelatingPropertyDefinition>
+										</IfcRelDefinesByProperties>
+									</IsDefinedBy>
+									<ObjectPlacement xsi:type="IfcLocalPlacement">
+										<RelativePlacement>
+											<IfcAxis2Placement3D>
+												<Location Coordinates="12 12 4" />
+											</IfcAxis2Placement3D>
+										</RelativePlacement>
+									</ObjectPlacement>
+								</IfcDistributionPort>
+							</RelatedObjects>
+						</IfcRelNests>
+					</IsNestedBy>
+					<HasPropertySets>
+						<IfcPropertySet id="i19" GlobalId="34RBPXI3v1B9OyUNo6YREP" Name="Pset_AirTerminalTypeCommon">
+							<OwnerHistory xsi:nil="true" href="i1" />
+							<HasProperties>
+								<IfcPropertySingleValue Name="Reference" />
+								<IfcPropertyEnumeratedValue Name="Status">
+									<EnumerationReference id="i5" Name="PEnum_Status">
+										<EnumerationValues>
+											<IfcLabel-wrapper>NEW</IfcLabel-wrapper>
+											<IfcLabel-wrapper>EXISTING</IfcLabel-wrapper>
+											<IfcLabel-wrapper>DEMOLISH</IfcLabel-wrapper>
+											<IfcLabel-wrapper>TEMPORARY</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertyEnumeratedValue Name="Shape">
+									<EnumerationValues>
+										<IfcLabel-wrapper>SQUARE</IfcLabel-wrapper>
+									</EnumerationValues>
+									<EnumerationReference id="i6" Name="PEnum_AirTerminalShape">
+										<EnumerationValues>
+											<IfcLabel-wrapper>ROUND</IfcLabel-wrapper>
+											<IfcLabel-wrapper>RECTANGULAR</IfcLabel-wrapper>
+											<IfcLabel-wrapper>SQUARE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>SLOT</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertyEnumeratedValue Name="FaceType">
+									<EnumerationReference id="i7" Name="PEnum_AirTerminalFaceType">
+										<EnumerationValues>
+											<IfcLabel-wrapper>FOURWAYPATTERN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>SINGLEDEFLECTION</IfcLabel-wrapper>
+											<IfcLabel-wrapper>DOUBLEDEFLECTION</IfcLabel-wrapper>
+											<IfcLabel-wrapper>SIGHTPROOF</IfcLabel-wrapper>
+											<IfcLabel-wrapper>EGGCRATE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>PERFORATED</IfcLabel-wrapper>
+											<IfcLabel-wrapper>LOUVERED</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertySingleValue Name="SlotWidth" />
+								<IfcPropertySingleValue Name="SlotLength" />
+								<IfcPropertySingleValue Name="NumberOfSlots" />
+								<IfcPropertyEnumeratedValue Name="FlowPattern">
+									<EnumerationReference id="i8" Name="PEnum_AirTerminalFlowPattern">
+										<EnumerationValues>
+											<IfcLabel-wrapper>LINEARSINGLE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>LINEARDOUBLE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>LINEARFOURWAY</IfcLabel-wrapper>
+											<IfcLabel-wrapper>RADIAL</IfcLabel-wrapper>
+											<IfcLabel-wrapper>SWIRL</IfcLabel-wrapper>
+											<IfcLabel-wrapper>DISPLACMENT</IfcLabel-wrapper>
+											<IfcLabel-wrapper>COMPACTJET</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertyBoundedValue Name="AirFlowrateRange" />
+								<IfcPropertyBoundedValue Name="TemperatureRange" />
+								<IfcPropertyEnumeratedValue Name="DischargeDirection">
+									<EnumerationReference id="i9" Name="PEnum_AirTerminalDischargeDirection">
+										<EnumerationValues>
+											<IfcLabel-wrapper>PARALLEL</IfcLabel-wrapper>
+											<IfcLabel-wrapper>PERPENDICULAR</IfcLabel-wrapper>
+											<IfcLabel-wrapper>ADJUSTABLE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertySingleValue Name="ThrowLength" />
+								<IfcPropertySingleValue Name="AirDiffusionPerformanceIndex" />
+								<IfcPropertyEnumeratedValue Name="FinishType">
+									<EnumerationReference id="i10" Name="PEnum_AirTerminalFinishType">
+										<EnumerationValues>
+											<IfcLabel-wrapper>ANNODIZED</IfcLabel-wrapper>
+											<IfcLabel-wrapper>PAINTED</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NONE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertySingleValue Name="FinishColor" />
+								<IfcPropertyEnumeratedValue Name="MountingType">
+									<EnumerationReference id="i11" Name="PEnum_AirTerminalMountingType">
+										<EnumerationValues>
+											<IfcLabel-wrapper>SURFACE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>FLATFLUSH</IfcLabel-wrapper>
+											<IfcLabel-wrapper>LAYIN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertyEnumeratedValue Name="CoreType">
+									<EnumerationReference id="i12" Name="PEnum_AirTerminalCoreType">
+										<EnumerationValues>
+											<IfcLabel-wrapper>SHUTTERBLADE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>CURVEDBLADE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>REMOVABLE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>REVERSIBLE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NONE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertySingleValue Name="CoreSetHorizontal" />
+								<IfcPropertySingleValue Name="CoreSetVertical" />
+								<IfcPropertySingleValue Name="HasIntegralControl" />
+								<IfcPropertyEnumeratedValue Name="FlowControlType">
+									<EnumerationReference id="i13" Name="PEnum_AirTerminalFlowControlType">
+										<EnumerationValues>
+											<IfcLabel-wrapper>DAMPER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>BELLOWS</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NONE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+								<IfcPropertySingleValue Name="HasSoundAttenuator" />
+								<IfcPropertySingleValue Name="HasThermalInsulation" />
+								<IfcPropertySingleValue Name="NeckArea" />
+								<IfcPropertySingleValue Name="EffectiveArea" />
+								<IfcPropertyTableValue Name="AirFlowrateVersusFlowControlElement" />
+							</HasProperties>
+						</IfcPropertySet>
+						<IfcPropertySet id="i21" GlobalId="2LM02K5dbFiBVTpfUgOnl4" Name="Pset_ManufacturerTypeInformation">
+							<OwnerHistory xsi:nil="true" href="i1" />
+							<HasProperties>
+								<IfcPropertySingleValue Name="GlobalTradeItemNumber" />
+								<IfcPropertySingleValue Name="ArticleNumber" />
+								<IfcPropertySingleValue Name="ModelReference">
+									<NominalValue>
+										<IfcLabel-wrapper>1234</IfcLabel-wrapper>
+									</NominalValue>
+								</IfcPropertySingleValue>
+								<IfcPropertySingleValue Name="ModelLabel">
+									<NominalValue>
+										<IfcLabel-wrapper>Ceiling Diffuser</IfcLabel-wrapper>
+									</NominalValue>
+								</IfcPropertySingleValue>
+								<IfcPropertySingleValue Name="Manufacturer">
+									<NominalValue>
+										<IfcLabel-wrapper>Acme</IfcLabel-wrapper>
+									</NominalValue>
+								</IfcPropertySingleValue>
+								<IfcPropertySingleValue Name="ProductionYear">
+									<NominalValue>
+										<IfcLabel-wrapper>2011</IfcLabel-wrapper>
+									</NominalValue>
+								</IfcPropertySingleValue>
+								<IfcPropertyEnumeratedValue Name="AssemblyPlace">
+									<EnumerationValues>
+										<IfcLabel-wrapper>FACTORY</IfcLabel-wrapper>
+									</EnumerationValues>
+									<EnumerationReference id="i14" Name="PEnum_AssemblyPlace">
+										<EnumerationValues>
+											<IfcLabel-wrapper>FACTORY</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OFFSITE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>SITE</IfcLabel-wrapper>
+											<IfcLabel-wrapper>OTHER</IfcLabel-wrapper>
+											<IfcLabel-wrapper>NOTKNOWN</IfcLabel-wrapper>
+											<IfcLabel-wrapper>UNSET</IfcLabel-wrapper>
+										</EnumerationValues>
+									</EnumerationReference>
+								</IfcPropertyEnumeratedValue>
+							</HasProperties>
+						</IfcPropertySet>
+					</HasPropertySets>
+					<RepresentationMaps>
+						<IfcRepresentationMap>
+							<MappingOrigin>
+								<IfcAxis2Placement3D>
+									<Location Coordinates="0 0 0" />
+								</IfcAxis2Placement3D>
+							</MappingOrigin>
+							<MappedRepresentation xsi:type="IfcShapeRepresentation" RepresentationIdentifier="Body" RepresentationType="AdvancedSweptSolid">
+								<ContextOfItems xsi:type="IfcGeometricRepresentationContext" xsi:nil="true" href="i2" />
+								<Items>
+									<IfcExtrudedAreaSolidTapered Depth="4">
+										<SweptArea xsi:type="IfcRectangleHollowProfileDef" id="i3" ProfileType="area" XDim="24" YDim="24" WallThickness="2" InnerFilletRadius="10" OuterFilletRadius="0" />
+										<Position>
+											<Location Coordinates="12 12 0" />
+										</Position>
+										<ExtrudedDirection DirectionRatios="0 0 1" />
+										<EndSweptArea xsi:type="IfcDerivedProfileDef" ProfileType="area">
+											<ParentProfile xsi:type="IfcRectangleHollowProfileDef" xsi:nil="true" href="i3" />
+											<Operator Scale="0,5">
+												<LocalOrigin Coordinates="0 0" />
+											</Operator>
+										</EndSweptArea>
+									</IfcExtrudedAreaSolidTapered>
+								</Items>
+							</MappedRepresentation>
+						</IfcRepresentationMap>
+					</RepresentationMaps>
+				</IfcAirTerminalType>
+				<IfcProjectLibrary id="i23" GlobalId="1rfo$z7PbCaeLf5SOGGJV5" Name="IFC4">
+					<OwnerHistory xsi:nil="true" href="i1" />
+					<Declares>
+						<IfcRelDeclares GlobalId="0Xl$PCnZPB2BUMJcj$F_RN" Name="PROJECT">
+							<OwnerHistory xsi:nil="true" href="i1" />
+							<RelatedDefinitions>
+								<IfcPropertySetTemplate id="i16" GlobalId="29WBDBI9L3tgEAg5Ay2Kax" Name="Pset_DistributionPortCommon" Description="Common attributes attached to an instance of IfcDistributionPort." TemplateType="pset_occurrencedriven" ApplicableEntity="IfcDistributionPort">
+									<OwnerHistory xsi:nil="true" href="i1" />
+									<HasPropertyTemplates>
+										<IfcSimplePropertyTemplate GlobalId="3_bLjRfq13tPEPPfI$6pRX" Name="PortNumber" Description="The port index for logically ordering the port within the containing element or element type." TemplateType="p_singlevalue" PrimaryMeasureType="IfcInteger" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="2VDgHzk35At81oM56a3xnn" Name="ColorCode" Description="Name of a color for identifying the connector, if applicable." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+									</HasPropertyTemplates>
+								</IfcPropertySetTemplate>
+								<IfcPropertySetTemplate id="i18" GlobalId="1A6ROK3ijAv94HqL2QeE5V" Name="Pset_DistributionPortTypeAirConditioning" Description="Duct port occurrence attributes attached to an instance of IfcDistributionPort." TemplateType="pset_occurrencedriven" ApplicableEntity="IfcDistributionPort/AIRCONDITIONING">
+									<OwnerHistory xsi:nil="true" href="i1" />
+									<HasPropertyTemplates>
+										<IfcSimplePropertyTemplate GlobalId="3$fSJrLkP9WesgtUW7tvY9" Name="ConnectionType" Description="The end-style treatment of the duct port:
+
+BEADEDSLEEVE: Beaded Sleeve. 
+COMPRESSION: Compression. 
+CRIMP: Crimp. 
+DRAWBAND: Drawband. 
+DRIVESLIP: Drive slip. 
+FLANGED: Flanged. 
+OUTSIDESLEEVE: Outside Sleeve. 
+SLIPON: Slipon. 
+SOLDERED: Soldered. 
+SSLIP: S-Slip. 
+STANDINGSEAM: Standing seam. 
+SWEDGE: Swedge. 
+WELDED: Welded. 
+OTHER: Another type of end-style has been applied.
+NONE: No end-style has been applied." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i4" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3eYrOWOML0MAWniKzD$bg8" Name="ConnectionSubType" Description="The physical port connection subtype that further qualifies the ConnectionType." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3U0yI_myr9Tuk86rnglnUq" Name="NominalWidth" Description="The nominal width or diameter of the duct connection." TemplateType="p_singlevalue" PrimaryMeasureType="IfcPositiveLengthMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1T7T2i39H9OfTY1TIerMbJ" Name="NominalHeight" Description="The nominal height of the duct connection." TemplateType="p_singlevalue" PrimaryMeasureType="IfcPositiveLengthMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3ASt$O5yD8NeM$q_lQyHWd" Name="DryBulbTemperature" Description="Dry bulb temperature of the air." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcThermodynamicTemperatureMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1tms9JUcX85eqcKjr4hn0X" Name="WetBulbTemperature" Description="Wet bulb temperature of the air." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcThermodynamicTemperatureMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0oDnPia3b949zQ9IOqQ3WD" Name="VolumetricFlowRate" Description="The volumetric flow rate of the fluid." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcVolumetricFlowRateMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0Y$o5$IVnCBBYMkfqCX9u2" Name="Velocity" Description="The velocity of the fluid." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcLinearVelocityMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0r4zhLdSb4$QDqtTZAlksU" Name="Pressure" Description="The pressure of the fluid." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcPressureMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+									</HasPropertyTemplates>
+								</IfcPropertySetTemplate>
+								<IfcPropertySetTemplate id="i20" GlobalId="2jTsg4Mlz1weXQWo2pv0Qb" Name="Pset_AirTerminalTypeCommon" Description="Air terminal type common attributes.
+SoundLevel attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead." TemplateType="pset_typedrivenoverride" ApplicableEntity="IfcAirTerminal">
+									<OwnerHistory xsi:nil="true" href="i1" />
+									<HasPropertyTemplates>
+										<IfcSimplePropertyTemplate GlobalId="3fpWm82nz9hQ6TKg7VFU19" Name="Reference" Description="Reference ID for this specified type in this project (e.g. type &apos;A-1&apos;), provided, if there is no classification reference to a recognized classification system used." TemplateType="p_singlevalue" PrimaryMeasureType="IfcIdentifier" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0Yj8hLD1HER8_kCs5XavrF" Name="Status" Description="Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as &quot;New&quot; - element designed as new addition, &quot;Existing&quot; - element exists and remains, &quot;Demolish&quot; - element existed but is to be demolished,  &quot;Temporary&quot; - element will exists only temporary (like a temporary support structure)." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i5" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0s3HOiBZz5HuKtBnUthHVn" Name="Shape" Description="Shape of the air terminal. Slot is typically a long narrow supply device with an aspect ratio generally greater than 10 to 1." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i6" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3ccEnz8CbDehYY5UfGjNhk" Name="FaceType" Description="Identifies how the terminal face of an AirTerminal is constructed." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i7" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3s2OInnMzFHQs$K3elh_3h" Name="SlotWidth" Description="Slot width." TemplateType="p_singlevalue" PrimaryMeasureType="IfcPositiveLengthMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1y1kHB7PrChPwTgQ$ECHb$" Name="SlotLength" Description="Slot length." TemplateType="p_singlevalue" PrimaryMeasureType="IfcPositiveLengthMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1U0eyN6b902eI0MbwdUd8M" Name="NumberOfSlots" Description="Number of slots." TemplateType="p_singlevalue" PrimaryMeasureType="IfcInteger" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0y7Fb2v4H9ehCvfO24PHM1" Name="FlowPattern" Description="Flow pattern." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i8" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0rg225Jsz7aPmR4rqHJHRR" Name="AirFlowrateRange" Description="Air flowrate range within which the air terminal is designed to operate." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcVolumetricFlowRateMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1IJN6qN3j68w9NjQIASYJF" Name="TemperatureRange" Description="Temperature range within which the air terminal is designed to operate." TemplateType="p_boundedvalue" PrimaryMeasureType="IfcThermodynamicTemperatureMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3YNHGt1l51jg4X9QGpz17j" Name="DischargeDirection" Description="Discharge direction of the air terminal.
+
+Parallel: discharges parallel to mounting surface designed so that flow attaches to the surface.
+Perpendicular:  discharges away from mounting surface.
+Adjustable: both parallel and perpendicular discharge." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i9" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="15AjYKuPv9lQ9iggUpGAaF" Name="ThrowLength" Description="The horizontal or vertical axial distance an airstream travels after leaving an AirTerminal before the maximum stream velocity is reduced to a specified terminal velocity under isothermal conditions at the upper value of the AirFlowrateRange." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLengthMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0JBeud9tT5RgwbQACxzdZH" Name="AirDiffusionPerformanceIndex" Description="The Air Diffusion Performance Index (ADPI) is used for cooling mode conditions. If several measurements of air velocity and air temperature are made throughout the occupied zone of a space, the ADPI is the percentage of locations where measurements were taken that meet the specifications for effective draft temperature and air velocity." TemplateType="p_singlevalue" PrimaryMeasureType="IfcReal" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1rGAtIuLj049KjoAX5lv0j" Name="FinishType" Description="The type of finish for the air terminal." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i10" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0Lx74WLuDAJBe29ZAokn7n" Name="FinishColor" Description="The finish color for the air terminal." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="28DA3rBGD45wIHAjVhRVfn" Name="MountingType" Description="The way the air terminal is mounted to the ceiling, wall, etc.
+
+Surface: mounted to the surface of something (e.g., wall, duct, etc.).
+Flat flush: mounted flat and flush with a surface.
+Lay-in: mounted in a lay-in type ceiling (e.g., a dropped ceiling grid)." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i11" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="2BHDN$CwT3oPiLEOzMDEo6" Name="CoreType" Description="Identifies the way the core of the AirTerminal is constructed." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i12" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3ivegLDDDF4Bj8eqOSTpHI" Name="CoreSetHorizontal" Description="Degree of horizontal (in the X-axis of the LocalPlacement) blade set from the centerline." TemplateType="p_singlevalue" PrimaryMeasureType="IfcPlaneAngleMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0lGnkfyAL1Yw4lbl7z2VvE" Name="CoreSetVertical" Description="Degree of vertical (in the Y-axis of the LocalPlacement) blade set from the centerline." TemplateType="p_singlevalue" PrimaryMeasureType="IfcPlaneAngleMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="2z_gncAVT79OxwFBa0hkvU" Name="HasIntegralControl" Description="If TRUE, a self powered temperature control is included in the AirTerminal." TemplateType="p_singlevalue" PrimaryMeasureType="IfcBoolean" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3M$NkRjRbFrvWwcY1izFe4" Name="FlowControlType" Description="Type of flow control element that may be included as a part of the construction of the air terminal." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i13" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1hMma$QwL4QOtgcEGSVoYE" Name="HasSoundAttenuator" Description="If TRUE, the air terminal has sound attenuation." TemplateType="p_singlevalue" PrimaryMeasureType="IfcBoolean" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1KWi8MdX54FxZUOwumhTef" Name="HasThermalInsulation" Description="If TRUE, the air terminal has thermal insulation." TemplateType="p_singlevalue" PrimaryMeasureType="IfcBoolean" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="2dgLXZEs900vztGBIr8_ao" Name="NeckArea" Description="Neck area of the air terminal." TemplateType="p_singlevalue" PrimaryMeasureType="IfcAreaMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="309SGtOAPE9929AbT6FTuV" Name="EffectiveArea" Description="Effective discharge area of the air terminal." TemplateType="p_singlevalue" PrimaryMeasureType="IfcAreaMeasure" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="2aOlIhtEn1yBBCqpuP6ygt" Name="AirFlowrateVersusFlowControlElement" Description="Air flowrate versus flow control element position at nominal pressure drop." TemplateType="p_tablevalue" PrimaryMeasureType="IfcVolumetricFlowRateMeasure" SecondaryMeasureType="IfcPositiveRatioMeasure" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+									</HasPropertyTemplates>
+								</IfcPropertySetTemplate>
+								<IfcPropertySetTemplate id="i22" GlobalId="0wwkiIwGz0lf2YIWw4Kdjj" Name="Pset_ManufacturerTypeInformation" Description="Defines characteristics of types (ranges) of manufactured products that may be given by the manufacturer. Note that the term &apos;manufactured&apos; may also be used to refer to products that are supplied and identified by the supplier or that are assembled off site by a third party provider. 
+HISTORY: This property set replaces the entity IfcManufacturerInformation from previous IFC releases. IFC 2x4: AssemblyPlace property added." TemplateType="pset_typedrivenoverride" ApplicableEntity="IfcElement">
+									<OwnerHistory xsi:nil="true" href="i1" />
+									<HasPropertyTemplates>
+										<IfcSimplePropertyTemplate GlobalId="3eHmy4aE566RLnsXQnc182" Name="GlobalTradeItemNumber" Description="The Global Trade Item Number (GTIN) is an identifier for trade items developed by GS1 (www.gs1.org)." TemplateType="p_singlevalue" PrimaryMeasureType="IfcIdentifier" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="1sgvdetjb1JxEqbzkc2sqC" Name="ArticleNumber" Description="Article number or reference that is be applied to a configured product according to a standard scheme for article number definition as defined by the manufacturer. It is often used as the purchasing number." TemplateType="p_singlevalue" PrimaryMeasureType="IfcIdentifier" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="3wqp__MIv1H9F7bsX0g1Pv" Name="ModelReference" Description="The model number or designator of the product model (or product line) as assigned by the manufacturer of the manufactured item." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0ZGAMw3wDEvQK1eN0ABad0" Name="ModelLabel" Description="The descriptive model name of the product model (or product line) as assigned by the manufacturer of the manufactured item." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0SjOR_Aiz1F9zib80mPIr0" Name="Manufacturer" Description="The organization that manufactured and/or assembled the item." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="2zE_DR$F52WAh8dBauU7vt" Name="ProductionYear" Description="The year of production of the manufactured item." TemplateType="p_singlevalue" PrimaryMeasureType="IfcLabel" SecondaryMeasureType="" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+										</IfcSimplePropertyTemplate>
+										<IfcSimplePropertyTemplate GlobalId="0T7c_L8b9E$9V2KslgB9xe" Name="AssemblyPlace" Description="Enumeration defining where the assembly is intended to take place, either in a factory or on the building site." TemplateType="p_enumeratedvalue" PrimaryMeasureType="IfcLabel" AccessState="readwrite">
+											<OwnerHistory xsi:nil="true" href="i1" />
+											<Enumerators xsi:nil="true" href="i14" />
+										</IfcSimplePropertyTemplate>
+									</HasPropertyTemplates>
+								</IfcPropertySetTemplate>
+							</RelatedDefinitions>
+						</IfcRelDeclares>
+					</Declares>
+				</IfcProjectLibrary>
+			</RelatedDefinitions>
+		</IfcRelDeclares>
+	</Declares>
+</IfcProject>
+<IfcRelDefinesByTemplate GlobalId="2DA69vfj12BPHrvbOJli4C">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedPropertySets>
+		<IfcPropertySet xsi:nil="true" href="i15" />
+	</RelatedPropertySets>
+	<RelatingTemplate xsi:nil="true" href="i16" />
+</IfcRelDefinesByTemplate>
+<IfcRelDefinesByTemplate GlobalId="2rvy24e5L04OIpKBIyaF5s">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedPropertySets>
+		<IfcPropertySet xsi:nil="true" href="i17" />
+	</RelatedPropertySets>
+	<RelatingTemplate xsi:nil="true" href="i18" />
+</IfcRelDefinesByTemplate>
+<IfcRelDefinesByTemplate GlobalId="2MnMFQk5T8PfDt4jNfTD0y">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedPropertySets>
+		<IfcPropertySet xsi:nil="true" href="i19" />
+	</RelatedPropertySets>
+	<RelatingTemplate xsi:nil="true" href="i20" />
+</IfcRelDefinesByTemplate>
+<IfcRelDefinesByTemplate GlobalId="1gZFqTeWDCiPFdVEDktMyc">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedPropertySets>
+		<IfcPropertySet xsi:nil="true" href="i21" />
+	</RelatedPropertySets>
+	<RelatingTemplate xsi:nil="true" href="i22" />
+</IfcRelDefinesByTemplate>
+<IfcRelAssociatesLibrary GlobalId="2AvhQDLy558AFVeANPXoWB">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcProjectLibrary xsi:nil="true" href="i23" />
+	</RelatedObjects>
+	<RelatingLibrary>
+		<IfcLibraryInformation id="i24" Name="IFC4" VersionDate="2011-09-26T20:52:24" Location="http://buildingsmart-tech.org/ifc/IFC2x4/rc3/html/annex/annex-a/ifc2x4_rc3-templates.ifc">
+			<Publisher>
+				<IfcOrganization Name="Tim-PC" />
+			</Publisher>
+		</IfcLibraryInformation>
+	</RelatingLibrary>
+</IfcRelAssociatesLibrary>
+<IfcRelAssociatesLibrary GlobalId="24PRN3YsXAVP3fEgb4zpZM">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcPropertySetTemplate xsi:nil="true" href="i16" />
+	</RelatedObjects>
+	<RelatingLibrary>
+		<IfcLibraryReference Identification="Pset_DistributionPortCommon" Name="Pset_DistributionPortCommon">
+			<ReferencedLibrary xsi:nil="true" href="i24" />
+		</IfcLibraryReference>
+	</RelatingLibrary>
+</IfcRelAssociatesLibrary>
+<IfcRelAssociatesLibrary GlobalId="2DqAITf693l8NzYzj5r79c">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcPropertySetTemplate xsi:nil="true" href="i18" />
+	</RelatedObjects>
+	<RelatingLibrary>
+		<IfcLibraryReference Identification="Pset_DistributionPortTypeAirConditioning" Name="Pset_DistributionPortTypeAirConditioning">
+			<ReferencedLibrary xsi:nil="true" href="i24" />
+		</IfcLibraryReference>
+	</RelatingLibrary>
+</IfcRelAssociatesLibrary>
+<IfcRelAssociatesLibrary GlobalId="259LjdEyzC5gc5NKIzDXj4">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcPropertySetTemplate xsi:nil="true" href="i20" />
+	</RelatedObjects>
+	<RelatingLibrary>
+		<IfcLibraryReference Identification="Pset_AirTerminalTypeCommon" Name="Pset_AirTerminalTypeCommon">
+			<ReferencedLibrary xsi:nil="true" href="i24" />
+		</IfcLibraryReference>
+	</RelatingLibrary>
+</IfcRelAssociatesLibrary>
+<IfcRelAssociatesLibrary GlobalId="39XKqfEPrEmwCmJTAn1TLk">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcPropertySetTemplate xsi:nil="true" href="i22" />
+	</RelatedObjects>
+	<RelatingLibrary>
+		<IfcLibraryReference Identification="Pset_ManufacturerTypeInformation" Name="Pset_ManufacturerTypeInformation">
+			<ReferencedLibrary xsi:nil="true" href="i24" />
+		</IfcLibraryReference>
+	</RelatingLibrary>
+</IfcRelAssociatesLibrary>
+</ifc:ifcXML>
+
+

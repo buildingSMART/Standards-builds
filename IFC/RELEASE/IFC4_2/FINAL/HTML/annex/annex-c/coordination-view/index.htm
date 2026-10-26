@@ -1,0 +1,222 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>Coordination View</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+<h2 class="std">C.2 Coordination View Inheritance</h2>
+<img src="cover.png" usemap="#f"/>
+<map name="f">
+<area shape="rect" coords="42,78,230,90" href="../../../schema/ifckernel/lexical/ifcproject.htm" alt="IfcProject" />
+<area shape="rect" coords="30,54,242,66" href="../../../schema/ifckernel/lexical/ifccontext.htm" alt="IfcContext" />
+<area shape="rect" coords="66,174,254,186" href="../../../schema/ifcproductextension/lexical/ifczone.htm" alt="IfcZone" />
+<area shape="rect" coords="54,150,266,162" href="../../../schema/ifcproductextension/lexical/ifcsystem.htm" alt="IfcSystem" />
+<area shape="rect" coords="42,126,278,138" href="../../../schema/ifckernel/lexical/ifcgroup.htm" alt="IfcGroup" />
+<area shape="rect" coords="78,270,266,282" href="../../../schema/ifcsharedbldgelements/lexical/ifcbeam.htm" alt="IfcBeam" />
+<area shape="rect" coords="78,294,266,306" href="../../../schema/ifcsharedbldgelements/lexical/ifcbuildingelementproxy.htm" alt="IfcBuildingElementProxy" />
+<area shape="rect" coords="78,318,266,330" href="../../../schema/ifcsharedbldgelements/lexical/ifccolumn.htm" alt="IfcColumn" />
+<area shape="rect" coords="78,342,266,354" href="../../../schema/ifcsharedbldgelements/lexical/ifccovering.htm" alt="IfcCovering" />
+<area shape="rect" coords="78,366,266,378" href="../../../schema/ifcsharedbldgelements/lexical/ifccurtainwall.htm" alt="IfcCurtainWall" />
+<area shape="rect" coords="90,414,278,426" href="../../../schema/ifcstructuralelementsdomain/lexical/ifcpile.htm" alt="IfcPile" />
+<area shape="rect" coords="78,390,290,402" href="../../../schema/ifcsharedbldgelements/lexical/ifcdeepfoundation.htm" alt="IfcDeepFoundation" />
+<area shape="rect" coords="78,438,266,450" href="../../../schema/ifcsharedbldgelements/lexical/ifcdoor.htm" alt="IfcDoor" />
+<area shape="rect" coords="78,462,266,474" href="../../../schema/ifcstructuralelementsdomain/lexical/ifcfooting.htm" alt="IfcFooting" />
+<area shape="rect" coords="78,486,266,498" href="../../../schema/ifcsharedbldgelements/lexical/ifcmember.htm" alt="IfcMember" />
+<area shape="rect" coords="78,510,266,522" href="../../../schema/ifcsharedbldgelements/lexical/ifcplate.htm" alt="IfcPlate" />
+<area shape="rect" coords="78,534,266,546" href="../../../schema/ifcsharedbldgelements/lexical/ifcrailing.htm" alt="IfcRailing" />
+<area shape="rect" coords="78,558,266,570" href="../../../schema/ifcsharedbldgelements/lexical/ifcramp.htm" alt="IfcRamp" />
+<area shape="rect" coords="78,582,266,594" href="../../../schema/ifcsharedbldgelements/lexical/ifcrampflight.htm" alt="IfcRampFlight" />
+<area shape="rect" coords="78,606,266,618" href="../../../schema/ifcsharedbldgelements/lexical/ifcroof.htm" alt="IfcRoof" />
+<area shape="rect" coords="338,270,526,282" href="../../../schema/ifcsharedbldgelements/lexical/ifcslab.htm" alt="IfcSlab" />
+<area shape="rect" coords="338,294,526,306" href="../../../schema/ifcsharedbldgelements/lexical/ifcstair.htm" alt="IfcStair" />
+<area shape="rect" coords="338,318,526,330" href="../../../schema/ifcsharedbldgelements/lexical/ifcstairflight.htm" alt="IfcStairFlight" />
+<area shape="rect" coords="350,366,538,378" href="../../../schema/ifcsharedbldgelements/lexical/ifcwallstandardcase.htm" alt="IfcWallStandardCase" />
+<area shape="rect" coords="338,342,550,354" href="../../../schema/ifcsharedbldgelements/lexical/ifcwall.htm" alt="IfcWall" />
+<area shape="rect" coords="338,390,526,402" href="../../../schema/ifcsharedbldgelements/lexical/ifcwindow.htm" alt="IfcWindow" />
+<area shape="rect" coords="66,246,562,258" href="../../../schema/ifcproductextension/lexical/ifcbuildingelement.htm" alt="IfcBuildingElement" />
+<area shape="rect" coords="78,654,266,666" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributioncontrolelement.htm" alt="IfcDistributionControlElement" />
+<area shape="rect" coords="90,702,278,714" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributionchamberelement.htm" alt="IfcDistributionChamberElement" />
+<area shape="rect" coords="90,726,278,738" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcenergyconversiondevice.htm" alt="IfcEnergyConversionDevice" />
+<area shape="rect" coords="350,702,538,714" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowcontroller.htm" alt="IfcFlowController" />
+<area shape="rect" coords="350,726,538,738" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowfitting.htm" alt="IfcFlowFitting" />
+<area shape="rect" coords="350,750,538,762" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowmovingdevice.htm" alt="IfcFlowMovingDevice" />
+<area shape="rect" coords="350,774,538,786" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowsegment.htm" alt="IfcFlowSegment" />
+<area shape="rect" coords="610,702,798,714" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowstoragedevice.htm" alt="IfcFlowStorageDevice" />
+<area shape="rect" coords="610,726,798,738" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowterminal.htm" alt="IfcFlowTerminal" />
+<area shape="rect" coords="610,750,798,762" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowtreatmentdevice.htm" alt="IfcFlowTreatmentDevice" />
+<area shape="rect" coords="78,678,810,690" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributionflowelement.htm" alt="IfcDistributionFlowElement" />
+<area shape="rect" coords="66,630,822,642" href="../../../schema/ifcproductextension/lexical/ifcdistributionelement.htm" alt="IfcDistributionElement" />
+<area shape="rect" coords="66,798,254,810" href="../../../schema/ifcproductextension/lexical/ifcelementassembly.htm" alt="IfcElementAssembly" />
+<area shape="rect" coords="78,846,266,858" href="../../../schema/ifcsharedcomponentelements/lexical/ifcbuildingelementpart.htm" alt="IfcBuildingElementPart" />
+<area shape="rect" coords="78,870,266,882" href="../../../schema/ifcsharedcomponentelements/lexical/ifcdiscreteaccessory.htm" alt="IfcDiscreteAccessory" />
+<area shape="rect" coords="78,894,266,906" href="../../../schema/ifcsharedcomponentelements/lexical/ifcfastener.htm" alt="IfcFastener" />
+<area shape="rect" coords="78,918,266,930" href="../../../schema/ifcsharedcomponentelements/lexical/ifcmechanicalfastener.htm" alt="IfcMechanicalFastener" />
+<area shape="rect" coords="90,966,278,978" href="../../../schema/ifcstructuralelementsdomain/lexical/ifcreinforcingbar.htm" alt="IfcReinforcingBar" />
+<area shape="rect" coords="90,990,278,1002" href="../../../schema/ifcstructuralelementsdomain/lexical/ifcreinforcingmesh.htm" alt="IfcReinforcingMesh" />
+<area shape="rect" coords="90,1014,278,1026" href="../../../schema/ifcstructuralelementsdomain/lexical/ifctendon.htm" alt="IfcTendon" />
+<area shape="rect" coords="90,1038,278,1050" href="../../../schema/ifcstructuralelementsdomain/lexical/ifctendonanchor.htm" alt="IfcTendonAnchor" />
+<area shape="rect" coords="78,942,290,954" href="../../../schema/ifcstructuralelementsdomain/lexical/ifcreinforcingelement.htm" alt="IfcReinforcingElement" />
+<area shape="rect" coords="66,822,302,834" href="../../../schema/ifcsharedcomponentelements/lexical/ifcelementcomponent.htm" alt="IfcElementComponent" />
+<area shape="rect" coords="90,1110,278,1122" href="../../../schema/ifcproductextension/lexical/ifcopeningelement.htm" alt="IfcOpeningElement" />
+<area shape="rect" coords="78,1086,290,1098" href="../../../schema/ifcproductextension/lexical/ifcfeatureelementsubtraction.htm" alt="IfcFeatureElementSubtraction" />
+<area shape="rect" coords="66,1062,302,1074" href="../../../schema/ifcproductextension/lexical/ifcfeatureelement.htm" alt="IfcFeatureElement" />
+<area shape="rect" coords="66,1134,254,1146" href="../../../schema/ifcproductextension/lexical/ifcfurnishingelement.htm" alt="IfcFurnishingElement" />
+<area shape="rect" coords="66,1158,254,1170" href="../../../schema/ifcproductextension/lexical/ifctransportelement.htm" alt="IfcTransportElement" />
+<area shape="rect" coords="54,222,834,234" href="../../../schema/ifcproductextension/lexical/ifcelement.htm" alt="IfcElement" />
+<area shape="rect" coords="66,1206,254,1218" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributionport.htm" alt="IfcDistributionPort" />
+<area shape="rect" coords="54,1182,266,1194" href="../../../schema/ifcproductextension/lexical/ifcport.htm" alt="IfcPort" />
+<area shape="rect" coords="54,1230,242,1242" href="../../../schema/ifcproductextension/lexical/ifcpositioningelement.htm" alt="IfcPositioningElement" />
+<area shape="rect" coords="90,1326,278,1338" href="../../../schema/ifcproductextension/lexical/ifcbuilding.htm" alt="IfcBuilding" />
+<area shape="rect" coords="78,1302,290,1314" href="../../../schema/ifcproductextension/lexical/ifcfacility.htm" alt="IfcFacility" />
+<area shape="rect" coords="90,1374,278,1386" href="../../../schema/ifcproductextension/lexical/ifcbuildingstorey.htm" alt="IfcBuildingStorey" />
+<area shape="rect" coords="78,1350,290,1362" href="../../../schema/ifcproductextension/lexical/ifcfacilitypart.htm" alt="IfcFacilityPart" />
+<area shape="rect" coords="78,1398,266,1410" href="../../../schema/ifcproductextension/lexical/ifcsite.htm" alt="IfcSite" />
+<area shape="rect" coords="78,1422,266,1434" href="../../../schema/ifcproductextension/lexical/ifcspace.htm" alt="IfcSpace" />
+<area shape="rect" coords="66,1278,302,1290" href="../../../schema/ifcproductextension/lexical/ifcspatialstructureelement.htm" alt="IfcSpatialStructureElement" />
+<area shape="rect" coords="54,1254,314,1266" href="../../../schema/ifcproductextension/lexical/ifcspatialelement.htm" alt="IfcSpatialElement" />
+<area shape="rect" coords="42,198,846,210" href="../../../schema/ifckernel/lexical/ifcproduct.htm" alt="IfcProduct" />
+<area shape="rect" coords="30,102,858,114" href="../../../schema/ifckernel/lexical/ifcobject.htm" alt="IfcObject" />
+<area shape="rect" coords="54,1494,242,1506" href="../../../schema/ifcarchitecturedomain/lexical/ifcdoorstyle.htm" alt="IfcDoorStyle" />
+<area shape="rect" coords="78,1566,266,1578" href="../../../schema/ifcsharedbldgelements/lexical/ifcbeamtype.htm" alt="IfcBeamType" />
+<area shape="rect" coords="78,1590,266,1602" href="../../../schema/ifcsharedbldgelements/lexical/ifcbuildingelementproxytype.htm" alt="IfcBuildingElementProxyType" />
+<area shape="rect" coords="78,1614,266,1626" href="../../../schema/ifcsharedbldgelements/lexical/ifccolumntype.htm" alt="IfcColumnType" />
+<area shape="rect" coords="78,1638,266,1650" href="../../../schema/ifcsharedbldgelements/lexical/ifccoveringtype.htm" alt="IfcCoveringType" />
+<area shape="rect" coords="78,1662,266,1674" href="../../../schema/ifcsharedbldgelements/lexical/ifccurtainwalltype.htm" alt="IfcCurtainWallType" />
+<area shape="rect" coords="78,1686,266,1698" href="../../../schema/ifcsharedbldgelements/lexical/ifcmembertype.htm" alt="IfcMemberType" />
+<area shape="rect" coords="78,1710,266,1722" href="../../../schema/ifcsharedbldgelements/lexical/ifcplatetype.htm" alt="IfcPlateType" />
+<area shape="rect" coords="78,1734,266,1746" href="../../../schema/ifcsharedbldgelements/lexical/ifcrailingtype.htm" alt="IfcRailingType" />
+<area shape="rect" coords="78,1758,266,1770" href="../../../schema/ifcsharedbldgelements/lexical/ifcrampflighttype.htm" alt="IfcRampFlightType" />
+<area shape="rect" coords="78,1782,266,1794" href="../../../schema/ifcsharedbldgelements/lexical/ifcslabtype.htm" alt="IfcSlabType" />
+<area shape="rect" coords="78,1806,266,1818" href="../../../schema/ifcsharedbldgelements/lexical/ifcstairflighttype.htm" alt="IfcStairFlightType" />
+<area shape="rect" coords="78,1830,266,1842" href="../../../schema/ifcsharedbldgelements/lexical/ifcwalltype.htm" alt="IfcWallType" />
+<area shape="rect" coords="66,1542,278,1554" href="../../../schema/ifcproductextension/lexical/ifcbuildingelementtype.htm" alt="IfcBuildingElementType" />
+<area shape="rect" coords="90,1902,278,1914" href="../../../schema/ifcbuildingcontrolsdomain/lexical/ifcactuatortype.htm" alt="IfcActuatorType" />
+<area shape="rect" coords="90,1926,278,1938" href="../../../schema/ifcbuildingcontrolsdomain/lexical/ifcalarmtype.htm" alt="IfcAlarmType" />
+<area shape="rect" coords="90,1950,278,1962" href="../../../schema/ifcbuildingcontrolsdomain/lexical/ifccontrollertype.htm" alt="IfcControllerType" />
+<area shape="rect" coords="350,1902,538,1914" href="../../../schema/ifcbuildingcontrolsdomain/lexical/ifcflowinstrumenttype.htm" alt="IfcFlowInstrumentType" />
+<area shape="rect" coords="350,1926,538,1938" href="../../../schema/ifcbuildingcontrolsdomain/lexical/ifcsensortype.htm" alt="IfcSensorType" />
+<area shape="rect" coords="78,1878,550,1890" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributioncontrolelementtype.htm" alt="IfcDistributionControlElementType" />
+<area shape="rect" coords="90,1998,278,2010" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributionchamberelementtype.htm" alt="IfcDistributionChamberElementType" />
+<area shape="rect" coords="102,2046,290,2058" href="../../../schema/ifchvacdomain/lexical/ifcairtoairheatrecoverytype.htm" alt="IfcAirToAirHeatRecoveryType" />
+<area shape="rect" coords="102,2070,290,2082" href="../../../schema/ifchvacdomain/lexical/ifcboilertype.htm" alt="IfcBoilerType" />
+<area shape="rect" coords="102,2094,290,2106" href="../../../schema/ifchvacdomain/lexical/ifcchillertype.htm" alt="IfcChillerType" />
+<area shape="rect" coords="102,2118,290,2130" href="../../../schema/ifchvacdomain/lexical/ifccoiltype.htm" alt="IfcCoilType" />
+<area shape="rect" coords="102,2142,290,2154" href="../../../schema/ifchvacdomain/lexical/ifccondensertype.htm" alt="IfcCondenserType" />
+<area shape="rect" coords="102,2166,290,2178" href="../../../schema/ifchvacdomain/lexical/ifccooledbeamtype.htm" alt="IfcCooledBeamType" />
+<area shape="rect" coords="102,2190,290,2202" href="../../../schema/ifchvacdomain/lexical/ifccoolingtowertype.htm" alt="IfcCoolingTowerType" />
+<area shape="rect" coords="102,2214,290,2226" href="../../../schema/ifcelectricaldomain/lexical/ifcelectricgeneratortype.htm" alt="IfcElectricGeneratorType" />
+<area shape="rect" coords="102,2238,290,2250" href="../../../schema/ifcelectricaldomain/lexical/ifcelectricmotortype.htm" alt="IfcElectricMotorType" />
+<area shape="rect" coords="102,2262,290,2274" href="../../../schema/ifchvacdomain/lexical/ifcevaporativecoolertype.htm" alt="IfcEvaporativeCoolerType" />
+<area shape="rect" coords="102,2286,290,2298" href="../../../schema/ifchvacdomain/lexical/ifcevaporatortype.htm" alt="IfcEvaporatorType" />
+<area shape="rect" coords="102,2310,290,2322" href="../../../schema/ifchvacdomain/lexical/ifcheatexchangertype.htm" alt="IfcHeatExchangerType" />
+<area shape="rect" coords="102,2334,290,2346" href="../../../schema/ifchvacdomain/lexical/ifchumidifiertype.htm" alt="IfcHumidifierType" />
+<area shape="rect" coords="102,2358,290,2370" href="../../../schema/ifcelectricaldomain/lexical/ifcmotorconnectiontype.htm" alt="IfcMotorConnectionType" />
+<area shape="rect" coords="102,2382,290,2394" href="../../../schema/ifcelectricaldomain/lexical/ifctransformertype.htm" alt="IfcTransformerType" />
+<area shape="rect" coords="102,2406,290,2418" href="../../../schema/ifchvacdomain/lexical/ifctubebundletype.htm" alt="IfcTubeBundleType" />
+<area shape="rect" coords="102,2430,290,2442" href="../../../schema/ifchvacdomain/lexical/ifcunitaryequipmenttype.htm" alt="IfcUnitaryEquipmentType" />
+<area shape="rect" coords="90,2022,302,2034" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcenergyconversiondevicetype.htm" alt="IfcEnergyConversionDeviceType" />
+<area shape="rect" coords="386,2022,574,2034" href="../../../schema/ifchvacdomain/lexical/ifcairterminalboxtype.htm" alt="IfcAirTerminalBoxType" />
+<area shape="rect" coords="386,2046,574,2058" href="../../../schema/ifchvacdomain/lexical/ifcdampertype.htm" alt="IfcDamperType" />
+<area shape="rect" coords="386,2070,574,2082" href="../../../schema/ifcelectricaldomain/lexical/ifcelectrictimecontroltype.htm" alt="IfcElectricTimeControlType" />
+<area shape="rect" coords="386,2094,574,2106" href="../../../schema/ifchvacdomain/lexical/ifcflowmetertype.htm" alt="IfcFlowMeterType" />
+<area shape="rect" coords="386,2118,574,2130" href="../../../schema/ifcelectricaldomain/lexical/ifcprotectivedevicetype.htm" alt="IfcProtectiveDeviceType" />
+<area shape="rect" coords="386,2142,574,2154" href="../../../schema/ifcelectricaldomain/lexical/ifcswitchingdevicetype.htm" alt="IfcSwitchingDeviceType" />
+<area shape="rect" coords="386,2166,574,2178" href="../../../schema/ifchvacdomain/lexical/ifcvalvetype.htm" alt="IfcValveType" />
+<area shape="rect" coords="374,1998,586,2010" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowcontrollertype.htm" alt="IfcFlowControllerType" />
+<area shape="rect" coords="386,2214,574,2226" href="../../../schema/ifcelectricaldomain/lexical/ifccablecarrierfittingtype.htm" alt="IfcCableCarrierFittingType" />
+<area shape="rect" coords="386,2238,574,2250" href="../../../schema/ifchvacdomain/lexical/ifcductfittingtype.htm" alt="IfcDuctFittingType" />
+<area shape="rect" coords="386,2262,574,2274" href="../../../schema/ifcelectricaldomain/lexical/ifcjunctionboxtype.htm" alt="IfcJunctionBoxType" />
+<area shape="rect" coords="386,2286,574,2298" href="../../../schema/ifchvacdomain/lexical/ifcpipefittingtype.htm" alt="IfcPipeFittingType" />
+<area shape="rect" coords="374,2190,586,2202" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowfittingtype.htm" alt="IfcFlowFittingType" />
+<area shape="rect" coords="386,2334,574,2346" href="../../../schema/ifchvacdomain/lexical/ifccompressortype.htm" alt="IfcCompressorType" />
+<area shape="rect" coords="386,2358,574,2370" href="../../../schema/ifchvacdomain/lexical/ifcfantype.htm" alt="IfcFanType" />
+<area shape="rect" coords="386,2382,574,2394" href="../../../schema/ifchvacdomain/lexical/ifcpumptype.htm" alt="IfcPumpType" />
+<area shape="rect" coords="374,2310,586,2322" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowmovingdevicetype.htm" alt="IfcFlowMovingDeviceType" />
+<area shape="rect" coords="386,2430,574,2442" href="../../../schema/ifcelectricaldomain/lexical/ifccablecarriersegmenttype.htm" alt="IfcCableCarrierSegmentType" />
+<area shape="rect" coords="386,2454,574,2466" href="../../../schema/ifcelectricaldomain/lexical/ifccablesegmenttype.htm" alt="IfcCableSegmentType" />
+<area shape="rect" coords="386,2478,574,2490" href="../../../schema/ifchvacdomain/lexical/ifcductsegmenttype.htm" alt="IfcDuctSegmentType" />
+<area shape="rect" coords="386,2502,574,2514" href="../../../schema/ifchvacdomain/lexical/ifcpipesegmenttype.htm" alt="IfcPipeSegmentType" />
+<area shape="rect" coords="374,2406,586,2418" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowsegmenttype.htm" alt="IfcFlowSegmentType" />
+<area shape="rect" coords="670,2022,858,2034" href="../../../schema/ifcelectricaldomain/lexical/ifcelectricflowstoragedevicetype.htm" alt="IfcElectricFlowStorageDeviceType" />
+<area shape="rect" coords="670,2046,858,2058" href="../../../schema/ifchvacdomain/lexical/ifctanktype.htm" alt="IfcTankType" />
+<area shape="rect" coords="658,1998,870,2010" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowstoragedevicetype.htm" alt="IfcFlowStorageDeviceType" />
+<area shape="rect" coords="670,2094,858,2106" href="../../../schema/ifchvacdomain/lexical/ifcairterminaltype.htm" alt="IfcAirTerminalType" />
+<area shape="rect" coords="670,2118,858,2130" href="../../../schema/ifcelectricaldomain/lexical/ifcelectricappliancetype.htm" alt="IfcElectricApplianceType" />
+<area shape="rect" coords="670,2142,858,2154" href="../../../schema/ifcplumbingfireprotectiondomain/lexical/ifcfiresuppressionterminaltype.htm" alt="IfcFireSuppressionTerminalType" />
+<area shape="rect" coords="670,2166,858,2178" href="../../../schema/ifcelectricaldomain/lexical/ifclamptype.htm" alt="IfcLampType" />
+<area shape="rect" coords="670,2190,858,2202" href="../../../schema/ifcelectricaldomain/lexical/ifclightfixturetype.htm" alt="IfcLightFixtureType" />
+<area shape="rect" coords="670,2214,858,2226" href="../../../schema/ifcelectricaldomain/lexical/ifcoutlettype.htm" alt="IfcOutletType" />
+<area shape="rect" coords="670,2238,858,2250" href="../../../schema/ifcplumbingfireprotectiondomain/lexical/ifcsanitaryterminaltype.htm" alt="IfcSanitaryTerminalType" />
+<area shape="rect" coords="670,2262,858,2274" href="../../../schema/ifchvacdomain/lexical/ifcspaceheatertype.htm" alt="IfcSpaceHeaterType" />
+<area shape="rect" coords="670,2286,858,2298" href="../../../schema/ifcplumbingfireprotectiondomain/lexical/ifcstackterminaltype.htm" alt="IfcStackTerminalType" />
+<area shape="rect" coords="670,2310,858,2322" href="../../../schema/ifcplumbingfireprotectiondomain/lexical/ifcwasteterminaltype.htm" alt="IfcWasteTerminalType" />
+<area shape="rect" coords="658,2070,870,2082" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowterminaltype.htm" alt="IfcFlowTerminalType" />
+<area shape="rect" coords="670,2358,858,2370" href="../../../schema/ifchvacdomain/lexical/ifcductsilencertype.htm" alt="IfcDuctSilencerType" />
+<area shape="rect" coords="670,2382,858,2394" href="../../../schema/ifchvacdomain/lexical/ifcfiltertype.htm" alt="IfcFilterType" />
+<area shape="rect" coords="658,2334,870,2346" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcflowtreatmentdevicetype.htm" alt="IfcFlowTreatmentDeviceType" />
+<area shape="rect" coords="78,1974,882,1986" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcdistributionflowelementtype.htm" alt="IfcDistributionFlowElementType" />
+<area shape="rect" coords="66,1854,894,1866" href="../../../schema/ifcproductextension/lexical/ifcdistributionelementtype.htm" alt="IfcDistributionElementType" />
+<area shape="rect" coords="78,2550,266,2562" href="../../../schema/ifcsharedcomponentelements/lexical/ifcdiscreteaccessorytype.htm" alt="IfcDiscreteAccessoryType" />
+<area shape="rect" coords="78,2574,266,2586" href="../../../schema/ifcsharedcomponentelements/lexical/ifcfastenertype.htm" alt="IfcFastenerType" />
+<area shape="rect" coords="78,2598,266,2610" href="../../../schema/ifcsharedcomponentelements/lexical/ifcmechanicalfastenertype.htm" alt="IfcMechanicalFastenerType" />
+<area shape="rect" coords="66,2526,278,2538" href="../../../schema/ifcsharedcomponentelements/lexical/ifcelementcomponenttype.htm" alt="IfcElementComponentType" />
+<area shape="rect" coords="66,2622,254,2634" href="../../../schema/ifcproductextension/lexical/ifcfurnishingelementtype.htm" alt="IfcFurnishingElementType" />
+<area shape="rect" coords="66,2646,254,2658" href="../../../schema/ifcproductextension/lexical/ifctransportelementtype.htm" alt="IfcTransportElementType" />
+<area shape="rect" coords="54,1518,906,1530" href="../../../schema/ifcproductextension/lexical/ifcelementtype.htm" alt="IfcElementType" />
+<area shape="rect" coords="78,2718,266,2730" href="../../../schema/ifcproductextension/lexical/ifcspacetype.htm" alt="IfcSpaceType" />
+<area shape="rect" coords="66,2694,278,2706" href="../../../schema/ifcproductextension/lexical/ifcspatialstructureelementtype.htm" alt="IfcSpatialStructureElementType" />
+<area shape="rect" coords="54,2670,290,2682" href="../../../schema/ifcproductextension/lexical/ifcspatialelementtype.htm" alt="IfcSpatialElementType" />
+<area shape="rect" coords="54,2742,242,2754" href="../../../schema/ifcarchitecturedomain/lexical/ifcwindowstyle.htm" alt="IfcWindowStyle" />
+<area shape="rect" coords="42,1470,918,1482" href="../../../schema/ifckernel/lexical/ifctypeproduct.htm" alt="IfcTypeProduct" />
+<area shape="rect" coords="30,1446,930,1458" href="../../../schema/ifckernel/lexical/ifctypeobject.htm" alt="IfcTypeObject" />
+<area shape="rect" coords="18,30,942,42" href="../../../schema/ifckernel/lexical/ifcobjectdefinition.htm" alt="IfcObjectDefinition" />
+<area shape="rect" coords="54,2838,242,2850" href="../../../schema/ifcarchitecturedomain/lexical/ifcdoorliningproperties.htm" alt="IfcDoorLiningProperties" />
+<area shape="rect" coords="54,2862,242,2874" href="../../../schema/ifcarchitecturedomain/lexical/ifcdoorpanelproperties.htm" alt="IfcDoorPanelProperties" />
+<area shape="rect" coords="54,2886,242,2898" href="../../../schema/ifcarchitecturedomain/lexical/ifcwindowliningproperties.htm" alt="IfcWindowLiningProperties" />
+<area shape="rect" coords="54,2910,242,2922" href="../../../schema/ifcarchitecturedomain/lexical/ifcwindowpanelproperties.htm" alt="IfcWindowPanelProperties" />
+<area shape="rect" coords="42,2814,254,2826" href="../../../schema/ifckernel/lexical/ifcpredefinedpropertyset.htm" alt="IfcPreDefinedPropertySet" />
+<area shape="rect" coords="326,2814,514,2826" href="../../../schema/ifckernel/lexical/ifcpropertyset.htm" alt="IfcPropertySet" />
+<area shape="rect" coords="30,2790,526,2802" href="../../../schema/ifckernel/lexical/ifcpropertysetdefinition.htm" alt="IfcPropertySetDefinition" />
+<area shape="rect" coords="18,2766,538,2778" href="../../../schema/ifckernel/lexical/ifcpropertydefinition.htm" alt="IfcPropertyDefinition" />
+<area shape="rect" coords="42,2982,230,2994" href="../../../schema/ifckernel/lexical/ifcrelassignstogroup.htm" alt="IfcRelAssignsToGroup" />
+<area shape="rect" coords="30,2958,242,2970" href="../../../schema/ifckernel/lexical/ifcrelassigns.htm" alt="IfcRelAssigns" />
+<area shape="rect" coords="326,2982,514,2994" href="../../../schema/ifckernel/lexical/ifcrelassociatesclassification.htm" alt="IfcRelAssociatesClassification" />
+<area shape="rect" coords="326,3006,514,3018" href="../../../schema/ifcproductextension/lexical/ifcrelassociatesmaterial.htm" alt="IfcRelAssociatesMaterial" />
+<area shape="rect" coords="314,2958,526,2970" href="../../../schema/ifckernel/lexical/ifcrelassociates.htm" alt="IfcRelAssociates" />
+<area shape="rect" coords="622,3006,810,3018" href="../../../schema/ifcsharedbldgelements/lexical/ifcrelconnectspathelements.htm" alt="IfcRelConnectsPathElements" />
+<area shape="rect" coords="622,3030,810,3042" href="../../../schema/ifcproductextension/lexical/ifcrelconnectswithrealizingelements.htm" alt="IfcRelConnectsWithRealizingElements" />
+<area shape="rect" coords="610,2982,822,2994" href="../../../schema/ifcproductextension/lexical/ifcrelconnectselements.htm" alt="IfcRelConnectsElements" />
+<area shape="rect" coords="610,3054,798,3066" href="../../../schema/ifcproductextension/lexical/ifcrelconnectsports.htm" alt="IfcRelConnectsPorts" />
+<area shape="rect" coords="610,3078,798,3090" href="../../../schema/ifcproductextension/lexical/ifcrelconnectsporttoelement.htm" alt="IfcRelConnectsPortToElement" />
+<area shape="rect" coords="610,3102,798,3114" href="../../../schema/ifcproductextension/lexical/ifcrelcontainedinspatialstructure.htm" alt="IfcRelContainedInSpatialStructure" />
+<area shape="rect" coords="610,3126,798,3138" href="../../../schema/ifcsharedbldgelements/lexical/ifcrelcoversbldgelements.htm" alt="IfcRelCoversBldgElements" />
+<area shape="rect" coords="870,2982,1058,2994" href="../../../schema/ifcproductextension/lexical/ifcrelfillselement.htm" alt="IfcRelFillsElement" />
+<area shape="rect" coords="870,3006,1058,3018" href="../../../schema/ifcsharedbldgserviceelements/lexical/ifcrelflowcontrolelements.htm" alt="IfcRelFlowControlElements" />
+<area shape="rect" coords="870,3030,1058,3042" href="../../../schema/ifcproductextension/lexical/ifcrelservicesbuildings.htm" alt="IfcRelServicesBuildings" />
+<area shape="rect" coords="598,2958,1070,2970" href="../../../schema/ifckernel/lexical/ifcrelconnects.htm" alt="IfcRelConnects" />
+<area shape="rect" coords="1154,2982,1342,2994" href="../../../schema/ifckernel/lexical/ifcrelaggregates.htm" alt="IfcRelAggregates" />
+<area shape="rect" coords="1154,3006,1342,3018" href="../../../schema/ifcproductextension/lexical/ifcrelvoidselement.htm" alt="IfcRelVoidsElement" />
+<area shape="rect" coords="1142,2958,1354,2970" href="../../../schema/ifckernel/lexical/ifcreldecomposes.htm" alt="IfcRelDecomposes" />
+<area shape="rect" coords="1438,2982,1626,2994" href="../../../schema/ifckernel/lexical/ifcreldefinesbyproperties.htm" alt="IfcRelDefinesByProperties" />
+<area shape="rect" coords="1438,3006,1626,3018" href="../../../schema/ifckernel/lexical/ifcreldefinesbytype.htm" alt="IfcRelDefinesByType" />
+<area shape="rect" coords="1426,2958,1638,2970" href="../../../schema/ifckernel/lexical/ifcreldefines.htm" alt="IfcRelDefines" />
+<area shape="rect" coords="18,2934,1650,2946" href="../../../schema/ifckernel/lexical/ifcrelationship.htm" alt="IfcRelationship" />
+<area shape="rect" coords="6,6,1662,18" href="../../../schema/ifckernel/lexical/ifcroot.htm" alt="IfcRoot" />
+</map>
+<p><a href="../../../link/inheritance-coordination-view.htm" target="_top" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+<p></p>
+  </body>
+</html>

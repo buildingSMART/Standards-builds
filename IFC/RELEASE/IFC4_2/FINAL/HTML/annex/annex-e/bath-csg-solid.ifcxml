@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifc:ifcXML xsi:schemaLocation="http://www.buildingsmart-tech.org/ifc/IFC4x2/final IFC4x2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifc="http://www.buildingsmart-tech.org/ifc/IFC4x2/final" xmlns="http://www.buildingsmart-tech.org/ifc/IFC4x2/final">
+<header>
+	<time_stamp>
+2019-03-24T14:00:59	</time_stamp>
+	<preprocessor_version>
+BuildingSmart IfcKit by Constructivity	</preprocessor_version>
+	<originating_system>
+IfcDoc 12.0.0.0	</originating_system>
+</header>
+<IfcBuilding id="i5" GlobalId="39t4Pu3nTC4ekXYRIHJB9W" Name="IfcBuilding">
+	<OwnerHistory id="i1" ChangeAction="added" LastModifiedDate="1454575675" CreationDate="1454575675">
+		<OwningUser>
+			<ThePerson Identification="Jon" FamilyName="Jon" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+			<TheOrganization Name="Geometry Gym Pty Ltd" />
+		</OwningUser>
+		<OwningApplication Version="0.0.1.0" ApplicationFullName="ggRhinoIFC - Geometry Gym Plug-in for Rhino3d" ApplicationIdentifier="ggRhinoIFC">
+			<ApplicationDeveloper Name="Geometry Gym Pty Ltd" />
+		</OwningApplication>
+	</OwnerHistory>
+	<ContainsElements>
+		<IfcRelContainedInSpatialStructure GlobalId="3Sa3dTJGn0H8TQIGiuGQd5" Name="Building" Description="Building Container for Elements">
+			<OwnerHistory xsi:nil="true" href="i1" />
+			<RelatedElements>
+				<IfcSanitaryTerminal GlobalId="3$$o7C03j0KQeLnoj018fc">
+					<OwnerHistory xsi:nil="true" href="i1" />
+					<IsTypedBy GlobalId="1lO$X3e3j9lfVMhNy4MzKB">
+						<OwnerHistory xsi:nil="true" href="i1" />
+						<RelatingType xsi:type="IfcSanitaryTerminalType" id="i6" GlobalId="1HarmwaPv3OeJSXpaoPKpg" Name="Bath" PredefinedType="bath">
+							<OwnerHistory xsi:nil="true" href="i1" />
+							<RepresentationMaps>
+								<IfcRepresentationMap id="i4">
+									<MappingOrigin>
+										<IfcAxis2Placement3D>
+											<Location id="i2" Coordinates="0 0 0" />
+										</IfcAxis2Placement3D>
+									</MappingOrigin>
+									<MappedRepresentation xsi:type="IfcShapeRepresentation" RepresentationIdentifier="Body" RepresentationType="SolidModel">
+										<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" id="i3" ContextIdentifier="Body" ContextType="Model" CoordinateSpaceDimension="0" TargetView="model_view" />
+										<Items>
+											<IfcCsgSolid>
+												<TreeRootExpression>
+													<IfcBooleanResult Operator="difference">
+														<FirstOperand>
+															<IfcBlock XLength="2000" YLength="800" ZLength="800">
+																<Position>
+																	<Location xsi:nil="true" href="i2" />
+																</Position>
+															</IfcBlock>
+														</FirstOperand>
+														<SecondOperand>
+															<IfcExtrudedAreaSolid Depth="700">
+																<SweptArea xsi:type="IfcRoundedRectangleProfileDef" ProfileType="area" ProfileName="VoidProfile" XDim="1800" YDim="600" RoundingRadius="200" />
+																<Position>
+																	<Location Coordinates="1000 400 100" />
+																</Position>
+																<ExtrudedDirection DirectionRatios="0 0 1" />
+															</IfcExtrudedAreaSolid>
+														</SecondOperand>
+													</IfcBooleanResult>
+												</TreeRootExpression>
+											</IfcCsgSolid>
+										</Items>
+									</MappedRepresentation>
+								</IfcRepresentationMap>
+							</RepresentationMaps>
+						</RelatingType>
+					</IsTypedBy>
+					<ObjectPlacement xsi:type="IfcLocalPlacement">
+						<RelativePlacement>
+							<IfcAxis2Placement3D>
+								<Location xsi:nil="true" href="i2" />
+							</IfcAxis2Placement3D>
+						</RelativePlacement>
+					</ObjectPlacement>
+					<Representation xsi:type="IfcProductDefinitionShape">
+						<Representations>
+							<IfcShapeRepresentation RepresentationIdentifier="Body" RepresentationType="MappedRepresentation">
+								<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" xsi:nil="true" href="i3" />
+								<Items>
+									<IfcMappedItem>
+										<MappingSource xsi:nil="true" href="i4" />
+										<MappingTarget xsi:type="IfcCartesianTransformationOperator3D" Scale="1">
+											<Axis1 DirectionRatios="1 0 0" />
+											<Axis2 DirectionRatios="0 1 0" />
+											<LocalOrigin Coordinates="0 0 0" />
+											<Axis3 DirectionRatios="0 0 1" />
+										</MappingTarget>
+									</IfcMappedItem>
+								</Items>
+							</IfcShapeRepresentation>
+						</Representations>
+					</Representation>
+				</IfcSanitaryTerminal>
+			</RelatedElements>
+		</IfcRelContainedInSpatialStructure>
+	</ContainsElements>
+</IfcBuilding>
+<IfcRelAggregates GlobalId="091a6ewbvCMQ2Vyiqspa7a" Name="Project Container" Description="Project Container for Buildings">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcBuilding xsi:nil="true" href="i5" />
+	</RelatedObjects>
+</IfcRelAggregates>
+<IfcRelDeclares GlobalId="1acQrDhur9399Xqs2jQs4t">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedDefinitions>
+		<IfcSanitaryTerminalType xsi:nil="true" href="i6" />
+	</RelatedDefinitions>
+</IfcRelDeclares>
+<IfcRelAssociatesMaterial GlobalId="0Pkhszwjv1qRMYyCFg9fjB" Name="MatAssoc" Description="Material Associates">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcSanitaryTerminalType xsi:nil="true" href="i6" />
+	</RelatedObjects>
+	<RelatingMaterial>
+		<IfcMaterial Name="Ceramic" />
+	</RelatingMaterial>
+</IfcRelAssociatesMaterial>
+</ifc:ifcXML>
+
+

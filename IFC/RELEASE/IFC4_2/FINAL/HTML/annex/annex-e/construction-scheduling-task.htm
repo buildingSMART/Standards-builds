@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Construction scheduling task</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-e.htm#13");
+//-->
+</script>
+
+<h3 class="std">E.13.1 Construction scheduling task</h3>
+<table class="gridtable"><tr><th>Format</th><th>ASCII</th><th>HTML</th><th>Size</th></tr><tr><td>XML</td><td><a href="construction-scheduling-task.ifcxml" target="_blank">File</a></td>
+<td><a href="construction-scheduling-task.ifcxml.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">37912</td></tr>
+<tr><td>STEP</td><td><a href="construction-scheduling-task.ifc" target="_blank">File</a></td>
+<td><a href="construction-scheduling-task.ifc.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">13942</td></tr>
+</table>
+<table class="gridtable"><tr><th>View</th></tr><tr><td><a href="../../schema/views/general-usage/index.htm">General Usage</td></tr></table><p>The focus point of this example is linking building elements to the task of a construction schedule to enable construction scheduling.</p>
+<p>
+The example includes a hierarchy of tasks assigned to  building elements. One task is assigned to pour a concrete
+slab, and four tasks are assigned to construct respective walls. The tasks are sequenced, where the walls are
+constructed in serial, following completion of the slab. The walls are nested into summary tasks for the slab and
+walls.
+</p>
+<p>The slabs and walls in the example have a local placement, a body shape representation, and a material assignment.</p>
+<p>Figure 497 shows a GANTT chart representing the tasks of the construction schedule.</p>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <td><img src="../../figures/examples/construction_scheduling_task-1.png" width="800" alt="construction_scheduling_fig-1.png 26,0 KB">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p class="figure">Figure 497 &mdash; Task occurrences</p>
+      <p>&nbsp;</p>
+     </td>
+  </tr>
+</table>
+<p>
+The project consists of a site aggregating a building which aggregates a building storey. The building storey contains
+a slab and four walls, each physically connected using <a href="../../schema/ifcproductextension/lexical/ifcrelconnectselements.htm">IfcRelConnectsElements</a> where the <i>RelatingElement</i> anchors the <i>RelatedElement</i>. The slab and walls have standard shape that is expressed parametrically using <i>ifcMaterialLayerSetUsage</i> 
+and <a href="../../schema/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm">IfcExtrudedAreaSolid</a> geometry. Therefore the slab and the walls are expressed as <a href="../../schema/ifcsharedbldgelements/lexical/ifcslabstandardcase.htm">IfcSlabStandardCase</a> and <a href="../../schema/ifcsharedbldgelements/lexical/ifcwallstandardcase.htm">IfcWallStandardCase</a>. See Figure E26 for the geometric representation of the construction elements assigned to the tasks of the 
+construction schedule.
+</p>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <td><img src="../../figures/examples/construction_scheduling_task-2.png" width="800" alt="construction_scheduling_fig-2.png 41,1 KB">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p class="figure">Figure 498 &mdash; Task products</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p>
+Each task is assigned to a resulting product produced by the task using the <a href="../../schema/ifckernel/lexical/ifcrelassignstoproduct.htm">IfcRelAssignsToProduct</a>
+relationship. The root task and the construction tasks form a hierachical task - subtask relationship provided
+by <a href="../../schema/ifckernel/lexical/ifcrelnests.htm">IfcRelNests</a>. The time related information (start time, end time) is added to each <a href="../../schema/ifcprocessextension/lexical/ifctask.htm">IfcTask</a> by
+<a href="../../schema/ifcdatetimeresource/lexical/ifctasktime.htm">IfcTaskTime</a>. See Figure 499 for an instantiation diagram.
+</p>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <td><img src="../../figures/examples/construction_scheduling_task-3.png" width="800" alt="construction_scheduling_fig-3.png 38,8 KB">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p class="figure">Figure 499 &mdash; Task assignment graph</p>
+    </td>
+   </tr>
+</table>
+</p>
+<p><a href="../../link/construction-scheduling-task.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

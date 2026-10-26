@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifc:ifcXML xsi:schemaLocation="http://www.buildingsmart-tech.org/ifc/IFC4x2/final IFC4x2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifc="http://www.buildingsmart-tech.org/ifc/IFC4x2/final" xmlns="http://www.buildingsmart-tech.org/ifc/IFC4x2/final">
+<header>
+	<time_stamp>
+2019-03-24T14:01:39	</time_stamp>
+	<preprocessor_version>
+BuildingSmart IfcKit by Constructivity	</preprocessor_version>
+	<originating_system>
+IfcDoc 12.0.0.0	</originating_system>
+</header>
+<IfcBuilding id="i2" GlobalId="39t4Pu3nTC4ekXYRIHJB9W" Name="IfcBuilding">
+	<OwnerHistory id="i1" ChangeAction="added" LastModifiedDate="1454575675" CreationDate="1454575675">
+		<OwningUser>
+			<ThePerson Identification="Jon" FamilyName="Jon" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+			<TheOrganization Name="Geometry Gym Pty Ltd" />
+		</OwningUser>
+		<OwningApplication Version="0.0.1.0" ApplicationFullName="ggRhinoIFC - Geometry Gym Plug-in for Rhino3d" ApplicationIdentifier="ggRhinoIFC">
+			<ApplicationDeveloper Name="Geometry Gym Pty Ltd" />
+		</OwningApplication>
+	</OwnerHistory>
+	<ContainsElements>
+		<IfcRelContainedInSpatialStructure GlobalId="3Sa3dTJGn0H8TQIGiuGQd5" Name="Building" Description="Building Container for Elements">
+			<OwnerHistory xsi:nil="true" href="i1" />
+			<RelatedElements>
+				<IfcSlabStandardCase id="i3" GlobalId="1wAj$J2Az2V8wnBiVYd3bU">
+					<OwnerHistory xsi:nil="true" href="i1" />
+					<ObjectPlacement xsi:type="IfcLocalPlacement">
+						<RelativePlacement>
+							<IfcAxis2Placement3D>
+								<Location Coordinates="0 0 -200" />
+							</IfcAxis2Placement3D>
+						</RelativePlacement>
+					</ObjectPlacement>
+					<Representation xsi:type="IfcProductDefinitionShape">
+						<Representations>
+							<IfcShapeRepresentation RepresentationIdentifier="Body" RepresentationType="SweptSolid">
+								<ContextOfItems xsi:type="IfcGeometricRepresentationSubContext" ContextIdentifier="Body" ContextType="Model" CoordinateSpaceDimension="0" TargetView="model_view" />
+								<Items>
+									<IfcExtrudedAreaSolid Depth="200">
+										<SweptArea xsi:type="IfcArbitraryClosedProfileDef" ProfileType="area" ProfileName="Slab Perim">
+											<OuterCurve xsi:type="IfcIndexedPolyCurve" SelfIntersect="false">
+												<Points xsi:type="IfcCartesianPointList2D" CoordList="0 0 1000 0 1399,99999999983 2000 1000 4000 0 4000 -400,000000000001 2000" TagList="" />
+												<Segments>
+													<IfcLineIndex-wrapper>buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger</IfcLineIndex-wrapper>
+													<IfcArcIndex-wrapper>buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger</IfcArcIndex-wrapper>
+													<IfcLineIndex-wrapper>buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger</IfcLineIndex-wrapper>
+													<IfcArcIndex-wrapper>buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger buildingSmart.IFC4x2.IfcMeasureResource.IfcInteger</IfcArcIndex-wrapper>
+												</Segments>
+											</OuterCurve>
+										</SweptArea>
+										<ExtrudedDirection DirectionRatios="0 0 1" />
+									</IfcExtrudedAreaSolid>
+								</Items>
+							</IfcShapeRepresentation>
+						</Representations>
+					</Representation>
+				</IfcSlabStandardCase>
+			</RelatedElements>
+		</IfcRelContainedInSpatialStructure>
+	</ContainsElements>
+</IfcBuilding>
+<IfcRelAggregates GlobalId="091a6ewbvCMQ2Vyiqspa7a" Name="Project Container" Description="Project Container for Buildings">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcBuilding xsi:nil="true" href="i2" />
+	</RelatedObjects>
+</IfcRelAggregates>
+<IfcRelAssociatesMaterial GlobalId="3ZdsMOqDf2C8LmNiQhlusS" Name="MatAssoc" Description="Material Associates">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcSlabStandardCase xsi:nil="true" href="i3" />
+	</RelatedObjects>
+	<RelatingMaterial>
+		<IfcMaterialLayerSetUsage LayerSetDirection="axis3" DirectionSense="positive" OffsetFromReferenceLine="-200">
+			<ForLayerSet id="i4" LayerSetName="200mm Concrete">
+				<MaterialLayers>
+					<IfcMaterialLayer LayerThickness="200" IsVentilated="false" Name="Core">
+						<Material Name="Concrete" Description="Concrete" />
+					</IfcMaterialLayer>
+				</MaterialLayers>
+			</ForLayerSet>
+		</IfcMaterialLayerSetUsage>
+	</RelatingMaterial>
+</IfcRelAssociatesMaterial>
+<IfcRelAssociatesMaterial GlobalId="2l_enLhI93reVwnim9gXUq" Name="MatAssoc" Description="Material Associates">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedObjects>
+		<IfcSlabType id="i5" GlobalId="0RSW$KKbzCZ9QaSm3GoEan" Name="200mm Concrete" PredefinedType="floor">
+			<OwnerHistory xsi:nil="true" href="i1" />
+		</IfcSlabType>
+	</RelatedObjects>
+	<RelatingMaterial>
+		<IfcMaterialLayerSet xsi:nil="true" href="i4" />
+	</RelatingMaterial>
+</IfcRelAssociatesMaterial>
+<IfcRelDeclares GlobalId="2Gpvcy0aXF0wUU3skbKo0s">
+	<OwnerHistory xsi:nil="true" href="i1" />
+	<RelatedDefinitions>
+		<IfcSlabType xsi:nil="true" href="i5" />
+	</RelatedDefinitions>
+</IfcRelDeclares>
+</ifc:ifcXML>
+
+

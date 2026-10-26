@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Sectioned Solid</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-e.htm#15");
+//-->
+</script>
+
+<h3 class="std">E.15.7 Sectioned Solid</h3>
+<table class="gridtable"><tr><th>Format</th><th>ASCII</th><th>HTML</th><th>Size</th></tr><tr><td>XML</td><td><a href="sectioned-solid.ifcxml" target="_blank">File</a></td>
+<td><a href="sectioned-solid.ifcxml.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">173381</td></tr>
+<tr><td>STEP</td><td><a href="sectioned-solid.ifc" target="_blank">File</a></td>
+<td><a href="sectioned-solid.ifc.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">57385</td></tr>
+</table>
+<table class="gridtable"><tr><th>View</th></tr><tr><td><a href="../../schema/views/general-usage/index.htm">General Usage</td></tr></table><table class="gridtable"><tr><th>Entity</th></tr><tr><td><a href=../../schema/ifcgeometricconstraintresource/lexical/ifcalignmentcurve.htm>IfcAlignmentCurve</td></tr><tr><td><a href=../../schema/ifcgeometricmodelresource/lexical/ifcsectionedsolidhorizontal.htm>IfcSectionedSolidHorizontal</td></tr><tr><td><a href=../../schema/ifcgeometryresource/lexical/ifcoffsetcurvebydistances.htm>IfcOffsetCurveByDistances</td></tr><tr><td><a href=../../schema/ifcproductextension/lexical/ifcalignment.htm>IfcAlignment</td></tr></table><p>This example demonstrates a bridge with swept geometry related to alignment curves.</p>
+
+<p>An alignment curve is defined with circular curvature horizontally and parabolic curvature vertically. Eight string lines are defined relative to this alignment curve using <a href="../../schema/ifcgeometryresource/lexical/ifcoffsetcurvebydistances.htm">IfcOffsetCurveByDistances</a>.</p>
+
+<p>The bridge girders are defined by <a href="../../schema/ifcproductextension/lexical/ifcelementassembly.htm">IfcElementAssembly</a> having PredefinedType set to GIRDER, and decomposed into <a href="../../schema/ifcsharedbldgelements/lexical/ifcbeam.htm">IfcBeam</a> elements for each segment, with geometry defined by <a href="../../schema/ifcgeometricmodelresource/lexical/ifcsectionedsolidhorizontal.htm">IfcSectionedSolidHorizontal</a> having a constant cross-section.</p>
+
+<p>The bridge deck is defined by <a href="../../schema/ifcproductextension/lexical/ifcelementassembly.htm">IfcElementAssembly</a> having PredefinedType set to SLAB_FIELD, and decomposed into <a href="../../schema/ifcsharedbldgelements/lexical/ifcslab.htm">IfcSlab</a> elements for each continuous concrete section (separated by construction joint), with geometry defined by <a href="../../schema/ifcgeometricmodelresource/lexical/ifcsectionedsolidhorizontal.htm">IfcSectionedSolidHorizontal</a> consisting of variable cross sections, where <a href="../../schema/ifcprofileresource/lexical/ifcarbitraryclosedprofiledef.htm">IfcArbitraryClosedProfileDef</a> defines each cross section.</p>
+
+<p><img src="../../figures/examples/bridge-variable-profile.png" height="360" width="640"/></p>
+</p>
+<p><a href="../../link/sectioned-solid.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

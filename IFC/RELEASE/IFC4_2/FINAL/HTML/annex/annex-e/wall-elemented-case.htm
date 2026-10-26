@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Wall elemented case</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-e.htm#9");
+//-->
+</script>
+
+<h3 class="std">E.9.1 Wall elemented case</h3>
+<table class="gridtable"><tr><th>Format</th><th>ASCII</th><th>HTML</th><th>Size</th></tr><tr><td>XML</td><td><a href="wall-elemented-case.ifcxml" target="_blank">File</a></td>
+<td><a href="wall-elemented-case.ifcxml.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">55156</td></tr>
+<tr><td>STEP</td><td><a href="wall-elemented-case.ifc" target="_blank">File</a></td>
+<td><a href="wall-elemented-case.ifc.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">24427</td></tr>
+</table>
+<table class="gridtable"><tr><th>View</th></tr><tr><td><a href="../../schema/views/general-usage/index.htm">General Usage</td></tr></table><table class="gridtable"><tr><th>Entity</th></tr><tr><td><a href=../../schema/ifcsharedbldgelements/lexical/ifcwallelementedcase.htm>IfcWallElementedCase</td></tr><tr><td><a href=../../schema/ifcsharedbldgelements/lexical/ifcwalltype.htm>IfcWallType</td></tr><tr><td><a href=../../schema/ifcproductextension/lexical/ifcelementassembly.htm>IfcElementAssembly</td></tr><tr><td><a href=../../schema/ifcproductextension/lexical/ifcelementassemblytype.htm>IfcElementAssemblyType</td></tr></table><p>This example illustrates a framed wall with openings suitable for a door and window. </p>
+<blockquote class="note">NOTE&nbsp; The example wall is very typical of residential construction in the U.S., consisting of "2x4" framing with gypsum panels on each side.</blockquote>
+
+<p>The wall has three layers: forward-facing drywall, framing, and rear-facing drywall. Each of these layers are modeled as <a href="../../schema/ifcmaterialresource/lexical/ifcmateriallayer.htm">IfcMaterialLayer</a> and have corresponding parts which elaborate each into elements. 
+Geometry for items makes use of <a href="../../schema/ifcgeometryresource/lexical/ifcmappeditem.htm">IfcMappedItem</a> for efficiency in storage and processing, such that a mesh for each shape need only be instantiated once, and then transformed multiple times.</p>
+
+<ul>
+<li>The 'Axis' representation of the wall indicates the parametric path for which the component geometry is generated.</li>
+<li>The 'Body' representations of the components is derived from the defined types, the axis path, and the order of the layer as defined by the material layer set.</li>
+<li>The 'Surface' representation of the wall is derived from the boundaries of the component geometry.</li>
+</ul>
+
+<blockquote class="note">NOTE&nbsp; The particular rules defining layout of components of framed walls are out of scope of this specification.</blockquote>
+
+<p>The example in Figure 484 shows the solid representation of the elemented wall, the example in Figure 485 shows the same elemented wall in transparent mode.</p>
+
+<table summary="elemented wall">
+ <tr>
+  <td style="width:400px"><img src="../../figures/examples/ifcwallelementedcase-solid.png" alt="elemented wall" height="400" width="350">
+  </td>
+  <td style="width:400px"><img src="../../figures/examples/ifcwallelementedcase-trans.png" alt="elemented wall" height="400" width="350" >
+  </td>
+ </tr>
+ <tr style="height:20px;">
+  <td style="vertical-align:bottom;">
+   <p class="figure">Figure 484 &mdash; Elemented wall solid representation</p>
+  </td>
+  <td style="vertical-align:bottom;">
+   <p class="figure">Figure 485 &mdash; Elemented wall transparent representation to show inner structure</p>
+  </td>
+ </tr>
+</table>
+</p>
+<p><a href="../../link/wall-elemented-case.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Structural curve member</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-e.htm#12");
+//-->
+</script>
+
+<h3 class="std">E.12.1 Structural curve member</h3>
+<table class="gridtable"><tr><th>Format</th><th>ASCII</th><th>HTML</th><th>Size</th></tr><tr><td>XML</td><td><a href="structural-curve-member.ifcxml" target="_blank">File</a></td>
+<td><a href="structural-curve-member.ifcxml.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">34486</td></tr>
+<tr><td>STEP</td><td><a href="structural-curve-member.ifc" target="_blank">File</a></td>
+<td><a href="structural-curve-member.ifc.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">12701</td></tr>
+</table>
+<table class="gridtable"><tr><th>View</th></tr><tr><td><a href="../../schema/views/general-usage/index.htm">General Usage</td></tr></table><table class="gridtable"><tr><th>Entity</th></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralanalysismodel.htm>IfcStructuralAnalysisModel</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralcurvemember.htm>IfcStructuralCurveMember</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralpointconnection.htm>IfcStructuralPointConnection</td></tr><tr><td><a href=../../schema/ifcrepresentationresource/lexical/ifctopologyrepresentation.htm>IfcTopologyRepresentation</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcrelconnectsstructuralmember.htm>IfcRelConnectsStructuralMember</td></tr><tr><td><a href=../../schema/ifcstructuralloadresource/lexical/ifcboundarynodecondition.htm>IfcBoundaryNodeCondition</td></tr><tr><td><a href=../../schema/ifcstructuralloadresource/lexical/ifcstructuralloadconfiguration.htm>IfcStructuralLoadConfiguration</td></tr><tr><td><a href=../../schema/ifcstructuralloadresource/lexical/ifcstructuralloadlinearforce.htm>IfcStructuralLoadLinearForce</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralcurveaction.htm>IfcStructuralCurveAction</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcrelconnectsstructuralactivity.htm>IfcRelConnectsStructuralActivity</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralloadgroup.htm>IfcStructuralLoadGroup</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralresultgroup.htm>IfcStructuralResultGroup</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralpointreaction.htm>IfcStructuralPointReaction</td></tr><tr><td><a href=../../schema/ifcstructuralanalysisdomain/lexical/ifcstructuralcurvereaction.htm>IfcStructuralCurveReaction</td></tr><tr><td><a href=../../schema/ifcstructuralloadresource/lexical/ifcstructuralloadsingleforce.htm>IfcStructuralLoadSingleForce</td></tr></table>      <p>
+        This example includes three structural curve members forming a simple frame, and a single load case of a linear
+        distributed load.
+      </p>
+      <p>
+        The example includes three structural curve members connected in series, forming two columns and a beam, where
+        the columns have rigid boundary conditions with respect to the ground. Each curve member has a material profile
+        set defined using an I-Shape profile of steel material. The profile has properties indicating area and moments
+        of inertia. The material has properties indicating density, modulus of elasticity, modulus of rigidity, and
+        yield strength. One load case is defined, having a constant linear distribution over half of the beam. See
+        Figure 494 for the geometric and topological representation of the structural members.
+      </p>
+      <table summary="example">
+        <tr>
+          <td>
+            <img src="../../figures/examples/structural_analysis_curve-1.png" width="800" alt="structural_analysis_fig-1.png 118,0 KB">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="figure">Figure 494 &mdash; Structural members and actions</p>
+            <p>
+              &nbsp;
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        The load case has calculated results included, consisting of point forces and moments at each point connection
+        on the ground. See Figure 495 for the represenation of the structural members with
+        reactions.
+      </p>
+      <table summary="example">
+        <tr>
+          <td>
+            <img src="../../figures/examples/structural_analysis_curve-2.png" width="800" alt="structural_analysis_fig-2.png 109,0 KB">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="figure">Figure 495 &mdash; Structural members and reactions
+            </p>
+            <p>
+              &nbsp;
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        The <i>IfcRelConnectsStructuralElements</i> relationship links a curve member to a point connection. See Figure 496 for an instantiation diagram.
+      </p>
+      <table summary="diagram">
+        <tr>
+          <td>
+            <img src="../../figures/examples/structural_analysis_curve-3.png" width="800" alt="structural_analysis_fig-3.png 48,1 KB">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="figure">Figure 496 &mdash; Structural connection graph</p>
+            <p>
+              &nbsp;
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        The <a href="../../schema/ifcstructuralanalysisdomain/lexical/ifcrelconnectsstructuralactivity.htm">IfcRelConnectsStructuralActivity</a> relationship links a load action to a curve member. See Figure 497 for an instantiation diagram.
+      </p>
+      <table summary="diagram">
+        <tr>
+          <td>
+            <img src="../../figures/examples/structural_analysis_curve-4.png" width="800" alt="structural_analysis_fig-4.png 43,1 KB">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="figure">Figure 497 &mdash; Structural load graph</p>
+          </td>
+        </tr>
+      </table></p>
+<p><a href="../../link/structural-curve-member.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

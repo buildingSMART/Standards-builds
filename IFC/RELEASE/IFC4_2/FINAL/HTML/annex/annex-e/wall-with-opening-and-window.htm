@@ -1,0 +1,129 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Wall with opening and window</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-e.htm#10");
+//-->
+</script>
+
+<h3 class="std">E.10.1 Wall with opening and window</h3>
+<table class="gridtable"><tr><th>Format</th><th>ASCII</th><th>HTML</th><th>Size</th></tr><tr><td>XML</td><td><a href="wall-with-opening-and-window.ifcxml" target="_blank">File</a></td>
+<td><a href="wall-with-opening-and-window.ifcxml.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">23788</td></tr>
+<tr><td>STEP</td><td><a href="wall-with-opening-and-window.ifc" target="_blank">File</a></td>
+<td><a href="wall-with-opening-and-window.ifc.htm" target="_blank">Markup</a></td>
+<td style="text-align:right">8195</td></tr>
+</table>
+<table class="gridtable"><tr><th>View</th></tr><tr><td><a href="../../schema/views/general-usage/index.htm">General Usage</td></tr></table><table class="gridtable"><tr><th>Entity</th></tr><tr><td><a href=../../schema/ifcsharedbldgelements/lexical/ifcwall.htm>IfcWall</td></tr><tr><td><a href=../../schema/ifcsharedbldgelements/lexical/ifcwindow.htm>IfcWindow</td></tr><tr><td><a href=../../schema/ifcproductextension/lexical/ifcopeningelement.htm>IfcOpeningElement</td></tr><tr><td><a href=../../schema/ifcproductextension/lexical/ifcrelvoidselement.htm>IfcRelVoidsElement</td></tr><tr><td><a href=../../schema/ifcproductextension/lexical/ifcrelfillselement.htm>IfcRelFillsElement</td></tr></table>      <p>
+        The example demonstrates how a window can be placed inside a wall. The basic format of the wall is 3 meter
+        length and 2 meter height with a thickness of 300 mm. The window has a size of 1x1 meter and is placed exactly
+        in the middle of the wall.
+      </p>
+      <p>
+        To insert a window or door in a wall it is required to create an opening. The following entities are relevant:
+      </p>
+      <ul>
+        <li>
+          <a href="../../schema/ifcsharedbldgelements/lexical/ifcwall.htm">IfcWall</a> (or <a href="../../schema/ifcsharedbldgelements/lexical/ifcwallstandardcase.htm">IfcWallStandardCase</a> if geometry representation allows for it);
+        </li>
+        <li>
+          <a href="../../schema/ifcproductextension/lexical/ifcopeningelement.htm">IfcOpeningElement</a>;
+        </li>
+        <li>
+          <a href="../../schema/ifcsharedbldgelements/lexical/ifcwindow.htm">IfcWindow</a>.
+        </li>
+      </ul>
+      <p>
+        The three entity instances have to be connected in 2 different ways
+      </p>
+      <ul>
+        <li>via relative placement;
+        </li>
+        <li>via topological connection.
+        </li>
+      </ul>
+      <p>
+        Each physical object has a placement. The placement is represented by <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> and can be
+        relative to an <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> of another physical object (in case of aggregation, feature or
+        filling relation) or of an spatial structure element. This process of local placements is recursive.
+        <a href="../../schema/ifcsharedbldgelements/lexical/ifcwall.htm">IfcWall</a>, <a href="../../schema/ifcproductextension/lexical/ifcopeningelement.htm">IfcOpeningElement</a> and <a href="../../schema/ifcsharedbldgelements/lexical/ifcwindow.htm">IfcWindow</a> each have their own
+        <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a>, however the <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> of <a href="../../schema/ifcsharedbldgelements/lexical/ifcwindow.htm">IfcWindow</a> is defined relatively
+        to the <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> of <a href="../../schema/ifcproductextension/lexical/ifcopeningelement.htm">IfcOpeningElement</a> and the <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> of
+        <a href="../../schema/ifcproductextension/lexical/ifcopeningelement.htm">IfcOpeningElement</a> is defined relatively to the <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> of <a href="../../schema/ifcsharedbldgelements/lexical/ifcwall.htm">IfcWall</a>.
+      </p>
+      <p>
+        The <a href="../../schema/ifcsharedbldgelements/lexical/ifcwall.htm">IfcWall</a> and <a href="../../schema/ifcproductextension/lexical/ifcopeningelement.htm">IfcOpeningElement</a> are connected via the objectified relation
+        <a href="../../schema/ifcproductextension/lexical/ifcrelvoidselement.htm">IfcRelVoidsElement</a>. The <a href="../../schema/ifcproductextension/lexical/ifcrelvoidselement.htm">IfcRelVoidsElement</a> is connected with the wall via the relationship
+        RelatingBuildingElement and to the opening element via the relationship RelatedOpeningElement. Through the
+        inverse relationships it is possible to traverse from wall to opening element and vice versa.
+      </p>
+      <p>
+        The <a href="../../schema/ifcproductextension/lexical/ifcopeningelement.htm">IfcOpeningElement</a> and <a href="../../schema/ifcsharedbldgelements/lexical/ifcwindow.htm">IfcWindow</a> are connected via the objectified relation
+        <a href="../../schema/ifcproductextension/lexical/ifcrelfillselement.htm">IfcRelFillsElement</a>. The <a href="../../schema/ifcproductextension/lexical/ifcrelfillselement.htm">IfcRelFillsElement</a> is connected with the opening element via the
+        relationship RelatingOpeningElement and to the window via the relationship RelatedBuildingElement. Through the
+        inverse relationships it is possible to traverse from opening element to window and vice versa.
+      </p>
+      <p>
+        &nbsp;
+      </p>
+      <table summary="wall example">
+        <tr>
+          <td>
+            <img src="../../figures/examples/building_element_configuration_wall-1.png" width="526" height="690" alt=
+            "building_element_configuration_wall-1.png 29,1 KB">
+          </td>
+          <td style=" vertical-align:bottom;">
+            <p>
+              The Figure 486 shows the parameters used for creating the example data set.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="figure">Figure 486 &mdash; Parameters of wall, opening and window</p>
+          </td>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+    </table>
+    <table summary="wall example">
+        <tr>
+          <td>
+            <img src="../../figures/examples/building_element_configuration_wall-2.png" width="846" height="594" alt="building_element_configuration_wall-1.png 48,6 KB" />
+          </td>
+          <td style=" vertical-align:bottom;">
+            <p>Figure 487 shows the geometric representation of the example data set.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="figure">Figure 487 &mdash; Geometric representation of wall, opening and window</p>
+          </td>
+          <td>
+            &nbsp;
+          </td>
+        </tr>			
+      </table>
+</p>
+<p><a href="../../link/wall-with-opening-and-window.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

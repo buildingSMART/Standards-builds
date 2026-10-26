@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Basic geometric shape</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-e.htm#2");
+//-->
+</script>
+
+<h3 class="std">E.2 Basic geometric shape</h3>
+<p>The examples demonstrate the use of various geometric shape representation types to express a simple geometric form of a building element proxy. All example files uses the same basic structure of the data set and only differ in the geometric representation items used to define the same shape (a block of 1m x 1m x 2m).</p>
+<p>The basic structure provided with the sample IFC files include:</p>
+<ul>
+ <li>the basic context of the data set provided by <a href="../../schema/ifckernel/lexical/ifcproject.htm">IfcProject</a> and referenced entities: 
+ <ul class="inner">
+  <li>
+    <a href="../../schema/ifcutilityresource/lexical/ifcownerhistory.htm">IfcOwnerHistory</a> for user, application and time stamp where the project data set had been created;
+  </li>
+  <li>
+    IfcGeometricRepresentationContext for the general context, including representation type, dimension, coordinate system, and precision;
+  </li>
+  <li>
+    IfcUnitAssignment for the default units used within the data set,
+  </li>
+ </ul>
+</li>
+<li>the basic spatial structure of the project provided by a single <a href="../../schema/ifcproductextension/lexical/ifcbuilding.htm">IfcBuilding</a> with referenced entities:
+  <ul class="inner">
+  <li>
+  <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> to create the local object coordinate system of the building being the parant coordinate system for all objects contained within
+  the building;
+  </li>
+  <li>
+  <a href="../../schema/ifckernel/lexical/ifcrelaggregates.htm">IfcRelAggregates</a> to link the <a href="../../schema/ifcproductextension/lexical/ifcbuilding.htm">IfcBuilding</a> to the <a href="../../schema/ifckernel/lexical/ifcproject.htm">IfcProject</a> as the uppermost item of the project spatial structure,
+  </li>
+ </ul>
+</li>
+<li>the proxy element having a shape representation provided by a single <a href="../../schema/ifcsharedbldgelements/lexical/ifcbuildingelementproxy.htm">IfcBuildingElementProxy</a> with referenced entities:
+ <ul class="inner">
+  <li>
+  <a href="../../schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm">IfcLocalPlacement</a> to create the local object coordinate system of the proxy relative to the object coordinate system of the building;
+  </li>
+  <li>
+  <a href="../../schema/ifcrepresentationresource/lexical/ifcproductdefinitionshape.htm">IfcProductDefinitionShape</a> to define the geometry within the local object coordinate system.
+  </li>
+ </ul>
+</li>
+</ul>
+<table summary="basic shape">
+  <tr>
+    <td><img src="../../figures/examples/basic_shape_fig-1.png" width="500" height="450" alt="basic_shape_fig-1.png 8,1 KB"></td>
+    <td style="vertical-align:bottom;">
+  <blockquote class="example">
+  EXAMPLE&nbsp; The geometry of the proxy is a 3D block with length=1m, width=1m and height=2m. It is positioned with a local coordinate system at 10m,0m,0m from the coordinate origin of the parent coordinate system of the building. The local object coordinate system has no rotation.<br>
+  <br>
+  See Figure 1 for the geometric shape of the example.</span>
+  </blockquote>
+  </td>
+ </tr>
+ <tr style="height:20px;">
+  <td>
+  <p class="figure">
+  Figure 1 &mdash; Basic shape of the proxy being a block.
+  </p>
+ </td>
+ <td>
+  &nbsp;
+ </td>
+</tr>
+</table>
+<p>
+  The same block geometry can be expressed using different 3D
+  models. The example IFC files introduce the swept solid
+  model, surface model, boundary representation model,
+  constructive solid geometry model and the tesselated
+  surface model.
+</p>
+<blockquote class="note">
+  NOTE&nbsp; Depending on the model view definition some representation
+  types may not be allowed in actual exchange scenarios.
+</blockquote>
+</p>
+<p><a href="../../link/basic-geometric-shape.htm" target="_top" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>
