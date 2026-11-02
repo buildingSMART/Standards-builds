@@ -38,6 +38,28 @@ Normative and historical IFC releases, including downloadable packages and indiv
 * **Addendum** - improvements to existing features. The schema may change while maintaining upward compatibility.
 * **Corrigendum** - documentation improvements. The schema does not change, although deprecations may be introduced.
 
+## Website deployment
+
+The root `index.html` is the source template. File URLs may use globs in
+their filenames, for example `IFC/DEV/IFC4_4/HTML/*.exp`. Keep directory paths
+explicit. Each file URL on `standards.buildingsmart.org` (and each relative
+file URL) must match exactly one file in the checkout. Zero or multiple matches
+fail the build; directory URLs are assumed valid and external URLs are unchanged.
+Only URLs in the root index are processed, not links inside generated publications.
+
+To generate and validate a separate index locally:
+
+```sh
+python scripts/build_index.py --output /tmp/standards-index.html
+```
+
+The Pages workflow validates pull requests and deploys pushes to `main`, staging
+the full static repository with the generated index and preserving `CNAME`.
+In repository **Settings > Pages > Build and deployment**, set **Source** to
+**GitHub Actions** instead of deploying from a branch. Build automation that pushes
+publication updates must use credentials that trigger workflows (for example a
+GitHub App token or PAT); pushes made with `GITHUB_TOKEN` do not trigger push workflows.
+
 ## License
 
 Copyright © buildingSMART International Ltd. All Rights reserved until formal release. Final IFC is licensed under the **Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0)**.
