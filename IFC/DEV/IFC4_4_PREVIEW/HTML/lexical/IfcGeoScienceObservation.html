@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <img src="../assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20261027 (IFC4X4_PREVIEW_20260618)
+<p class="header-title">IFC 4.4.0.0 build 20261103 (IFC4X4_PREVIEW_20261103)
                             <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
 </p>
 <ul>
@@ -472,6 +472,7 @@
     6.6.3.16.1 Semantic definition
 <a class="link" href="#6.6.3.16.1-Semantic-definition"><i data-feather="link"></i></a></h2>
 <p>Detailed collected information, including measured parameters, descriptions etc. related to geoscientific observations that can be assigned to physical or spatial elements using <em><a href="IfcRelAssignsToProduct.html">IfcRelAssignsToProduct</a></em>.</p>
+<!-- end of short definition -->
 <h2><a class="anchor" id="6.6.3.16.2-Entity-inheritance"></a>
     6.6.3.16.2 Entity inheritance
 <a class="link" href="#6.6.3.16.2-Entity-inheritance"><i data-feather="link"></i></a></h2>
@@ -826,8 +827,7 @@
             </td>
 <td data-label="Type"><a href="IfcGeoScienceObservationTypeEnum.html">IfcGeoScienceObservationTypeEnum</a></td>
 <td data-label="Description">
-<p>A list of types to further identify the object. Some property sets may be specifically applicable to one of these types.</p>
-<aside class="aside-note"><mark>NOTE</mark>  If the object has an associated <a href="IfcTypeObject.html">IfcTypeObject</a> with a <em>PredefinedType</em>, then this attribute shall not be used.</aside>
+<p>Identifies the predefined type of a geoscience observation. This type may associate additional specific property sets.</p>
 </td>
 </tr>
 </tbody>
@@ -846,9 +846,7 @@
 <tr>
 <td>HasObjectType</td>
 <td>
-<p class="search-skip">
-<em>No description available.</em>
-</p>
+<p>The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.</p>
 </td>
 </tr>
 <tr>
@@ -1636,10 +1634,10 @@
 <p class="search-skip">This concept can be applied to the following resources:</p>
 <ul>
 <li>
-                        <a href="Pset_Uncertainty.html">Pset_Uncertainty</a>
+                        <a href="Pset_Risk.html">Pset_Risk</a>
                     </li>
 <li>
-                        <a href="Pset_Risk.html">Pset_Risk</a>
+                        <a href="Pset_Uncertainty.html">Pset_Uncertainty</a>
                     </li>
 <li>
                         <a href="Pset_Tolerance.html">Pset_Tolerance</a>
@@ -1744,23 +1742,51 @@
 <p class="search-skip">This concept can be applied to the following resources:</p>
 <ul>
 <li>
+                        <a href="Pset_GeoObsFoldAxis.html">Pset_GeoObsFoldAxis</a>
+                        (only applies to <code>MAPPEDFEATURE)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsLineation.html">Pset_GeoObsLineation</a>
+                        (only applies to <code>MAPPEDFEATURE)
+                    </code></li>
+<li>
+                        <a href="Pset_LabTestResult.html">Pset_LabTestResult</a>
+                        (only applies to <code>LABTESTRESULT)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsBoreholeCommon.html">Pset_GeoObsBoreholeCommon</a>
+                        (only applies to <code>BOREHOLELOG)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsMappedUnit.html">Pset_GeoObsMappedUnit</a>
+                        (only applies to <code>MAPPEDFEATURE)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsDiscontinuityCommon.html">Pset_GeoObsDiscontinuityCommon</a>
+                        (only applies to <code>LOCALINFORMATION)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsDiscontinuityCommon.html">Pset_GeoObsDiscontinuityCommon</a>
+                        (only applies to <code>MAPPEDFEATURE)
+                    </code></li>
+<li>
+                        <a href="Pset_InSituTestHydro.html">Pset_InSituTestHydro</a>
+                        (only applies to <code>INSITUTESTRESULT)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsBoreholeGeophysicalInterval.html">Pset_GeoObsBoreholeGeophysicalInterval</a>
+                        (only applies to <code>BOREHOLELOG)
+                    </code></li>
+<li>
+                        <a href="Pset_LabTestCommon.html">Pset_LabTestCommon</a>
+                        (only applies to <code>LABTESTRESULT)
+                    </code></li>
+<li>
                         <a href="Pset_BoreholeTestSPT.html">Pset_BoreholeTestSPT</a>
                         (only applies to <code>INSITUTESTRESULT)
                     </code></li>
 <li>
-                        <a href="Pset_GeoObsDiscontinuityFault.html">Pset_GeoObsDiscontinuityFault</a>
-                        (only applies to <code>LOCALINFORMATION)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsDiscontinuityFault.html">Pset_GeoObsDiscontinuityFault</a>
-                        (only applies to <code>MAPPEDFEATURE)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsHydroGeologyWaterInflow.html">Pset_GeoObsHydroGeologyWaterInflow</a>
-                        (only applies to <code>LOCALINFORMATION)
-                    </code></li>
-<li>
-                        <a href="Pset_GeophysicalSurveyCommon.html">Pset_GeophysicalSurveyCommon</a>
+                        <a href="Pset_GeophysicalSurveyBorehole.html">Pset_GeophysicalSurveyBorehole</a>
                         (only applies to <code>GEOPHYSICALSURVEYRESULT)
                     </code></li>
 <li>
@@ -1768,70 +1794,15 @@
                         (only applies to <code>BOREHOLELOG)
                     </code></li>
 <li>
-                        <a href="Pset_GeophysicalSurveyBorehole.html">Pset_GeophysicalSurveyBorehole</a>
-                        (only applies to <code>GEOPHYSICALSURVEYRESULT)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsCommon.html">Pset_GeoObsCommon</a>
-                    </li>
-<li>
-                        <a href="Pset_InSituTestHydro.html">Pset_InSituTestHydro</a>
-                        (only applies to <code>INSITUTESTRESULT)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsDiscontinuityCommon.html">Pset_GeoObsDiscontinuityCommon</a>
-                        (only applies to <code>LOCALINFORMATION)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsDiscontinuityCommon.html">Pset_GeoObsDiscontinuityCommon</a>
-                        (only applies to <code>MAPPEDFEATURE)
-                    </code></li>
-<li>
-                        <a href="Pset_SpatialGeoObsSample.html">Pset_SpatialGeoObsSample</a>
-                        (only applies to <code>INSITUTESTRESULT)
-                    </code></li>
-<li>
-                        <a href="Pset_SpatialGeoObsSample.html">Pset_SpatialGeoObsSample</a>
-                        (only applies to <code>LABTESTRESULT)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsBoreholeGeophysicalInterval.html">Pset_GeoObsBoreholeGeophysicalInterval</a>
-                        (only applies to <code>BOREHOLELOG)
-                    </code></li>
-<li>
-                        <a href="Pset_LabTestResult.html">Pset_LabTestResult</a>
-                        (only applies to <code>LABTESTRESULT)
-                    </code></li>
-<li>
                         <a href="Pset_InSituTestCommon.html">Pset_InSituTestCommon</a>
                         (only applies to <code>INSITUTESTRESULT)
                     </code></li>
 <li>
-                        <a href="Pset_GeoObsMappedUnit.html">Pset_GeoObsMappedUnit</a>
-                        (only applies to <code>MAPPEDFEATURE)
+                        <a href="Pset_GeoObsDiscontinuityFault.html">Pset_GeoObsDiscontinuityFault</a>
+                        (only applies to <code>LOCALINFORMATION)
                     </code></li>
 <li>
-                        <a href="Pset_InSituTestCPT.html">Pset_InSituTestCPT</a>
-                        (only applies to <code>INSITUTESTRESULT)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsBoreholeCommon.html">Pset_GeoObsBoreholeCommon</a>
-                        (only applies to <code>BOREHOLELOG)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsLineation.html">Pset_GeoObsLineation</a>
-                        (only applies to <code>MAPPEDFEATURE)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsBoreholeMWDInterval.html">Pset_GeoObsBoreholeMWDInterval</a>
-                        (only applies to <code>BOREHOLELOG)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsBoreholeWaterLevel.html">Pset_GeoObsBoreholeWaterLevel</a>
-                        (only applies to <code>BOREHOLELOG)
-                    </code></li>
-<li>
-                        <a href="Pset_GeoObsFoldAxis.html">Pset_GeoObsFoldAxis</a>
+                        <a href="Pset_GeoObsDiscontinuityFault.html">Pset_GeoObsDiscontinuityFault</a>
                         (only applies to <code>MAPPEDFEATURE)
                     </code></li>
 <li>
@@ -1839,13 +1810,40 @@
                         (only applies to <code>LOCALINFORMATION)
                     </code></li>
 <li>
-                        <a href="Pset_LabTestCommon.html">Pset_LabTestCommon</a>
+                        <a href="Pset_GeoObsBoreholeWaterLevel.html">Pset_GeoObsBoreholeWaterLevel</a>
+                        (only applies to <code>BOREHOLELOG)
+                    </code></li>
+<li>
+                        <a href="Pset_SpatialGeoObsSample.html">Pset_SpatialGeoObsSample</a>
+                        (only applies to <code>INSITUTESTRESULT)
+                    </code></li>
+<li>
+                        <a href="Pset_SpatialGeoObsSample.html">Pset_SpatialGeoObsSample</a>
                         (only applies to <code>LABTESTRESULT)
+                    </code></li>
+<li>
+                        <a href="Pset_InSituTestCPT.html">Pset_InSituTestCPT</a>
+                        (only applies to <code>INSITUTESTRESULT)
                     </code></li>
 <li>
                         <a href="Pset_BoreholeTestPressuremeter.html">Pset_BoreholeTestPressuremeter</a>
                         (only applies to <code>INSITUTESTRESULT)
                     </code></li>
+<li>
+                        <a href="Pset_GeoObsBoreholeMWDInterval.html">Pset_GeoObsBoreholeMWDInterval</a>
+                        (only applies to <code>BOREHOLELOG)
+                    </code></li>
+<li>
+                        <a href="Pset_GeophysicalSurveyCommon.html">Pset_GeophysicalSurveyCommon</a>
+                        (only applies to <code>GEOPHYSICALSURVEYRESULT)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsHydroGeologyWaterInflow.html">Pset_GeoObsHydroGeologyWaterInflow</a>
+                        (only applies to <code>LOCALINFORMATION)
+                    </code></li>
+<li>
+                        <a href="Pset_GeoObsCommon.html">Pset_GeoObsCommon</a>
+                    </li>
 </ul>
 </td>
 </tr>

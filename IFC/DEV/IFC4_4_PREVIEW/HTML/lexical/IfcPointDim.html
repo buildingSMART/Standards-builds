@@ -14,7 +14,7 @@
 <div class="row">
 <header>
 <img src="../assets/img/IFC4x4-logo1.1-wide.png"/>
-<p class="header-title">IFC 4.4.0.0 build 20261027 (IFC4X4_PREVIEW_20260618)
+<p class="header-title">IFC 4.4.0.0 build 20261103 (IFC4X4_PREVIEW_20261103)
                             <small style="background-color: #fbb4ae;">⚠ Preview version - backwards incompatible changes are likely</small>
 </p>
 <ul>
@@ -289,16 +289,16 @@
 <pre><code class="language-express pygments" data-highlighted="generator"><span class="tok-kd">FUNCTION</span> <a href="IfcPointDim.html"><span class="tok-nc">IfcPointDim</span></a>
 <span class="tok-p">(</span><span class="tok-n">Point</span> <span class="tok-o">:</span> <a href="IfcPoint.html"><span class="tok-nc">IfcPoint</span></a><span class="tok-p">)</span>
 <span class="tok-o">:</span> <a href="IfcDimensionCount.html"><span class="tok-nc">IfcDimensionCount</span></a><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20260618.IFCCARTESIANPOINT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20261103.IFCCARTESIANPOINT'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-nb">HIINDEX</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-o">\</span><a href="IfcCartesianPoint.html"><span class="tok-nc">IfcCartesianPoint</span></a><span class="tok-p">.</span><span class="tok-n">Coordinates</span><span class="tok-p">)</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20260618.IFCPOINTBYDISTANCEEXPRESSION'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20261103.IFCPOINTBYDISTANCEEXPRESSION'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-o">\</span><a href="IfcPointByDistanceExpression.html"><span class="tok-nc">IfcPointByDistanceExpression</span></a><span class="tok-p">.</span><span class="tok-n">BasisCurve</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20260618.IFCPOINTONCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20261103.IFCPOINTONCURVE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-o">\</span><a href="IfcPointOnCurve.html"><span class="tok-nc">IfcPointOnCurve</span></a><span class="tok-p">.</span><span class="tok-n">BasisCurve</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
-<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20260618.IFCPOINTONSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
+<span class="tok-kd">IF</span> <span class="tok-p">(</span><span class="tok-s1">'IFC4X4_PREVIEW_20261103.IFCPOINTONSURFACE'</span> <span class="tok-nb">IN</span> <span class="tok-nb">TYPEOF</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-p">)</span><span class="tok-p">)</span>
 <span class="tok-kd">THEN</span> <span class="tok-k">RETURN</span><span class="tok-p">(</span><span class="tok-n">Point</span><span class="tok-o">\</span><a href="IfcPointOnSurface.html"><span class="tok-nc">IfcPointOnSurface</span></a><span class="tok-p">.</span><span class="tok-n">BasisSurface</span><span class="tok-p">.</span><span class="tok-n">Dim</span><span class="tok-p">)</span><span class="tok-p">;</span>
 <span class="tok-kd">END_IF</span><span class="tok-p">;</span>
 <span class="tok-k">RETURN</span> <span class="tok-p">(</span><span class="tok-err">?</span><span class="tok-p">)</span><span class="tok-p">;</span>
